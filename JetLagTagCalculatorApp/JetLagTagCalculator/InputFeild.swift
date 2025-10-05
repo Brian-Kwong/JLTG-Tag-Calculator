@@ -5,17 +5,18 @@
 //  Created by Brian Kwong on 10/5/25.
 //
 
+import CoreLocation
 import SwiftUI
 
-struct cordinate: Hashable {
-    var lat: Double
-    var lng: Double
+struct Coordinate: Hashable {
+    var latitude: Double
+    var longitude: Double
 }
 
 struct UserPlaceEntry: Hashable {
     var location: String
     var placeID: String
-    var coordinate: cordinate? = nil
+    var coordinate: Coordinate?
 }
 
 struct InputFeild: View {
@@ -46,13 +47,31 @@ struct InputFeild: View {
             } else {
                 locationManager.stopUpdatingLocation()
             }
+        }.onChange(of: location.placeID) {
+            oldValue,
+            newValue in
+            if newValue != "" {
+                googlePlacesViewModel.fetchPlaceCordinates(placeID: newValue) {
+                    coordinate in
+                    guard let coordinate else {
+                        return
+                    }
+                    location.coordinate = Coordinate(
+                        latitude: coordinate.latitude,
+                        longitude: coordinate.longitude
+                    )
+                }
+            }
         }
     }
 }
 
 #Preview {
     struct InputFeildPreviewWrapper: View {
-        @State private var fromLocation = UserPlaceEntry(location: "", placeID: "")
+        @State private var fromLocation = UserPlaceEntry(
+            location: "",
+            placeID: ""
+        )
         @FocusState private var fromLocationFocused: Bool
         var body: some View {
             InputFeild(

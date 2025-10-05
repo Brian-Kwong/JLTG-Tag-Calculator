@@ -20,6 +20,8 @@ struct SelectRoutePicker: View {
     )
     @FocusState private var toLocationFocused: Bool
     @State private var selectedTransitType: String = "All"
+    @State private var departureDate: Date = Date()
+    @State private var coinBalance: String = ""
     @StateObject private var locationManager = UserLocationManager()
     @StateObject private var googlePlacesViewModel = GooglePlacesViewModel()
     var body: some View {
@@ -44,11 +46,11 @@ struct SelectRoutePicker: View {
                 Section("Options") {
                     DatePicker(
                         "Departure",
-                        selection: .constant(Date()),
+                        selection: $departureDate,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                    TextField("Coin Balance", text: .constant(""))
-
+                    TextField("Coin Balance", text: $coinBalance)
+                        .keyboardType(.numberPad)
                 }
                 Section {
                     Button("Search Route") {

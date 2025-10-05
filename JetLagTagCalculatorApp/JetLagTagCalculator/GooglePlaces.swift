@@ -17,6 +17,7 @@ class GooglePlacesViewModel: ObservableObject {
     private var placesClient = PlacesClient.shared
     private var sessionToken = AutocompleteSessionToken()
     private var searchTask: Task<Void, Never>?
+    private var placeCordiateSearch: Task<Void, Never>?
     func fetchForStations(input: String, currentLocation: CLLocation) {
         // Cancel any existing search task
         searchTask?.cancel()
@@ -47,7 +48,6 @@ class GooglePlacesViewModel: ObservableObject {
             {
             case .success(let response):
                 DispatchQueue.main.async {
-                    print("Fetched \(response) suggestions")
                     var mySugguestions : [AutocompletePlaceSuggestion] = []
                     for suggestion in response {
                         switch suggestion {
@@ -64,6 +64,23 @@ class GooglePlacesViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.autoCompleteStations = []
                 }
+            }
+        }
+    }
+    func fetchPlaceCordinates(placeID: String, setter: ((CLLocationCoordinate2D?) -> Void)? = nil) {
+        placeCordiateSearch?.cancel()
+        guard !placeID.isEmpty else {
+            return
+        }
+        placeCordiateSearch = Task {
+            let fetchPlace = FetchPlaceRequest(
+                placeID: placeID, placeProperties: [.coordinate]
+            )
+            switch await placesClient.fetchPlace(with: fetchPlace) {
+            case .success(let place):
+                setter?(place.location)
+            case .failure(let placesError):
+                print("Error fetching place details: \(placesError)")
             }
         }
     }
