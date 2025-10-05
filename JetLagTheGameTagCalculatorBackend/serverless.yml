@@ -1,0 +1,55 @@
+service: JetLagTheGameTagCalculator
+frameworkVersion: "3"
+useDotenv: true
+
+plugins:
+  - serverless-esbuild
+  - "serverless-offline"
+
+custom:
+  tableName: "users-table-${sls:stage}"
+
+provider:
+  name: aws
+  timeout: 60
+  runtime: nodejs18.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:DeleteTable
+            - dynamodb:CreateTable
+          Resource:
+            - Fn::GetAtt: [UsersTable, Arn]
+  environment:
+    USERS_TABLE: ${self:custom.tableName}
+    JWT_SECRET: ${env:JWT_SECRET}
+    HERE_API_KEY: ${env:HERE_API_KEY}
+    GOOGLE_API_KEY: ${env:GOOGLE_API_KEY}
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - httpApi: "*"
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.tableName}
