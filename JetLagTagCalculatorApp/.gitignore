@@ -1,0 +1,6 @@
+confidential.yml
+xcuserdata
+IDEWorkspaceChecks.plist
+*.xcworkspacedata
+/CloudCast.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+.DS_Store

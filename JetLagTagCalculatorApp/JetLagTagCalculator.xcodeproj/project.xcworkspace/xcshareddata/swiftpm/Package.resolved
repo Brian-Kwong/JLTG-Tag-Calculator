@@ -1,0 +1,42 @@
+{
+  "originHash" : "7a6d85016821a7af76430f7351030b20ba3e36d9f2d0e0b4cef7c097c3aa0614",
+  "pins" : [
+    {
+      "identity" : "ios-places-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googlemaps/ios-places-sdk",
+      "state" : {
+        "revision" : "d07fef1d14fb7095d3681571433ca4e147e34a91",
+        "version" : "10.4.0"
+      }
+    },
+    {
+      "identity" : "swift-confidential",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/securevale/swift-confidential",
+      "state" : {
+        "revision" : "37ece2467ed2f9416531a809a53b58f6bd39f7c5",
+        "version" : "0.4.2"
+      }
+    },
+    {
+      "identity" : "swift-confidential-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/securevale/swift-confidential-plugin",
+      "state" : {
+        "revision" : "6508cf4f18fdf41232b01e68a1e1d81d3b90554d",
+        "version" : "0.4.2"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+        "version" : "602.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
