@@ -1,0 +1,11 @@
+node_modules
+.serverless
+.env
+.env.*
+.DS_Store
+.vscode
+.idea
+dist
+coverage
+*.log
+npm-debug.log*
