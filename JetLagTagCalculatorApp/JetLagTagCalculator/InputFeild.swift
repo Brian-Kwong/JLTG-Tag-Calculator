@@ -36,7 +36,8 @@ struct InputFeild: View {
                     .fetchForStations(
                         input: newValue,
                         currentLocation: locationManager
-                            .userLocation!
+                            .userLocation
+                            ?? CLLocation(latitude: 0, longitude: 0)
                     )
             }
         }.onChange(of: inputFocused) {

@@ -24,7 +24,9 @@ struct SelectRoutePicker: View {
     @State private var coinBalance: String = ""
     @StateObject private var locationManager = UserLocationManager()
     @StateObject private var googlePlacesViewModel = GooglePlacesViewModel()
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
+        let isCompact = horizontalSizeClass == .compact
         VStack {
             Form {
                 Section("Location") {
@@ -85,7 +87,9 @@ struct SelectRoutePicker: View {
                         .cornerRadius(8)
                         .padding()
                         .shadow(radius: 5)
-                        .offset(y: fromLocationFocused ? 60 : 110)
+                        .offset(y: fromLocationFocused ?
+                                isCompact ? 60 : 70 :
+                                isCompact ? 120 : 130)
                 }
             }
         }.navigationTitle("Route Search")
