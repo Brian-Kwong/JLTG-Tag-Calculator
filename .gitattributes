@@ -1,6 +1,3 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-
 # Mark files as linguist-detectable
 *.ts linguist-detectable=true
 *.tsx linguist-detectable=true
