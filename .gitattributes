@@ -1,13 +1,5 @@
-# Mark files as linguist-detectable
-*.ts linguist-detectable=true
-*.tsx linguist-detectable=true
-*.js linguist-detectable=true
-*.jsx linguist-detectable=true
-*.json linguist-detectable=true
-*.html linguist-detectable=true
-*.css linguist-detectable=true
-*.md linguist-detectable=true
-*.swift linguist-detectable=true
+# Auto detect text files and perform LF normalization
+* text=auto
 
 # Mark language-specific files
 *.swift linguist-language=Swift
