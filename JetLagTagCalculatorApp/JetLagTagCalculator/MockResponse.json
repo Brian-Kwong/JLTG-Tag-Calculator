@@ -1,0 +1,700 @@
+[
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "03:33:00",
+        "arrivalTime": "05:44:00",
+        "totalDuration": 6960,
+        "totalCost": 1030,
+        "numTransfers": 2,
+        "numSteps": 4,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T05:33:00+02:00",
+                "arrivalTime": "2025-10-07T05:34:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "duration": 3360,
+                "journeyCost": 560,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T05:34:00+02:00",
+                "arrivalTime": "2025-10-07T06:30:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 2820,
+                "journeyCost": 470,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T06:45:00+02:00",
+                "arrivalTime": "2025-10-07T07:32:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 720,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T07:32:00+02:00",
+                "arrivalTime": "2025-10-07T07:44:00+02:00"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "03:33:00",
+        "arrivalTime": "05:42:00",
+        "totalDuration": 6660,
+        "totalCost": 1045,
+        "numTransfers": 3,
+        "numSteps": 6,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T05:33:00+02:00",
+                "arrivalTime": "2025-10-07T05:34:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "duration": 3360,
+                "journeyCost": 560,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T05:34:00+02:00",
+                "arrivalTime": "2025-10-07T06:30:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 2820,
+                "journeyCost": 470,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T06:45:00+02:00",
+                "arrivalTime": "2025-10-07T07:32:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.876271,
+                    "lng": 2.358118
+                },
+                "duration": 120,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T07:32:00+02:00",
+                "arrivalTime": "2025-10-07T07:34:00+02:00"
+            },
+            {
+                "transportationMode": "BUS",
+                "startLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.876271,
+                    "lng": 2.358118
+                },
+                "endLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880839,
+                    "lng": 2.357952
+                },
+                "duration": 180,
+                "journeyCost": 15,
+                "lineName": "38",
+                "vehicleType": "bus",
+                "departureTime": "2025-10-07T07:37:00+02:00",
+                "arrivalTime": "2025-10-07T07:40:00+02:00",
+                "transitLineFinalDestination": "Pte de la Chapelle - St-Denis"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880839,
+                    "lng": 2.357952
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 120,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T07:40:00+02:00",
+                "arrivalTime": "2025-10-07T07:42:00+02:00"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "04:28:00",
+        "arrivalTime": "06:44:00",
+        "totalDuration": 6960,
+        "totalCost": 1030,
+        "numTransfers": 2,
+        "numSteps": 4,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T06:28:00+02:00",
+                "arrivalTime": "2025-10-07T06:29:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "duration": 3360,
+                "journeyCost": 560,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T06:29:00+02:00",
+                "arrivalTime": "2025-10-07T07:25:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 2820,
+                "journeyCost": 470,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T07:45:00+02:00",
+                "arrivalTime": "2025-10-07T08:32:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 720,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T08:32:00+02:00",
+                "arrivalTime": "2025-10-07T08:44:00+02:00"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "04:28:00",
+        "arrivalTime": "06:43:00",
+        "totalDuration": 7020,
+        "totalCost": 1055,
+        "numTransfers": 3,
+        "numSteps": 8,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T06:28:00+02:00",
+                "arrivalTime": "2025-10-07T06:29:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "duration": 3360,
+                "journeyCost": 560,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T06:29:00+02:00",
+                "arrivalTime": "2025-10-07T07:25:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Reims",
+                    "lat": 49.259602,
+                    "lng": 4.02392
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 2940,
+                "journeyCost": 490,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T07:43:00+02:00",
+                "arrivalTime": "2025-10-07T08:32:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "r. D'Alsace",
+                    "lat": 48.877441,
+                    "lng": 2.358226
+                },
+                "duration": 120,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T08:32:00+02:00",
+                "arrivalTime": "2025-10-07T08:34:00+02:00"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "r. D'Alsace",
+                    "lat": 48.877441,
+                    "lng": 2.358226
+                },
+                "endLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.877209,
+                    "lng": 2.358645
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T08:34:00+02:00",
+                "arrivalTime": "2025-10-07T08:35:00+02:00"
+            },
+            {
+                "transportationMode": "METRO",
+                "startLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.877209,
+                    "lng": 2.358645
+                },
+                "endLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880959,
+                    "lng": 2.356144
+                },
+                "duration": 60,
+                "journeyCost": 5,
+                "lineName": "4",
+                "vehicleType": "subway",
+                "departureTime": "2025-10-07T08:35:00+02:00",
+                "arrivalTime": "2025-10-07T08:36:00+02:00",
+                "transitLineFinalDestination": "Porte de Clignancourt"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880959,
+                    "lng": 2.356144
+                },
+                "endLocation": {
+                    "name": "r. du Fbg Saint-Denis",
+                    "lat": 48.879394,
+                    "lng": 2.356852
+                },
+                "duration": 180,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T08:36:00+02:00",
+                "arrivalTime": "2025-10-07T08:39:00+02:00"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "r. du Fbg Saint-Denis",
+                    "lat": 48.879394,
+                    "lng": 2.356852
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 240,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T08:39:00+02:00",
+                "arrivalTime": "2025-10-07T08:43:00+02:00"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "05:16:00",
+        "arrivalTime": "07:14:00",
+        "totalDuration": 7080,
+        "totalCost": 1050,
+        "numTransfers": 1,
+        "numSteps": 3,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T07:16:00+02:00",
+                "arrivalTime": "2025-10-07T07:17:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 6300,
+                "journeyCost": 1050,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T07:17:00+02:00",
+                "arrivalTime": "2025-10-07T09:02:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 720,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T09:02:00+02:00",
+                "arrivalTime": "2025-10-07T09:14:00+02:00"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Start Location",
+            "lat": 49.7682,
+            "lng": 4.726183
+        },
+        "arrivalLocation": {
+            "name": "End Location",
+            "lat": 48.880953,
+            "lng": 2.357537
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "05:16:00",
+        "arrivalTime": "07:12:00",
+        "totalDuration": 6900,
+        "totalCost": 1075,
+        "numTransfers": 2,
+        "numSteps": 5,
+        "steps": [
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Start Location",
+                    "lat": 49.7682,
+                    "lng": 4.726183
+                },
+                "endLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "duration": 60,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T07:16:00+02:00",
+                "arrivalTime": "2025-10-07T07:17:00+02:00"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76763,
+                    "lng": 4.724344
+                },
+                "endLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "duration": 6300,
+                "journeyCost": 1050,
+                "lineName": "801A",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T07:17:00+02:00",
+                "arrivalTime": "2025-10-07T09:02:00+02:00",
+                "transitLineFinalDestination": "Paris Est"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Paris Est",
+                    "lat": 48.876742,
+                    "lng": 2.358424
+                },
+                "endLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.876271,
+                    "lng": 2.358118
+                },
+                "duration": 120,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T09:02:00+02:00",
+                "arrivalTime": "2025-10-07T09:04:00+02:00"
+            },
+            {
+                "transportationMode": "BUS",
+                "startLocation": {
+                    "name": "Gare de L'Est",
+                    "lat": 48.876271,
+                    "lng": 2.358118
+                },
+                "endLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880839,
+                    "lng": 2.357952
+                },
+                "duration": 300,
+                "journeyCost": 25,
+                "lineName": "38",
+                "vehicleType": "bus",
+                "departureTime": "2025-10-07T09:05:00+02:00",
+                "arrivalTime": "2025-10-07T09:10:00+02:00",
+                "transitLineFinalDestination": "Pte de la Chapelle - St-Denis"
+            },
+            {
+                "transportationMode": "WALKING",
+                "startLocation": {
+                    "name": "Gare du Nord",
+                    "lat": 48.880839,
+                    "lng": 2.357952
+                },
+                "endLocation": {
+                    "name": "End Location",
+                    "lat": 48.880953,
+                    "lng": 2.357537
+                },
+                "duration": 120,
+                "journeyCost": 0,
+                "vehicleType": "pedestrian",
+                "departureTime": "2025-10-07T09:10:00+02:00",
+                "arrivalTime": "2025-10-07T09:12:00+02:00"
+            }
+        ]
+    }
+]

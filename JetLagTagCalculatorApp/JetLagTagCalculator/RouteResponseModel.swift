@@ -7,23 +7,23 @@
 
 import Foundation
 
-enum TransportationModes: Decodable, Encodable {
-    case HIGH_SPEED_RAIL
-    case LOW_SPEED_RAIL
-    case METRO
-    case BUS
-    case FERRY
-    case FLIGHT
-    case WALKING
+enum TransportationModes: String, Codable {
+    case HIGH_SPEED_RAIL = "HIGH_SPEED_RAIL"
+    case LOW_SPEED_RAIL = "LOW_SPEED_RAIL"
+    case METRO = "METRO"
+    case BUS = "BUS"
+    case FERRY = "FERRY"
+    case FLIGHT = "FLIGHT"
+    case WALKING = "WALKING"
 }
 
-struct Location : Hashable, Decodable, Encodable {
+struct Location : Hashable, Codable {
     var name: String;
     var lat: Double;
     var lng: Double;
 }
 
-struct ResponseStep : Hashable, Decodable, Encodable {
+struct ResponseStep : Hashable, Codable {
     var transportationMode: TransportationModes;
     var startLocation: Location
     var endLocation: Location
@@ -37,7 +37,7 @@ struct ResponseStep : Hashable, Decodable, Encodable {
     var transitLineFinalDestination: String?
 }
 
-struct RouteResponse: Hashable, Decodable, Encodable {
+struct RouteResponse: Hashable, Codable {
     var departureLocation: Location
     var arrivalLocation: Location
     var departureDate: String
@@ -50,4 +50,4 @@ struct RouteResponse: Hashable, Decodable, Encodable {
     var numSteps: Int
     var steps: [ResponseStep]
 }
-    
+

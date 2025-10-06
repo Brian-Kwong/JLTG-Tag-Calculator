@@ -7,6 +7,29 @@ import {
   HERE_API_RESPONSE,
 } from "./routeTypes";
 
+function updateLocationNames(parsedRoutes: RouteResponse[]) {
+    // Replace the first route departure name with "Start Location" and last route arrival name with "End Location"
+  if (parsedRoutes.length > 0) {
+    for (const route of parsedRoutes) {
+      // Match if coordinates then replace with "Start Location" or "End Location"
+      if (route.departureLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.departureLocation.name = "Start Location";
+      }
+      if (route.arrivalLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.arrivalLocation.name = "End Location";
+      }
+      // Also replace in steps 0 and last
+      if (route.steps[0].startLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.steps[0].startLocation.name = "Start Location";
+      }
+      if (route.steps[route.steps.length - 1].endLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.steps[route.steps.length - 1].endLocation.name = "End Location";
+      }
+    }
+  }
+  return parsedRoutes;
+}
+
 function determineTransportationMode(type: string) {
   if (transportationMode.HIGH_SPEED_RAIL.includes(type)) {
     return "HIGH_SPEED_RAIL";
@@ -173,7 +196,7 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
     });
     responseSteps.length = 0; // Clear for the next route
   }
-  return parsedRoute;
+  return updateLocationNames(parsedRoute);
 }
 
 function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
@@ -183,7 +206,7 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
   for (const route of routes) {
     for (const section of route.sections) {
       const transportationMode = determineTransportationMode(
-        section.transport.mode.toUpperCase(),
+        section.transport.mode
       );
       steps.push({
         transportationMode:
@@ -237,7 +260,7 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
     });
     steps.length = 0;
   }
-  return parsedRoutes;
+  return updateLocationNames(parsedRoutes);
 }
 
 export { parseGoogleMapsResponse, parseHEREMapsResponse };

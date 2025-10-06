@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SearchRoute: View {
     var body: some View {
-        NavigationStack {
+        NavigationSplitView {
             SelectRoutePicker()
+        } detail: {
+            RouteResults()
         }
     }
 }

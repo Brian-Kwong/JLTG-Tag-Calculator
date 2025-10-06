@@ -55066,6 +55066,25 @@ var transportationModeCost = /* @__PURE__ */ ((transportationModeCost2) => {
 })(transportationModeCost || {});
 
 // src/googleAPIParser.ts
+function updateLocationNames(parsedRoutes) {
+  if (parsedRoutes.length > 0) {
+    for (const route of parsedRoutes) {
+      if (route.departureLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.departureLocation.name = "Start Location";
+      }
+      if (route.arrivalLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.arrivalLocation.name = "End Location";
+      }
+      if (route.steps[0].startLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.steps[0].startLocation.name = "Start Location";
+      }
+      if (route.steps[route.steps.length - 1].endLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+        route.steps[route.steps.length - 1].endLocation.name = "End Location";
+      }
+    }
+  }
+  return parsedRoutes;
+}
 function determineTransportationMode(type) {
   if (transportationMode.HIGH_SPEED_RAIL.includes(type)) {
     return "HIGH_SPEED_RAIL";
@@ -55196,7 +55215,7 @@ function parseGoogleMapsResponse(response) {
     });
     responseSteps.length = 0;
   }
-  return parsedRoute;
+  return updateLocationNames(parsedRoute);
 }
 function parseHEREMapsResponse(response) {
   const routes = response.routes;
@@ -55205,7 +55224,7 @@ function parseHEREMapsResponse(response) {
   for (const route of routes) {
     for (const section of route.sections) {
       const transportationMode2 = determineTransportationMode(
-        section.transport.mode.toUpperCase()
+        section.transport.mode
       );
       steps.push({
         transportationMode: transportationMode2,
@@ -55252,7 +55271,7 @@ function parseHEREMapsResponse(response) {
     });
     steps.length = 0;
   }
-  return parsedRoutes;
+  return updateLocationNames(parsedRoutes);
 }
 
 // src/index.ts
