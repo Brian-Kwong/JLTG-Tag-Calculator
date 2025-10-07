@@ -8,12 +8,14 @@
 import SwiftUI
 
 func determineRouteLargeOcpm(route: RouteResponse) -> AnyView {
-    let transportationModeTypeCount: [TransportationModes: Int] = route.steps
+    var transportationModeTypeCount: [TransportationModes: Int] = route.steps
         .reduce(
             into: [:]
         ) { counts, step in
             counts[step.transportationMode, default: 0] += 1
         }
+    // Set walking as last resort
+    transportationModeTypeCount[.WALKING, default: 0] = 0
     let transportationMode =
         transportationModeTypeCount.max {
             a,
@@ -77,8 +79,10 @@ func findLastTransitStation(route: RouteResponse) -> String {
 
 struct RouteCard: View {
     let route: RouteResponse
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
-        HStack(spacing: 20) {
+        let isCompact = horizontalSizeClass == .compact
+        HStack(spacing: 12) {
             VStack(alignment: .center) {
                 Text(convertSecondsToTimeFormat(seconds: route.totalDuration))
                     .font(.system(size: TextSizes.body, weight: .medium))
@@ -100,28 +104,50 @@ struct RouteCard: View {
             }
             VStack(alignment: .center, spacing: 16) {
                 HStack(spacing: 12) {
-                    VStack {
-                        Text(findFirstTransitStation(route: route))
-                            .font(
-                                .system(size: TextSizes.subtitle, weight: .bold)
-                            )
-                        Text("to")
-                            .font(.system(size: TextSizes.caption))
-                            .foregroundStyle(
-                                .secondary
-                            )
-                        Text(findLastTransitStation(route: route))
-                            .font(
-                                .system(size: TextSizes.subtitle, weight: .bold)
-                            )
+                    if isCompact{
+                        VStack {
+                            Text(findFirstTransitStation(route: route))
+                                .font(
+                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                )
+                            Text("to")
+                                .font(.system(size: TextSizes.caption))
+                                .foregroundStyle(
+                                    .secondary
+                                )
+                            Text(findLastTransitStation(route: route))
+                                .font(
+                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                )
+                        }
+                    } else {
+                        HStack {
+                            Text(findFirstTransitStation(route: route))
+                                .font(
+                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                )
+                            Text("to")
+                                .font(.system(size: TextSizes.caption))
+                                .foregroundStyle(
+                                    .secondary
+                                )
+                            Text(findLastTransitStation(route: route))
+                                .font(
+                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                )
+                        }
                     }
                 }
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(alignment: .center, spacing: 8) {
+                LazyVGrid(
+                    columns: [GridItem(.adaptive(minimum: isCompact ? 110 : 120, maximum: .infinity), spacing: 10)],
+                    spacing: 10
+                ){
                         HStack {
                             Image(systemName: "airplane.departure")
                                 .font(.system(size: TextSizes.subtitle))
-                            Text("\(route.departureDate) \n\(route.departureTime)")
+                            Text(
+                                "\(route.departureDate) \(isCompact ?  "\n" : "") \(route.departureTime.description.prefix(5))"
+                            )
                                 .multilineTextAlignment(.leading).font(
                                     .system(size: TextSizes.body)
                                 ).foregroundStyle(.secondary)
@@ -134,12 +160,10 @@ struct RouteCard: View {
                                     .system(size: TextSizes.body)
                                 ).foregroundStyle(.secondary)
                         }
-                    }
-                    HStack(alignment: .center, spacing: 8) {
                         HStack {
                             Image(systemName: "airplane.arrival")
                                 .font(.system(size: TextSizes.subtitle))
-                            Text("\(route.arrivalDate) \n\(route.arrivalTime)")
+                            Text("\(route.arrivalDate) \(isCompact ?  "\n" : "") \(route.arrivalTime.description.prefix(5))")
                                 .multilineTextAlignment(.leading).font(
                                     .system(size: TextSizes.body)
                                 ).foregroundStyle(.secondary)
@@ -158,11 +182,17 @@ struct RouteCard: View {
                                     .system(size: TextSizes.body)
                                 ).foregroundStyle(.secondary)
                         }
-                    }
                 }
             }
         }
-        .padding(20)
+        .padding(12)
+        .containerRelativeFrame(
+                    .horizontal,
+                    count: isCompact ? 20 : 6,
+                    span: isCompact ? 19: 5,
+                    spacing: 1,
+                    alignment: isCompact ? .center : .leading
+                )
         .background(Color.gray.opacity(0.15).gradient)
         .cornerRadius(16)
         .border(.gray.opacity(0.2), width: 1.5)

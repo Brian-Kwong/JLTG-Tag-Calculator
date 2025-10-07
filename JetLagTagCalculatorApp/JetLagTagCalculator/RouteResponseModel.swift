@@ -17,14 +17,14 @@ enum TransportationModes: String, Codable, Hashable, CaseIterable {
     case WALKING = "WALKING"
 }
 
-struct Location : Hashable, Codable {
-    var name: String;
-    var lat: Double;
-    var lng: Double;
+struct Location: Hashable, Codable {
+    var name: String
+    var lat: Double
+    var lng: Double
 }
 
-struct ResponseStep : Hashable, Codable {
-    var transportationMode: TransportationModes;
+struct ResponseStep: Hashable, Codable {
+    var transportationMode: TransportationModes
     var startLocation: Location
     var endLocation: Location
     var duration: Int
@@ -39,7 +39,8 @@ struct ResponseStep : Hashable, Codable {
     var transitLineFinalDestination: String?
 }
 
-struct RouteResponse: Hashable, Codable {
+struct RouteResponse: Hashable, Codable, Identifiable {
+    var id = UUID()
     var departureLocation: Location
     var arrivalLocation: Location
     var departureDate: String
@@ -52,6 +53,19 @@ struct RouteResponse: Hashable, Codable {
     var numTransfers: Int
     var numSteps: Int
     var steps: [ResponseStep]
+
+    private enum CodingKeys: String, CodingKey {
+        case departureLocation,
+            arrivalLocation,
+            departureDate,
+            arrivalDate,
+            departureTime,
+            arrivalTime,
+            totalDuration,
+            totalDistance,
+            totalCost,
+            numTransfers,
+            numSteps,
+            steps
+    }
 }
-
-

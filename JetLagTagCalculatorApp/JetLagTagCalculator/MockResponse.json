@@ -1,765 +1,821 @@
 [
     {
         "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
         },
         "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
         },
         "departureDate": "2025-10-07",
         "arrivalDate": "2025-10-07",
-        "departureTime": "03:33:00",
-        "arrivalTime": "05:44:00",
-        "totalDistance": 234293,
-        "totalDuration": 6960,
-        "totalCost": 1030,
-        "numTransfers": 1,
-        "numSteps": 4,
-        "steps": [
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
-                },
-                "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T05:33:00+02:00",
-                "arrivalTime": "2025-10-07T05:34:00+02:00"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "endLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "duration": 3360,
-                "distance": 87505,
-                "polyline": "BH4kxn1do-7j6C3XrOrxQ7avrDjN34MgUjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
-                "journeyCost": 560,
-                "lineName": "C70+",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T05:34:00+02:00",
-                "arrivalTime": "2025-10-07T06:30:00+02:00",
-                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "duration": 2820,
-                "distance": 145967,
-                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 470,
-                "lineName": "801A",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T06:45:00+02:00",
-                "arrivalTime": "2025-10-07T07:32:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
-                },
-                "duration": 720,
-                "distance": 746,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T07:32:00+02:00",
-                "arrivalTime": "2025-10-07T07:44:00+02:00"
-            }
-        ]
-    },
-    {
-        "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
-        },
-        "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
-        },
-        "departureDate": "2025-10-07",
-        "arrivalDate": "2025-10-07",
-        "departureTime": "03:33:00",
-        "arrivalTime": "05:42:00",
-        "totalDistance": 234441,
-        "totalDuration": 6660,
-        "totalCost": 1045,
-        "numTransfers": 2,
-        "numSteps": 6,
-        "steps": [
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
-                },
-                "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T05:33:00+02:00",
-                "arrivalTime": "2025-10-07T05:34:00+02:00"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "endLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "duration": 3360,
-                "distance": 87505,
-                "polyline": "BH4kxn1do-7j6C3XrOrxQ7avrDjN34MgUjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
-                "journeyCost": 560,
-                "lineName": "C70+",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T05:34:00+02:00",
-                "arrivalTime": "2025-10-07T06:30:00+02:00",
-                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "duration": 2820,
-                "distance": 145967,
-                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 470,
-                "lineName": "801A",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T06:45:00+02:00",
-                "arrivalTime": "2025-10-07T07:32:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "endLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.876271,
-                    "lng": 2.358118
-                },
-                "duration": 120,
-                "distance": 120,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T07:32:00+02:00",
-                "arrivalTime": "2025-10-07T07:34:00+02:00"
-            },
-            {
-                "transportationMode": "BUS",
-                "startLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.876271,
-                    "lng": 2.358118
-                },
-                "endLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880839,
-                    "lng": 2.357952
-                },
-                "duration": 180,
-                "distance": 647,
-                "polyline": "BHgk1nkdgto_sB4XvuE4rBv_IgyB_9KgyB_yIgZvwDwlBnGw3C_Y4vEnGwwDwMsqM42D03B8QojEsnBwwDgyBgvFgrCwMoG4-Jo1FwiFw-BgyBwlBw3CgyBgoGoqDwjMgoGoqDgyBoyE89B",
-                "journeyCost": 15,
-                "lineName": "38",
-                "vehicleType": "bus",
-                "departureTime": "2025-10-07T07:37:00+02:00",
-                "arrivalTime": "2025-10-07T07:40:00+02:00",
-                "transitLineFinalDestination": "Pte de la Chapelle - St-Denis"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880839,
-                    "lng": 2.357952
-                },
-                "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
-                },
-                "duration": 120,
-                "distance": 127,
-                "polyline": "BGstun9C6m9vEzOlGzK_E0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T07:40:00+02:00",
-                "arrivalTime": "2025-10-07T07:42:00+02:00"
-            }
-        ]
-    },
-    {
-        "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
-        },
-        "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
-        },
-        "departureDate": "2025-10-07",
-        "arrivalDate": "2025-10-07",
-        "departureTime": "04:28:00",
-        "arrivalTime": "06:44:00",
-        "totalDistance": 234237,
-        "totalDuration": 6960,
-        "totalCost": 1030,
-        "numTransfers": 1,
-        "numSteps": 4,
-        "steps": [
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
-                },
-                "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T06:28:00+02:00",
-                "arrivalTime": "2025-10-07T06:29:00+02:00"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "endLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "duration": 3360,
-                "distance": 87449,
-                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
-                "journeyCost": 560,
-                "lineName": "C70+",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T06:29:00+02:00",
-                "arrivalTime": "2025-10-07T07:25:00+02:00",
-                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "duration": 2820,
-                "distance": 145967,
-                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 470,
-                "lineName": "801A",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T07:45:00+02:00",
-                "arrivalTime": "2025-10-07T08:32:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
-                },
-                "duration": 720,
-                "distance": 746,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T08:32:00+02:00",
-                "arrivalTime": "2025-10-07T08:44:00+02:00"
-            }
-        ]
-    },
-    {
-        "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
-        },
-        "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
-        },
-        "departureDate": "2025-10-07",
-        "arrivalDate": "2025-10-07",
-        "departureTime": "04:28:00",
-        "arrivalTime": "06:43:00",
-        "totalDistance": 234777,
-        "totalDuration": 7020,
-        "totalCost": 1055,
-        "numTransfers": 2,
-        "numSteps": 8,
-        "steps": [
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
-                },
-                "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T06:28:00+02:00",
-                "arrivalTime": "2025-10-07T06:29:00+02:00"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "endLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "duration": 3360,
-                "distance": 87449,
-                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
-                "journeyCost": 560,
-                "lineName": "C70+",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T06:29:00+02:00",
-                "arrivalTime": "2025-10-07T07:25:00+02:00",
-                "transitLineFinalDestination": "Champagne-Ardenne Tgv"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Reims",
-                    "lat": 49.259602,
-                    "lng": 4.02392
-                },
-                "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "duration": 2940,
-                "distance": 145967,
-                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 490,
-                "lineName": "801A",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T07:43:00+02:00",
-                "arrivalTime": "2025-10-07T08:32:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "endLocation": {
-                    "name": "r. D'Alsace",
-                    "lat": 48.877441,
-                    "lng": 2.358226
-                },
-                "duration": 120,
-                "distance": 141,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3c4NgK0PgK2rByY",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T08:32:00+02:00",
-                "arrivalTime": "2025-10-07T08:34:00+02:00"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "r. D'Alsace",
-                    "lat": 48.877441,
-                    "lng": 2.358226
-                },
-                "endLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.877209,
-                    "lng": 2.358645
-                },
-                "duration": 60,
-                "distance": 40,
-                "polyline": "BH0wtokdojr_sB_wE8lI",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T08:34:00+02:00",
-                "arrivalTime": "2025-10-07T08:35:00+02:00"
-            },
-            {
-                "transportationMode": "METRO",
-                "startLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.877209,
-                    "lng": 2.358645
-                },
-                "endLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880959,
-                    "lng": 2.356144
-                },
-                "duration": 60,
-                "distance": 695,
-                "polyline": "BHo25nkdov0_sBrJ75D_YnxH_Jz5FnBzkDjNrrEzF32DkNr8DkXr_EslCzxOsO3wBwW3wB0e3wB0yB_2Bg3B3wBs2B7zBslCvjCo4B_sBwvBjSokB3I4_BjI4mB7B4tUs6EwkJw1D8qDk0E80DoxMovD01HwnFwpEs9K00F",
-                "journeyCost": 5,
-                "lineName": "4",
-                "vehicleType": "subway",
-                "departureTime": "2025-10-07T08:35:00+02:00",
-                "arrivalTime": "2025-10-07T08:36:00+02:00",
-                "transitLineFinalDestination": "Porte de Clignancourt"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880959,
-                    "lng": 2.356144
-                },
-                "endLocation": {
-                    "name": "r. du Fbg Saint-Denis",
-                    "lat": 48.879394,
-                    "lng": 2.356852
-                },
-                "duration": 180,
-                "distance": 182,
-                "polyline": "BHsnyqkdgui-sBjyew6N",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T08:36:00+02:00",
-                "arrivalTime": "2025-10-07T08:39:00+02:00"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "r. du Fbg Saint-Denis",
-                    "lat": 48.879394,
-                    "lng": 2.356852
-                },
-                "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
-                },
-                "duration": 240,
-                "distance": 228,
-                "polyline": "BGyprn9Cys7vEiC2HgF4D4IgFgU0K4mBgU0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T08:39:00+02:00",
-                "arrivalTime": "2025-10-07T08:43:00+02:00"
-            }
-        ]
-    },
-    {
-        "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
-        },
-        "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
-        },
-        "departureDate": "2025-10-07",
-        "arrivalDate": "2025-10-07",
-        "departureTime": "05:16:00",
-        "arrivalTime": "07:14:00",
-        "totalDistance": 234212,
-        "totalDuration": 7080,
-        "totalCost": 1050,
-        "numTransfers": 0,
-        "numSteps": 3,
-        "steps": [
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
-                },
-                "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T07:16:00+02:00",
-                "arrivalTime": "2025-10-07T07:17:00+02:00"
-            },
-            {
-                "transportationMode": "LOW_SPEED_RAIL",
-                "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
-                },
-                "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "duration": 6300,
-                "distance": 233391,
-                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JrlM_uKvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-DvlV_owGzgF3kvB7iCvmNrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-EruFj8Fv9YvogB7ilBjotBrtwB7jgCnlI_yI75I_yIviPz3LrvgB7gSrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksBjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 1050,
-                "lineName": "801A",
-                "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T07:17:00+02:00",
-                "arrivalTime": "2025-10-07T09:02:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
-            },
-            {
-                "transportationMode": "WALKING",
-                "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
-                },
-                "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
-                },
-                "duration": 720,
-                "distance": 746,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T09:02:00+02:00",
-                "arrivalTime": "2025-10-07T09:14:00+02:00"
-            }
-        ]
-    },
-    {
-        "departureLocation": {
-            "name": "Start Location",
-            "lat": 49.7682,
-            "lng": 4.726183
-        },
-        "arrivalLocation": {
-            "name": "End Location",
-            "lat": 48.880953,
-            "lng": 2.357537
-        },
-        "departureDate": "2025-10-07",
-        "arrivalDate": "2025-10-07",
-        "departureTime": "05:16:00",
-        "arrivalTime": "07:12:00",
-        "totalDistance": 234360,
-        "totalDuration": 6900,
-        "totalCost": 1075,
-        "numTransfers": 1,
+        "departureTime": "06:30:00",
+        "arrivalTime": "14:00:00",
+        "totalDistance": 629463,
+        "totalDuration": 17160,
+        "totalCost": 4015,
+        "numTransfers": 4,
         "numSteps": 5,
         "steps": [
             {
-                "transportationMode": "WALKING",
+                "transportationMode": "LOW_SPEED_RAIL",
                 "startLocation": {
-                    "name": "Start Location",
-                    "lat": 49.7682,
-                    "lng": 4.726183
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
                 },
                 "endLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
                 },
-                "duration": 60,
-                "distance": 75,
-                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T07:16:00+02:00",
-                "arrivalTime": "2025-10-07T07:17:00+02:00"
+                "duration": 4680,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzwCrlC30JzpIvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 780,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T08:30:00+02:00",
+                "arrivalTime": "2025-10-07T09:48:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "endLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "duration": 4620,
+                "distance": 302223,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5L_2Gk7S7jd070CjnS0m5B_sa0-6C7n-B4glH_wxG489X_8Xwt8C7ynBk44E3-gCou-Ij2Xg7yD3rV0wwD_gbks5EriGwrmBz3L82oCvpYk_hF3ub414GviPoiuEvmNkynEzvKwphE7tJ0hpEj4H0ihE3xmBslwS36fgmiP_8Xok4L_93B0p6a_9PkzoH_2LgszFnpGgstD_mJ0ugErtN8vwG744Boq6a_riBs8wQr9P8i5GnpGsqwDv_DsvjC76jBwmmQjzR4zwIzxdw0qNr2Gs2vDn9G08yEnpG4itF_7Bk71BzoBkgvC_T4o7E4pC8g9C3hBk5iBw_Ds_rE8awwnD8iC4szCjNo9pB8iC4xpC8akk1DsmEwosFgoBk_Q41B4pzEo1FogpHgoBs2sCAw9-C3hB8ytD31Bk4tC72C8lzCnpG073DvuO4vnGnkQ0r9En0NsivD_6JounCz6Ww3zEz3Lk5lCvhXw-5DzkD4wLzkmBs7wF_o_BkgjI7za4ltD7lwB825Gz3L0i7BzmWk_5D7zak-pF3wLkkyCzrMgpiDz_Mw62D71Ks56Dj8FwruC3mf8q6Qv_Dw8jC_6J8yhJvqLs8xInpGojjDj0J06_D3kMg_1D72oCs7hU7hKoviD_nkBkxsN__iBk5tNzrMol5Ej3Pw4uFntsB8ryQ3wLkprDz3uB887L_yI8w6CjsIoyoDn1F4ykDzkD4trC72C02kF4hBgjxC4xD4ngEopGwu3Dk6a45sLgrHgpiD4lEktmCwzE0n3DgUwp-C_Tsw7BzkDwvvD3pC4swBz0F070CnpG00rC71KkmgD_6yD0p6a_i0D0p6a3n9Cou4Qr2pBojvHrtN44yCr-Hgq3B7lIktmC_6Js_oDnpGoyoD72C0n0C7a8mrC8uBwi1C04Dwt8CohFwjtCg7J8-sDo6mCshhY48Koo5Cg_Hsw7BolIkz0BstN0kpC4wL8g6Bg7J85rBghb00uDkqY0v1C44MwvpBwi1C4wlIk_Q4_4B04DkjP42c4pwDwhXk1qD0-Uwu3Dw6NssgD81K8s8CopG8mmC0kD8xvBw_D44yC4pCwq2CAgnsBAkrzBzwCoo5C7ilBo2tW_vlBo09Wr6EsmvC3lE0vtBz7Jg_yCnpGkgsBznOs10C78T479C_qqB81-FrxQ81wCv_Dw1XrjI0i7BvxKw6zC_6Jg7yDryD8v_B_7Bss9B7GkxkC41Bw3tC82Cw54BgrH4mlDk0J0n0Cg-P8-sD0nO4lqCo0NglhCs8XozgDg1-B4q0H8oTotvC0_Mw54Bk_Q847Cw6Nwh9CwqL8ytDwzEw4lC82C0woC4N4hpBA0p_B3hB0vyB39Cov6Bv3C0goBrqHo5uC3wL847Cz7iB88qHnjiBwy9Evr1Bwz7Gn0zC495Gv5zB8viDj69Boo8Dj7S00oB7gSwvpBrwYgl8BjliB8k7Cj3P8xvB_vlBsx5D7gS0lhCv6Ngq3Bv-Lkn1B3zW00uDj3Pg-6C_xQog7D_iLwrxD3oKkj9DjgJg-9DryDkuhDAo__CwjC4xpCwnF4g0C0sEkn1B03LgpiDwyMwmzC8hK065BosRk74Ck1iCwkzKghmDklnQ0nxBkt6HooO4xpCkzRwspDo9G8htBw-LkiiD00FooxBgrHwruCw_D801B00F0xoDwrDksxDA86uDvyMoj6TzsE0urG4pCkuhD0kDw_pC4xD4gxBw3Cszeg7J032Ck4H433BoxqB8plIw0fw6hG0rMok2C4kM4pwDsuFwzqCsyDktmCgoBwjqBkNwnuD3xDonhDzsEounCvzEs05Bj4HszmC_yI0tiC77-Bo-sN_6JgslC_lR0v4D3xD0iYz4Ds4U3gJgp_BzwCk_QzyVo5xD3lnBw6-E_nkBkr-Djz0BoixFnkQs86BvyMw6wBr1O87-BriG0tfrpPk8wCjrQ01mD_lR8-vEzkDoigBz0FoylCryDwp7B7qD0i-CvjCko2E7uB0hmD7G0uX3lE0u0J7agy-Dv_Dgq9DruF4lqCnpGk71BvnF4u-BrtNgwrDz7OgjxCjmasuzD71tBot1En-hB4n9CnppB46lD7pLojYz_1DsgtH3-d8k4B7w3B4ltDvp7Bsl6DnvXw2yB7vc4z5B_tSwznBnoOw0fryrBo-nD_0bs3kCzqU844B31kB00uD3yekprDj5iB8k-D75IgwlB_mJoppB_mJ03uB3wL8ziC3kM0m5Bj8FgsiBrqHwiyB_9P0ihEzoG0m5B38Kgz2D_2Gov9CjsI0rgGnxH0ihEr6EsxzBnpG4j3B7xMw-2CvzEgpc74Qo5uCjsI0wlBn8O0u6Bv1X8xyCzqUs05B_uK8jd7oT4wuBn3-Ckt3Gr8Xoj7Bztfg1-B_lRkplB_p3Bkv8Dr7fwzqC_zjBgy7Cv8gBw9-C_yIs0WnylC409FjxhBk74Cj0sBwwnDviPsvgBn2gB0hjCv8jCg28Dj2lEoi8H3tjBsniC_hT8qmBvh6B8qsD3-dwh6B_wjDox7Fv5Vk4qB7xvBs0hD7nboj7B3plBkn4CnxqBwjwDj0vCgo4Gz7xBkukEj0sBsh8DnufgryCr3kCgj6FvmwBkk1D7jdgt9B_sao4zB3kM0yV3j3Bg-6C7puBommC_nkB0rvBvvpBowyBz65B0osCjmuG0znI39lBw2yBr7f4kvBj_Qk6avogBgu1Bv_mB8ioCztf05hCripBkj6Cj4qBo__C_sag9_BvwhB0m8CjrQw2yB3wL4xmBrhOkrzBvuOwt5BnwPkhnCzvK433Br-HgrvB38K4owCrmEk1kBjkH0grCruFw21C_7B4j3BzoB4qxG3xDk7sIzwC847C3xDo42C30JojmEn5Io__CruoBggrM3lEg22BzkD0zwB7uBk8oBzoBow6C08B48wC49Con-BsmEwt5B8qD86jBwiyBgosMo1F81tBgta88nGk-YoslG8jd0mwIopG04pC8pLohzDo9GgwoC4gJsp1Cgle49nKsuoBwy0L0qUs64Fs0W4l7G8qDkwpBwrD8s5B82Co1rC4NsmsB31Bwt8C7uBktjBvrDo37BzsE0_vB71K4j_Cj8FsuoBnlIs9yBrhxBsv6I38Kk0vC7hKw_xD_uKk3jG7hKg4yF_nB4hvDgoB4oKgU46iC49C0_yC4hB84VwnFs05BgnJ0j2Co3Y0qoGkkHoxqB8ioCs96Ms2G0kmB4nSo7qG7ask8BriGgoyEngNszyGzgFw3wD39Cg_qBjwGwljE78T86oLriG4g0CruFgi2B_qHo37BjoKsrlC75IspyBz_M0lhCzjLgrvBr8Xgu4C38Kg0jBrxQg60Bnufsh5C7nbkxkCv6N05e3mfki_Bvkds86B7ynBw8jCv5VoyiBvogB0_vBvt5Bo9sC_hT0uX_t1Bw54Bv_mB45nBnlrBo9pBj4qBk1kBvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuC",
+                "journeyCost": 1925,
+                "lineName": "TGV 061A",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T11:57:00+02:00",
+                "arrivalTime": "2025-10-07T13:14:00+02:00",
+                "transitLineFinalDestination": "Strasbourg"
             },
             {
                 "transportationMode": "LOW_SPEED_RAIL",
                 "startLocation": {
-                    "name": "Charleville-Mézières",
-                    "lat": 49.76763,
-                    "lng": 4.724344
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
                 },
                 "endLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
                 },
-                "duration": 6300,
-                "distance": 233391,
-                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JrlM_uKvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-DvlV_owGzgF3kvB7iCvmNrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-EruFj8Fv9YvogB7ilBjotBrtwB7jgCnlI_yI75I_yIviPz3LrvgB7gSrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksBjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
-                "journeyCost": 1050,
-                "lineName": "801A",
+                "duration": 4140,
+                "distance": 135227,
+                "polyline": "BHg7r2-cg7pwzErlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F38Kj0JnxCn9Bv7tBzxiBzzzC3qgCrmE39C3_V70SrtNvuOn8On8O_uKz3L7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpBo3TwwmB0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslMjpgBozankLkkM",
+                "journeyCost": 690,
+                "lineName": "K200",
                 "vehicleType": "regionalTrain",
-                "departureTime": "2025-10-07T07:17:00+02:00",
-                "arrivalTime": "2025-10-07T09:02:00+02:00",
-                "transitLineFinalDestination": "Paris Est"
+                "departureTime": "2025-10-07T13:21:00+02:00",
+                "arrivalTime": "2025-10-07T14:30:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
             },
             {
-                "transportationMode": "WALKING",
+                "transportationMode": "LOW_SPEED_RAIL",
                 "startLocation": {
-                    "name": "Paris Est",
-                    "lat": 48.876742,
-                    "lng": 2.358424
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
                 },
                 "endLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.876271,
-                    "lng": 2.358118
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
                 },
-                "duration": 120,
-                "distance": 120,
-                "polyline": "BG2kmn9Ckl-vElB4E7V_J",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T09:02:00+02:00",
-                "arrivalTime": "2025-10-07T09:04:00+02:00"
+                "duration": 480,
+                "distance": 6612,
+                "polyline": "BHo062rc8qwjwE3u5Bsu8Bz-U80S_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qUzpuCovmBj_pBg0UrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T",
+                "journeyCost": 80,
+                "lineName": "TER",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T14:42:00+02:00",
+                "arrivalTime": "2025-10-07T14:50:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
             },
             {
-                "transportationMode": "BUS",
+                "transportationMode": "LOW_SPEED_RAIL",
                 "startLocation": {
-                    "name": "Gare de L'Est",
-                    "lat": 48.876271,
-                    "lng": 2.358118
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
                 },
                 "endLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880839,
-                    "lng": 2.357952
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
                 },
-                "duration": 300,
-                "distance": 647,
-                "polyline": "BHgk1nkdgto_sB4XvuE4rBv_IgyB_9KgyB_yIgZvwDwlBnGw3C_Y4vEnGwwDwMsqM42D03B8QojEsnBwwDgyBgvFgrCwMoG4-Jo1FwiFw-BgyBwlBw3CgyBgoGoqDwjMgoGoqDgyBoyE89B",
-                "journeyCost": 25,
-                "lineName": "38",
-                "vehicleType": "bus",
-                "departureTime": "2025-10-07T09:05:00+02:00",
-                "arrivalTime": "2025-10-07T09:10:00+02:00",
-                "transitLineFinalDestination": "Pte de la Chapelle - St-Denis"
+                "duration": 3240,
+                "distance": 88077,
+                "polyline": "BH8t_7qcg_y4wEjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmGrvbkj6C3_pBghhD7svB0lsE76tBkmgDz8L8ilBrqM82lB73J065BnpBwl4B_rEg5nEgKk1kB_EohFjN86jB8a8oTgkDokQohFokQ0gFwqLohF8tJ882BsuwCg30DsnwF49lB0-3BwmN8gSkma8ynBgnJooOgjLs0WokzB406EohFokQ8pL81tBgnJsl0Bw_Dg8kBs9P4zlGopG8_hCgnJsvjC48KoylC81K4r4B4-gC0ssLg-Pgq6Cs2Gw0fooOk26B0_vB41yEs_iB0u9Cg3G0-UsqHgxd0snBw9nG44vBkk7F09c0wwDokQs86BshxBowjGo1tBw0wF40J44vB4xDo3Ys-CsmnBkN81tB3hBokQ7iCskZr6E8mjB3xDguSriGo_ZvqL8ukBriGosRvp7B4xvEv5VspyBjtjBs53CrorGg-lP3ye8qpCzjuB00uDz0FsgWz4D43UnpGspyB7aomjBk4Hgi2B00Fk3yB7qD41vDv3CsvgBzkD0qU39CkgJ72CgiT3pC8tJrmE03Lj4H0jLn1Fk8K7-DsoXvzEsipBzoB8vc_7B4jU_2G01b_vlBo88DvrDstN31BwvG7uBg-PnGgiTg8B06W4pC0iT81Kw2yBs6Eo_ZgoBwxUjNgmR3pCs9P7jdozjE_gb4pwD_-H49lB3wLw7oBvxUov6Bz6W0zwBrk8BwjwDrhOknSjpoCwu0CnlxDkilE7l5EwsvF3jU07OznOs6EngNgU_2L_nBz3L3xDzrM_2G3oKr-H7-pC_0-B70S3wL_yI3pC_xQ3N3sNwrD71KwzEjkHs6EvmN8xMv-LowPvjHokQ_2Gs4UzkD0goBkma822FsqCs8X7GkyZzwC4hkBr6E4mf_mJw4dvpY8_hCr6E0yV_T8lIv3C89LjhB85I4pCg1bgoBo9G82C40JgzIknS8hKojY0vKo2gB03Lon-B07Ogi5C8Gk_Q3hBs9Pz4DssV_uKswY_4Z0hgBnxqBw6wBr_iBgzrB_pP4wL70S48KvuO03L_mJ8hK3vTo_Z7vcgsiB70Sw6NnhwCksrBj4HsuF37SkjU75zCgu7D75IwuOnxHgyQr6E0nO7qDspPzUs5M0oBwnoB0gFs0Wk4Ho0SswYsmnBwyM0iYgrHs0W4xDsgW8GsxQ7uB0yVvrDkvOj0J83djwGspPrtNonWjma05ev6N89L_gbk_Q_1TgqPv-LgjLrhOwxUjgJk_QjxhBk71B_2xC8rnE_t4CwssEvxZwvpBnr8Bg9iD7lI4nS72CgzIvrDkrQ_nB4nXkgJw6zCAkrQ72Cor8BoG88Tw_DktjBs6EsgWsuFogSg_H0iT4kM4_VggjBg22B8xM0uS40J8hK0nOg7JwyM0gFgmR08B0v1CvzE8nbz8Bo9G_7Bo1FkNwtW40Js-HsuFowPokQs5Ms8XwzE0_M4xDspPw3Cg6RgU0-Uz4DwvpB7G07J82Cs8X0wC89LgsiBsjnDs4Zg4sD49lBgz5EgrHwlVk0Jw5Vs1Os8XwxU0lek_QkubolIkjP4kM05ew_DwyM0wCgvK8a4rV31Bs4U39CkoKvuOwkd3wLw2PrhOo8O7tsBw_mB7xM4wLznJ0rMvvG0rMj8FkzR_jDg6R7awuOkhBkjPw-B8tOgxEg-PwnKsmT4gJ8oO0oL86K48Uk1Q8rUkmQo7C4iDgwC0_CszFo2Hw9Eg2JkqEo5NgkDwsPgZooOkXo5Xg8Bs48B4pCo9pBopGwnoBwmNwnrCsmEguSs6Eo8O0sE4wLo5IogSstwB885CopG4oK8ilBkhnCotJwuOk4HowPw9ToyiBgvK8zasiG80So1Fkub8uB0rMgoBssVnG8pL3N8tJzkD0-U7lIw8gB3qOkgsB_ipBgy-D7-6Bko2EruFk0JnpG85I_uK4oK3qdwhX_-H85I_-H81K_6J4vTrmE0_M3xDk_Qn1FwvpB4pCkyZ01b83mE8iCk7SgUswY_TooOv-LkrhFr-Hwt5BryDkzRruFs1OvyH8hP_jI8sM_2GogS39C0vKzrM4z5B3lEshOvrDgzIvnF85I38K4sNzgPg7JjiN49C3iczoGngX7lI7tnBnsR7wUz3L_xQjgJn8J3gEvygB31G_oN8a7xM0UngN82C_6JsmE_iLwjHntEsmEnpGo1FzrMw6NruF0kIruU0vjB_9Ks0Rr_YskoBnuL8gSv8bwsyBjojBs-5BnqhB882Br1Okma_uKkqY_sa82oCnoOg1bjgJ0_M38K0_Mj4HkkHz4mB05enwP8tJ3yespPz2T03LrriBkma_lRwiP7jgC8mmCj_Q0mW3rVw0f3oKgmR_6J8oT_-C8uGnxCssGzxEw2Kv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gFnkB07J_Yo6Pj_B0pNzyBs4Fv1DwyMrhO42wBzgUgwoC",
+                "journeyCost": 540,
+                "lineName": "ICE",
+                "vehicleType": "intercityTrain",
+                "departureTime": "2025-10-07T15:06:00+02:00",
+                "arrivalTime": "2025-10-07T16:00:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
+        },
+        "arrivalLocation": {
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "06:30:00",
+        "arrivalTime": "13:52:00",
+        "totalDistance": 666451,
+        "totalDuration": 22860,
+        "totalCost": 4635,
+        "numTransfers": 5,
+        "numSteps": 6,
+        "steps": [
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
+                },
+                "endLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "duration": 4680,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzwCrlC30JzpIvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 780,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T08:30:00+02:00",
+                "arrivalTime": "2025-10-07T09:48:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
             },
             {
-                "transportationMode": "WALKING",
+                "transportationMode": "HIGH_SPEED_RAIL",
                 "startLocation": {
-                    "name": "Gare du Nord",
-                    "lat": 48.880839,
-                    "lng": 2.357952
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
                 },
                 "endLocation": {
-                    "name": "End Location",
-                    "lat": 48.880953,
-                    "lng": 2.357537
+                    "name": "Nancy",
+                    "lat": 48.6898,
+                    "lng": 6.174094
                 },
-                "duration": 120,
-                "distance": 127,
-                "polyline": "BGstun9C6m9vEzOlGzK_E0F_Ysa2M",
-                "journeyCost": 0,
-                "vehicleType": "pedestrian",
-                "departureTime": "2025-10-07T09:10:00+02:00",
-                "arrivalTime": "2025-10-07T09:12:00+02:00"
+                "duration": 3300,
+                "distance": 191494,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5L_2Gk7S7jd070CjnS0m5B_sa0-6C7n-B4glH_wxG489X_8Xwt8C7ynBk44E3-gCou-Ij2Xg7yD3rV0wwD_gbks5EriGwrmBz3L82oCvpYk_hF3ub414GviPoiuEvmNkynEzvKwphE7tJ0hpEj4H0ihE3xmBslwS36fgmiP_8Xok4L_93B0p6a_9PkzoH_2LgszFnpGgstD_mJ0ugErtN8vwG744Boq6a_riBs8wQr9P8i5GnpGsqwDv_DsvjC76jBwmmQjzR4zwIzxdw0qNr2Gs2vDn9G08yEnpG4itF_7Bk71BzoBkgvC_T4o7E4pC8g9C3hBk5iBw_Ds_rE8awwnD8iC4szCjNo9pB8iC4xpC8akk1DsmEwosFgoBk_Q41B4pzEo1FogpHgoBs2sCAw9-C3hB8ytD31Bk4tC72C8lzCnpG073DvuO4vnGnkQ0r9En0NsivD_6JounCz6Ww3zEz3Lk5lCvhXw-5DzkD4wLzkmBs7wF_o_BkgjI7za4ltD7lwB825Gz3L0i7BzmWk_5D7zak-pF3wLkkyCzrMgpiDz_Mw62D71Ks56Dj8FwruC3mf8q6Qv_Dw8jC_6J8yhJvqLs8xInpGojjDj0J06_D3kMg_1D72oCs7hU7hKoviD_nkBkxsN__iBk5tNzrMol5Ej3Pw4uFntsB8ryQ3wLkprDz3uB887L_yI8w6CjsIoyoDn1F4ykDzkD4trC72C02kF4hBgjxC4xD4ngEopGwu3Dk6a45sLgrHgpiD4lEktmCwzE0n3DgUwp-C_Tsw7BzkDwvvD3pC4swBz0F070CnpG00rC71KkmgD_6yD0p6a_i0D0p6a3n9Cou4Qr2pBojvHrtN44yCr-Hgq3B7lIktmC_6Js_oDnpGoyoD72C0n0C7a8mrC8uBwi1C04Dwt8CohFwjtCg7J8-sDo6mCshhY48Koo5Cg_Hsw7BolIkz0BstN0kpC4wL8g6Bg7J85rBghb00uDkqY0v1C44MwvpBwi1C4wlIk_Q4_4B04DkjP42c4pwDwhXk1qD0-Uwu3Dw6NssgD81K8s8CopG8mmC0kD8xvBw_D44yC4pCwq2CAgnsBAkrzBzwCoo5C7ilBo2tW_vlBo09Wr6EsmvC3lE0vtBz7Jg_yCnpGkgsBznOs10C78T479C_qqB81-FrxQ81wCv_Dw1XrjI0i7BvxKw6zC_6Jg7yDryD8v_B_7Bss9B7GkxkC41Bw3tC82Cw54BgrH4mlDk0J0n0Cg-P8-sD0nO4lqCo0NglhCs8XozgDg1-B4q0H8oTotvC0_Mw54Bk_Q847Cw6Nwh9CwqL8ytDwzEw4lC82C0woC4N4hpBA0p_B3hB0vyB39Cov6Bv3C0goBrqHo5uC3wL847Cz7iB88qHnjiBwy9Evr1Bwz7Gn1tB83jD_50B4miCnvrBglZ_6vCo9anmnEkqsBnuxCglZv0f0kD3toBvzEj5iB38K36anoOnlIriGv0fjzRroX_-HjkH_nBnsR7uB_t4Cw_D36rFgvKnmjB4wLnrZo8O_gbk_QzrvB05e_T4N76jB0uX_3sDk5lC3-jDgp_B7kVw6N36_Kk0gHjzR0jLrx2C0q3Bz5e84Vzq3BsjhBzvyBkpgBnw1Cg22B70S8pLn4Q8lI77bsiGjn1BwzErpP3NnnWzsEz6W3oKr6lCv6wBrsfnkQ7pL_jDvyMzwCnvXz8BnsRwjC_5R04Dn8xBspP3kMopGz6zJ44gGvhX43UnwP4vTz4DkwGzzNo3YvnF4kM_iGk_QvnF4vTn5IwuxBzle0ypG_-H8ukBzzN45qCzkDs9PzkDo0Nn1F80S3oKwpY34MwtW7tJwuO71Ks5M7gSguSr9P48Kj_Q8tJ_9PopGrxQ49C_saArgWn1FryI3xDn8OjsI_5RvmN_lR7gSvnFrqH_o_Bjy8B3kM30Jz3Lr2Gn0Nn1FntJ_vC38K3pCv-LzU7pL4NjjP49Cz_MwzE3kMkwG72lBorZv4do3Y_uK0rMz3Lk3P38KosRvyMojYnxqB4ltDr4Z4o1Cr1OolrB7hKs4U_yIs1Oz3LsxQ3oKs5Mj4Hk4HjyZkvTjoKopG_xQo1F75I41B3sNkNvmN_7Bn8OvjCzrM3lEj69Bjmaj3P7lI_nkBjnS_iLr6Ez_M72CrhO7a38K8arpP8qD74QkwGznOsqHnufonWj7SwmNn0N4kM3kMshOvmN8wUzrMswYv1XgyzBr6Es-Hn1F8lI74VkyZnpGo9Gj7zCkszCn9Ls9KzjG88EvyR8iRviPw6Nn1Fg3G3xDg8BvlVkqYv8gB8qmBz_MstNj2XojY71K81KzwC49C_6JwmNvnFs2G_msBs05Br53Ckz_D3ubsmnB78TkyZzsE8qD3wL0rMr5M03Lr9PwqLnkQs-HrhOgrH77b4wLrjhBsiGr1xBgoBv6N4pC3hkBgnJ79L08B3wL8GrpP3hBzrMzwCvtWnlInnWnwP30xBvvpB70SzjL7o5C3xmBngSriGv-LzwCv6N7uBzzN8GrsV04D_7kB4sNn04Cw3lB_jsDo1tBnwyBw9Tr6E0kD_5RgnJ7uB8ar2GgwC37Sw2KjxI8kG",
+                "journeyCost": 1375,
+                "lineName": "TGV 805B",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T09:54:00+02:00",
+                "arrivalTime": "2025-10-07T10:49:00+02:00",
+                "transitLineFinalDestination": "Remiremont"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Nancy",
+                    "lat": 48.6898,
+                    "lng": 6.174094
+                },
+                "endLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "duration": 6060,
+                "distance": 146012,
+                "polyline": "BH0u41gd89l41DvoW4hQnlIkkHz-U0iYjzR0lezvKwlVvrDkgJ3tFkvOntnBo5uC74V4hpB_tSwgf3oKs1O_tSkiXv7oBsxzB3vT0mWrqqB882Bv3C4xDvzEsuF_vlBgyzBj8FotJzkDotE3xDw_D3oKg2T71Kw5V37S8ilBnnbwt5Bn8OoukBjyZgslC_6J0uX3nS49lBzyV4hkBvhX0hgBv16Bs-tC3-d0kmB_s9B89xCvmN8oT7-sD8p_FzzNs8Xz0uDo8iG3wL8nbriGgyQ_mJoyiBvzEk-Yv3Cg2T_7B4swB4pCgsiBs6E05e8qDo4QgzI01b4pCoxHwrDg7JgjLo3Ys5vB4z8Ck8Kghb40JkpgBoxH0goB04D0nxB7iCo9pBrmEoqhB7xM0u9C75I8s5BjgJ04mBjsIkqYn0Nw0f7xM06WnhoBwt5Br4Z4xmBvqLwlV_6J06WjkH0qUn6jBsl6DzjLgkmBnj7BozpGjvT01jCr9yBwsvF7xHguSr2GowP3vTw0fr8X0pcvyMgjLz_M4gJn5uCgjuBrqHwrDn7W0oG7wU08Bv7oBgoBvkdopGvuOwnFz6W0vKzqlFog4Cz0uDw16BzgoBsoX_wYo4Qj7Sg-PrhO4gOv6NkrQjrQssVn8O0uX71Ks1Ov5VorZ7kVg6Rn4zB08kBjwGwzEz0oBwgf_6vCs6vC71tB4kvBruoB8mjBjowC46iC3pC0kD7oTkrQ79L4kMjjPgyQ_lR06WrqHw-LruFsqHz5e4j3B7tsBsl3C3kM8vc3oKwseriGo3Y71Kg-6C7Go4zB08BglZwzE4yes3hBkviG0wCo4QwzE0_vB8iC0y4B3xDkv8D39Ckj3B75Is86BnpG4ic_hTk69Bj4Hg1bvnFo3Y_2G0rvBjhBs4ZkNs8X08B8_Zw7F00oBksI0wlB81tB8h7E80Sgp_BoxHs0Wg_HgqUk0J0-U48K43UwqL0iTwmNgiTwuOg6RwhXojYgrpJsluJ8hK48K8tJ4kM0_M0qUk3PwwhB0gFshOohF84Qg_HkhkBgzI0zwBkNwwD0gFoosB0wCk9gBjNkj3BoG068CAoqhB8ak0sBjN48tB7aow9D8uB0_yC7G0kxNA814D7uBgm0BjN80jFA84pQgUsu2E7Gw9kF8as8X08B8kV49C80SsuF8_ZgzI8vcgn6E83oN0_yCwmkHo9pB4g3D89xC8wrHw2P4r4B0vKgu1Bs4Zs4lF8sR8uvDsuFghbkkHwkdgnJg9cgjL0xd0jLovXgvK43Ug-Pghb8pLkrQshOguSolrBgrvBwhXsvgB40JgyQs7fw97Bk7SkkqB0xdw21C0nOw8gB4gJgmRo4Q8nb0snBs9yB03LkrQk3Pg5ZksIspPs1Os7fo5IswYg_HorZ0sEguS8puB4-xGg3G46a479Cwl3Jo9G05e07Jkn1BwtW8vlEwnF4gxB8iCkxhBk4H822F4xD8tsBslM00rCw9Y0pqEwjC81K0vyBwo6IotE05ekhBkwGsmE87bw_DwxZkgJooxBg7J4xmBk3P89uBo4Q82lBwh0JwnkSo-hB05hC80Ss6nBw8jC8uyEsyrB83jDk7N0kmB8_kDg3oJwvGwpY85I4xmBo9GoppBw_DkliB0wC83dgoBkkqB_Ts3hB7iCoqhBjoF0zwB3_V8_qF3pC8htB8G8qmB8iCk_zB0wC0hgBwzEkliB0_M0osC065B86oLo8O0q6CsuF06W81Ko-hB8tJovXkgJk7S0qU8ukBswYwnoBwuOo-hBk4Hw1X0jLstwBgvK8lzCw_D0wlBgnJ41yE40Jgp_BgvKog1BkgJ8vcgrH47SojY4j3Bs4Z4r4BgkhBotvCwvG8gSwmNolrBwnFk7SogNor8B07Ogi5CgzI4xmBwmN4lnBgtasw7Bg5ZoigBw9Yk-YwkdwtW4zW0nOs5Mo1Fs9Pw7Fo7Wo1Fg0uDkgJs1Ow3C4icolIs0WksIw1XkjPs8X8oT40Jg7J0rMooOskZw8gBs8Xs6nBowPwkiBssVkrzB46f8qpC0jLw5V4lqCk2lEsgW0rvBk9lBgjxCsoXg3uB0jBkuC0rWk2wBstNkliB0sEw2P82CkwGghb00rCooOwuxB03LowyB8hKg22BkgJ4trCwrDsipB4pCs86B_To_8BntE0lhC7hKsmvC35E4ub7hKkz0B38K45nB39Cs1OjjP0m8CnpGwjqB7qDkjPrzekt0F7iCkrQ3hBw6NzwC0-UrqHsuoBzvK0kmBznOktjB3wL8kVzyV0lez_MshO_lRspP_tS4wLn8OgrHviyBgyQzqUg3LnkQooOv-L0_M38KkjP71KknS_uKw1X75IghbriG01b72C8wU31Bkma8G4kMwnFk5lC31Bk-7BjrQoxvLr2G4g3Dv3Cg-9D8aktpDw_DglhCjNs7fzkDoigBj4H4hpBvzE0lezoB0rMjhB05eg8BkkqBg7Jg1-B8ag7J8uBs0WA4mf3pC87b3xDojY7hKkgsBr1xBo0hG3lEo_ZvrDsuoB_Tw1X8aovX49Cw1XolIktjBwrD0jLstNs7fk4HwuO8tJshO07OknSstNshOw6NgyQkwGs-HwvG81KooOg4hBsuFkzR0gF0qUsyDosRgwC88T0oBonW8a4gxB8uB42c4lE4plB4pCo8OkoFs8XwjH0-UohF4wL81Kk7S82Co1FohFg7J4hB0oBswYsvgB06WskZsiGksI0nJokQs9PsjhB0kmB4kyCk0JghbkkH8vcwrDo7W8iCk5iB7a0m5BvrDoyiBnlIktjB_6Jg1b_yI4zRjmaohtB_2Go0Nz3L0tfj4H42cvxZsh8DnoO4i_BvzEw6N_lRolrBriG0rMz4Dk4Hj5iBsuoBzgoB0i7BzpcgsiBz1gBkn1BrlMs8X_yIsoXzsEsxQ3xD02T3pCkyZ7awnoBwrDoukB00FsymB4gJktjBgnJ42cwuO0phBoirD084GwxUgta8ilB0nxBwnoB0nxBgu1Bo2jC8muD09qEknSwse0qZ476BkjKk3jBgoGwgf4wGonqBs2G0lew3C80SgzIs86B49C0nOgzIwwc4sNgwlB48tB00uD0_vB0guD4lE0nO03L4yesyD07J0uXwp7B49oCouwFsk_CgiqH0zNgvtBkwGw8gB0wC02T8-D8k4B8a8tgHjNgvtBzoB0yVzsE0snBnxHwznB3oK8qmBjtjBkiiDvhoFwhlO30JkliBn1F42cnlIw97Br7iCo8kPvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuC",
+                "journeyCost": 1010,
+                "lineName": "K1",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T10:59:00+02:00",
+                "arrivalTime": "2025-10-07T12:40:00+02:00",
+                "transitLineFinalDestination": "Strasbourg"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "endLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "duration": 4140,
+                "distance": 135227,
+                "polyline": "BHg7r2-cg7pwzErlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F38Kj0JnxCn9Bv7tBzxiBzzzC3qgCrmE39C3_V70SrtNvuOn8On8O_uKz3L7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpBo3TwwmB0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslMjpgBozankLkkM",
+                "journeyCost": 690,
+                "lineName": "K200",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T12:51:00+02:00",
+                "arrivalTime": "2025-10-07T14:00:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "endLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "duration": 540,
+                "distance": 6611,
+                "polyline": "BHo062rc8qwjwE3u5Bsu8Bz-U80S_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qU3o4Doj7BrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T",
+                "journeyCost": 90,
+                "lineName": "TER",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T14:31:00+02:00",
+                "arrivalTime": "2025-10-07T14:40:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "endLocation": {
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
+                },
+                "duration": 4140,
+                "distance": 89783,
+                "polyline": "BH03m8qcwu73wE3pHwwXjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmG7tOw5V7gN8xM_9FwrDn5mBw6zC302B4trC7_mCw16B32_BwshCj19B4qoDz35D4t3G_j9CwgwFroxDwz7Gz0wCkjgF7qrB0wtCj3yBggmCzljB4kvB37SwlV7xMwiP37SorZzrM8gS3rVgsiBjmG09InwjB4mzBr6EksIv6N0yVr1Okma7zak3yB3rVg_vBnkQk9gBv3CoxHjynE4tiJ7lIghbvvGgrqBzUo3YwvB8h1Cn5Dk-Y3_Vs7wF7ukB4xgJjwGss9BjvTwjzEj8F4ic7iCs2Gz6Wgu1BjoFwmN39C8hK38KwnoBjkC8-I_uPgghCnsRok2CznJwuxBv7F0hgB7ag-P8a0yV49CkvTotEkrQk4H8oTo5IkrQsuFg_H4ic4qdgvK0nOo9Gs5MotEgvKs2G0-U04DsoXgoBgiTz4DoijC4hBgiT4xD0mWg_qBkmuG0kDk9gB3hBo3Yn1Fg9cjsI0yV_yI8kQ7hKw6NvmN8xM782Bg7sB_9Uk-Yv-LgiTzrMglZ30Jo_ZngSsvjCj4Hw5VvqL0uXviPkiX30J4kMr0hDsw-C_6J4kM70S0le3gJosRvvGg-Pj4H0nOv6N0-Uv0f42c_nkBgokBrhO03LjvOk4Hv1Xk4HjsuCghbzxuF8v_Bv4rE85wBrx2CgkhB_tjF8s5B7p3Ew54B7svGgwoC7gmB0vP_glBslM_h5Couf_gsFg9_BrqqBowPz1bg7JjplBshO7tnBszP_8S83Jrm2Bo-hBj0JkgJnhFg3Gn9Qk9lBn6F40J_wJk_QjgJo0NjkHo5I71KkrQzvKw5VznOsjhBvyM8ilBriGkma_qHo9pB7kVwn5FriG48tBn1Fo6jBriGwkd75IojYv5VkwuBjoK0uS39CsuFnpGslRrmEo8OzgF0-UvrD4rV3hBwlV8aorZsmEorZ0sEguS0mWky8B4poC0qoGswY4-gCw5Vos0BgwoCk3jGksIg2T8tJgmRokQojYo9GksIw6NwyMk-Yg6R0lewuOotyD8o2BwuOo5Is1OooO4oK4sNkkHsxLsqH07Okz3C8i5G05hCgqgF88T0y4BshO4wuBsjkCo1kI0rMowyBkgiB4rjEkgTwrpC8nb890DkrQsvrD43Ug33Eo9GwshCo3YgyhFshOsuwCkgsBo0vJ03L86pDk7S8_nE48Kku-Bo_Zw67D0rHszyBkpC80SsxB4oK4NkzM0jBkoPwH8-SoBg7EzUo4QvzEo9pBzsE0mW_-H09c34Mw8gBrhO4ubnsRs4ZnigBsqqBz_Mo7WjkHwiPz_Mg4hBrxzBoo_Ej-d0q_Cz7Tg9_B3uR801Bj_G8yYzjQo94BniC40JzsEs7f3N48KAgnJ4pCkubsipBg2tIovX8mxEksIoqhB8lI0-UksI8sRshO0yV4yFwrIovNosM80S44M0_vBs8X88T8hK0opBo3Y03L4sI48Kk0JksI8tJ8lI4wLsvgBs9yBwiPg5Zs8mB0-8BsvH43UsiL8-hB48P882BokVwjtCgge05kDwhX4lqCs5M8ukBskZ0vyBo1F4oKo4QkqYkjP88Ts9P80S4kMg3L0le8_ZgtaskZw6Nk_QkzR4ic4sIkrQotJ4rVk4Hs8Xg3Gg5Z0gFo_Z41Bs5M0wC04mBn0D0o0D_YkpjC4S0nToqD85co6F4kgBsyIovrB4kH8ilBgxEw1X8pG03kBo9Bw8MowPg-6C8kQ8ihDo7Mw9vC0mgBg79F8nHovwBommCsvrN8nb8zrF0oBgtaz8Bkicn1F44vB3xD8sRjwGg1bnxCsmJvhD81Kv6DsvMv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gFnkB07J_Yo6Pj_B0pNzyBs4Fv1DwyMrhO42wBzgUgwoC",
+                "journeyCost": 690,
+                "lineName": "IR37",
+                "vehicleType": "intercityTrain",
+                "departureTime": "2025-10-07T14:43:00+02:00",
+                "arrivalTime": "2025-10-07T15:52:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
+        },
+        "arrivalLocation": {
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-07",
+        "departureTime": "06:30:00",
+        "arrivalTime": "14:26:00",
+        "totalDistance": 629824,
+        "totalDuration": 17280,
+        "totalCost": 5235,
+        "numTransfers": 3,
+        "numSteps": 4,
+        "steps": [
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
+                },
+                "endLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "duration": 4680,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzwCrlC30JzpIvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 780,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T08:30:00+02:00",
+                "arrivalTime": "2025-10-07T09:48:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "endLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "duration": 4620,
+                "distance": 302223,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5L_2Gk7S7jd070CjnS0m5B_sa0-6C7n-B4glH_wxG489X_8Xwt8C7ynBk44E3-gCou-Ij2Xg7yD3rV0wwD_gbks5EriGwrmBz3L82oCvpYk_hF3ub414GviPoiuEvmNkynEzvKwphE7tJ0hpEj4H0ihE3xmBslwS36fgmiP_8Xok4L_93B0p6a_9PkzoH_2LgszFnpGgstD_mJ0ugErtN8vwG744Boq6a_riBs8wQr9P8i5GnpGsqwDv_DsvjC76jBwmmQjzR4zwIzxdw0qNr2Gs2vDn9G08yEnpG4itF_7Bk71BzoBkgvC_T4o7E4pC8g9C3hBk5iBw_Ds_rE8awwnD8iC4szCjNo9pB8iC4xpC8akk1DsmEwosFgoBk_Q41B4pzEo1FogpHgoBs2sCAw9-C3hB8ytD31Bk4tC72C8lzCnpG073DvuO4vnGnkQ0r9En0NsivD_6JounCz6Ww3zEz3Lk5lCvhXw-5DzkD4wLzkmBs7wF_o_BkgjI7za4ltD7lwB825Gz3L0i7BzmWk_5D7zak-pF3wLkkyCzrMgpiDz_Mw62D71Ks56Dj8FwruC3mf8q6Qv_Dw8jC_6J8yhJvqLs8xInpGojjDj0J06_D3kMg_1D72oCs7hU7hKoviD_nkBkxsN__iBk5tNzrMol5Ej3Pw4uFntsB8ryQ3wLkprDz3uB887L_yI8w6CjsIoyoDn1F4ykDzkD4trC72C02kF4hBgjxC4xD4ngEopGwu3Dk6a45sLgrHgpiD4lEktmCwzE0n3DgUwp-C_Tsw7BzkDwvvD3pC4swBz0F070CnpG00rC71KkmgD_6yD0p6a_i0D0p6a3n9Cou4Qr2pBojvHrtN44yCr-Hgq3B7lIktmC_6Js_oDnpGoyoD72C0n0C7a8mrC8uBwi1C04Dwt8CohFwjtCg7J8-sDo6mCshhY48Koo5Cg_Hsw7BolIkz0BstN0kpC4wL8g6Bg7J85rBghb00uDkqY0v1C44MwvpBwi1C4wlIk_Q4_4B04DkjP42c4pwDwhXk1qD0-Uwu3Dw6NssgD81K8s8CopG8mmC0kD8xvBw_D44yC4pCwq2CAgnsBAkrzBzwCoo5C7ilBo2tW_vlBo09Wr6EsmvC3lE0vtBz7Jg_yCnpGkgsBznOs10C78T479C_qqB81-FrxQ81wCv_Dw1XrjI0i7BvxKw6zC_6Jg7yDryD8v_B_7Bss9B7GkxkC41Bw3tC82Cw54BgrH4mlDk0J0n0Cg-P8-sD0nO4lqCo0NglhCs8XozgDg1-B4q0H8oTotvC0_Mw54Bk_Q847Cw6Nwh9CwqL8ytDwzEw4lC82C0woC4N4hpBA0p_B3hB0vyB39Cov6Bv3C0goBrqHo5uC3wL847Cz7iB88qHnjiBwy9Evr1Bwz7Gn0zC495Gv5zB8viDj69Boo8Dj7S00oB7gSwvpBrwYgl8BjliB8k7Cj3P8xvB_vlBsx5D7gS0lhCv6Ngq3Bv-Lkn1B3zW00uDj3Pg-6C_xQog7D_iLwrxD3oKkj9DjgJg-9DryDkuhDAo__CwjC4xpCwnF4g0C0sEkn1B03LgpiDwyMwmzC8hK065BosRk74Ck1iCwkzKghmDklnQ0nxBkt6HooO4xpCkzRwspDo9G8htBw-LkiiD00FooxBgrHwruCw_D801B00F0xoDwrDksxDA86uDvyMoj6TzsE0urG4pCkuhD0kDw_pC4xD4gxBw3Cszeg7J032Ck4H433BoxqB8plIw0fw6hG0rMok2C4kM4pwDsuFwzqCsyDktmCgoBwjqBkNwnuD3xDonhDzsEounCvzEs05Bj4HszmC_yI0tiC77-Bo-sN_6JgslC_lR0v4D3xD0iYz4Ds4U3gJgp_BzwCk_QzyVo5xD3lnBw6-E_nkBkr-Djz0BoixFnkQs86BvyMw6wBr1O87-BriG0tfrpPk8wCjrQ01mD_lR8-vEzkDoigBz0FoylCryDwp7B7qD0i-CvjCko2E7uB0hmD7G0uX3lE0u0J7agy-Dv_Dgq9DruF4lqCnpGk71BvnF4u-BrtNgwrDz7OgjxCjmasuzD71tBot1En-hB4n9CnppB46lD7pLojYz_1DsgtH3-d8k4B7w3B4ltDvp7Bsl6DnvXw2yB7vc4z5B_tSwznBnoOw0fryrBo-nD_0bs3kCzqU844B31kB00uD3yekprDj5iB8k-D75IgwlB_mJoppB_mJ03uB3wL8ziC3kM0m5Bj8FgsiBrqHwiyB_9P0ihEzoG0m5B38Kgz2D_2Gov9CjsI0rgGnxH0ihEr6EsxzBnpG4j3B7xMw-2CvzEgpc74Qo5uCjsI0wlBn8O0u6Bv1X8xyCzqUs05B_uK8jd7oT4wuBn3-Ckt3Gr8Xoj7Bztfg1-B_lRkplB_p3Bkv8Dr7fwzqC_zjBgy7Cv8gBw9-C_yIs0WnylC409FjxhBk74Cj0sBwwnDviPsvgBn2gB0hjCv8jCg28Dj2lEoi8H3tjBsniC_hT8qmBvh6B8qsD3-dwh6B_wjDox7Fv5Vk4qB7xvBs0hD7nboj7B3plBkn4CnxqBwjwDj0vCgo4Gz7xBkukEj0sBsh8DnufgryCr3kCgj6FvmwBkk1D7jdgt9B_sao4zB3kM0yV3j3Bg-6C7puBommC_nkB0rvBvvpBowyBz65B0osCjmuG0znI39lBw2yBr7f4kvBj_Qk6avogBgu1Bv_mB8ioCztf05hCripBkj6Cj4qBo__C_sag9_BvwhB0m8CjrQw2yB3wL4xmBrhOkrzBvuOwt5BnwPkhnCzvK433Br-HgrvB38K4owCrmEk1kBjkH0grCruFw21C_7B4j3BzoB4qxG3xDk7sIzwC847C3xDo42C30JojmEn5Io__CruoBggrM3lEg22BzkD0zwB7uBk8oBzoBow6C08B48wC49Con-BsmEwt5B8qD86jBwiyBgosMo1F81tBgta88nGk-YoslG8jd0mwIopG04pC8pLohzDo9GgwoC4gJsp1Cgle49nKsuoBwy0L0qUs64Fs0W4l7G8qDkwpBwrD8s5B82Co1rC4NsmsB31Bwt8C7uBktjBvrDo37BzsE0_vB71K4j_Cj8FsuoBnlIs9yBrhxBsv6I38Kk0vC7hKw_xD_uKk3jG7hKg4yF_nB4hvDgoB4oKgU46iC49C0_yC4hB84VwnFs05BgnJ0j2Co3Y0qoGkkHoxqB8ioCs96Ms2G0kmB4nSo7qG7ask8BriGgoyEngNszyGzgFw3wD39Cg_qBjwGwljE78T86oLriG4g0CruFgi2B_qHo37BjoKsrlC75IspyBz_M0lhCzjLgrvBr8Xgu4C38Kg0jBrxQg60Bnufsh5C7nbkxkCv6N05e3mfki_Bvkds86B7ynBw8jCv5VoyiBvogB0_vBvt5Bo9sC_hT0uX_t1Bw54Bv_mB45nBnlrBo9pBj4qBk1kBvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuC",
+                "journeyCost": 1925,
+                "lineName": "TGV 061A",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T11:57:00+02:00",
+                "arrivalTime": "2025-10-07T13:14:00+02:00",
+                "transitLineFinalDestination": "Strasbourg"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "endLocation": {
+                    "name": "Mulhouse",
+                    "lat": 47.741954,
+                    "lng": 7.343045
+                },
+                "duration": 3180,
+                "distance": 108274,
+                "polyline": "BHg7r2-cg7pwzErlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F38Kj0JnxCn9Bv7tBzxiBzzzC3qgCrmE39C3_V70SrtNvuOn8On8O_uKz3L7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpBo3TwwmB",
+                "journeyCost": 530,
+                "lineName": "K200",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T13:21:00+02:00",
+                "arrivalTime": "2025-10-07T14:14:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Mulhouse",
+                    "lat": 47.741954,
+                    "lng": 7.343045
+                },
+                "endLocation": {
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
+                },
+                "duration": 4800,
+                "distance": 122003,
+                "polyline": "BHo7pzuc4-7hsE0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslM77hDo6pD3kM0_MzsEo1F_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qU3o4Doj7BrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T78J0rvBvvGslW3pHwwXjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmGrvbkj6C3_pBghhD7svB0lsE76tBkmgDz8L8ilBrqM82lB73J065BnpBwl4B_rEg5nEgKk1kB_EohFjN86jB8a8oTgkDokQohFokQ0gFwqLohF8tJ882BsuwCg30DsnwF49lB0-3BwmN8gSkma8ynBgnJooOgjLs0WokzB406EohFokQ8pL81tBgnJsl0Bw_Dg8kBs9P4zlGopG8_hCgnJsvjC48KoylC81K4r4B4-gC0ssLg-Pgq6Cs2Gw0fooOk26B0_vB41yEs_iB0u9Cg3G0-UsqHgxd0snBw9nG44vBkk7F09c0wwDokQs86BshxBowjGo1tBw0wF40J44vB4xDo3Ys-CsmnBkN81tB3hBokQ7iCskZr6E8mjB3xDguSriGo_ZvqL8ukBriGosRvp7B4xvEv5VspyBjtjBs53CrorGg-lP3ye8qpCzjuB00uDz0FsgWz4D43UnpGspyB7aomjBk4Hgi2B00Fk3yB7qD41vDv3CsvgBzkD0qU39CkgJ72CgiT3pC8tJrmE03Lj4H0jLn1Fk8K7-DsoXvzEsipBzoB8vc_7B4jU_2G01b_vlBo88DvrDstN31BwvG7uBg-PnGgiTg8B06W4pC0iT81Kw2yBs6Eo_ZgoBwxUjNgmR3pCs9P7jdozjE_gb4pwD_-H49lB3wLw7oBvxUov6Bz6W0zwBrk8BwjwDrhOknSjpoCwu0CnlxDkilE7l5EwsvF3jU07OznOs6EngNgU_2L_nBz3L3xDzrM_2G3oKr-H7-pC_0-B70S3wL_yI3pC_xQ3N3sNwrD71KwzEjkHs6EvmN8xMv-LowPvjHokQ_2Gs4UzkD0goBkma822FsqCs8X7GkyZzwC4hkBr6E4mf_mJw4dvpY8_hCr6E0yV_T8lIv3C89LjhB85I4pCg1bgoBo9G82C40JgzIknS8hKojY0vKo2gB03Lon-B07Ogi5C8Gk_Q3hBs9Pz4DssV_uKswY_4Z0hgBnxqBw6wBr_iBgzrB_pP4wL70S48KvuO03L_mJ8hK3vTo_Z7vcgsiB70Sw6NnhwCksrBj4HsuF37SkjU75zCgu7D75IwuOnxHgyQr6E0nO7qDspPzUs5M0oBwnoB0gFs0Wk4Ho0SswYsmnBwyM0iYgrHs0W4xDsgW8GsxQ7uB0yVvrDkvOj0J83djwGspPrtNonWjma05ev6N89L_gbk_Q_1TgqPv-LgjLrhOwxUjgJk_QjxhBk71B_2xC8rnE_t4CwssEvxZwvpBnr8Bg9iD7lI4nS72CgzIvrDkrQ_nB4nXkgJw6zCAkrQ72Cor8BoG88Tw_DktjBs6EsgWsuFogSg_H0iT4kM4_VggjBg22B8xM0uS40J8hK0nOg7JwyM0gFgmR08B0v1CvzE8nbz8Bo9G_7Bo1FkNwtW40Js-HsuFowPokQs5Ms8XwzE0_M4xDspPw3Cg6RgU0-Uz4DwvpB7G07J82Cs8X0wC89LgsiBsjnDs4Zg4sD49lBgz5EgrHwlVk0Jw5Vs1Os8XwxU0lek_QkubolIkjP4kM05ew_DwyM0wCgvK8a4rV31Bs4U39CkoKvuOwkd3wLw2PrhOo8O7tsBw_mB7xM4wLznJ0rMvvG0rMj8FkzR_jDg6R7awuOkhBkjPw-B8tOgxEg-PwnKsmT4gJ8oO0oL86K48Uk1Q8rUkmQo7C4iDgwC0_CszFo2Hw9Eg2JkqEo5NgkDwsPgZooOkXo5Xg8Bs48B4pCo9pBopGwnoBwmNwnrCsmEguSs6Eo8O0sE4wLo5IogSstwB885CopG4oK8ilBkhnCotJwuOk4HowPw9ToyiBgvK8zasiG80So1Fkub8uB0rMgoBssVnG8pL3N8tJzkD0-U7lIw8gB3qOkgsB_ipBgy-D7-6Bko2EruFk0JnpG85I_uK4oK3qdwhX_-H85I_-H81K_6J4vTrmE0_M3xDk_Qn1FwvpB4pCkyZ01b83mE8iCk7SgUswY_TooOv-LkrhFr-Hwt5BryDkzRruFs1OvyH8hP_jI8sM_2GogS39C0vKzrM4z5B3lEshOvrDgzIvnF85I38K4sNzgPg7JjiN49C3iczoGngX7lI7tnBnsR7wUz3L_xQjgJn8J3gEvygB31G_oN8a7xM0UngN82C_6JsmE_iLwjHntEsmEnpGo1FzrMw6NruF0kIruU0vjB_9Ks0Rr_YskoBnuL8gSv8bwsyBjojBs-5BnqhB882Br1Okma_uKkqY_sa82oCnoOg1bjgJ0_M38K0_Mj4HkkHz4mB05enwP8tJ3yespPz2T03LrriBkma_lRwiP7jgC8mmCj_Q0mW3rVw0f3oKgmR_6J8oT_-C8uGnxCssGzxEw2Kv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gFnkB07J_Yo6Pj_B0pNzyBs4Fv1DwyMrhO42wBzgUgwoC",
+                "journeyCost": 2000,
+                "lineName": "TGV TGV",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T15:06:00+02:00",
+                "arrivalTime": "2025-10-07T16:26:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
+        },
+        "arrivalLocation": {
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-08",
+        "departureTime": "16:08:00",
+        "arrivalTime": "04:26:00",
+        "totalDistance": 629548,
+        "totalDuration": 17460,
+        "totalCost": 4275,
+        "numTransfers": 4,
+        "numSteps": 5,
+        "steps": [
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
+                },
+                "endLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "duration": 4200,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JrlM_uKvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 700,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T18:08:00+02:00",
+                "arrivalTime": "2025-10-07T19:18:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "endLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "duration": 5460,
+                "distance": 302223,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5L_2Gk7S7jd070CjnS0m5B_sa0-6C7n-B4glH_wxG489X_8Xwt8C7ynBk44E3-gCou-Ij2Xg7yD3rV0wwD_gbks5EriGwrmBz3L82oCvpYk_hF3ub414GviPoiuEvmNkynEzvKwphE7tJ0hpEj4H0ihE3xmBslwS36fgmiP_8Xok4L_93B0p6a_9PkzoH_2LgszFnpGgstD_mJ0ugErtN8vwG744Boq6a_riBs8wQr9P8i5GnpGsqwDv_DsvjC76jBwmmQjzR4zwIzxdw0qNr2Gs2vDn9G08yEnpG4itF_7Bk71BzoBkgvC_T4o7E4pC8g9C3hBk5iBw_Ds_rE8awwnD8iC4szCjNo9pB8iC4xpC8akk1DsmEwosFgoBk_Q41B4pzEo1FogpHgoBs2sCAw9-C3hB8ytD31Bk4tC72C8lzCnpG073DvuO4vnGnkQ0r9En0NsivD_6JounCz6Ww3zEz3Lk5lCvhXw-5DzkD4wLzkmBs7wF_o_BkgjI7za4ltD7lwB825Gz3L0i7BzmWk_5D7zak-pF3wLkkyCzrMgpiDz_Mw62D71Ks56Dj8FwruC3mf8q6Qv_Dw8jC_6J8yhJvqLs8xInpGojjDj0J06_D3kMg_1D72oCs7hU7hKoviD_nkBkxsNrqgB0htMz1Cw3gBzrMol5Ej3Pw4uFntsB8ryQ3wLkprDz3uB887L_yI8w6CjsIoyoDn1F4ykDzkD4trC72C02kF4hBgjxC4xD4ngEopGwu3Dk6a45sLgrHgpiD4lEktmCwzE0n3DgUwp-C_Tsw7BzkDwvvD3pC4swBz0F070CnpG00rC71KkmgD_6yD0p6a_i0D0p6a3n9Cou4Qr2pBojvHrtN44yCr-Hgq3B7lIktmC_6Js_oDnpGoyoD72C0n0C7a8mrC8uBwi1C04Dwt8CohFwjtCg7J8-sDo6mCshhY48Koo5Cg_Hsw7BolIkz0BstN0kpC4wL8g6Bg7J85rBghb00uDkqY0v1C44MwvpBwi1C4wlIk_Q4_4B04DkjP42c4pwDwhXk1qD0-Uwu3Dw6NssgD81K8s8CopG8mmC0kD8xvBw_D44yC4pCwq2CAgnsBAkrzBzwCoo5C7ilBo2tW_vlBo09Wr6EsmvC3lE0vtBz7Jg_yCnpGkgsBznOs10C78T479C_qqB81-FrxQ81wCv_Dw1XrjI0i7BvxKw6zC_6Jg7yDryD8v_B_7Bss9B7GkxkC41Bw3tC82Cw54BgrH4mlDk0J0n0Cg-P8-sD0nO4lqCo0NglhCs8XozgDg1-B4q0H8oTotvC0_Mw54Bk_Q847Cw6Nwh9CwqL8ytDwzEw4lC82C0woC4N4hpBA0p_B3hB0vyB39Cov6Bv3C0goBrqHo5uC3wL847Cz7iB88qHnjiBwy9Evr1Bwz7Gn0zC495Gv5zB8viDj69Boo8Dj7S00oB7gSwvpBrwYgl8BjliB8k7Cj3P8xvB_vlBsx5D7gS0lhCv6Ngq3Bv-Lkn1B3zW00uDj3Pg-6C_xQog7D_iLwrxD3oKkj9DjgJg-9DryDkuhDAo__CwjC4xpCwnF4g0C0sEkn1B03LgpiDwyMwmzC8hK065BosRk74Ck1iCwkzKghmDklnQ0nxBkt6HooO4xpCkzRwspDo9G8htBw-LkiiD00FooxBgrHwruCw_D801B00F0xoDwrDksxDA86uDvyMoj6TzsE0urG4pCkuhD0kDw_pC4xD4gxBw3Cszeg7J032Ck4H433BoxqB8plIw0fw6hG0rMok2C4kM4pwDsuFwzqCsyDktmCgoBwjqBkNwnuD3xDonhDzsEounCvzEs05Bj4HszmC_yI0tiC77-Bo-sN_6JgslC_lR0v4D3xD0iYz4Ds4U3gJgp_BzwCk_QzyVo5xD3lnBw6-E_nkBkr-Djz0BoixFnkQs86BvyMw6wBr1O87-BriG0tfrpPk8wCjrQ01mD_lR8-vEzkDoigBz0FoylCryDwp7B7qD0i-CvjCko2E7uB0hmD7G0uX3lE0u0J7agy-Dv_Dgq9DruF4lqCnpGk71BvnF4u-BrtNgwrDz7OgjxCjmasuzD71tBot1En-hB4n9CnppB46lD7pLojYz_1DsgtH3-d8k4B7w3B4ltDvp7Bsl6DnvXw2yB7vc4z5B_tSwznBnoOw0fryrBo-nD_0bs3kCzqU844B31kB00uD3yekprDj5iB8k-D75IgwlB_mJoppB_mJ03uB3wL8ziC3kM0m5Bj8FgsiBrqHwiyB_9P0ihEzoG0m5B38Kgz2D_2Gov9CjsI0rgGnxH0ihEr6EsxzBnpG4j3B7xMw-2CvzEgpc74Qo5uCjsI0wlBn8O0u6Bv1X8xyCzqUs05B_uK8jd7oT4wuBn3-Ckt3Gr8Xoj7Bztfg1-B_lRkplB_p3Bkv8Dr7fwzqC_zjBgy7Cv8gBw9-C_yIs0WnylC409FjxhBk74Cj0sBwwnDviPsvgBn2gB0hjCv8jCg28Dj2lEoi8H3tjBsniC_hT8qmBvh6B8qsD3-dwh6B_wjDox7Fv5Vk4qB7xvBs0hD7nboj7B3plBkn4CnxqBwjwDj0vCgo4Gz7xBkukEj0sBsh8DnufgryCr3kCgj6FvmwBkk1D7jdgt9B_sao4zB3kM0yV3j3Bg-6C7puBommC_nkB0rvBvvpBowyBz65B0osCjmuG0znI39lBw2yBr7f4kvBj_Qk6avogBgu1Bv_mB8ioCztf05hCripBkj6Cj4qBo__C_sag9_BvwhB0m8CjrQw2yB3wL4xmBrhOkrzBvuOwt5BnwPkhnCzvK433Br-HgrvB38K4owCrmEk1kBjkH0grCruFw21C_7B4j3BzoB4qxG3xDk7sIzwC847C3xDo42C30JojmEn5Io__CruoBggrM3lEg22BzkD0zwB7uBk8oBzoBow6C08B48wC49Con-BsmEwt5B8qD86jBwiyBgosMo1F81tBgta88nGk-YoslG8jd0mwIopG04pC8pLohzDo9GgwoC4gJsp1Cgle49nKsuoBwy0L0qUs64Fs0W4l7G8qDkwpBwrD8s5B82Co1rC4NsmsB31Bwt8C7uBktjBvrDo37BzsE0_vB71K4j_Cj8FsuoBnlIs9yBrhxBsv6I38Kk0vC7hKw_xD_uKk3jG7hKg4yF_nB4hvDgoB4oKgU46iC49C0_yC4hB84VwnFs05BgnJ0j2Co3Y0qoGkkHoxqB8ioCs96Ms2G0kmB4nSo7qG7ask8BriGgoyEngNszyGzgFw3wD39Cg_qBjwGwljE78T86oLriG4g0CruFgi2B_qHo37BjoKsrlC75IspyBz_M0lhCzjLgrvBr8Xgu4C38Kg0jBrxQg60Bnufsh5C7nbkxkCv6N05e3mfki_Bvkds86B7ynBw8jCv5VoyiBvogB0_vBvt5Bo9sC_hT0uX_t1Bw54Bv_mB45nBnlrBo9pBj4qBk1kBvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuC",
+                "journeyCost": 2275,
+                "lineName": "TGV 061B",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T19:35:00+02:00",
+                "arrivalTime": "2025-10-07T21:06:00+02:00",
+                "transitLineFinalDestination": "Strasbourg"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "endLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "duration": 4140,
+                "distance": 135227,
+                "polyline": "BHg7r2-cg7pwzErlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F38Kj0JnxCn9Bv7tBzxiBzzzC3qgCrmE39C3_V70SrtNvuOn8On8O_uKz3L7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpBo3TwwmB0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslMjpgBozankLkkM",
+                "journeyCost": 690,
+                "lineName": "K200",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T21:21:00+02:00",
+                "arrivalTime": "2025-10-07T22:30:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "endLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "duration": 480,
+                "distance": 6612,
+                "polyline": "BHo062rc8qwjwE3u5Bsu8Bz-U80S_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qUzpuCovmBj_pBg0UrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T",
+                "journeyCost": 80,
+                "lineName": "TER",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-08T05:12:00+02:00",
+                "arrivalTime": "2025-10-08T05:20:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "endLocation": {
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
+                },
+                "duration": 3180,
+                "distance": 88162,
+                "polyline": "BH03m8qcwu73wE3pHwwXjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmGrvbkj6C3_pBghhD7svB0lsE76tBkmgDz8L8ilBrqM82lB73J065BnpBwl4B_rEg5nEgKk1kB_EohFjN86jB8a8oTgkDokQohFokQ0gFwqLohF8tJ882BsuwCg30DsnwF49lB0-3BwmN8gSkma8ynBgnJooOgjLs0WokzB406EohFokQ8pL81tBgnJsl0Bw_Dg8kBs9P4zlGopG8_hCgnJsvjC48KoylC81K4r4B4-gC0ssLg-Pgq6Cs2Gw0fooOk26B0_vB41yEs_iB0u9Cg3G0-UsqHgxd0snBw9nG44vBkk7F09c0wwDokQs86BshxBowjGo1tBw0wF40J44vB4xDo3Ys-CsmnBkN81tB3hBokQ7iCskZr6E8mjB3xDguSriGo_ZvqL8ukBriGosRvp7B4xvEv5VspyBjtjBs53CrorGg-lP3ye8qpCzjuB00uDz0FsgWz4D43UnpGspyB7aomjBk4Hgi2B00Fk3yB7qD41vDv3CsvgBzkD0qU39CkgJ72CgiT3pC8tJrmE03Lj4H0jLn1Fk8K7-DsoXvzEsipBzoB8vc_7B4jU_2G01b_vlBo88DvrDstN31BwvG7uBg-PnGgiTg8B06W4pC0iT81Kw2yBs6Eo_ZgoBwxUjNgmR3pCs9P7jdozjE_gb4pwD_-H49lB3wLw7oBvxUov6Bz6W0zwBrk8BwjwDrhOknSjpoCwu0CnlxDkilE7l5EwsvF3jU07OznOs6EngNgU_2L_nBz3L3xDzrM_2G3oKr-H7-pC_0-B70S3wL_yI3pC_xQ3N3sNwrD71KwzEjkHs6EvmN8xMv-LowPvjHokQ_2Gs4UzkD0goBkma822FsqCs8X7GkyZzwC4hkBr6E4mf_mJw4dvpY8_hCr6E0yV_T8lIv3C89LjhB85I4pCg1bgoBo9G82C40JgzIknS8hKojY0vKo2gB03Lon-B07Ogi5C8Gk_Q3hBs9Pz4DssV_uKswY_4Z0hgBnxqBw6wBr_iBgzrB_pP4wL70S48KvuO03L_mJ8hK3vTo_Z7vcgsiB70Sw6NnhwCksrBj4HsuF37SkjU75zCgu7D75IwuOnxHgyQr6E0nO7qDspPzUs5M0oBwnoB0gFs0Wk4Ho0SswYsmnBwyM0iYgrHs0W4xDsgW8GsxQ7uB0yVvrDkvOj0J83djwGspPrtNonWjma05ev6N89L_gbk_Q_1TgqPv-LgjLrhOwxUjgJk_QjxhBk71B_2xC8rnE_t4CwssEvxZwvpBnr8Bg9iD7lI4nS72CgzIvrDkrQ_nB4nXkgJw6zCAkrQ72Cor8BoG88Tw_DktjBs6EsgWsuFogSg_H0iT4kM4_VggjBg22B8xM0uS40J8hK0nOg7JwyM0gFgmR08B0v1CvzE8nbz8Bo9G_7Bo1FkNwtW40Js-HsuFowPokQs5Ms8XwzE0_M4xDspPw3Cg6RgU0-Uz4DwvpB7G07J82Cs8X0wC89LgsiBsjnDs4Zg4sD49lBgz5EgrHwlVk0Jw5Vs1Os8XwxU0lek_QkubolIkjP4kM05ew_DwyM0wCgvK8a4rV31Bs4U39CkoKvuOwkd3wLw2PrhOo8O7tsBw_mB7xM4wLznJ0rMvvG0rMj8FkzR_jDg6R7awuOkhBkjPw-B8tOgxEg-PwnKsmT4gJ8oO0oL86K48Uk1Q8rUkmQo7C4iDgwC0_CszFo2Hw9Eg2JkqEo5NgkDwsPgZooOkXo5Xg8Bs48B4pCo9pBopGwnoBwmNwnrCsmEguSs6Eo8O0sE4wLo5IogSstwB885CopG4oK8ilBkhnCotJwuOk4HowPw9ToyiBgvK8zasiG80So1Fkub8uB0rMgoBssVnG8pL3N8tJzkD0-U7lIw8gB3qOkgsB_ipBgy-D7-6Bko2EruFk0JnpG85I_uK4oK3qdwhX_-H85I_-H81K_6J4vTrmE0_M3xDk_Qn1FwvpB4pCkyZ01b83mE8iCk7SgUswY_TooOv-LkrhFr-Hwt5BryDkzRruFs1OvyH8hP_jI8sM_2GogS39C0vKzrM4z5B3lEshOvrDgzIvnF85I38K4sNzgPg7JjiN49C3iczoGngX7lI7tnBnsR7wUz3L_xQjgJn8J3gEvygB31G_oN8a7xM0UngN82C_6JsmE_iLwjHntEsmEnpGo1FzrMw6NruF0kIruU0vjB_9Ks0Rr_YskoBnuL8gSv8bwsyBjojBs-5BnqhB882Br1Okma_uKkqY_sa82oCnoOg1bjgJ0_M38K0_Mj4HkkHz4mB05enwP8tJ3yespPz2T03LrriBkma_lRwiP7jgC8mmCj_Q0mW3rVw0f3oKgmR_6J8oT_-C8uGnxCssGzxEw2Kv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gF7_KoppBvpTw8jC7lS8v_B",
+                "journeyCost": 530,
+                "lineName": "IC3",
+                "vehicleType": "intercityTrain",
+                "departureTime": "2025-10-08T05:33:00+02:00",
+                "arrivalTime": "2025-10-08T06:26:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
+        },
+        "arrivalLocation": {
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
+        },
+        "departureDate": "2025-10-08",
+        "arrivalDate": "2025-10-08",
+        "departureTime": "05:04:00",
+        "arrivalTime": "11:00:00",
+        "totalDistance": 629463,
+        "totalDuration": 16920,
+        "totalCost": 3990,
+        "numTransfers": 4,
+        "numSteps": 5,
+        "steps": [
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
+                },
+                "endLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "duration": 4380,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzwCrlC30JzpIvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 730,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-08T07:04:00+02:00",
+                "arrivalTime": "2025-10-08T08:17:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "endLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "duration": 4680,
+                "distance": 302223,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5L_2Gk7S7jd070CjnS0m5B_sa0-6C7n-B4glH_wxG489X_8Xwt8C7ynBk44E3-gCou-Ij2Xg7yD3rV0wwD_gbks5EriGwrmBz3L82oCvpYk_hF3ub414GviPoiuEvmNkynEzvKwphE7tJ0hpEj4H0ihE3xmBslwS36fgmiP_8Xok4L_93B0p6a_9PkzoH_2LgszFnpGgstD_mJ0ugErtN8vwG744Boq6a_riBs8wQr9P8i5GnpGsqwDv_DsvjC76jBwmmQjzR4zwIzxdw0qNr2Gs2vDn9G08yEnpG4itF_7Bk71BzoBkgvC_T4o7E4pC8g9C3hBk5iBw_Ds_rE8awwnD8iC4szCjNo9pB8iC4xpC8akk1DsmEwosFgoBk_Q41B4pzEo1FogpHgoBs2sCAw9-C3hB8ytD31Bk4tC72C8lzCnpG073DvuO4vnGnkQ0r9En0NsivD_6JounCz6Ww3zEz3Lk5lCvhXw-5DzkD4wLzkmBs7wF_o_BkgjI7za4ltD7lwB825Gz3L0i7BzmWk_5D7zak-pF3wLkkyCzrMgpiDz_Mw62D71Ks56Dj8FwruC3mf8q6Qv_Dw8jC_6J8yhJvqLs8xInpGojjDj0J06_D3kMg_1D72oCs7hU7hKoviD_nkBkxsNrqgB0htMz1Cw3gBzrMol5Ej3Pw4uFntsB8ryQ3wLkprDz3uB887L_yI8w6CjsIoyoDn1F4ykDzkD4trC72C02kF4hBgjxC4xD4ngEopGwu3Dk6a45sLgrHgpiD4lEktmCwzE0n3DgUwp-C_Tsw7BzkDwvvD3pC4swBz0F070CnpG00rC71KkmgD_6yD0p6a_i0D0p6a3n9Cou4Qr2pBojvHrtN44yCr-Hgq3B7lIktmC_6Js_oDnpGoyoD72C0n0C7a8mrC8uBwi1C04Dwt8CohFwjtCg7J8-sDo6mCshhY48Koo5Cg_Hsw7BolIkz0BstN0kpC4wL8g6Bg7J85rBghb00uDkqY0v1C44MwvpBwi1C4wlIk_Q4_4B04DkjP42c4pwDwhXk1qD0-Uwu3Dw6NssgD81K8s8CopG8mmC0kD8xvBw_D44yC4pCwq2CAgnsBAkrzBzwCoo5C7ilBo2tW_vlBo09Wr6EsmvC3lE0vtBz7Jg_yCnpGkgsBznOs10C78T479C_qqB81-FrxQ81wCv_Dw1XrjI0i7BvxKw6zC_6Jg7yDryD8v_B_7Bss9B7GkxkC41Bw3tC82Cw54BgrH4mlDk0J0n0Cg-P8-sD0nO4lqCo0NglhCs8XozgDg1-B4q0H8oTotvC0_Mw54Bk_Q847Cw6Nwh9CwqL8ytDwzEw4lC82C0woC4N4hpBA0p_B3hB0vyB39Cov6Bv3C0goBrqHo5uC3wL847Cz7iB88qHnjiBwy9Evr1Bwz7Gn0zC495Gv5zB8viDj69Boo8Dj7S00oB7gSwvpBrwYgl8BjliB8k7Cj3P8xvB_vlBsx5D7gS0lhCv6Ngq3Bv-Lkn1B3zW00uDj3Pg-6C_xQog7D_iLwrxD3oKkj9DjgJg-9DryDkuhDAo__CwjC4xpCwnF4g0C0sEkn1B03LgpiDwyMwmzC8hK065BosRk74Ck2oF0p6a0nxBkt6HooO4xpCkzRwspDo9G8htBw-LkiiD00FooxBgrHwruCw_D801B00F0xoDwrDksxDA86uDvyMoj6TzsE0urG4pCkuhD0kDw_pC4xD4gxBw3Cszeg7J032Ck4H433BoxqB8plIw0fw6hG0rMok2C4kM4pwDsuFwzqCsyDktmCgoBwjqBkNwnuD3xDonhDzsEounCvzEs05Bj4HszmC_yI0tiC77-Bo-sN_6JgslC_lR0v4D3xD0iYz4Ds4U3gJgp_BzwCk_QzyVo5xD3lnBw6-E_nkBkr-Djz0BoixFnkQs86BvyMw6wBr1O87-BriG0tfrpPk8wCjrQ01mD_lR8-vEzkDoigBz0FoylCryDwp7B7qD0i-CvjCko2E7uB0hmD7G0uX3lE0u0J7agy-Dv_Dgq9DruF4lqCnpGk71BvnF4u-BrtNgwrDz7OgjxCjmasuzD71tBot1En-hB4n9CnppB46lD7pLojYz_1DsgtH3-d8k4B7w3B4ltDvp7Bsl6DnvXw2yB7vc4z5B_tSwznBnoOw0fryrBo-nD_0bs3kCzqU844B31kB00uD3yekprDj5iB8k-D75IgwlB_mJoppB_mJ03uB3wL8ziC3kM0m5Bj8FgsiBrqHwiyB_9P0ihEzoG0m5B38Kgz2D_2Gov9CjsI0rgGnxH0ihEr6EsxzBnpG4j3B7xMw-2CvzEgpc74Qo5uCjsI0wlBn8O0u6Bv1X8xyCzqUs05B_uK8jd7oT4wuBn3-Ckt3Gr8Xoj7Bztfg1-B_lRkplB_p3Bkv8Dr7fwzqC_zjBgy7Cv8gBw9-C_yIs0WnylC409FjxhBk74Cj0sBwwnDviPsvgBn2gB0hjCv8jCg28Dj2lEoi8H3tjBsniC_hT8qmBvh6B8qsD3-dwh6B_wjDox7Fv5Vk4qB7xvBs0hD7nboj7B3plBkn4CnxqBwjwDj0vCgo4Gz7xBkukEj0sBsh8DnufgryCr3kCgj6FvmwBkk1D7jdgt9B_sao4zB3kM0yV3j3Bg-6C7puBommC_nkB0rvBvvpBowyBz65B0osCjmuG0znI39lBw2yBr7f4kvBj_Qk6avogBgu1Bv_mB8ioCztf05hCripBkj6Cj4qBo__C_sag9_BvwhB0m8CjrQw2yB3wL4xmBrhOkrzBvuOwt5BnwPkhnCzvK433Br-HgrvB38K4owCrmEk1kBjkH0grCruFw21C_7B4j3BzoB4qxG3xDk7sIzwC847C3xDo42C30JojmEn5Io__CruoBggrM3lEg22BzkD0zwB7uBk8oBzoBow6C08B48wC49Con-BsmEwt5B8qD86jBwiyBgosMo1F81tBgta88nGk-YoslG8jd0mwIopG04pC8pLohzDo9GgwoC4gJsp1Cgle49nKsuoBwy0L0qUs64Fs0W4l7G8qDkwpBwrD8s5B82Co1rC4NsmsB31Bwt8C7uBktjBvrDo37BzsE0_vB71K4j_Cj8FsuoBnlIs9yBrhxBsv6I38Kk0vC7hKw_xD_uKk3jG7hKg4yF_nB4hvDgoB4oKgU46iC49C0_yC4hB84VwnFs05BgnJ0j2Co3Y0qoGkkHoxqB8ioCs96Ms2G0kmB4nSo7qG7ask8BriGgoyEngNszyGzgFw3wD39Cg_qBjwGwljE78T86oLriG4g0CruFgi2B_qHo37BjoKsrlC75IspyBz_M0lhCzjLgrvBr8Xgu4C38Kg0jBrxQg60Bnufsh5C7nbkxkCv6N05e3mfki_Bvkds86B7ynBw8jCv5VoyiBvogB0_vBvt5Bo9sC_hT0uX_t1Bw54Bv_mB45nBnlrBo9pBj4qBk1kBvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuC",
+                "journeyCost": 1950,
+                "lineName": "TGV 807A",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-08T08:41:00+02:00",
+                "arrivalTime": "2025-10-08T09:59:00+02:00",
+                "transitLineFinalDestination": "Strasbourg"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Strasbourg",
+                    "lat": 48.585103,
+                    "lng": 7.735141
+                },
+                "endLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "duration": 4140,
+                "distance": 135227,
+                "polyline": "BHg7r2-cg7pwzErlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F38Kj0JnxCn9Bv7tBzxiBzzzC3qgCrmE39C3_V70SrtNvuOn8On8O_uKz3L7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpBo3TwwmB0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslMjpgBozankLkkM",
+                "journeyCost": 690,
+                "lineName": "K200",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-08T10:21:00+02:00",
+                "arrivalTime": "2025-10-08T11:30:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Saint-Louis (Haut-Rhin)",
+                    "lat": 47.590591,
+                    "lng": 7.555748
+                },
+                "endLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "duration": 480,
+                "distance": 6612,
+                "polyline": "BHo062rc8qwjwE3u5Bsu8Bz-U80S_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qUzpuCovmBj_pBg0UrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T",
+                "journeyCost": 80,
+                "lineName": "TER",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-08T11:42:00+02:00",
+                "arrivalTime": "2025-10-08T11:50:00+02:00",
+                "transitLineFinalDestination": "Basel SBB"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Basel SBB",
+                    "lat": 47.547413,
+                    "lng": 7.58956
+                },
+                "endLocation": {
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
+                },
+                "duration": 3240,
+                "distance": 88077,
+                "polyline": "BH8t_7qcg_y4wEjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmGrvbkj6C3_pBghhD7svB0lsE76tBkmgDz8L8ilBrqM82lB73J065BnpBwl4B_rEg5nEgKk1kB_EohFjN86jB8a8oTgkDokQohFokQ0gFwqLohF8tJ882BsuwCg30DsnwF49lB0-3BwmN8gSkma8ynBgnJooOgjLs0WokzB406EohFokQ8pL81tBgnJsl0Bw_Dg8kBs9P4zlGopG8_hCgnJsvjC48KoylC81K4r4B4-gC0ssLg-Pgq6Cs2Gw0fooOk26B0_vB41yEs_iB0u9Cg3G0-UsqHgxd0snBw9nG44vBkk7F09c0wwDokQs86BshxBowjGo1tBw0wF40J44vB4xDo3Ys-CsmnBkN81tB3hBokQ7iCskZr6E8mjB3xDguSriGo_ZvqL8ukBriGosRvp7B4xvEv5VspyBjtjBs53CrorGg-lP3ye8qpCzjuB00uDz0FsgWz4D43UnpGspyB7aomjBk4Hgi2B00Fk3yB7qD41vDv3CsvgBzkD0qU39CkgJ72CgiT3pC8tJrmE03Lj4H0jLn1Fk8K7-DsoXvzEsipBzoB8vc_7B4jU_2G01b_vlBo88DvrDstN31BwvG7uBg-PnGgiTg8B06W4pC0iT81Kw2yBs6Eo_ZgoBwxUjNgmR3pCs9P7jdozjE_gb4pwD_-H49lB3wLw7oBvxUov6Bz6W0zwBrk8BwjwDrhOknSjpoCwu0CnlxDkilE7l5EwsvF3jU07OznOs6EngNgU_2L_nBz3L3xDzrM_2G3oKr-H7-pC_0-B70S3wL_yI3pC_xQ3N3sNwrD71KwzEjkHs6EvmN8xMv-LowPvjHokQ_2Gs4UzkD0goBkma822FsqCs8X7GkyZzwC4hkBr6E4mf_mJw4dvpY8_hCr6E0yV_T8lIv3C89LjhB85I4pCg1bgoBo9G82C40JgzIknS8hKojY0vKo2gB03Lon-B07Ogi5C8Gk_Q3hBs9Pz4DssV_uKswY_4Z0hgBnxqBw6wBr_iBgzrB_pP4wL70S48KvuO03L_mJ8hK3vTo_Z7vcgsiB70Sw6NnhwCksrBj4HsuF37SkjU75zCgu7D75IwuOnxHgyQr6E0nO7qDspPzUs5M0oBwnoB0gFs0Wk4Ho0SswYsmnBwyM0iYgrHs0W4xDsgW8GsxQ7uB0yVvrDkvOj0J83djwGspPrtNonWjma05ev6N89L_gbk_Q_1TgqPv-LgjLrhOwxUjgJk_QjxhBk71B_2xC8rnE_t4CwssEvxZwvpBnr8Bg9iD7lI4nS72CgzIvrDkrQ_nB4nXkgJw6zCAkrQ72Cor8BoG88Tw_DktjBs6EsgWsuFogSg_H0iT4kM4_VggjBg22B8xM0uS40J8hK0nOg7JwyM0gFgmR08B0v1CvzE8nbz8Bo9G_7Bo1FkNwtW40Js-HsuFowPokQs5Ms8XwzE0_M4xDspPw3Cg6RgU0-Uz4DwvpB7G07J82Cs8X0wC89LgsiBsjnDs4Zg4sD49lBgz5EgrHwlVk0Jw5Vs1Os8XwxU0lek_QkubolIkjP4kM05ew_DwyM0wCgvK8a4rV31Bs4U39CkoKvuOwkd3wLw2PrhOo8O7tsBw_mB7xM4wLznJ0rMvvG0rMj8FkzR_jDg6R7awuOkhBkjPw-B8tOgxEg-PwnKsmT4gJ8oO0oL86K48Uk1Q8rUkmQo7C4iDgwC0_CszFo2Hw9Eg2JkqEo5NgkDwsPgZooOkXo5Xg8Bs48B4pCo9pBopGwnoBwmNwnrCsmEguSs6Eo8O0sE4wLo5IogSstwB885CopG4oK8ilBkhnCotJwuOk4HowPw9ToyiBgvK8zasiG80So1Fkub8uB0rMgoBssVnG8pL3N8tJzkD0-U7lIw8gB3qOkgsB_ipBgy-D7-6Bko2EruFk0JnpG85I_uK4oK3qdwhX_-H85I_-H81K_6J4vTrmE0_M3xDk_Qn1FwvpB4pCkyZ01b83mE8iCk7SgUswY_TooOv-LkrhFr-Hwt5BryDkzRruFs1OvyH8hP_jI8sM_2GogS39C0vKzrM4z5B3lEshOvrDgzIvnF85I38K4sNzgPg7JjiN49C3iczoGngX7lI7tnBnsR7wUz3L_xQjgJn8J3gEvygB31G_oN8a7xM0UngN82C_6JsmE_iLwjHntEsmEnpGo1FzrMw6NruF0kIruU0vjB_9Ks0Rr_YskoBnuL8gSv8bwsyBjojBs-5BnqhB882Br1Okma_uKkqY_sa82oCnoOg1bjgJ0_M38K0_Mj4HkkHz4mB05enwP8tJ3yespPz2T03LrriBkma_lRwiP7jgC8mmCj_Q0mW3rVw0f3oKgmR_6J8oT_-C8uGnxCssGzxEw2Kv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gFnkB07J_Yo6Pj_B0pNzyBs4Fv1DwyMrhO42wBzgUgwoC",
+                "journeyCost": 540,
+                "lineName": "IC3",
+                "vehicleType": "intercityTrain",
+                "departureTime": "2025-10-08T12:06:00+02:00",
+                "arrivalTime": "2025-10-08T13:00:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
+            }
+        ]
+    },
+    {
+        "departureLocation": {
+            "name": "Charleville-Mézières",
+            "lat": 49.76789,
+            "lng": 4.725525
+        },
+        "arrivalLocation": {
+            "name": "Zürich HB",
+            "lat": 47.378176,
+            "lng": 8.540211
+        },
+        "departureDate": "2025-10-07",
+        "arrivalDate": "2025-10-08",
+        "departureTime": "16:34:00",
+        "arrivalTime": "09:26:00",
+        "totalDistance": 743060,
+        "totalDuration": 26220,
+        "totalCost": 8420,
+        "numTransfers": 5,
+        "numSteps": 6,
+        "steps": [
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Charleville-Mézières",
+                    "lat": 49.76789,
+                    "lng": 4.725525
+                },
+                "endLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "duration": 4440,
+                "distance": 97324,
+                "polyline": "BHkx3n1d81sk6Cz_Mn1FnhF72C7pLn1Fv7F7G3wLgUrtNwrDvlVgzIzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzwCrlC30JzpIvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMnLnvDzmMj-3Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vc3rLvqVjra3vxB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3PnavvB_mEzwHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4Dz_M78TjshBz6qBzwM3hQr6EzsE_uKruFnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9Gv9Jo1F7zG04DzrM8tJ33Ug6Rn9pBs2pBj17C4t_CzvZ4wazhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjjPsmEj0JgoBj74Cs-C30Jz8B_xQruFn4Qj0JjsIjkHvyMr5M3kMn4QjwGzjL7hKzyV_6Jn6jB70SvvvD_vCj_QryD31kB7GnhtB8ajjPsyD3mf00FrzegnJj5iBwyM7-mB0goBr3nD42_Bj1wF06gBju8C",
+                "journeyCost": 740,
+                "lineName": "C70+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T18:34:00+02:00",
+                "arrivalTime": "2025-10-07T19:48:00+02:00",
+                "transitLineFinalDestination": "Champagne-Ardenne TGV"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Champagne-Ardenne TGV",
+                    "lat": 49.214387,
+                    "lng": 3.994251
+                },
+                "endLocation": {
+                    "name": "Bar-le-Duc",
+                    "lat": 48.773612,
+                    "lng": 5.167262
+                },
+                "duration": 4080,
+                "distance": 131704,
+                "polyline": "BH4ni2qds08lsC_vgBgp9C_0-BszvF_nkB0m8Cnr8Bk-pFnvX81wC_4Z4j_Cv1X0_yC7oT4lqCzqUkz3C3gOo7-BvuxBwmnI_kZ0-iEzmW45tD7lI86jB_5R49oC3kvB822Fz7O83gC3nS8w6CvuO4_7CjsIsrlCrmEkkqB35Eku-Bz3LknpHn1F44yCnxHkhnC_2GwiyB7hK4qgCvqQ0_yCn8Ogp_Br1O8k4BvmNg7sBvhXktmC32c00rCz-Uk3yB_iuBsoiDzv4D417H7oT0snB7lrBkkyCviyB804Cv8gBoo2B__iB0i2BrqqBon-B7ilBs9yBr8XsnfnwyBku-B_8_B82oCz0uDohzD_vuE8mxEzgoBoxqB3wuB801BnwPogS7ynBwuxB75rB0m5BztfgzrBv6wB8ioCr50B032C_8XkwpB7jgCkk1D_3vEss0InyiB0tiC7wUk4qBjliB04pCzsnB4n9CjhkBwh9CvosF0ipP3z5BgikFrwvHgopVr6E0_MrolE8s5Lv3C04DjrQ4xmB3wL43U_tSorZn3YglZz6Ww2PzrMg3G71tB4rVjwGg8BzwCsqC_tSo5Ijmao9GryrB41BrhO04Dr1O0kDziT4pC3gO7GrtN04D_gbjNz3L7uBjnSzsE3vT7lIvmNnlI79L3gJrsV7kVj7Sr8Xz3Lv9T_yIzvPnxHjrQzrMrzejkHv1X3pCv-LnhF39lBzgF3trCrmEjliBjj3B79iHntEr1O34MnkzBzvKrnfvvGrpP_lRvwhB_7kBrvjC_qHv-Lj0JznOzrMn8O3jU78TzgrCr1xB30Jj4H_iL7pL3gJ7tJ_hT77bnsRzhgBrxLvwc7pLr2pB3pCnwP_7nCnmoL_6JnwyBruFzmW_-HvhX3oKnzVjnSn3Y_xQz7OvuO3gJ3_Vz0FrlM_T3kMgoBrhO0sE7xMg3GjvOk8KjgJ07JjsIgjLn9Gw-L_lRggjB7ilBgjxCvh9Ck09FjgJs1OjqYkxhBrqqBsw7B_8cgokB_-Ho9Gr8Xk3PvyMsqH78Tk4Hz5ekwGr89C8iC7onG04D39lB41Bn4Q82Cn1FwvB70So5Iz7O40J32c42cn8Oo0S7hKkvO71KslR_sak3yB_qH8pLzrMkyZrxQ0ler6EksIzopBk-7BznJspPjjU4ic7sRkmav_DwnF39C04D30J0rMvjHw-L3oK44M7sR80SvjHsiGr2Q8rPv9JwkJviPslM3wLolIz5PglKjlxBwzY_pP4wG7vcs-HzzNwjC7oTzoBnkQ39Cjq7B78T3wLz8BngSA_sa04Dvv0D40xBjsDw3C3qd8gSv1Xo4Qnuf87bnmjBo1oB77bsipBv6wB0n0CnrZgwlB_gbsjhBn2jCotvCr1O80SvnoBwznBj2cg0jBz4mBor8BvhXgokBjvOo_Zr1OkliBviP48tBj3P4xmB_iL43U7tJooO33Ukic7xH0_MvpY4kvBnkQkwpBv6N04mB_iGwuOn5IosRn8Oo3Yji_B4j6C74Q43U_tS8gSj7S0nO336C48tB3-dg6RjzR0nOr1xBk3yBvmN8pLz3Lg_H_sawmN30xBw6Nzpc4wLjubo8O3i_B45nBvvpB0yVr9yBs0Wv-LopG7lNkgJz3Lg_HjxhB8re33UojY3kvB82oCn4zB0ryCjmxHgq8L3yew6wBr7f471Bv7oBki_BrsVs8XvogBoqhBzs-H0g_Hr1nBw0pBrjXwjW7_1Ck43Cz08Bw78Bj3hCwugC3inD0xoDv0iCg0mCrwY0mWn3YwxUzstD4o1Crq7F893Ej69B44vB3wuBgwlBj3yBsipBn60FgswErh0CktmCviyB8ilBr0sPo-pMvitGwnlFjoekwanpL44Mv0GgzI71PwjWr5M0gU7-S8ukBnkGw2Pr6OkzqB74Gs1YvnKg9rBj1GojsBztBk5YzFo3O08BkliBgjBg7JsgCopQshEsjhB87CwuTs7BguN8vIsh7Bk4Hw54BosHgi2B0oL89xCo4L87yCs3DsyX8nMsh0Cg6C8pfgmH0itD4rG09qEoiC47gE_6EoggOrvCw32FvhDgvnJ37DwpgMjrGko7Oj9CgwlLgjBk69B0-F86uDs4Fg63ConCgiTs2G445B0Pw1DsdosH8oJw1mB88J4hf8oOgopBoxHk_QgzIkrQk-Y45nB80hBwuxBoowEkl2G4n6Bw21Csl3Co_iE8pxC8t3DgvkI4ujMglZg4mBkzRs_dsoXo5rBs3hBk1nCwuOgokBkkH8gS47S801Bo_Z0kuC86jBok5DogSkpoCslM4r4BkrQog4C8-mB0s7G4ic8p3E4qdw6-EshO433BsiGsgWsiGosR43Uky8BwyM4mfk0J0qUoijCwxiE0lpDoi0GshOo_Zg1-Bo07Dk71BouqD8_Z4j3B8-mBs-tCkqpF4guK82lB4hsCwznBg_tCokzBk36C8oT0goBokQk9gBsgW00oBspPkhkBolIg9XovXsg-Bg6R8v_B8tJ4ub00F07OgjGkrQ00F8sR8a04D41BoxH80Sk5lCwnF0goB4hBskZ3N4nSzsE81tBv5V88kF3vTol0E7_hC4wkQz4D4vT_-H8jdjzRk3yB_mJ06W7xHowPryIw6Nn0N8gSr1Ow2P72Rw4Oj6QwwN71tB4xmB_9P8uQ7xMokQv6Is_OzjL0-U3oKwlV_ocwp7BvqL0pcv7FgiT_yI49lBrmEsjhBrqHw5jEzoBoxqB0UgmRgwC42cgrH04mBsiG0yVoxH4jUk-Yg22Bs2GgyQ85Io_ZgzIwznB4lEk5iB4hBs0W_T4-dz8Bw9Y3xDojY7oTk1qD7tJk3yBriGghbnxHonbjsI8_Z7kQ0snB_5Rs3hBvtWk5iB_wgCk1nCrtNg6RzuXgsiBvhXs2pBz2TksrBzzNk1kBnkQ0-3Bnufos6D7tJkub3sNwse_lR0tfjsrB49oC70SoqhB_0bw2yBr1O0hgBj3Pw3lB782B8ywE_8cw_uCvyM4hkB3oK43Unza8qmB7uB41B7uB0sE7lI4wL7jdouf_vRo9Q",
+                "journeyCost": 1700,
+                "lineName": "TGV 801B",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-07T20:11:00+02:00",
+                "arrivalTime": "2025-10-07T21:19:00+02:00",
+                "transitLineFinalDestination": "Bar-le-Duc"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Bar-le-Duc",
+                    "lat": 48.773612,
+                    "lng": 5.167262
+                },
+                "endLocation": {
+                    "name": "Frouard",
+                    "lat": 48.755439,
+                    "lng": 6.144593
+                },
+                "duration": 3060,
+                "distance": 90678,
+                "polyline": "BHk1jpid0l9xiDjnS4iS7xM4wLvnF4xDvtWonWjvO84V3-d471BrvgBgjuB_h5ColxD_vlBwqzB38KstN_zjB8htB78TkubnmmC073DjvOgpcnxHguSruFkrQ_sa42iDj7Sg1-B_5R4gxBvmN4icv6N0mW7_nE409F7sRo_ZnkQg1b_uKssVv0f0wtCzyVg60BjrQ00oB_qH0yVr-HoigBvrDk7Sv_Dw3lBjNw1X49C8qpC7GguSzwC42cruFkxhB_jsD898OroXghmDrqHg5ZryD0vK7lNk2cznJwlVjnSwogB7gSs0WnmjBsuoBj8wC8nmDr1O8nbv-LskZzrMo1oBvrDsxQ72Co9pB4pC0goBo9G8yiBksIo_Z80S49lB4wuBgkpCksI8sR4kMwwhBk8FsgWsuF8zagoBg7JwrDwgfs8X41mK8uBsvgB_TswYrmEsuoBnkQ0tlDjxhBswvH3xD4mf7uBwgfkhBsvgBw3Cs0WwnF8jdsuF4rVk4HkyZg6Rs6nB02T4-d44Ms9PkgJ8tJkqY02T06W4wLsze03L0mW4wLskZgqUshOgqPwglDg-9D8xyC0pnDslR4ics6nB8xyC0rM0mW8v_B4ykDwuO0yVs0WkxhBwyMs9Ps-HolIw6Nw-L0jLg_H4wLsiGojYgzI80S8qDghbjhB4rsHvxUwhX0oBg6RwzE8gSo9GghbosRw5V43UslRssVgzIwmNkjPg9c8pL87bgnJwgfs7f4r-DsqHssasiG4nS48KorZ8sRwgf0leoxqBk0JkzRgmRwvpB8tJk9gBsxQ4_7CstNw4lCgrHo-hB0rMo1oB4mfktmC49CwvG4sIkyZ8qmBs4iE83d4wxC89Gs9PwqQs7f0kmB844BstNs0Wg6R8ilBo5IovXooOkwuBwhXg7yDo4Q0pkC4ub804Ck4H8wU0tf4miCoxHwlVwzEstNopGojY0wC4wL49C43Uo0N8ggEwjHwiyBwrD4-ds0W0o4Gg8B05e_TsoX3hBw2PnxHkwpBjkHghb_2Lk6azvK0yV_yIwmN71Ks8Xn8O8zavzEwvGvzEo9G_vlBgi2Bz9c8puB35nBo2jCriG8tJ_qHg3Lr6E8tJn4Q8ukBzmWkn1BrtNggjB3lE4wLnjYsjkC3zRkz0BnsR4_4BvmNg8kBj0J43U_5Rsnfr5Mo8O7jdkicnoO0jLv1Xw6N70SkkH3wuBk0JzzNkoFjgJ4xDziT4oKzmWwuO3jU8sRv5V0yVz_MowPjhnC0lpD70S4hkB3vTksrB38K8jdn4Qgq3BrtS0jiCnxC8jJnpG88T_uKkyZzsEgnJ7gSsnf7k7CoiuEnoO0qUz7OguSn9vD4z_DvwhBg0jB7k7C85zC32_Bs7iCn4Q4jUz_MguS3oKsxQj9gB87-B_wdw16BzjLswYn4QshxBvnFwlVj_Q8mrC_pPoz9B_yIgxYzrMk6a7hKosR7jdk4qB758F45-Hn0Sw4dv2K8wUr-Hg6RnpGgmRvzEgmRjsI0goBjoF4-d7-D4qd32cwvjJ30J8pxC7hKsipBruFsxQjtjBg25CnxHwlVnxHg5Zj4H0opBv3CoigB7Gk7S0kDoqnDjNo1tBzkD4ubzgFs0WrmEokQruFowP_xQs2pBjsIokQ34M88TjjPg6RjnSs9PvuO8tJjn1B8vczqU80Sr0Wk6aj3Ps0W_9UggjBryDoxHr8Xo5rBr1OwgfjnSksrBrhOksrB_2GglZ_nkB0zhGvpY0ugE_6J4lnB_iG80SvnF0nOr1O8yiBjhnC040EzgF85I3lqCwm-E3ic882Bz_Mwse7lIogSzzNoppBvrDstN35Eonbr-Cghb_nBg4hBwrD0sqCoGgvKnGshOkNs9P3pCk3yBjNksI31Bw8gBvrDkma31Bs1O7qDw5VjjP0sqCvvGw8gB_mJ8tsBryD0yVzwCgjL_7B0rM_T4sI3N00F_uK8g1Bn1FomjB7iCg6RvnF4qgCzoB8ukB4N8ilB8uB46f8hKwjwD48K8irD49CknSowPsqtCwzE8mjBkhBg-UnGgqPzoBwtW_vCguSvzEw5VjwG4rV3jUkv2B7tJo6ezgFo7bzoBo0N_T0opB41Bw5VwrD0-U04Dk_QgmR4v2BwqQwiyBopGwpYw_Dw5VkwGwjtC4pCs4U0gF4mfstNoz9BgiEg0PgkNszyBgqU8_hC0_M41kB46agh-B4zWkpoC8lI0mWwhX8o2B8oTwuxB40J8jdkoKw3lBohF4nXwvGg0jB0kDs0WotE8tsB4pC0pkC8uBolxDsuF47gE8iCgyQw7Fgpck4Hk-Y0vKskZ0zNswYspP0-UkrQowP48K85I0ryCgu1B46f06W46aw5VgvKg7JkwGksI8kVs0WgyQ43UwmN8gS8kVw0fkjPg5ZguSktjBs9P8ukBgzI0iYw6Ng-yBk8Fk5iB0kDg9ckhB8mjBzsEg5nE_7B8xvB3hBoxqBgUg6R0kDk6aw3Cg2Ow7F8sWsqHwlVopGo8OwqL8wUsxQsoX8lIgnJg2T8gS4plB05e0hgBw1XowPgzI47S85I47Sw7Fs3hBwzE85InGoo8Dr4U4-dsyDwyMw_D0iY8pLo8O0vKowP8lN0rMogNs5MwqQ0gFgrHs5MsoXk-pFw3nKk_Q8reozaohoB8zasvgBwqzBo4zBs1OgqU84Q0xd0nOkliBg3G0-U0rMsyrBwnFw5Vo5I0juBohoBkjuI0kDwtW8-Dk0sB4hBk9gB3hB4mfzsEoufvrDwiPvjHglZ_mJwhX7xH07O38K4zR36iC4_7CrhO0mW7tJ80S7hKkyZ3lEkhQryD42NzsE0le3kM8ytDz4Dk4qBAgta8awuO04D8jd4lE47S8tJ0xd0sE8pL8lIo4QkprDkk7F03LovXk_Q0goB49CgzI81KoyiBw5Vow1Cs6Es8XksIwuxB8tJ0i7B00F44vB07Jg0pD4xDs8X48Koz9B04DgmR4oKk69B0nO8rkDwrDw4dgoBgiT4hB4rV7iC8ukBzkDw5VryDs9PzgFgmRr2GgiT_9PggjBrqH0_M_pP0-U_2LgyQnpGo9G73gC0sgC",
+                "journeyCost": 510,
+                "lineName": "C46+",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T21:25:00+02:00",
+                "arrivalTime": "2025-10-07T22:16:00+02:00",
+                "transitLineFinalDestination": "Nancy"
+            },
+            {
+                "transportationMode": "LOW_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Frouard",
+                    "lat": 48.755439,
+                    "lng": 6.144593
+                },
+                "endLocation": {
+                    "name": "Metz Ville",
+                    "lat": 49.109378,
+                    "lng": 6.177669
+                },
+                "duration": 2520,
+                "distance": 48827,
+                "polyline": "BHo1_9hdwysm1D83gCzsgCopGn9G84VjyZo1F7lIs6Er-Hw1X_xzB0rMrwYwmN7wU4kMrhOo0N3kMk7SvmNoufnnW0nOrqH84QjwGspP7qD48K7ashO8a0_M82CgjLs6E0jLksI4tFw3C8wyBwxZ0nxB8oT44MsyDw-L41BozagoBg6RvzE8xHr6EkoKnpGkyZjvTk4Hj4H4oKr5M03LrxQgzIr1O8hKr4Us1OnlrBs4Z3o1CoxqB3ltDwyMnjY48KnsR03Lj3PgvKzrMw4dn3Y82lBnrZ4kMjwG0_MvzEkjP39C8pL3Nw-L0U48K4pCotJgwC01H8lD0-FsvC03Ls2G4kM40Jgp_Bky8BwnFsqHgmR8gSg6RwmNo8OksIsyI4xDsgWo1FgtaAsxQ39Cg-PnpGk_Q7tJs9P38K8gS_tS81Kr5M8tJvuO44MvtW4oKvpYo1F70S0kDn0N0kDr9P0zN35qCgiTjz6D0yVvgtEwzEvtWkwGrwY40JnrZw2P3ick4Hz3Lw-LvuO81K7hK0zNzvK046Gz1pEgpiDrk8Bk-YntJ0tLj9CsvR7tEsvgBzwCovX08BwyM0wC8pLgkDssfokQs6lCw6wB06W4oKonW0sEspP4Nkn1BvzE87briGo4Q7lI80S7pLow1C_12B0vyBjpgB0q3BrjhB05e74Vsx2Czq3BkzRzjL46_Kj0gH8kVv6Nk4HjkH47N3xIwgkB7nW8ukBz6Ww7FzwCg4sDj5lC86jBzuXgU3N0rvBz5eghbj_QorZn8OomjB3wL46rF_uKgu4Cv_DosR8uBkkHgoBsoXg_Hw0fkzRolIsiG46aooOk5iB48K4toBwzEw0fzkDouxC_kZomnEjqsBg7vCn9agttE_g-B4m4Gr89C0nhErw7B0wgB3sNk0T3N0pSjNwu2BskZg2dgmR8we09cs--Bgp_BohrC0osCswnB0snB0pcg-P0qZwvGsgbAkqTzwCwgV72CkkW4hBojT4lEo0X0rMkyZo7W0pcg8kBslR4_VgsT0yVoj2B03uB8i-B0snBo56Bo2gB0jzBwiPgkX08BstmB0kDw7mC0gFo3xB0_M0yfkrQ4pjCk4qBsizB8vco0XgvKgs2B8oT4phDgkhBgo9B8oTgqUgnJs0CkkCwzTk8PgmhDstzCokgD4trC8xqBkxhB06Ro4Q4vT0mWsmxB8xjCkI0KkhzBkz3C43e882B8oOo2gB47X8xyCsnkBw-5Do-_Bs--GgmvB09tFsrd0stD07Ow2yB0gKsriBsmTg0mCk9bgq6Cw_NspyB4hGg7sBojE4ykDkhGoz9BolNkllC0vF0hjCwgGku-Bs4Ko8xBoiMo_Z06Rs7fsoc4qd8hoBo2gBs5qB8ukBg_bwpY0le82lBssV0juB8hP0nd",
+                "journeyCost": 420,
+                "lineName": "C40",
+                "vehicleType": "regionalTrain",
+                "departureTime": "2025-10-07T22:46:00+02:00",
+                "arrivalTime": "2025-10-07T23:28:00+02:00",
+                "transitLineFinalDestination": "Metz Ville"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Metz Ville",
+                    "lat": 49.109378,
+                    "lng": 6.177669
+                },
+                "endLocation": {
+                    "name": "Mulhouse",
+                    "lat": 47.741954,
+                    "lng": 7.343045
+                },
+                "duration": 7320,
+                "distance": 252524,
+                "polyline": "BHg281od0iz61D7hPzndrsVzjuBzle72lB_-bvpYr5qB7ukBrocnwPjyU3NrlbkkHrpU40Jr6Ow6Nr-H8xM_-M4jUnnW4yejjPo3Y_-qB42_Bn5iDk1tE37uCkozDzysCw3wDv9Ts7fjoK0yV_-Hg2TjwGs4UjsIsriB3lEwogB31Bk9gBoG83gC08Bw8mDjN0mW31Bo_ZnhF01bvvGwhXzyVor8Bj8Fw5VzsE8wUzkD47Sv7Fs50BjiXkggHruF03uBr2GsjhB_7nC0l1H_-HozariGk_Qr-H8oTjjP0pcrk8B0q_C_6JwpTr6E89L_6J0levzE4vTrmEw8gB_T8_ZgUglhC7ag-P_6Jw4lC7uBkpgB8as8Xs2GkwuBwiyBkvlHksI00oBohFs7f0gF44vB0oBwogB7uB0goBryDsuoB3lE4icntE0mWj0Jw7oB_xQ48tB_jmB0i-Cv2KovXngS0tfzqUkyZ_hTg6R7oT0_MrhOo9GnxqBokQjqYs1Or1O4wLrpPspP3_V4qd_t1B8o5CriG8pLvyM4icnoO0kmBv7F8wU3wL4swBvzE87brw7B4y-Kz3L83gCnhF0qUz_MkhkB71Kw5VnlI0nOz3Lg6RnoOgmRjrQowP79Lk0J_unJowjGz3L4oKj8Kw-LvyMs9P_qH81Kz_MwtWzrM4ic_4kDw86Inuf8g9C7puBwt_Djmak9oC71K4ub3nSs_iB34MozV75I4sN_pU8nb7sR4vT_lRokQ34M48K30JwvG79Lg_H3icwuO3mf81Krm1Es6nB_kZksIzuX0jL3wLkkHv4d0mWrtN44MnwjGs7zG7wUo3Y71Ks9PvyMsoX_yI47SvvGg6RnhFowPjzRo1wCvyM0xgCv0f0v7E7pL8ynBnpGg6Rn9GkrQ3nSggjB3sN8wU_yIwqL30J8pL_iL48Kn7W80S7tJw7Fjmaw-LzzN4lEz3L08BjgsB44M7GA7kVg_Hzpcs5Mj2cslR3vTw6N78T0uSvyM0nOzrMk_QjzR42cvyMorZ_-HwlV_mJ4-dn1FglZ3xD4zW72C04mBr-CwgiC7uB0hmD7G0uX3lE0u0J7agy-Dv_Dgq9DruF4lqCnpGk71BvnF4u-BrtNgwrDz7OgjxCjmasuzD71tBot1En-hB4n9CnppB46lD7pLojYz_1DsgtH3-d8k4B7w3B4ltDvp7Bsl6DnvXw2yB7vc4z5B_tSwznBnoOw0fryrBo-nD_0bs3kCzqU844B31kB00uD3yekprDj5iB8k-D75IgwlB_mJoppB_mJ03uB3wL8ziC3kM0m5Bj8FgsiBrqHwiyB_9P0ihEzoG0m5B38Kgz2D_2Gov9CjsI0rgGnxH0ihEr6EsxzBnpG4j3B7xMw-2CvzEgpc74Qo5uCjsI0wlBn8O0u6Bv1X8xyCzqUs05B_uK8jd7oT4wuBn3-Ckt3Gr8Xoj7Bztfg1-B_lRkplB_p3Bkv8Dr7fwzqC_zjBgy7Cv8gBw9-C_yIs0WnylC409FjxhBk74Cj0sBwwnDviPsvgBn2gB0hjCv8jCg28Dj2lEoi8H3tjBsniC_hT8qmBvh6B8qsD3-dwh6B_wjDox7Fv5Vk4qB7xvBs0hD7nboj7B3plBkn4CnxqBwjwDj0vCgo4Gz7xBkukEj0sBsh8DnufgryCr3kCgj6FvmwBkk1D7jdgt9B_sao4zB3kM0yV3j3Bg-6C7puBommC_nkB0rvBvvpBowyBz65B0osCjmuG0znI39lBw2yBr7f4kvBj_Qk6avogBgu1Bv_mB8ioCztf05hCripBkj6Cj4qBo__C_sag9_BvwhB0m8CjrQw2yB3wL4xmBrhOkrzBvuOwt5BnwPkhnCzvK433Br-HgrvB38K4owCrmEk1kBjkH0grCruFw21C_7B4j3BzoB4qxG3xDk7sIzwC847C3xDo42C30JojmEn5Io__CruoBggrM3lEg22BzkD0zwB7uBk8oBzoBow6C08B48wC49Con-BsmEwt5B8qD86jBwiyBgosMo1F81tBgta88nGk-YoslG8jd0mwIopG04pC8pLohzDo9GgwoC4gJsp1Cgle49nKsuoBwy0L0qUs64Fs0W4l7G8qDkwpBwrD8s5B82Co1rC4NsmsB31Bwt8C7uBktjBvrDo37BzsE0_vB71K4j_Cj8FsuoBnlIs9yBrhxBsv6I38Kk0vC7hKw_xD_uKk3jG7hKg4yF_nB4hvDgoB4oKgU46iC49C0_yC4hB84VwnFs05BgnJ0j2Co3Y0qoGkkHoxqB8ioCs96Ms2G0kmB4nSo7qG7ask8BriGgoyEngNszyGzgFw3wD39Cg_qBjwGwljE78T86oLriG4g0CruFgi2B_qHo37BjoKsrlC75IspyBz_M0lhCzjLgrvBr8Xgu4C38Kg0jBrxQg60Bnufsh5C7nbkxkCv6N05e3mfki_Bvkds86B7ynBw8jCv5VoyiBvogB0_vBvt5Bo9sC_hT0uX_t1Bw54Bv_mB45nBnlrBo9pBj4qBk1kBvjtCgkkCz0oB0phBnwPkvOnkQ0_M3otB89uB7ynB04mB_9PkzRn_Zo2gBztiC479C3gJs1O3qd4otB7kV8ukB3ubo4zBr2pB44yCviPw8gB3kM0xd36asjkCjzR8xvBvmN0_vB_tSgh-B7gSo6mC_iL0rvB7sRo42C_-Ho5rBrpPompDr1O8ytDr1Ogq6Cv8gBwmkHvmNw8mD_sagmiFzmW4jlF3oKgh-B7tJspyB7pLog1BjjPky8B3zW8lzCvkdsl3Cz4xDg8-I7_Zg3xCvmNo8xB7hKsyrBvvGw0f75Ik3yBruFg8kBnxH4yhCrmEk-7Bz5e0x2QvzEkgvCvzEgzzCjvE05kDv0G44vB_lHw3qBriLkxhBrlMovXj-O4qd3kR0uX_rO84QvkJ48Kz_R8oTnsbssajxS0vKr4Pg_HjgOwzEnmU4pCj52BksI76jBk4H7j5CskZjlgC8tJz4mBg_Hno8DkjPzzzC0nOrqqBsuFnmpDkrQn3YsmE_o_BwjHvmX0wCn1yG0kDz1uO4_7C_ySkgJ3uM8tJ34RwyMz8G00F7gS4vTz0U4icvtM83Tntd8p4Bn9LgtarnQwgf_uek71BnlNw6NzkSgzIvnU8iC7menlIn-NrjN7tiB71ev0azyVz2lC_yuCrlhDjtmCjhLjoK7-DruF3vT_1TvmN_pP38K7lNzzNziTz3L7wU_mJ70Sn1FzzN3wL3tjB7jd77mDr1O_qqBrtN_oc_mJr9Pr7fvquB79uB_4hCn0D_zFv7PzxYzkI3qJ_o6Bn9a7ioCr_djw0D34vBv5V_mJj_Qn1FzgFj1BjozDv6wBnl_Gzu9C7ynL_i3En-pM3jlFr2sCzle_6vCnqhBj17H_7qD7k4BvhX7ngL39zE_4Zv-Lnr8Bn2gB7i8Hzj8Evy3Crt1B3owC_9yBrjyFnqsDv7uD_zmCv7rC7puB7wUnoOnyiBnzav7oB7ukB_5R7sR36a_8cnmjBjsrB3-druoBvyjHrnhKrk8Bz70Cz13H7r-Kv6wB3miC398Hr7kLrgnF_hqHrx5Dr3tF_pU_0brxtJ77mN_4ZjhkBvvG71K71KvmN_9gF7piHzzzCz73Dn04Cn45DzlhC7s8C_uzDnwgFno2BnxtCz0uD717E7gSj2XnjY7vcjnS78T_yI_mJzrM38K7nbvhXvpY37SnigBz-U_lR7hKvzvC_7kB7htBzmW32cjzRz4mB3ub7k4BnlrBjz0BzgoBvnFriG_pPj_QrqHj8F_yIn5IzjLznJ_soEvkoD_-HjkH_tSn0SnrZ_kZ7zoEzk0EjzuJjwrK3v-Cv0lDj77D_4nEr3hB_zjB_6sBzopBvpTnwPzwtC7o2Bj-sG72uE7viDvklC_i2M3y4Ir2pBn_Z3qdjjP_lRnlIzgoBjrQvxUv7FvjqBzjLrjhBn1F3ivYnmpDnwoQnylCj4H7uBzle7qDzt2Hn-hBzsd71F38tB7wUrqvBj5iBvkpFzwzEjzbrkZz35Dj0yDv_mBrvgBzqUnwP_jmBn_ZrsVzrM_qvBr0WrhxB_hT_6sB3kMnunCrlMvkrEjvTnq6av24DzomK71tB7zlDj3Pjn2DjyP_l4Jn-rBji5Jn5rBjhkBn1F_0-Bn8O_utBnsR39lB7sR7pvD_12BnoyIjqmEj2XrpPrkZjzRz9cvtWj1kBr7fziT37Sz1gBj5iB3v5Cr_oDn85Cv8mDroXzuX72lBj5iB_msB_riB_sajnS7jd74Qj9gBnsRztfv6Nn5rBjjPjqYvvGvt5Bv-LnlrB3xDr9yB3pC71tBrmEvzEjN38K7a3kvBvnFzihEvqLr18DjsIz89QryrB32zH37S7ilB3xD7rev3C71KA3gJjN33U3pCv7oB3pCroXr-Cj74CrqHnvXz8BnlIjNz4DAn2gBv3C_4qFvmN3xmBjNv4dsuFrpPwzE3mfwmN75Iw_DrwYw2P_7kBwgfj3PgmR3vTs8Xr0WkxhBnsR4-d33UshxBz9con-B3kM4-d7pLglZzuS4gxBv8jC48-FvzEwqLzuXwwkCv9T065B_99DwgkL70S0juB_uK0_Wv1X0yuB7yiBoz9BznOs0Wj_Qghbj4Hw6NvzE48Kv3CkgJ39C4kM31BwmNnGwmNk1B02Tw3C8xMs6EkvO4qE8lN0qe05hCw2Ks0W0oV4hpB",
+                "journeyCost": 3050,
+                "lineName": "TGV 071B",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-08T05:46:00+02:00",
+                "arrivalTime": "2025-10-08T07:48:00+02:00",
+                "transitLineFinalDestination": "Montpellier Saint-Roch"
+            },
+            {
+                "transportationMode": "HIGH_SPEED_RAIL",
+                "startLocation": {
+                    "name": "Mulhouse",
+                    "lat": 47.741954,
+                    "lng": 7.343045
+                },
+                "endLocation": {
+                    "name": "Zürich HB",
+                    "lat": 47.378176,
+                    "lng": 8.540211
+                },
+                "duration": 4800,
+                "distance": 122003,
+                "polyline": "BHo7pzuc4-7hsE0sY4zvBszgF8r4Is4Pk5iBksI8gSwsFw2KojYkn1BwnFw2P4hGomjB0tLsw-CwvGkllC4mGsvjC8Gghb3hB84V39C8_Zj4H04mBvmNwjqB_jpCwg2H_lRwiyB7hKkyZ33UsipB7gSwgfn4QskZ7sR0yVj6a0xdn-4H0s7Gn_Z0qU7za80S7qmBwhX38tBsoX_wd0rMz9_B0mW_68XksiIv8mDwkiB39lBo8O3jUgnJrriB8gSnigB47SvuxBwkiBnsRo0N77bw1XjrzBw6wBrghDkiiD77sFgtrF_gb0lersVghb3jUk6a70S46av6Nw5Vv_xD0niGv91J8zzQnxH0vK7xHwiPjnS0tfrm4F4-6Jj_Qg1bvjqB8qpCnjY04mBvuOwlVvyvB4yhCv7FgnJnv6B4miC7_eo2gB_yrBs2pBz3uB4gxB_2LslM77hDo6pD3kM0_MzsEo1F_mJolIvseo2gBjhkBgwlBj7NwyM_3pCsk8B_-HwzE_zjB42c3lE8iC3ub0qU3o4Doj7BrtN8qD_1T_T_2GjN3rVjrQ_savkd7xvB7xvB32cj-YjnSj0J38KntE36an9Gv9Y_T7z9B8lI36f4wL_lRkoK7gSo8OjsIkgJzjL0rM78ToufnkQs3hB7hK4qdvrD4-d08Bk2Xo1Fw9Ys-H8sRkxNw5fwtH4mVwnFwlVo3EwhX7sC88T78J0rvBvvGslW3pHwwXjhLgzwB_-R05hCzoGw9djiD87RzkDg6Rz_lBo-yFr3D0levoCwgf3Io3Y4sD4rVsyI8yiBohFsoX8uBo3Y3pC8kV3oK8mjB34Mo6jB_6J8-hB7uBg7JvvBsoXjNosR3pCg-PnhFsxQv3-BokkG_tNgh-B_gMwgf_g5BknmGrvbkj6C3_pBghhD7svB0lsE76tBkmgDz8L8ilBrqM82lB73J065BnpBwl4B_rEg5nEgKk1kB_EohFjN86jB8a8oTgkDokQohFokQ0gFwqLohF8tJ882BsuwCg30DsnwF49lB0-3BwmN8gSkma8ynBgnJooOgjLs0WokzB406EohFokQ8pL81tBgnJsl0Bw_Dg8kBs9P4zlGopG8_hCgnJsvjC48KoylC81K4r4B4-gC0ssLg-Pgq6Cs2Gw0fooOk26B0_vB41yEs_iB0u9Cg3G0-UsqHgxd0snBw9nG44vBkk7F09c0wwDokQs86BshxBowjGo1tBw0wF40J44vB4xDo3Ys-CsmnBkN81tB3hBokQ7iCskZr6E8mjB3xDguSriGo_ZvqL8ukBriGosRvp7B4xvEv5VspyBjtjBs53CrorGg-lP3ye8qpCzjuB00uDz0FsgWz4D43UnpGspyB7aomjBk4Hgi2B00Fk3yB7qD41vDv3CsvgBzkD0qU39CkgJ72CgiT3pC8tJrmE03Lj4H0jLn1Fk8K7-DsoXvzEsipBzoB8vc_7B4jU_2G01b_vlBo88DvrDstN31BwvG7uBg-PnGgiTg8B06W4pC0iT81Kw2yBs6Eo_ZgoBwxUjNgmR3pCs9P7jdozjE_gb4pwD_-H49lB3wLw7oBvxUov6Bz6W0zwBrk8BwjwDrhOknSjpoCwu0CnlxDkilE7l5EwsvF3jU07OznOs6EngNgU_2L_nBz3L3xDzrM_2G3oKr-H7-pC_0-B70S3wL_yI3pC_xQ3N3sNwrD71KwzEjkHs6EvmN8xMv-LowPvjHokQ_2Gs4UzkD0goBkma822FsqCs8X7GkyZzwC4hkBr6E4mf_mJw4dvpY8_hCr6E0yV_T8lIv3C89LjhB85I4pCg1bgoBo9G82C40JgzIknS8hKojY0vKo2gB03Lon-B07Ogi5C8Gk_Q3hBs9Pz4DssV_uKswY_4Z0hgBnxqBw6wBr_iBgzrB_pP4wL70S48KvuO03L_mJ8hK3vTo_Z7vcgsiB70Sw6NnhwCksrBj4HsuF37SkjU75zCgu7D75IwuOnxHgyQr6E0nO7qDspPzUs5M0oBwnoB0gFs0Wk4Ho0SswYsmnBwyM0iYgrHs0W4xDsgW8GsxQ7uB0yVvrDkvOj0J83djwGspPrtNonWjma05ev6N89L_gbk_Q_1TgqPv-LgjLrhOwxUjgJk_QjxhBk71B_2xC8rnE_t4CwssEvxZwvpBnr8Bg9iD7lI4nS72CgzIvrDkrQ_nB4nXkgJw6zCAkrQ72Cor8BoG88Tw_DktjBs6EsgWsuFogSg_H0iT4kM4_VggjBg22B8xM0uS40J8hK0nOg7JwyM0gFgmR08B0v1CvzE8nbz8Bo9G_7Bo1FkNwtW40Js-HsuFowPokQs5Ms8XwzE0_M4xDspPw3Cg6RgU0-Uz4DwvpB7G07J82Cs8X0wC89LgsiBsjnDs4Zg4sD49lBgz5EgrHwlVk0Jw5Vs1Os8XwxU0lek_QkubolIkjP4kM05ew_DwyM0wCgvK8a4rV31Bs4U39CkoKvuOwkd3wLw2PrhOo8O7tsBw_mB7xM4wLznJ0rMvvG0rMj8FkzR_jDg6R7awuOkhBkjPw-B8tOgxEg-PwnKsmT4gJ8oO0oL86K48Uk1Q8rUkmQo7C4iDgwC0_CszFo2Hw9Eg2JkqEo5NgkDwsPgZooOkXo5Xg8Bs48B4pCo9pBopGwnoBwmNwnrCsmEguSs6Eo8O0sE4wLo5IogSstwB885CopG4oK8ilBkhnCotJwuOk4HowPw9ToyiBgvK8zasiG80So1Fkub8uB0rMgoBssVnG8pL3N8tJzkD0-U7lIw8gB3qOkgsB_ipBgy-D7-6Bko2EruFk0JnpG85I_uK4oK3qdwhX_-H85I_-H81K_6J4vTrmE0_M3xDk_Qn1FwvpB4pCkyZ01b83mE8iCk7SgUswY_TooOv-LkrhFr-Hwt5BryDkzRruFs1OvyH8hP_jI8sM_2GogS39C0vKzrM4z5B3lEshOvrDgzIvnF85I38K4sNzgPg7JjiN49C3iczoGngX7lI7tnBnsR7wUz3L_xQjgJn8J3gEvygB31G_oN8a7xM0UngN82C_6JsmE_iLwjHntEsmEnpGo1FzrMw6NruF0kIruU0vjB_9Ks0Rr_YskoBnuL8gSv8bwsyBjojBs-5BnqhB882Br1Okma_uKkqY_sa82oCnoOg1bjgJ0_M38K0_Mj4HkkHz4mB05enwP8tJ3yespPz2T03LrriBkma_lRwiP7jgC8mmCj_Q0mW3rVw0f3oKgmR_6J8oT_-C8uGnxCssGzxEw2Kv0B4lEr_T452Bv5Gs7Qz6CgzIzmCkmGvwSwitBjmkBwv0Dz53B44kE3gxB01rDzg_C0hvGvshCgooE7tnBs6qC_rxBwh4C74uBk5qC7tiB08pBnukB8za_1sBs9Z78Ok6Gj0J0sE_nBkc7xWklO3yPs5M_kF07E3lJw7K_qMk3Uv9JozV70IwogB_zKg1jCjyU8vvEv1Is0vB3-E8s5B4sDoo2BosH4ptCwlQs8mGg1HkxxD4wG43_CgtB0tfr2BspP3sDojY_4K8upB__nBogvErglB8rnE7onB0tyErzPsg-Br2LsnuBv_S8_hCj9Rg8nCz5FkhkB7iR02yD70DwzTvoCkiXroDgqUnoE0iT3wGswYnsH8oT30JkyZrqM0tf70I02T75I0mW71FwiP3wGonW7lIs6Yz4D4jK7vD88J7hKwwhBnzuBg-gFnkB07J_Yo6Pj_B0pNzyBs4Fv1DwyMrhO42wBzgUgwoC",
+                "journeyCost": 2000,
+                "lineName": "TGV TGV",
+                "vehicleType": "highSpeedTrain",
+                "departureTime": "2025-10-08T10:06:00+02:00",
+                "arrivalTime": "2025-10-08T11:26:00+02:00",
+                "transitLineFinalDestination": "Zürich HB"
             }
         ]
     }

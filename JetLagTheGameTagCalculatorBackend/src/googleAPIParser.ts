@@ -206,7 +206,10 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
       )
         .toISOString()
         .split("T")[0],
-      departureTime: new Date().toISOString().split("T")[1].split(".")[0],
+      departureTime: new Date()
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0],
       arrivalTime: new Date(
         responseSteps[responseSteps.length - 1].arrivalTime || "",
       )
