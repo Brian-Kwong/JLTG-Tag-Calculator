@@ -14,9 +14,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "03:33:00",
         "arrivalTime": "05:44:00",
+        "totalDistance": 234293,
         "totalDuration": 6960,
         "totalCost": 1030,
-        "numTransfers": 2,
+        "numTransfers": 1,
         "numSteps": 4,
         "steps": [
             {
@@ -32,6 +33,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T05:33:00+02:00",
@@ -50,6 +53,8 @@
                     "lng": 4.02392
                 },
                 "duration": 3360,
+                "distance": 87505,
+                "polyline": "BH4kxn1do-7j6C3XrOrxQ7avrDjN34MgUjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
                 "journeyCost": 560,
                 "lineName": "C70+",
                 "vehicleType": "regionalTrain",
@@ -70,6 +75,8 @@
                     "lng": 2.358424
                 },
                 "duration": 2820,
+                "distance": 145967,
+                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 470,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -90,6 +97,8 @@
                     "lng": 2.357537
                 },
                 "duration": 720,
+                "distance": 746,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T07:32:00+02:00",
@@ -112,9 +121,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "03:33:00",
         "arrivalTime": "05:42:00",
+        "totalDistance": 234441,
         "totalDuration": 6660,
         "totalCost": 1045,
-        "numTransfers": 3,
+        "numTransfers": 2,
         "numSteps": 6,
         "steps": [
             {
@@ -130,6 +140,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T05:33:00+02:00",
@@ -148,6 +160,8 @@
                     "lng": 4.02392
                 },
                 "duration": 3360,
+                "distance": 87505,
+                "polyline": "BH4kxn1do-7j6C3XrOrxQ7avrDjN34MgUjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
                 "journeyCost": 560,
                 "lineName": "C70+",
                 "vehicleType": "regionalTrain",
@@ -168,6 +182,8 @@
                     "lng": 2.358424
                 },
                 "duration": 2820,
+                "distance": 145967,
+                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 470,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -188,6 +204,8 @@
                     "lng": 2.358118
                 },
                 "duration": 120,
+                "distance": 120,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T07:32:00+02:00",
@@ -206,6 +224,8 @@
                     "lng": 2.357952
                 },
                 "duration": 180,
+                "distance": 647,
+                "polyline": "BHgk1nkdgto_sB4XvuE4rBv_IgyB_9KgyB_yIgZvwDwlBnGw3C_Y4vEnGwwDwMsqM42D03B8QojEsnBwwDgyBgvFgrCwMoG4-Jo1FwiFw-BgyBwlBw3CgyBgoGoqDwjMgoGoqDgyBoyE89B",
                 "journeyCost": 15,
                 "lineName": "38",
                 "vehicleType": "bus",
@@ -226,6 +246,8 @@
                     "lng": 2.357537
                 },
                 "duration": 120,
+                "distance": 127,
+                "polyline": "BGstun9C6m9vEzOlGzK_E0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T07:40:00+02:00",
@@ -248,9 +270,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "04:28:00",
         "arrivalTime": "06:44:00",
+        "totalDistance": 234237,
         "totalDuration": 6960,
         "totalCost": 1030,
-        "numTransfers": 2,
+        "numTransfers": 1,
         "numSteps": 4,
         "steps": [
             {
@@ -266,6 +289,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T06:28:00+02:00",
@@ -284,6 +309,8 @@
                     "lng": 4.02392
                 },
                 "duration": 3360,
+                "distance": 87449,
+                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
                 "journeyCost": 560,
                 "lineName": "C70+",
                 "vehicleType": "regionalTrain",
@@ -304,6 +331,8 @@
                     "lng": 2.358424
                 },
                 "duration": 2820,
+                "distance": 145967,
+                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 470,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -324,6 +353,8 @@
                     "lng": 2.357537
                 },
                 "duration": 720,
+                "distance": 746,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T08:32:00+02:00",
@@ -346,9 +377,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "04:28:00",
         "arrivalTime": "06:43:00",
+        "totalDistance": 234777,
         "totalDuration": 7020,
         "totalCost": 1055,
-        "numTransfers": 3,
+        "numTransfers": 2,
         "numSteps": 8,
         "steps": [
             {
@@ -364,6 +396,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T06:28:00+02:00",
@@ -382,6 +416,8 @@
                     "lng": 4.02392
                 },
                 "duration": 3360,
+                "distance": 87449,
+                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JzoB_iB38K_rJvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-D7G_uKAn8OgUzrMzK3nDnnMzl4Dz4D3vT3hB38KzkD32c7uBvvGzwC_lR3pCjzR_7BjkHrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-Ev_Dn9G78Tn3Yr6EjkH72CriGnjYrnfvzErqHv7Fj3Pvb3wB3lErvHvwhB_-qBj8FnpGnwP3sN_sajjPriG_7BriGz8Bv_D_nB79LryDrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksB",
                 "journeyCost": 560,
                 "lineName": "C70+",
                 "vehicleType": "regionalTrain",
@@ -402,6 +438,8 @@
                     "lng": 2.358424
                 },
                 "duration": 2940,
+                "distance": 145967,
+                "polyline": "BH4iyxrdo8i4sCjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 490,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -422,6 +460,8 @@
                     "lng": 2.358226
                 },
                 "duration": 120,
+                "distance": 141,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3c4NgK0PgK2rByY",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T08:32:00+02:00",
@@ -440,6 +480,8 @@
                     "lng": 2.358645
                 },
                 "duration": 60,
+                "distance": 40,
+                "polyline": "BH0wtokdojr_sB_wE8lI",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T08:34:00+02:00",
@@ -458,6 +500,8 @@
                     "lng": 2.356144
                 },
                 "duration": 60,
+                "distance": 695,
+                "polyline": "BHo25nkdov0_sBrJ75D_YnxH_Jz5FnBzkDjNrrEzF32DkNr8DkXr_EslCzxOsO3wBwW3wB0e3wB0yB_2Bg3B3wBs2B7zBslCvjCo4B_sBwvBjSokB3I4_BjI4mB7B4tUs6EwkJw1D8qDk0E80DoxMovD01HwnFwpEs9K00F",
                 "journeyCost": 5,
                 "lineName": "4",
                 "vehicleType": "subway",
@@ -478,6 +522,8 @@
                     "lng": 2.356852
                 },
                 "duration": 180,
+                "distance": 182,
+                "polyline": "BHsnyqkdgui-sBjyew6N",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T08:36:00+02:00",
@@ -496,6 +542,8 @@
                     "lng": 2.357537
                 },
                 "duration": 240,
+                "distance": 228,
+                "polyline": "BGyprn9Cys7vEiC2HgF4D4IgFgU0K4mBgU0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T08:39:00+02:00",
@@ -518,9 +566,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "05:16:00",
         "arrivalTime": "07:14:00",
+        "totalDistance": 234212,
         "totalDuration": 7080,
         "totalCost": 1050,
-        "numTransfers": 1,
+        "numTransfers": 0,
         "numSteps": 3,
         "steps": [
             {
@@ -536,6 +585,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T07:16:00+02:00",
@@ -554,6 +605,8 @@
                     "lng": 2.358424
                 },
                 "duration": 6300,
+                "distance": 233391,
+                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JrlM_uKvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-DvlV_owGzgF3kvB7iCvmNrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-EruFj8Fv9YvogB7ilBjotBrtwB7jgCnlI_yI75I_yIviPz3LrvgB7gSrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksBjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 1050,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -574,6 +627,8 @@
                     "lng": 2.357537
                 },
                 "duration": 720,
+                "distance": 746,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J_EjD4DvWsE3cgF_iBgFvbwCnL4DT4IvCsOToLoBk6BwRoLgFwRwHoBU8fkSoQoGgF4D4IgFgU0K4mBgU0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T09:02:00+02:00",
@@ -596,9 +651,10 @@
         "arrivalDate": "2025-10-07",
         "departureTime": "05:16:00",
         "arrivalTime": "07:12:00",
+        "totalDistance": 234360,
         "totalDuration": 6900,
         "totalCost": 1075,
-        "numTransfers": 2,
+        "numTransfers": 1,
         "numSteps": 5,
         "steps": [
             {
@@ -614,6 +670,8 @@
                     "lng": 4.724344
                 },
                 "duration": 60,
+                "distance": 75,
+                "polyline": "BG6rz9-CqosgJpFW_EjDjNvHjDvHArJjDzFJhB",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T07:16:00+02:00",
@@ -632,6 +690,8 @@
                     "lng": 2.358424
                 },
                 "duration": 6300,
+                "distance": 233391,
+                "polyline": "BH8snn1d4q8j6Cv1X7uBjrQ4xD75IwzEjrQg_HzovDgq3B3kMkoFr9P82C_pPkgJjgJ8lIr8XwgfnhFkgJ3pC41Bnnb4swBj8Fg3G31B4pCz4D8-DnlI4gJzwlBg6Rr1O4pCrxQ3hBvmN8GriG7iC_mJnpGjjP38KvzE3pCzgFz8BzkmBjubzugEj6gDv2PvyMvyM7xM_lRz-Uj4HzvKv6Nn_ZjxsDrn2HrhOn3Yr1O7wU3jU3rVnwPvyM_9P_mJzlyG7irDz-oG3mlDr9PryIr0Wn8O_6Jj4Hj0J7tJ3zRzqUznOzyVjrQr3hB_6Jj-YjwGr0WjwG7_e_iLzzzC_-H38tBrqH_sarlMrriBroXn9pBzuXz9c71K_uKr5M7hK7vc3vT_0b33UroXvpY30JngN34M_pU30J37SviPzsnB_4Z_oiDj0Jjma7oTvznB74Qv1Xzg2E_gsFzqUnnWrpPr1O_lR3gO7vcr4Uz_vBv9YnpG3pCzgoB30Jj6gD3wLvjqBvzE7oTr6EnnW_uK7oTzrMvvpBzpczzN_6JrlM_uKvuO_9P_uKv6N_yIz_M_mJjrQngNjubzoG7gS75Izlez4D7gSz_vBnotI78TvvvDzkD_4Z7uBr_iB8uB_zjBs6Ero6B82CzuX0sEn3Y81tBjs_GwrD7za8iC_oc8G_kZ_nB_ocrhOjp0GoGrkZ41Br3hB0wC7zas6E73d82CrtNgnJv0fwlVnr8B4lErpPk8F_sa0wC_lR4pCn3Y8ankQzUz4mB7iC3_V38K7jgCvzEjpgB7iCnza_Tv1X82Cn9pBoxHj5lC8a7oT7aroX_7B70S30J_jmBv7Fr1O_6JziTz7JrhOrg-Bj1nC7s0Bvx8Bn_ZrgW71KjwG_xQr-HviPr6E32zH782BrpPn1F7gSjgJjzR34Mvu0Crh0C7wUv2P_tS30JzvKzsEjnSr6Ej6a_nB71K8uB_5R04Dz2TolI7oTw-L30JsqHr9PkvO3oK44M7_nEwgwFrxQ0qUrpPgyQ_lRokQ33UwiP_nkB80SjliB40Jzxdg8Bz5ez4DrhO3xD_zmCn7Wj2c_-H3plB34Mz65B_xQjqY7uB7jdohF3kM0sEzi2B4qdv2Pk4HziTsiGn_ZsyDjnS3hB36a_-Hn4QjsI7q6G32qEz-UnkQjrQ_xQnwPz-Uz_M33Uzxd77-BnkQzhgBjjPvhXngSr4U3wL_iL3zRz_Mn_ZrtNzs4FnqkC_5RnlIjjP_yIvtWjrQ7jd77bz3LzzN33U32cnoOvhX79LvhX71KroXnoOz4mB_mJrjhBv7FnrZrmEroX79L_vrDrtN7k-DvlV_owGzgF3kvB7iCvmNrxL782BvlgDzz4MrqtCvvmKzguD36zQvzEzmWriGnppB3xD30xBkNz3uBohFvxiEkNvznBzwCnrZ_jDrpPv-LnppB7hKzmWj3P7vcvtM7qXrpZrvvB_5R_riBruF_mJjkH38Kz7OjnS_5Rj_QzzqJ3jrH3lnBz5enh2E341Dz6W38K7rZnpGzsE3pC36iCrpP_qqB7iC7wUzsEvlV7tJ3wLnxHjrQ_pP_5RnrZzrMrkZ_jmB7viDjy8B_q4E3jUzzwB33UvvpBn5xDvr6GnwPrsavmN7oT7lN_xQjw3EnvoFnwP70SziTnzanpxCjilEn0NziTv5V3_VnsR7pLr8Xv2Kn0vJv_xD7_ZzzN74Vr1O3vT_9P3qdvogB_9PvlVr8lEz-oG71zD3itFn9G7tJvgfj71BzmWzy4B7gSzhjC_x4B_ozHz3L38tBjkHvhXv8jCri6Fvr3F_v2P7kVj71Bn0N3ub3jUz1gB3g3Drt-EruFj8Fv9YvogB7ilBjotBrtwB7jgCnlI_yI75I_yIviPz3LrvgB7gSrnfj8K79LvvBz-3B08B3pzEzzN34yCjkH38tBriG7gSj8F3zWj0J_4Zj3P_lRz_M_iL30J_lR_5R34jH_1tI7yiBrqqBjiwG7r1Hr3kC38wCz_vB_x4Bv2KrhO_2L_5R_yIrhOvyMr8X3_Vjn1Bv2K__iBngS_7nCry0Er77R73jDn_hMviPv54B_9P333BnrZ_wjD7sR_jpC34MrtwBjgJ3-djoFrtN3kMjyZ_jmBv4lCnpG3wLvtWnhoBngN_hTrsa32czrvBvqzBr1OrhO_i0D788D31B_7B7xMrtNvrDz4DrhOrxQ7-hBvksBjwL3-O_yI_yIriGzsEnxHriGr1OjzRjkH75I38KjrQ_g-Bn5uCzzNnoOz_MzrM_pP_iLvqQ_6J3vT75IroXr2Gv-L31Bjic8arsV0sE_2L04D74Qo9GrxQ8tJzrM8tJ33Ug6Rn9pBs2pB3k1Dw-5DzhmDs3nD3vhE8rnEzqUwqQvuO8tJ_uKwnFjiX4sIj0Jg8B_o_B08B_5R31B3vTvzE34Mn1FjjP3oKnlIn9GjsIjgJ_xQnjY7tJ_hTn9G7oT7tJvnoB34Mj0vC_lRjtmCzgF_8czoBrsV8azlesmE77bwjHn_ZsipB_p6Cw0fvjtCkkqB7hzD0qUrw7Bk9lBjltD8g1BzoyE8vcj0vCooO35nB05ejsuC45nB3z8CgokBjgvC45tD_tpH4kvBj9rD0juB7l2DsxQnkzB4-dvkoDwtW3r7C48Kn8xBkrQr53Co9GvvpB8hKvzqCkwGr48Bw7FjhnCwzEjtmC0wCrqtCkNzosC7a7ukB_vCntvCjwG7viDn1Fzy4Bz0FrmsB_-Hzq3B_yrB75nIvuxBzkgJ_9UnmpDn0Nzi7B3icrzpDn6jB7hzD_yrB_63Dj6avshC_8_Bzk0EvomDn4nHjn1Bvq5Dz3uBzn3D7ynB7-sDr2pB37gE7_qFnvwQj9gBnr_C_9U_12Br_d7-pCztf7unCnkQrriB3ubzy4B7kVzgoB7oTj5iBr05Brk_C3lnBj-7BrgWr7fvgqDrvuE79xCjprDjowC_nqDvsej4qBvrmBzu6Bz7xB34yCnrZjgsBzpcj71Br3hBvwkCvjqB_4_C_5RvrrB3xmBztlD_zjB_vrDz5en6pDrrd_-1D_ocvi4DzyVjv5CnoOzq3BvxZng4CrtNrqqB7gSng1Bj-YrjkC_7nCj47FvhX7jgC79L3hkB7_Zrx2C34M7lwB7tJzsnBr2sCvroK31sC7prKn8O_voC71Kv97B3oKrniCng1BjhpL7lInwyBj7SnnhD70SvmzCr1Oz65Bro6B7vwGn8Ons0BnrZ7jjD7ytD7jrOnr8Bz13Hv0fvxiE_xQ7v_B73dvwnD_zjBntyD3icz_yCzopBv3wD_0brrlCr5vBvrxDztfj9jC3lqC3k9E_jsDrtkH_50Bj41D74V701BrvgBzj2C72oC7m3Gz79FvtyR_jmBj8zD76jBj8zD7gS7jgC7rezovD7x1Dr99Nn3YrivD_xQz32Cn4QnqnDvuOv_xD3sIz_yCzoGv4lCvqLzujFrqH_m6Ev3Cv6zC7uBj36CjN3qjDgoB3inD8iCn42CsmE7rkD8nb3i4R4wL7zxHs2G_wjDohFzy4B4wLrnqDgzIn-kCs2pBjt9I01gBrq-Gkq7Bv1iN0_Mj39DsiGzy7Cw_Dvq2C8uBvomD7iCnp0DnhFn__CjgJvvvD_xQ_gpE7oTv62D79L7_hCjoFnjYnioC_7hK3ic_99Dn6mC_g9Jv5Vzu9CvzEz-UrjkCjvwJr94Dv80QntvCn39Kzxdvq5DznO3v2BjwpB39zEz65Br64Fz0uDvl6Kz1gBr-wDnwPj69B3wLnkzB7tJ71tBr1OvruCr1Or3nDr2Gzu6B_mJ7k7CzrMz2kFrmE_msBz_M3hvD7lI7s0Bv2Pzj2C7sRj8wCvmN_xzBv1X75zCvgfvt8C7pLvgf31nC_v2F7wU7o2B_lR_l0Bv5Vj1nCjmazpnD71Kr1xB71Krw7B38Kr3kCnlIrvjCz7J_-1DryIrroDj5iBrzxOzkDrvgB75I39oC7pL7unCngNnmmCntJzopBjrQv8jC3jUj5lCj2X_7nCz5enluC3_VvuxB_0b3j3B7_ZnhtB3-dr5vB7qmB_12Bjn1B_8_BvmzCzpnDn__C_myDn4Q7kVz_M_9P_owBz65BnvrB_h2BvusBzvyB_2uBjjyBzp_B_p3B_3pCjz0Br91Cr86Bn1zD34yCv19Cju-B32cnsRjy-K_q7F37S38Kz65B7ilBvvpB3qdv8jCn4zBvx3Br-qB3oyBn-hBr86Bj5iBjtmCzwlB7mjB3vT7xMnlIv5Vn4QrpPvmNn8OnoOnrZ77bj-Yv0f7oT73djrQ7nb7wUnppBrsV782B38Kr3hBzzNrl0BzsEvlVnpGn-hBrmEz5evnFj69BnrFrg8C3jFnuqDv8Cjo8B3rBjkbvlBryXnpBvsyB31BrxzB7mF3g3D7wFz6_DvwNrppI79B7k4BjNr1O8a782Bw7FjqjD4nS3o-F0sEjtjBw1Nz6_DowoBvo3MgxJrqhDksI_x4B0sE3vTooJjkqB0jQ7w3B4tFv6Ng8kB7k7CshOrvgB47S_utBguS3swBkowCz79F4wLn6jBkwGjpgBs2Gv7oBgrH_p3Bk71BvgnM8wUjxvEkoFzxds-H_h2B4NjkHkkHjrzBsgCjjP83Orp6CkjF7tsB87C36fgoBvzqCzenk2C3rB3qdvkE3_7C0FzkuC8uBrgW0kDz-U49CvmN8xHnjYwzE7xMg2T_o_BsuF3jU0kDnkQ4pC_pPgoBnkQAnkzB39Cnl_Gz4DrghD7ar05BnzBnxqBngDju-B3_G_sxCnzBn7qB7iCn5xD8Gv8mDoG_2L_nB3u-BvrDnioC3pCn7Wr-Hj1kB_yInigBn9G78T33Uj4qBr6E7tJroX7_er-H7xHvoMzlK742Hz9-EzlyBz8kBnGrJ",
                 "journeyCost": 1050,
                 "lineName": "801A",
                 "vehicleType": "regionalTrain",
@@ -652,6 +712,8 @@
                     "lng": 2.358118
                 },
                 "duration": 120,
+                "distance": 120,
+                "polyline": "BG2kmn9Ckl-vElB4E7V_J",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T09:02:00+02:00",
@@ -670,6 +732,8 @@
                     "lng": 2.357952
                 },
                 "duration": 300,
+                "distance": 647,
+                "polyline": "BHgk1nkdgto_sB4XvuE4rBv_IgyB_9KgyB_yIgZvwDwlBnGw3C_Y4vEnGwwDwMsqM42D03B8QojEsnBwwDgyBgvFgrCwMoG4-Jo1FwiFw-BgyBwlBw3CgyBgoGoqDwjMgoGoqDgyBoyE89B",
                 "journeyCost": 25,
                 "lineName": "38",
                 "vehicleType": "bus",
@@ -690,6 +754,8 @@
                     "lng": 2.357537
                 },
                 "duration": 120,
+                "distance": 127,
+                "polyline": "BGstun9C6m9vEzOlGzK_E0F_Ysa2M",
                 "journeyCost": 0,
                 "vehicleType": "pedestrian",
                 "departureTime": "2025-10-07T09:10:00+02:00",

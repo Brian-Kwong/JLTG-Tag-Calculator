@@ -16,7 +16,10 @@ import serverless from "serverless-http";
 import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import {parseGoogleMapsResponse, parseHEREMapsResponse} from "./googleAPIParser";
+import {
+  parseGoogleMapsResponse,
+  parseHEREMapsResponse,
+} from "./googleAPIParser";
 dotenv.config();
 
 if (!process.env.JWT_SECRET) {
@@ -146,7 +149,7 @@ app.post("/reset", async function (_req, res) {
 const calculateRouteBasedOffHERE_API = async (req) => {
   const { originCoord, destinationCoord } = req.query;
   const hereApiKey = process.env.HERE_API_KEY;
-  const transitURL = `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10`;
+  const transitURL = `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10&return=bookingLinks,polyline,travelSummary`;
   try {
     const transitResponse = await fetch(`${transitURL}`);
     if (!transitResponse.ok) {

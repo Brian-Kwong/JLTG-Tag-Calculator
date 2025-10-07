@@ -8,21 +8,37 @@ import {
 } from "./routeTypes";
 
 function updateLocationNames(parsedRoutes: RouteResponse[]) {
-    // Replace the first route departure name with "Start Location" and last route arrival name with "End Location"
+  // Replace the first route departure name with "Start Location" and last route arrival name with "End Location"
   if (parsedRoutes.length > 0) {
     for (const route of parsedRoutes) {
       // Match if coordinates then replace with "Start Location" or "End Location"
-      if (route.departureLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+      if (
+        route.departureLocation.name.match(
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+        )
+      ) {
         route.departureLocation.name = "Start Location";
       }
-      if (route.arrivalLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+      if (
+        route.arrivalLocation.name.match(
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+        )
+      ) {
         route.arrivalLocation.name = "End Location";
       }
       // Also replace in steps 0 and last
-      if (route.steps[0].startLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+      if (
+        route.steps[0].startLocation.name.match(
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+        )
+      ) {
         route.steps[0].startLocation.name = "Start Location";
       }
-      if (route.steps[route.steps.length - 1].endLocation.name.match(/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/)) {
+      if (
+        route.steps[route.steps.length - 1].endLocation.name.match(
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+        )
+      ) {
         route.steps[route.steps.length - 1].endLocation.name = "End Location";
       }
     }
@@ -55,6 +71,7 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
   const walkingsSteps: Array<{
     distanceMeters: number;
     staticDuration: string;
+    polyline: string;
     startLocation: {
       latLng: {
         latitude: number;
@@ -77,8 +94,9 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
       for (const step of leg.steps) {
         if (step.travelMode === "WALK") {
           walkingsSteps.push({
-            distanceMeters: step.distanceMeters,
+            distanceMeters: step.distanceMeters || 0,
             staticDuration: step.staticDuration,
+            polyline: step.polyline.encodedPolyline,
             startLocation: {
               latLng: {
                 latitude: step.startLocation.latLng.latitude,
@@ -99,12 +117,16 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
           if (walkingsSteps.length > 0) {
             let totalWalkingDistance = 0;
             let totalWalkingDuration = 0;
+            let polyline = "";
             for (const walkingStep of walkingsSteps) {
               totalWalkingDistance += walkingStep.distanceMeters;
               totalWalkingDuration += parseInt(walkingStep.staticDuration);
+              polyline += walkingStep.polyline;
             }
             responseSteps.push({
               transportationMode: "WALKING",
+              distance: totalWalkingDistance,
+              polyline: polyline,
               startLocation: {
                 name:
                   walkingsSteps[0].startLocation.latLng.latitude +
@@ -147,6 +169,8 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
               lat: step.endLocation.latLng.latitude,
               lng: step.endLocation.latLng.longitude,
             },
+            distance: step.distanceMeters,
+            polyline: step.polyline.encodedPolyline,
             duration: parseInt(step.staticDuration),
             journeyCost:
               transportationModeCost[
@@ -177,20 +201,33 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
         lng: responseSteps[responseSteps.length - 1].endLocation.lng,
       },
       departureDate: new Date().toISOString().split("T")[0],
-      arrivalDate: new Date(responseSteps[responseSteps.length - 1].arrivalTime || "").toISOString().split("T")[0],
+      arrivalDate: new Date(
+        responseSteps[responseSteps.length - 1].arrivalTime || "",
+      )
+        .toISOString()
+        .split("T")[0],
       departureTime: new Date().toISOString().split("T")[1].split(".")[0],
-      arrivalTime: new Date(responseSteps[responseSteps.length - 1].arrivalTime || "").toISOString().split("T")[1].split(".")[0],
+      arrivalTime: new Date(
+        responseSteps[responseSteps.length - 1].arrivalTime || "",
+      )
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0],
       totalDuration: responseSteps.reduce(
         (acc, step) => acc + step.duration,
+        0,
+      ),
+      totalDistance: responseSteps.reduce(
+        (acc, step) => acc + step.distance,
         0,
       ),
       totalCost: responseSteps.reduce(
         (acc, step) => acc + (step.journeyCost || 0),
         0,
       ),
-      numTransfers: responseSteps.filter(
-        (step) => step.transportationMode !== "WALKING",
-      ).length,
+      numTransfers:
+        responseSteps.filter((step) => step.transportationMode !== "WALKING")
+          .length - 1,
       numSteps: responseSteps.length,
       steps: structuredClone(responseSteps),
     });
@@ -206,29 +243,37 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
   for (const route of routes) {
     for (const section of route.sections) {
       const transportationMode = determineTransportationMode(
-        section.transport.mode
+        section.transport.mode,
       );
       steps.push({
         transportationMode:
           transportationMode as keyof typeof transportationModeCost,
         startLocation: {
           name:
-            section.departure.place.name || `${section.departure.place.location.lat}, ${section.departure.place.location.lng}`,
+            section.departure.place.name ||
+            `${section.departure.place.location.lat}, ${section.departure.place.location.lng}`,
           lat: section.departure.place.location.lat,
           lng: section.departure.place.location.lng,
         },
         endLocation: {
           name:
-            section.arrival.place.name || `${section.arrival.place.location.lat}, ${section.arrival.place.location.lng}`,
+            section.arrival.place.name ||
+            `${section.arrival.place.location.lat}, ${section.arrival.place.location.lng}`,
           lat: section.arrival.place.location.lat,
           lng: section.arrival.place.location.lng,
         },
-        duration: new Date(section.arrival.time).getTime() / 1000 - new Date(section.departure.time).getTime() / 1000,
+        duration:
+          new Date(section.arrival.time).getTime() / 1000 -
+          new Date(section.departure.time).getTime() / 1000,
+        distance: section.travelSummary?.length || 0,
+        polyline: section.polyline || "",
         journeyCost:
           transportationModeCost[
             transportationMode as keyof typeof transportationModeCost
           ] *
-          ((new Date(section.arrival.time).getTime() / 1000 - new Date(section.departure.time).getTime() / 1000) / 60),
+          ((new Date(section.arrival.time).getTime() / 1000 -
+            new Date(section.departure.time).getTime() / 1000) /
+            60),
         lineName: section.transport.name || undefined,
         vehicleType: section.transport.mode || undefined,
         departureTime: section.departure.time,
@@ -248,13 +293,26 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
         lat: steps[steps.length - 1].endLocation.lat,
         lng: steps[steps.length - 1].endLocation.lng,
       },
-      departureDate: new Date(steps[0].departureTime || "").toISOString().split("T")[0],
-      arrivalDate: new Date(steps[steps.length - 1].arrivalTime || "").toISOString().split("T")[0],
-      departureTime: new Date(steps[0].departureTime || "").toISOString().split("T")[1].split(".")[0],
-      arrivalTime: new Date(steps[steps.length - 1].arrivalTime || "").toISOString().split("T")[1].split(".")[0],
+      departureDate: new Date(steps[0].departureTime || "")
+        .toISOString()
+        .split("T")[0],
+      arrivalDate: new Date(steps[steps.length - 1].arrivalTime || "")
+        .toISOString()
+        .split("T")[0],
+      departureTime: new Date(steps[0].departureTime || "")
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0],
+      arrivalTime: new Date(steps[steps.length - 1].arrivalTime || "")
+        .toISOString()
+        .split("T")[1]
+        .split(".")[0],
+      totalDistance: steps.reduce((acc, step) => acc + step.distance, 0),
       totalDuration: steps.reduce((acc, step) => acc + step.duration, 0),
       totalCost: steps.reduce((acc, step) => acc + (step.journeyCost || 0), 0),
-      numTransfers: steps.filter((step) => step.transportationMode !== "WALKING").length,
+      numTransfers:
+        steps.filter((step) => step.transportationMode !== "WALKING").length -
+        1,
       numSteps: steps.length,
       steps: structuredClone(steps),
     });

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransportationModes: String, Codable {
+enum TransportationModes: String, Codable, Hashable, CaseIterable {
     case HIGH_SPEED_RAIL = "HIGH_SPEED_RAIL"
     case LOW_SPEED_RAIL = "LOW_SPEED_RAIL"
     case METRO = "METRO"
@@ -28,6 +28,8 @@ struct ResponseStep : Hashable, Codable {
     var startLocation: Location
     var endLocation: Location
     var duration: Int
+    var distance: Int
+    var polyline: String?
     var journeyCost: Int
     var lineNam: String?
     var vehicleName: String?
@@ -45,9 +47,11 @@ struct RouteResponse: Hashable, Codable {
     var departureTime: String
     var arrivalTime: String
     var totalDuration: Int
+    var totalDistance: Int
     var totalCost: Int
     var numTransfers: Int
     var numSteps: Int
     var steps: [ResponseStep]
 }
+
 

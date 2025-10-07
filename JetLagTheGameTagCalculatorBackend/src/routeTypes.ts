@@ -50,6 +50,17 @@ type HERE_API_RESPONSE = {
         {
           id: string;
           type: string;
+          travelSummary: {
+            duration: number;
+            length: number;
+          };
+          bookingLinks?: [
+            {
+              href: string;
+              type: string;
+            },
+          ];
+          polyline: string;
           departure: {
             time: string;
             place: {
@@ -102,6 +113,9 @@ type GOOGLE_MAPS_API_RESPONSE = {
             {
               distanceMeters: number;
               staticDuration: string;
+              polyline: {
+                encodedPolyline: string;
+              };
               startLocation: {
                 latLng: {
                   latitude: number;
@@ -182,6 +196,8 @@ type ResponseStep = {
     lng: number;
   };
   duration: number;
+  distance: number;
+  polyline: string;
   journeyCost: number;
   lineName?: string;
   vehicleType?: string;
@@ -207,6 +223,7 @@ type RouteResponse = {
   departureTime: string;
   arrivalTime: string;
   totalDuration: number;
+  totalDistance: number;
   totalCost: number;
   numTransfers: number;
   numSteps: number;

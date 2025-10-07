@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
 
+func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
     switch transportationMode {
     case .HIGH_SPEED_RAIL:
         return AnyView(RouteLogo(icon: HighSpeedTrain(), iconColor: .blue))
@@ -35,7 +35,7 @@ struct RouteStep: View {
             HStack {
                 VStack {
                     Text(routeStep.transportationMode.rawValue)
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.system(size: TextSizes.body, weight: .bold))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                         .frame(alignment: .center)
@@ -46,13 +46,24 @@ struct RouteStep: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(routeStep.startLocation.name)
-                                .multilineTextAlignment(.leading)
+                                .multilineTextAlignment(.leading).lineLimit(2)
+                                .font(
+                                    .system(
+                                        size: TextSizes.body,
+                                        weight: .medium
+                                    )
+                                )
                             Text(
                                 extractTime(
                                     timeString: routeStep.departureTime ?? ""
                                 )
                             )
-                            .font(.caption)
+                            .font(
+                                .system(
+                                    size: TextSizes.caption,
+                                    weight: .medium
+                                )
+                            )
                             .foregroundStyle(
                                 .secondary
                             )
@@ -62,12 +73,22 @@ struct RouteStep: View {
                         VStack(alignment: .center) {
                             if let lineName = routeStep.lineNam {
                                 Text(lineName)
-                                    .font(.headline)
+                                    .font(
+                                        .system(
+                                            size: TextSizes.body,
+                                            weight: .bold
+                                        )
+                                    )
                             }
                             Text(
                                 "towards \( routeStep.transitLineFinalDestination ?? routeStep.endLocation.name)"
                             )
-                            .font(.caption)
+                            .font(
+                                .system(
+                                    size: TextSizes.caption,
+                                    weight: .medium
+                                )
+                            )
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
 
@@ -75,13 +96,24 @@ struct RouteStep: View {
                         Spacer()
                         VStack(alignment: .trailing) {
                             Text(routeStep.endLocation.name)
-                                .multilineTextAlignment(.trailing)
+                                .multilineTextAlignment(.trailing).lineLimit(2)
+                                .font(
+                                    .system(
+                                        size: TextSizes.body,
+                                        weight: .medium
+                                    )
+                                )
                             Text(
                                 extractTime(
                                     timeString: routeStep.arrivalTime ?? ""
                                 )
                             )
-                            .font(.caption)
+                            .font(
+                                .system(
+                                    size: TextSizes.body,
+                                    weight: .medium
+                                )
+                            )
                             .foregroundStyle(
                                 .secondary
                             )
@@ -99,7 +131,7 @@ struct RouteStep: View {
                     Text(
                         convertSecondsToTimeFormat(seconds: routeStep.duration)
                     )
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: TextSizes.body, weight: .medium))
                     .foregroundStyle(.secondary)
                 }
                 HStack {
@@ -111,7 +143,7 @@ struct RouteStep: View {
                         )
                     ).frame(width: 20, height: 20)
                     Text(routeStep.journeyCost.description)
-                        .font(.system(size: 14, weight: .medium))
+                        .font(.system(size: TextSizes.body, weight: .medium))
                         .foregroundStyle(.secondary)
                 }
                 HStack {
@@ -120,7 +152,7 @@ struct RouteStep: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                     Text("\(balance - routeStep.journeyCost)")
-                        .font(.system(size: 14, weight: .medium))
+                        .font(.system(size: TextSizes.body, weight: .medium))
                         .foregroundStyle(.secondary)
                 }
 
