@@ -16,12 +16,10 @@ struct RouteResults: View {
                 if !routeResultsViewModel.routes.isEmpty {
                         List(routeResultsViewModel.routes) { route in
                             HStack{
-                                Spacer()
                                 RouteCard(route: route)
                                     .background(
                                         NavigationLink(value: route) { EmptyView()
-                                        }.opacity(0)).padding(.vertical, 12)
-                                Spacer()
+                                        }.opacity(0)).padding(.vertical, 24)
                             }.frame(maxWidth: .infinity, alignment: .center)
                                 .listRowInsets(EdgeInsets())
                         }
@@ -34,6 +32,12 @@ struct RouteResults: View {
             }
             .navigationDestination(for: RouteResponse.self) { route in
                 RouteDetails(route: route)
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    SortByButton(
+                        selectedSortOption: $routeResultsViewModel.sortByOption
+                    )
+                }
             }
         }
     }

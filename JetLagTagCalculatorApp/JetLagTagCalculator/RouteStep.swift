@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
     switch transportationMode {
     case .HIGH_SPEED_RAIL:
@@ -29,16 +28,20 @@ func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
 
 struct RouteStep: View {
     let routeStep: ResponseStep
-    let balance: Int = 2000
+    let balance: Int
     var body: some View {
         VStack {
             HStack {
                 VStack {
-                    Text(routeStep.transportationMode.rawValue)
-                        .font(.system(size: TextSizes.body, weight: .bold))
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                        .frame(alignment: .center)
+                    Text(
+                        routeStep.transportationMode.rawValue
+                            .replacingOccurrences(of: "_", with: " ")
+                            .localizedCapitalized
+                    )
+                    .font(.system(size: TextSizes.body, weight: .bold))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .frame(alignment: .center)
                     determineRouteLogo(
                         transportationMode: routeStep.transportationMode
                     )
@@ -67,13 +70,14 @@ struct RouteStep: View {
                             .foregroundStyle(
                                 .secondary
                             )
-                        }.multilineTextAlignment(.leading).padding(.leading, 20).containerRelativeFrame(
-                            .horizontal,
-                            count: 3,
-                            span: 1,
-                            spacing: 1,
-                            alignment: .leading
-                        )
+                        }.multilineTextAlignment(.leading).padding(.leading, 20)
+                            .containerRelativeFrame(
+                                .horizontal,
+                                count: 3,
+                                span: 1,
+                                spacing: 1,
+                                alignment: .leading
+                            )
                         VStack(alignment: .center) {
                             if let lineName = routeStep.lineNam {
                                 Text(lineName)
@@ -127,7 +131,10 @@ struct RouteStep: View {
                                 .secondary
                             )
 
-                        }.multilineTextAlignment(.trailing).padding(.trailing, 20).containerRelativeFrame(
+                        }.multilineTextAlignment(.trailing).padding(
+                            .trailing,
+                            20
+                        ).containerRelativeFrame(
                             .horizontal,
                             count: 3,
                             span: 1,
@@ -166,7 +173,7 @@ struct RouteStep: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 20)
-                    Text("\(balance - routeStep.journeyCost)")
+                    Text("\(balance)")
                         .font(.system(size: TextSizes.body, weight: .medium))
                         .foregroundStyle(.secondary)
                 }
@@ -185,7 +192,7 @@ struct RouteStep: View {
         var body: some View {
             if let firstRoute = routeResultsViewModel.routes.first {
                 let firstLeg = firstRoute.steps.first
-                RouteStep(routeStep: firstLeg!)
+                RouteStep(routeStep: firstLeg!, balance: 100)
             } else {
                 Text("No Route Data")
             }

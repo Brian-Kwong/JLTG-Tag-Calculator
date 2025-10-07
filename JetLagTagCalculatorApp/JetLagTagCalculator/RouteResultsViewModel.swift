@@ -39,6 +39,11 @@ func fetchResults() -> [RouteResponse]? {
 final class RouteResultsViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var routes: [RouteResponse] = []
+    @Published var sortByOption: SortByOptions = .cost {
+        didSet {
+            sortResultsBy(sortBy: sortByOption)
+        }
+    }
     
     init() {
         self.isLoading = true
@@ -48,5 +53,22 @@ final class RouteResultsViewModel: ObservableObject {
             self.routes = []
         }
         self.isLoading = false
+    }
+    
+    func sortResultsBy(sortBy : SortByOptions){
+        switch sortBy {
+        case .cost:
+            self.routes.sort { $0.totalCost < $1.totalCost }
+        case .duration:
+            self.routes.sort { $0.totalDuration < $1.totalDuration }
+        case .transfers:
+            self.routes.sort { $0.numTransfers < $1.numTransfers }
+        case .departureTime:
+            self.routes.sort { $0.departureTime < $1.departureTime }
+        case .arrivalTime:
+            self.routes.sort { $0.arrivalTime < $1.arrivalTime }
+        case .distance:
+            self.routes.sort { $0.totalDistance < $1.totalDistance }
+        }
     }
 }

@@ -104,11 +104,14 @@ struct RouteCard: View {
             }
             VStack(alignment: .center, spacing: 16) {
                 HStack(spacing: 12) {
-                    if isCompact{
+                    if isCompact {
                         VStack {
                             Text(findFirstTransitStation(route: route))
                                 .font(
-                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                    .system(
+                                        size: TextSizes.subtitle,
+                                        weight: .bold
+                                    )
                                 )
                             Text("to")
                                 .font(.system(size: TextSizes.caption))
@@ -117,14 +120,20 @@ struct RouteCard: View {
                                 )
                             Text(findLastTransitStation(route: route))
                                 .font(
-                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                    .system(
+                                        size: TextSizes.subtitle,
+                                        weight: .bold
+                                    )
                                 )
                         }
                     } else {
                         HStack {
                             Text(findFirstTransitStation(route: route))
                                 .font(
-                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                    .system(
+                                        size: TextSizes.subtitle,
+                                        weight: .bold
+                                    )
                                 )
                             Text("to")
                                 .font(.system(size: TextSizes.caption))
@@ -133,49 +142,61 @@ struct RouteCard: View {
                                 )
                             Text(findLastTransitStation(route: route))
                                 .font(
-                                    .system(size: TextSizes.subtitle, weight: .bold)
+                                    .system(
+                                        size: TextSizes.subtitle,
+                                        weight: .bold
+                                    )
                                 )
                         }
                     }
                 }
                 ViewThatFits {
                     LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 4),
+                        columns: Array(
+                            repeating: GridItem(.flexible(), spacing: 10),
+                            count: 4
+                        ),
                         spacing: 10
                     ) {
                         routeDetailsInfo
-                    }  .frame(minWidth: 600, alignment: .center)
-                    
+                    }.frame(minWidth: 600, alignment: .center)
+
                     LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2),
+                        columns: Array(
+                            repeating: GridItem(.flexible(), spacing: 10),
+                            count: 2
+                        ),
                         spacing: 10
                     ) {
                         routeDetailsInfo
-                    }  .frame(minWidth: 250, alignment: .center)
-                    
+                    }.frame(minWidth: 250, alignment: .center)
+
                     LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 1),
+                        columns: Array(
+                            repeating: GridItem(.flexible(), spacing: 10),
+                            count: 1
+                        ),
                         spacing: 10
                     ) {
                         routeDetailsInfo
-                    }  .frame(alignment: .center)
+                    }.frame(alignment: .center)
                 }
             }
         }
         .padding(12)
         .containerRelativeFrame(
-                    .horizontal,
-                    count: isCompact ? 20 : 6,
-                    span: isCompact ? 19: 5,
-                    spacing: 1,
-                    alignment: isCompact ? .center : .leading
-                )
+            .horizontal,
+            count: isCompact ? 20 : 6,
+            span: isCompact ? 19 : 5,
+            spacing: 1,
+            alignment: isCompact ? .center : .leading
+        )
         .background(Color.gray.opacity(0.15).gradient)
         .cornerRadius(16)
         .border(.gray.opacity(0.2), width: 1.5)
         .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
     }
-    
+
     @ViewBuilder
     private var routeDetailsInfo: some View {
         let isCompact = horizontalSizeClass == .compact
@@ -185,9 +206,9 @@ struct RouteCard: View {
             Text(
                 "\(route.departureDate) \(isCompact ?  "\n" : "") \(route.departureTime.description.prefix(5))"
             )
-                .multilineTextAlignment(.leading).font(
-                    .system(size: TextSizes.body)
-                ).foregroundStyle(.secondary)
+            .multilineTextAlignment(.leading).font(
+                .system(size: TextSizes.body)
+            ).foregroundStyle(.secondary)
         }
         HStack {
             Image(systemName: "mappin.and.ellipse")
@@ -200,10 +221,12 @@ struct RouteCard: View {
         HStack {
             Image(systemName: "airplane.arrival")
                 .font(.system(size: TextSizes.subtitle))
-            Text("\(route.arrivalDate) \(isCompact ?  "\n" : "") \(route.arrivalTime.description.prefix(5))")
-                .multilineTextAlignment(.leading).font(
-                    .system(size: TextSizes.body)
-                ).foregroundStyle(.secondary)
+            Text(
+                "\(route.arrivalDate) \(isCompact ?  "\n" : "") \(route.arrivalTime.description.prefix(5))"
+            )
+            .multilineTextAlignment(.leading).font(
+                .system(size: TextSizes.body)
+            ).foregroundStyle(.secondary)
         }
         HStack {
             TransferIcon()
@@ -214,10 +237,13 @@ struct RouteCard: View {
                         lineJoin: .round
                     )
                 ).frame(width: 24, height: 24)
-            Text(route.numTransfers.description + (route.numTransfers == 1 ? " Transfer" : " Transfers"))
-                .multilineTextAlignment(.leading).font(
-                    .system(size: TextSizes.body)
-                ).foregroundStyle(.secondary)
+            Text(
+                route.numTransfers.description
+                    + (route.numTransfers == 1 ? " Transfer" : " Transfers")
+            )
+            .multilineTextAlignment(.leading).font(
+                .system(size: TextSizes.body)
+            ).foregroundStyle(.secondary)
         }
     }
 }
