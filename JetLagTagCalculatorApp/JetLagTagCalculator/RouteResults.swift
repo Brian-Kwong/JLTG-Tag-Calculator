@@ -20,9 +20,10 @@ struct RouteResults: View {
                                 RouteCard(route: route)
                                     .background(
                                         NavigationLink(value: route) { EmptyView()
-                                        }.opacity(0))
-                                Spacer
-                            }
+                                        }.opacity(0)).padding(.vertical, 12)
+                                Spacer()
+                            }.frame(maxWidth: .infinity, alignment: .center)
+                                .listRowInsets(EdgeInsets())
                         }
                         .listStyle(.plain)
                 } else {

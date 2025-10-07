@@ -17,7 +17,7 @@ struct RouteLogo<CustomIcon: Shape>: View {
                     .font(.system(size: TextSizes.subtitle))
                     .foregroundStyle(.gray.gradient)
                 Rectangle()
-                    .frame(height: 5)
+                    .frame(height: 4)
                 ZStack {
                     Image(systemName: "circle.fill")
                         .font(.system(size: 32))
@@ -26,11 +26,11 @@ struct RouteLogo<CustomIcon: Shape>: View {
                         .frame(width: 20, height: 20)
                 }
                 Rectangle()
-                    .frame(height: 5)
+                    .frame(height: 4)
                 Image(systemName: "circle.fill")
                     .font(.system(size: TextSizes.subtitle))
                     .foregroundStyle(.gray.gradient)
-            }.padding(10)
+            }.padding(12)
         }
     }
 }

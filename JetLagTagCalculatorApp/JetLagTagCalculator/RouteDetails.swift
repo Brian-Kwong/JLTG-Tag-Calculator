@@ -13,7 +13,7 @@ struct RouteDetails: View {
         VStack{
             Text("Route Details")
                 .font(.system(size: TextSizes.title))
-            RouteCard(route: route).padding(.bottom, 10)
+            RouteCard(route: route).padding(.bottom, 12)
             List(route.steps) { step in
                 RouteStep(routeStep: step)
             }.listStyle(.plain)

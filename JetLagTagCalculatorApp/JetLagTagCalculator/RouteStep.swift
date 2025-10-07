@@ -60,16 +60,20 @@ struct RouteStep: View {
                             )
                             .font(
                                 .system(
-                                    size: TextSizes.caption,
+                                    size: TextSizes.body,
                                     weight: .medium
                                 )
                             )
                             .foregroundStyle(
                                 .secondary
                             )
-
-                        }
-                        Spacer()
+                        }.multilineTextAlignment(.leading).padding(.leading, 20).containerRelativeFrame(
+                            .horizontal,
+                            count: 3,
+                            span: 1,
+                            spacing: 1,
+                            alignment: .leading
+                        )
                         VStack(alignment: .center) {
                             if let lineName = routeStep.lineNam {
                                 Text(lineName)
@@ -92,8 +96,13 @@ struct RouteStep: View {
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
 
-                        }
-                        Spacer()
+                        }.containerRelativeFrame(
+                            .horizontal,
+                            count: 3,
+                            span: 1,
+                            spacing: 1,
+                            alignment: .center
+                        )
                         VStack(alignment: .trailing) {
                             Text(routeStep.endLocation.name)
                                 .multilineTextAlignment(.trailing).lineLimit(2)
@@ -118,10 +127,16 @@ struct RouteStep: View {
                                 .secondary
                             )
 
-                        }.multilineTextAlignment(.trailing)
+                        }.multilineTextAlignment(.trailing).padding(.trailing, 20).containerRelativeFrame(
+                            .horizontal,
+                            count: 3,
+                            span: 1,
+                            spacing: 1,
+                            alignment: .trailing
+                        )
                     }
                 }
-            }.padding(10)
+            }.padding(12)
             HStack(alignment: .center, spacing: 20) {
                 HStack {
                     Image(systemName: "clock")
@@ -157,7 +172,7 @@ struct RouteStep: View {
                 }
 
             }
-        }.padding(10)
+        }.padding(12)
             .frame(maxWidth: .infinity, alignment: .top)
             .cornerRadius(8)
 
