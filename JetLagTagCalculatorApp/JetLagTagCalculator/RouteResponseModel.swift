@@ -23,7 +23,8 @@ struct Location: Hashable, Codable {
     var lng: Double
 }
 
-struct ResponseStep: Hashable, Codable {
+struct ResponseStep: Hashable, Codable, Identifiable {
+    var id = UUID()
     var transportationMode: TransportationModes
     var startLocation: Location
     var endLocation: Location
@@ -37,6 +38,22 @@ struct ResponseStep: Hashable, Codable {
     var arrivalTime: String?
     var numStops: String?
     var transitLineFinalDestination: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case transportationMode,
+             startLocation,
+             endLocation,
+             duration,
+             distance,
+             polyline,
+             journeyCost,
+             lineNam,
+             vehicleName,
+             departureTime,
+             arrivalTime,
+             numStops,
+             transitLineFinalDestination
+    }
 }
 
 struct RouteResponse: Hashable, Codable, Identifiable {

@@ -12,20 +12,27 @@ struct RouteResults: View {
     @State var searched: Bool = true
     var body: some View {
         NavigationStack {
-            if !routeResultsViewModel.routes.isEmpty {
-                List(routeResultsViewModel.routes) { route in
-                    HStack {
-                        Spacer()
-                        RouteCard(route: route)
-                        Spacer()
+            Group {
+                if !routeResultsViewModel.routes.isEmpty {
+                        List(routeResultsViewModel.routes) { route in
+                            HStack{
+                                Spacer()
+                                RouteCard(route: route)
+                                    .background(
+                                        NavigationLink(value: route) { EmptyView()
+                                        }.opacity(0))
+                                Spacer
+                            }
+                        }
+                        .listStyle(.plain)
+                } else {
+                    VStack {
+                        Text("No routes found")
                     }
-                }.listStyle(.plain)
-            } else {
-                VStack {
-                    Text("No routes found")
-                        .font(.system(size: TextSizes.title))
-                        .padding()
                 }
+            }
+            .navigationDestination(for: RouteResponse.self) { route in
+                RouteDetails(route: route)
             }
         }
     }
