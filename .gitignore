@@ -1,3 +1,4 @@
 .env
+.env.local
 .DS_Store
 JetLagTheGameTagCalculatorBackend/functions/src/serviceInfo.json
