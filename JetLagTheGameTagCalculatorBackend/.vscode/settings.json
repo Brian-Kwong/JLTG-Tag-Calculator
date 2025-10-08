@@ -1,3 +1,8 @@
 {
-  "cSpell.words": ["esbuild", "headsign", "uuidv"]
+  "cSpell.words": [
+    "esbuild",
+    "headsign",
+    "predeploy",
+    "uuidv"
+  ]
 }

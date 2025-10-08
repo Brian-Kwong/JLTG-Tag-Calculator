@@ -85,7 +85,7 @@ type HERE_API_RESPONSE = {
               id?: string;
             };
           };
-          transport?: {
+          transport: {
             mode: keyof typeof transportationModeCost | "pedestrian";
             name?: string;
             category?: string;

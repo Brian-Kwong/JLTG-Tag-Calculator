@@ -7,21 +7,25 @@ import {
   HERE_API_RESPONSE,
 } from "./routeTypes";
 
-function updateLocationNames(parsedRoutes: RouteResponse[]) {
-  // Replace the first route departure name with "Start Location" and last route arrival name with "End Location"
+/**
+ * Update the location names to "Start Location" and "End Location" if they are coordinates.
+ * @param {RouteResponse[]} parsedRoutes - array of RouteResponse objects to inspect and update
+ * @return {RouteResponse[]} - the same array with departure and arrival names replaced when they are coordinate strings
+ */
+function updateLocationNames(parsedRoutes: RouteResponse[]): RouteResponse[] {
   if (parsedRoutes.length > 0) {
     for (const route of parsedRoutes) {
       // Match if coordinates then replace with "Start Location" or "End Location"
       if (
         route.departureLocation.name.match(
-          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/
         )
       ) {
         route.departureLocation.name = "Start Location";
       }
       if (
         route.arrivalLocation.name.match(
-          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/
         )
       ) {
         route.arrivalLocation.name = "End Location";
@@ -29,14 +33,14 @@ function updateLocationNames(parsedRoutes: RouteResponse[]) {
       // Also replace in steps 0 and last
       if (
         route.steps[0].startLocation.name.match(
-          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/
         )
       ) {
         route.steps[0].startLocation.name = "Start Location";
       }
       if (
         route.steps[route.steps.length - 1].endLocation.name.match(
-          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/,
+          /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?((1[0-7]\d)|([1-9]?\d)(\.\d+)?|180(\.0+)?)$/
         )
       ) {
         route.steps[route.steps.length - 1].endLocation.name = "End Location";
@@ -46,6 +50,11 @@ function updateLocationNames(parsedRoutes: RouteResponse[]) {
   return parsedRoutes;
 }
 
+/**
+ * Determine the transportation mode based on the Google Maps API response vehicle type.
+ * @param {string} type - transportation type from Google Maps API
+ * @return {string} - the determined transportation mode
+ */
 function determineTransportationMode(type: string) {
   if (transportationMode.HIGH_SPEED_RAIL.includes(type)) {
     return "HIGH_SPEED_RAIL";
@@ -66,6 +75,11 @@ function determineTransportationMode(type: string) {
   }
 }
 
+/**
+ * Parse the Google Maps API response to extract relevant information to return back to the client.
+ * @param {GOOGLE_MAPS_API_RESPONSE} response - The response object from Google Maps API
+ * @return {RouteResponse[]} - An array of RouteResponse objects
+ */
 function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
   const routes = response.routes;
   const walkingsSteps: Array<{
@@ -153,37 +167,39 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
             });
             walkingsSteps.length = 0; // Clear the walking steps
           }
-          const transportationMode = determineTransportationMode(
-            step.transitDetails.transitLine.vehicle.type.toUpperCase(),
-          );
-          responseSteps.push({
-            transportationMode:
-              transportationMode as keyof typeof transportationModeCost,
-            startLocation: {
-              name: step.transitDetails.stopDetails.departureStop.name,
-              lat: step.startLocation.latLng.latitude,
-              lng: step.startLocation.latLng.longitude,
-            },
-            endLocation: {
-              name: step.transitDetails.stopDetails.arrivalStop.name,
-              lat: step.endLocation.latLng.latitude,
-              lng: step.endLocation.latLng.longitude,
-            },
-            distance: step.distanceMeters,
-            polyline: step.polyline.encodedPolyline,
-            duration: parseInt(step.staticDuration),
-            journeyCost:
-              transportationModeCost[
-                transportationMode as keyof typeof transportationModeCost
-              ] *
-              (parseInt(step.staticDuration) / 60),
-            lineName: step.transitDetails.transitLine.name,
-            vehicleType: step.transitDetails.transitLine.vehicle.name.text,
-            departureTime: step.transitDetails.stopDetails.departureTime,
-            arrivalTime: step.transitDetails.stopDetails.arrivalTime,
-            numStops: step.transitDetails.stopCount,
-            transitLineFinalDestination: step.transitDetails.headsign,
-          });
+          if (step.transitDetails) {
+            const transportationMode = determineTransportationMode(
+              step.transitDetails.transitLine.vehicle.type.toUpperCase()
+            );
+            responseSteps.push({
+              transportationMode:
+                transportationMode as keyof typeof transportationModeCost,
+              startLocation: {
+                name: step.transitDetails.stopDetails.departureStop.name,
+                lat: step.startLocation.latLng.latitude,
+                lng: step.startLocation.latLng.longitude,
+              },
+              endLocation: {
+                name: step.transitDetails.stopDetails.arrivalStop.name,
+                lat: step.endLocation.latLng.latitude,
+                lng: step.endLocation.latLng.longitude,
+              },
+              distance: step.distanceMeters,
+              polyline: step.polyline.encodedPolyline,
+              duration: parseInt(step.staticDuration),
+              journeyCost:
+                transportationModeCost[
+                  transportationMode as keyof typeof transportationModeCost
+                ] *
+                (parseInt(step.staticDuration) / 60),
+              lineName: step.transitDetails.transitLine.name,
+              vehicleType: step.transitDetails.transitLine.vehicle.name.text,
+              departureTime: step.transitDetails.stopDetails.departureTime,
+              arrivalTime: step.transitDetails.stopDetails.arrivalTime,
+              numStops: step.transitDetails.stopCount,
+              transitLineFinalDestination: step.transitDetails.headsign,
+            });
+          }
         } else {
           continue;
         }
@@ -202,31 +218,28 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
       },
       departureDate: new Date().toISOString().split("T")[0],
       arrivalDate: new Date(
-        responseSteps[responseSteps.length - 1].arrivalTime || "",
+        responseSteps[responseSteps.length - 1].arrivalTime || ""
       )
         .toISOString()
         .split("T")[0],
-      departureTime: new Date()
-        .toISOString()
-        .split("T")[1]
-        .split(".")[0],
+      departureTime: new Date().toISOString().split("T")[1].split(".")[0],
       arrivalTime: new Date(
-        responseSteps[responseSteps.length - 1].arrivalTime || "",
+        responseSteps[responseSteps.length - 1].arrivalTime || ""
       )
         .toISOString()
         .split("T")[1]
         .split(".")[0],
       totalDuration: responseSteps.reduce(
         (acc, step) => acc + step.duration,
-        0,
+        0
       ),
       totalDistance: responseSteps.reduce(
         (acc, step) => acc + step.distance,
-        0,
+        0
       ),
       totalCost: responseSteps.reduce(
         (acc, step) => acc + (step.journeyCost || 0),
-        0,
+        0
       ),
       numTransfers:
         responseSteps.filter((step) => step.transportationMode !== "WALKING")
@@ -239,6 +252,10 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
   return updateLocationNames(parsedRoute);
 }
 
+/** Parse the HERE Maps API response to extract relevant information to return back to the client.
+ * @param {HERE_API_RESPONSE} response - The response object from HERE Maps API
+ * @return {RouteResponse[]} - An array of RouteResponse objects
+ */
 function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
   const routes = response.routes;
   const steps: ResponseStep[] = [];
@@ -246,7 +263,7 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
   for (const route of routes) {
     for (const section of route.sections) {
       const transportationMode = determineTransportationMode(
-        section.transport.mode,
+        section.transport.mode
       );
       steps.push({
         transportationMode:
