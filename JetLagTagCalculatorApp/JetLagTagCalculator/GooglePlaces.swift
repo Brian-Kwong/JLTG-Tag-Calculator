@@ -29,6 +29,7 @@ class GooglePlacesViewModel: ObservableObject {
             }
             return
         }
+        
         searchTask = Task {
             let filter = AutocompleteFilter(
                 types: [.transitStation, .cityHall, .airport, .trainStation],

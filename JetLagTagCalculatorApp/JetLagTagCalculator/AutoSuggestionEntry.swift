@@ -9,7 +9,6 @@ import GooglePlacesSwift
 import SwiftUI
 
 func findIcon(for place: AutocompletePlaceSuggestion) -> String {
-
     for placeType in place.types {
         switch placeType.rawValue {
         case "city_hall":
