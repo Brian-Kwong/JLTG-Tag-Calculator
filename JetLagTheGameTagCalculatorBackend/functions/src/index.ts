@@ -1,3 +1,13 @@
+/**
+ * Main entry point for Firebase Cloud Functions.
+ * Sets up an Express app with routes for transit calculations,
+ * Adds auth protected by Firebase App Check authentication.
+ *
+ * @module index
+ *
+ * Created by Kitty Brian on 10/3/25.
+ */
+
 import { https } from "firebase-functions/v2";
 import { defineSecret } from "firebase-functions/params";
 import admin from "firebase-admin";

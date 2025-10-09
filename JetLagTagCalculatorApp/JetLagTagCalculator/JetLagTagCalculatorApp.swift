@@ -13,6 +13,7 @@ import _ConfidentialKit
 struct JetLagTagCalculatorApp: App {
     
     init(){
+        @UIApplicationDelegateAdaptor(FirebaseAppDelegate.self) var delegate
         let apiKey = ObfuscatedLiterals.$googlePlacesAPIKey
         if PlacesClient.provideAPIKey(apiKey){
             print("Google Places API Key provided successfully.")

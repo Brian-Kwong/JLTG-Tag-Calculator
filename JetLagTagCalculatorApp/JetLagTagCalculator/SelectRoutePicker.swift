@@ -58,6 +58,9 @@ struct SelectRoutePicker: View {
                 }
                 Section {
                     Button("Search Route") {
+                        Task {
+                            await getFirebaseToken()
+                        }
                     }.frame(maxWidth: .infinity, alignment: .center)
                 }
             }.overlay(alignment: .top) {

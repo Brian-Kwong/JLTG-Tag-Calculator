@@ -1,3 +1,13 @@
+/**
+ * Middleware to verify Firebase App Check token for API authentication.
+ * All requests must include a valid App Check token in the "X-Firebase-AppCheck" header.
+ * A debug token can be used in development for testing purposes.
+ *
+ * @module auth
+ *
+ * Created by Kitty Brian on 10/6/25.
+ */
+
 import admin from "firebase-admin";
 import { Request, Response, NextFunction } from "express";
 

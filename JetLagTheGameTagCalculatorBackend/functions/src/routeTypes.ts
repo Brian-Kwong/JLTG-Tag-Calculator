@@ -1,3 +1,10 @@
+/**
+ * Type definitions and constants for route calculation and parsing.
+ * Includes transportation modes, cost mappings, and API response types.
+ * @module routeTypes
+ *
+ * Created by Kitty Brian on 10/4/25.
+ */
 const transportationMode = {
   HIGH_SPEED_RAIL: ["highSpeedTrain", "HIGH_SPEED_TRAIN"],
   LOW_SPEED_RAIL: [

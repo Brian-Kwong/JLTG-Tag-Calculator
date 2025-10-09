@@ -8,54 +8,50 @@
 internal import Combine
 import Foundation
 
-func fetchResults() -> [RouteResponse]? {
-    // For now use the mock data
-    let jsonDecoder = JSONDecoder()
-    guard
-        let fileURL = Bundle.main.url(
-            forResource: "MockResponse",
-            withExtension: "json"
-        )
-    else {
-        print("Failed to locate mockRouteResponse.json in bundle.")
-        return nil
-    }
-    guard let mockData = try? Data(contentsOf: fileURL) else {
-        print("Failed to load mockRouteResponse.json from bundle.")
-        return nil
-    }
-    do {
-        let decodedResponse = try jsonDecoder.decode(
-            [RouteResponse].self,
-            from: mockData
-        )
-        return decodedResponse
-    } catch {
-        print("Failed to decode mockRouteResponse.json: \(error)")
-    }
-    return nil
-}
-
 final class RouteResultsViewModel: ObservableObject {
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = true
     @Published var routes: [RouteResponse] = []
     @Published var sortByOption: SortByOptions = .cost {
         didSet {
             sortResultsBy(sortBy: sortByOption)
         }
     }
-    
-    init() {
-        self.isLoading = true
-        if let fetchedRoutes = fetchResults() {
-            self.routes = fetchedRoutes
-        } else {
-            self.routes = []
-        }
-        self.isLoading = false
+    private var searchTask: Task<Void, Never>?
+    private var baseOrigin: UserPlaceEntry = UserPlaceEntry(
+        location: "Paris, France",
+        placeID: "ChIJD7fiBh9u5kcRYJSMaMOCCwQ",
+        coordinate: Coordinate(latitude: 48.8566, longitude: 2.3522)
+    )
+    private var baseDestination: UserPlaceEntry = UserPlaceEntry(
+        location: "Zermatt, Switzerland",
+        placeID: "ChIJ0Wk3b6p1hkcR4vM8F2kH8gE",
+        coordinate: Coordinate(latitude: 46.0207, longitude: 7.7491)
+    )
+
+
+    init(orgin: UserPlaceEntry?, destination: UserPlaceEntry?) {
+        searchRoutes(orgin: orgin ?? baseOrigin, destination: destination  ?? baseDestination)
     }
-    
-    func sortResultsBy(sortBy : SortByOptions){
+
+    func searchRoutes(orgin: UserPlaceEntry, destination: UserPlaceEntry) {
+        searchTask?.cancel()
+        searchTask = Task {
+            self.isLoading = true
+            do {
+                let fetchedRoutes = try await APINetworkManager.shared.getRoute(
+                    from: orgin,
+                    destination: destination
+                )
+                self.routes = fetchedRoutes
+            } catch {
+                print("Error fetching routes: \(error)")
+                self.routes = []
+            }
+            self.isLoading = false
+        }
+    }
+
+    func sortResultsBy(sortBy: SortByOptions) {
         switch sortBy {
         case .cost:
             self.routes.sort { $0.totalCost < $1.totalCost }

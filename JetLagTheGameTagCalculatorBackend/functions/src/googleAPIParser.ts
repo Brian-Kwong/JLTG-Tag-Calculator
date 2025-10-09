@@ -1,3 +1,12 @@
+/**
+ * Functions to parse responses from Google Maps and HERE Maps APIs into a
+ * standardized shared format to be sent back to the client.
+ * @module googleAPIParser
+ * @module hereAPIParser
+ *
+ * Created by Kitty Brian on 10/4/25.
+ */
+
 import {
   GOOGLE_MAPS_API_RESPONSE,
   RouteResponse,

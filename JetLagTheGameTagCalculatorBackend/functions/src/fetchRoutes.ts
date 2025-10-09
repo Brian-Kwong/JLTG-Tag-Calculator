@@ -1,3 +1,11 @@
+/**
+ * Express router to handle route calculation requests using HERE and Google Maps routing APIs.
+ * For production, HERE API will be used primarily, with Google Maps as a fallback.
+ * @module fetchRoutes
+ *
+ * Created by Kitty Brian on 10/4/25.
+ */
+
 import express from "express";
 import dotenv from "dotenv";
 import {

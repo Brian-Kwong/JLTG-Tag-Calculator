@@ -250,7 +250,10 @@ struct RouteCard: View {
 
 #Preview {
     struct RouteCardPreviewWrapper: View {
-        @StateObject var routeResultsViewModel = RouteResultsViewModel()
+        @StateObject var routeResultsViewModel = RouteResultsViewModel(
+            orgin: nil,
+            destination: nil
+        )
         var body: some View {
             if let firstRoute = routeResultsViewModel.routes.first {
                 RouteCard(route: firstRoute)

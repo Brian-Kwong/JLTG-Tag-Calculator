@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct RouteResults: View {
-    @StateObject var routeResultsViewModel = RouteResultsViewModel()
+    @StateObject var routeResultsViewModel = RouteResultsViewModel(
+        orgin: nil,
+        destination: nil
+    )
     @State var searched: Bool = true
     var body: some View {
         NavigationStack {
