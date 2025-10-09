@@ -9,6 +9,7 @@ import GooglePlacesSwift
 import SwiftUI
 
 struct SelectRoutePicker: View {
+    @ObservedObject var routeResultsViewModel: RoutesViewModel
     @State private var fromLocation: UserPlaceEntry = UserPlaceEntry(
         location: "",
         placeID: ""
@@ -59,7 +60,12 @@ struct SelectRoutePicker: View {
                 Section {
                     Button("Search Route") {
                         Task {
-                            await getFirebaseToken()
+                            routeResultsViewModel
+                                .performSearch(
+                                    orgin: fromLocation,
+                                    destination: toLocation,
+                                    departureDate: departureDate,
+                                )
                         }
                     }.frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -98,10 +104,21 @@ struct SelectRoutePicker: View {
                         )
                 }
             }
-        }.navigationTitle("Route Search")
+        }.navigationTitle("Route Search").navigationDestination(
+            isPresented: .constant(false)
+        ) {
+            // Destination View
+            Text("Destination View")
+        }
     }
 }
 
 #Preview {
-    SelectRoutePicker()
+    struct RouteSelectRoouteOpitionsPreviewWrapper: View {
+        @StateObject var routeResultsViewModel = RoutesViewModel( forPreview: true)
+        var body: some View {
+            SelectRoutePicker(routeResultsViewModel: routeResultsViewModel)
+        }
+    }
+    return RouteSelectRoouteOpitionsPreviewWrapper()
 }

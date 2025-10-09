@@ -79,14 +79,31 @@ struct RouteStep: View {
                                 alignment: .leading
                             )
                         VStack(alignment: .center) {
-                            if let lineName = routeStep.lineNam {
-                                Text(lineName)
-                                    .font(
-                                        .system(
-                                            size: TextSizes.body,
-                                            weight: .bold
-                                        )
+                            if let lineName = routeStep.lineName {
+                                Text(
+                                    routeStep.transportationMode.rawValue
+                                        == "METRO"
+                                        || routeStep.transportationMode.rawValue
+                                            == "BUS"
+                                        ? "Line " + lineName
+                                        : lineName + " Line"
+                                )
+                                .font(
+                                    .system(
+                                        size: TextSizes.body,
+                                        weight: .bold
                                     )
+                                )
+                            } else if let vehicleName = routeStep.vehicleType {
+                                Text(
+                                    vehicleName.localizedCapitalized
+                                )
+                                .font(
+                                    .system(
+                                        size: TextSizes.body,
+                                        weight: .bold
+                                    )
+                                )
                             }
                             Text(
                                 "towards \( routeStep.transitLineFinalDestination ?? routeStep.endLocation.name)"
@@ -188,10 +205,7 @@ struct RouteStep: View {
 
 #Preview {
     struct RouteStepPreviewWrapper: View {
-        @StateObject var routeResultsViewModel = RouteResultsViewModel(
-            orgin: nil,
-            destination: nil
-        )
+        @StateObject var routeResultsViewModel = RoutesViewModel(forPreview: true)
         var body: some View {
             if let firstRoute = routeResultsViewModel.routes.first {
                 let firstLeg = firstRoute.steps.first

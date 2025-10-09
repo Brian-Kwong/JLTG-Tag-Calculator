@@ -32,11 +32,11 @@ struct ResponseStep: Hashable, Codable, Identifiable {
     var distance: Int
     var polyline: String?
     var journeyCost: Int
-    var lineNam: String?
-    var vehicleName: String?
+    var lineName: String?
+    var vehicleType: String?
     var departureTime: String?
     var arrivalTime: String?
-    var numStops: String?
+    var numStops: Int?
     var transitLineFinalDestination: String?
     
     private enum CodingKeys: String, CodingKey {
@@ -47,8 +47,8 @@ struct ResponseStep: Hashable, Codable, Identifiable {
              distance,
              polyline,
              journeyCost,
-             lineNam,
-             vehicleName,
+             lineName,
+             vehicleType,
              departureTime,
              arrivalTime,
              numStops,
@@ -65,7 +65,7 @@ struct RouteResponse: Hashable, Codable, Identifiable {
     var departureTime: String
     var arrivalTime: String
     var totalDuration: Int
-    var totalDistance: Int
+    var totalDistance: Double
     var totalCost: Int
     var numTransfers: Int
     var numSteps: Int

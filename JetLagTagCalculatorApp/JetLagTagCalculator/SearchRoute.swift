@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SearchRoute: View {
+    @State private var routeSearchViewModel: RoutesViewModel = RoutesViewModel()
     var body: some View {
         NavigationSplitView {
-            SelectRoutePicker()
+            SelectRoutePicker(routeResultsViewModel: routeSearchViewModel)
         } detail: {
-            RouteResults()
+            RouteResults(routeResultsViewModel: routeSearchViewModel)
         }
     }
 }

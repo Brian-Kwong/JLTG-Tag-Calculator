@@ -36,9 +36,8 @@ struct RouteDetails: View {
 
 #Preview {
     struct RouteDetailsPreviewWrapper: View {
-        @StateObject var routeResultsViewModel = RouteResultsViewModel(
-            orgin: nil,
-            destination: nil
+        @StateObject var routeResultsViewModel = RoutesViewModel(
+            forPreview: true
         )
         var body: some View {
             if let firstRoute = routeResultsViewModel.routes.first {

@@ -14,6 +14,7 @@ final class APINetworkManager {
     func getRoute(
         from origin: UserPlaceEntry,
         destination: UserPlaceEntry,
+        departureDate: Date
     ) async throws -> [RouteResponse] {
         if (origin.coordinate == nil) || (destination.coordinate == nil) {
             throw RouteFetchErrors.invalidURL
@@ -23,8 +24,9 @@ final class APINetworkManager {
         }
         let requestURL = URL(
             string:
-                "\(firebaseBaseFunctionURLString)/calculateRoute?originCoord=\(origin.coordinate!.latitude),\(origin.coordinate!.longitude)&destinationCoord=\(destination.coordinate!.latitude),\(destination.coordinate!.longitude)"
+                "\(firebaseBaseFunctionURLString)/calculateRoute?originCoord=\(origin.coordinate!.latitude),\(origin.coordinate!.longitude)&destinationCoord=\(destination.coordinate!.latitude),\(destination.coordinate!.longitude)&departureTime=\(convertToISO8601DateString(date: departureDate))"
         )
+        print("Request URL: \(String(describing: requestURL))")
         if requestURL == nil {
             throw RouteFetchErrors.invalidURL
         }
@@ -52,7 +54,7 @@ final class APINetworkManager {
                 from: data
             )
             return routeResponse
-        } catch {
+        } catch  {
             throw RouteFetchErrors.decodingError
         }
     }

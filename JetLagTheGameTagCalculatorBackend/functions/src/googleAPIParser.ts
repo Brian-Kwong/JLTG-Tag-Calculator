@@ -141,6 +141,19 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
             let totalWalkingDistance = 0;
             let totalWalkingDuration = 0;
             let polyline = "";
+
+            // Get the last transit station as the start location of the walking segment
+            const startLocationName = responseSteps.length
+              ? responseSteps[responseSteps.length - 1].endLocation.name
+              : walkingsSteps[0].startLocation.latLng.latitude +
+                ", " +
+                walkingsSteps[0].startLocation.latLng.longitude;
+            const endLocationName = step.transitDetails
+              ? step.transitDetails.stopDetails.departureStop.name
+              : walkingsSteps[walkingsSteps.length - 1].endLocation.latLng.latitude +
+                ", " +
+                walkingsSteps[walkingsSteps.length - 1].endLocation.latLng.longitude;
+            // Get the first transit station as the end location of the walking segment
             for (const walkingStep of walkingsSteps) {
               totalWalkingDistance += walkingStep.distanceMeters;
               totalWalkingDuration += parseInt(walkingStep.staticDuration);
@@ -152,27 +165,30 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
               polyline: polyline,
               startLocation: {
                 name:
+                  startLocationName ||
                   walkingsSteps[0].startLocation.latLng.latitude +
-                  ", " +
-                  walkingsSteps[0].startLocation.latLng.longitude,
+                    ", " +
+                    walkingsSteps[0].startLocation.latLng.longitude,
                 lat: walkingsSteps[0].startLocation.latLng.latitude,
                 lng: walkingsSteps[0].startLocation.latLng.longitude,
               },
               endLocation: {
                 name:
+                  endLocationName ||
                   walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
                     .latitude +
-                  ", " +
-                  walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
-                    .longitude,
+                    ", " +
+                    walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                      .longitude,
                 lat: walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
                   .latitude,
                 lng: walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
                   .longitude,
               },
               duration: totalWalkingDuration,
-              journeyCost:
-                transportationModeCost.WALKING * (totalWalkingDuration / 60),
+              journeyCost: Math.ceil(
+                transportationModeCost.WALKING * (totalWalkingDuration / 60)
+              ),
             });
             walkingsSteps.length = 0; // Clear the walking steps
           }
@@ -196,11 +212,12 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
               distance: step.distanceMeters,
               polyline: step.polyline.encodedPolyline,
               duration: parseInt(step.staticDuration),
-              journeyCost:
+              journeyCost: Math.ceil(
                 transportationModeCost[
                   transportationMode as keyof typeof transportationModeCost
                 ] *
-                (parseInt(step.staticDuration) / 60),
+                  (parseInt(step.staticDuration) / 60)
+              ),
               lineName: step.transitDetails.transitLine.name,
               vehicleType: step.transitDetails.transitLine.vehicle.name.text,
               departureTime: step.transitDetails.stopDetails.departureTime,
@@ -213,6 +230,21 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
           continue;
         }
       }
+    }
+    // Filter for any steps that have the same start and end location (some walking steps can be like this provided by the Google Maps API)
+    const filteredResponseSteps = responseSteps.filter(
+      (step) =>
+        !(
+          step.startLocation.name === step.endLocation.name ||
+          (step.startLocation.lat === step.endLocation.lat &&
+            step.startLocation.lng === step.endLocation.lng)
+        )
+    );
+    responseSteps.length = 0;
+    responseSteps.push(...filteredResponseSteps);
+    if (responseSteps.length === 0) {
+      // Skip there are no valid steps
+      continue;
     }
     parsedRoute.push({
       departureLocation: {
@@ -238,9 +270,8 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
         .toISOString()
         .split("T")[1]
         .split(".")[0],
-      totalDuration: responseSteps.reduce(
-        (acc, step) => acc + step.duration,
-        0
+      totalDuration: Math.ceil(
+        responseSteps.reduce((acc, step) => acc + step.duration, 0)
       ),
       totalDistance: responseSteps.reduce(
         (acc, step) => acc + step.distance,
@@ -296,13 +327,14 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
           new Date(section.departure.time).getTime() / 1000,
         distance: section.travelSummary?.length || 0,
         polyline: section.polyline || "",
-        journeyCost:
+        journeyCost: Math.ceil(
           transportationModeCost[
             transportationMode as keyof typeof transportationModeCost
           ] *
-          ((new Date(section.arrival.time).getTime() / 1000 -
-            new Date(section.departure.time).getTime() / 1000) /
-            60),
+            ((new Date(section.arrival.time).getTime() / 1000 -
+              new Date(section.departure.time).getTime() / 1000) /
+              60)
+        ),
         lineName: section.transport.name || undefined,
         vehicleType: section.transport.mode || undefined,
         departureTime: section.departure.time,
@@ -336,7 +368,9 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
         .toISOString()
         .split("T")[1]
         .split(".")[0],
-      totalDistance: steps.reduce((acc, step) => acc + step.distance, 0),
+      totalDistance: Math.ceil(
+        steps.reduce((acc, step) => acc + step.distance, 0)
+      ),
       totalDuration: steps.reduce((acc, step) => acc + step.duration, 0),
       totalCost: steps.reduce((acc, step) => acc + (step.journeyCost || 0), 0),
       numTransfers:

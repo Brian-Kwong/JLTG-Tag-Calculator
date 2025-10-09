@@ -41,3 +41,7 @@ func convertSecondsToTimeFormat(seconds: Int) -> String {
     }
     return timeString.trimmingCharacters(in: .whitespaces)
 }
+
+func convertToISO8601DateString(date: Date) -> String {
+    return dateFormatter.string(from: date)
+}

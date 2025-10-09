@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct RouteResults: View {
-    @StateObject var routeResultsViewModel = RouteResultsViewModel(
-        orgin: nil,
-        destination: nil
-    )
-    @State var searched: Bool = true
+    @ObservedObject var routeResultsViewModel: RoutesViewModel
+
+    @State var searched: Bool = false
     var body: some View {
         NavigationStack {
             Group {
-                if !routeResultsViewModel.routes.isEmpty {
+              if routeResultsViewModel.isLoading {
+                    VStack {
+                        ProgressView()
+                        Text("Fetching routes...")
+                    }
+                }
+               else if !routeResultsViewModel.routes.isEmpty {
                         List(routeResultsViewModel.routes) { route in
                             HStack{
                                 RouteCard(route: route)
@@ -46,6 +50,6 @@ struct RouteResults: View {
     }
 }
 
-#Preview {
-    RouteResults()
-}
+//#Preview {
+//    RouteResults(origin: .constant(nil), destination: .constant(nil))
+//}

@@ -19,15 +19,24 @@ const createRouter = express.Router;
 const router = createRouter();
 
 const calculateRouteBasedOffHereApi = async (req: express.Request) => {
-  const { originCoord, destinationCoord } = req.query;
+  const { originCoord, destinationCoord, departureTime } = req.query;
   if (!originCoord || !destinationCoord) {
     return {
       status: 400,
       message: "originCoord and destinationCoord are required",
     };
   }
+  if( departureTime ){
+    const depTime = new Date(departureTime as string);
+    if( isNaN(depTime.getTime()) ){
+      return {
+        status: 400,
+        message: "Invalid departureTime format",
+      };
+    }
+  }
   const hereApiKey = process.env.HERE_API_KEY;
-  const transitURL = `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10&return=bookingLinks,polyline,travelSummary`;
+  const transitURL = `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10&return=bookingLinks,polyline,travelSummary` + (departureTime ? `&departureTime=${new Date(departureTime as string).toISOString()}` : "");
   try {
     const transitResponse = await fetch(`${transitURL}`);
     if (!transitResponse.ok) {
@@ -64,7 +73,7 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
 };
 
 const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
-  const { originCoord, destinationCoord } = req.query;
+  const { originCoord, destinationCoord, departureTime } = req.query;
   if (!originCoord || !destinationCoord) {
     return {
       status: 400,
@@ -91,6 +100,7 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
       },
     },
     travelMode: "TRANSIT",
+    departureTime: departureTime?.toString()  || new Date().toISOString(),
     computeAlternativeRoutes: true,
     languageCode: "en",
   };
@@ -139,6 +149,19 @@ router.get("/calculateRoute", async function (req, res) {
       .status(400)
       .json({ error: "originCoord and destinationCoord are required" });
   }
+  
+  // If its more than a day in the future, use Google API directly
+  const departureTime = req.query.departureTime ? new Date(req.query.departureTime as string) : new Date();
+  const now = new Date();
+  const oneDayFromNow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+
+  if (departureTime > oneDayFromNow) {
+    const googleRouteResult = await calculateRouteBasedOffGoogleApi(req);
+    return res
+      .status(googleRouteResult.status)
+      .json(googleRouteResult.data || { error: googleRouteResult.message });
+  }
+
   const routeResult = await calculateRouteBasedOffHereApi(req);
   if (routeResult.status !== 200) {
     // Fallback to Google API
