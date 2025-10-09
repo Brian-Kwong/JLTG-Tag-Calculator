@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RouteLogo<CustomIcon: Shape>: View {
+struct RouteLine<CustomIcon: Shape>: View {
     var icon: CustomIcon
     var iconColor: Color = Color.teal
     var body: some View {
@@ -36,27 +36,27 @@ struct RouteLogo<CustomIcon: Shape>: View {
 }
 
 #Preview {
-    RouteLogo(
+    RouteLine(
         icon: HighSpeedTrain(),
         iconColor: .mint
     )
-    RouteLogo(
+    RouteLine(
         icon: LowSpeedRail(),
         iconColor: .green
     )
-    RouteLogo(
+    RouteLine(
         icon: MetroTrain(),
         iconColor: .orange
     )
-    RouteLogo(
+    RouteLine(
         icon: BusIcon(),
         iconColor: .yellow
     )
-    RouteLogo(
+    RouteLine(
         icon: FerryIcon(),
         iconColor: .blue
     )
-    RouteLogo(
+    RouteLine(
         icon: WalkingIcon(),
         iconColor: .pink
     )

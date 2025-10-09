@@ -30,7 +30,7 @@ struct RouteDetails: View {
                 let balance = balanceAfterStep[idx]
                 RouteStep(routeStep: step, balance: balance)
             }
-        }.listStyle(.plain)
+        }.listStyle(.plain).padding(.horizontal, 12)
     }
 }
 

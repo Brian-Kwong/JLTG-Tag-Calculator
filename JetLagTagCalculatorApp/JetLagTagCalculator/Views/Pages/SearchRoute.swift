@@ -13,7 +13,15 @@ struct SearchRoute: View {
         NavigationSplitView {
             SelectRoutePicker(routeResultsViewModel: routeSearchViewModel)
         } detail: {
-            RouteResults(routeResultsViewModel: routeSearchViewModel)
+            NavigationStack {
+                if routeSearchViewModel.showRouteDetails {
+                    RouteResults(routeResultsViewModel: routeSearchViewModel)
+                } else {
+                    Text("Please enter route details to search for routes.")
+                        .font(.system(size: TextSizes.body))
+                        .foregroundColor(.gray)
+                }
+            }
         }
     }
 }

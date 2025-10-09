@@ -25,8 +25,6 @@ struct JetLagTagCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack{
-                Color("JetLagBackground")
-                    .ignoresSafeArea()
                 SearchRoute()
             }
         }

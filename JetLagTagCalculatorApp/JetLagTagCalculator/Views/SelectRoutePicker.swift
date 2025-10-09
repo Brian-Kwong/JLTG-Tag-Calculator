@@ -105,10 +105,9 @@ struct SelectRoutePicker: View {
                 }
             }
         }.navigationTitle("Route Search").navigationDestination(
-            isPresented: .constant(false)
+            isPresented: $routeResultsViewModel.showRouteDetails
         ) {
-            // Destination View
-            Text("Destination View")
+            RouteResults(routeResultsViewModel: routeResultsViewModel)
         }
     }
 }

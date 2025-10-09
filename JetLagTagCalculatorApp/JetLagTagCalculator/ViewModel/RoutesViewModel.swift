@@ -9,6 +9,7 @@ internal import Combine
 import Foundation
 
 final class RoutesViewModel: ObservableObject {
+    @Published var showRouteDetails: Bool = false
     @Published var isLoading: Bool = false
     @Published var routes: [RouteResponse] = []
     @Published var sortByOption: SortByOptions = .cost {
@@ -17,21 +18,8 @@ final class RoutesViewModel: ObservableObject {
         }
     }
     private var searchTask: Task<Void, Never>?
-    private var baseOrigin: UserPlaceEntry = UserPlaceEntry(
-        location: "Paris, France",
-        placeID: "ChIJD7fiBh9u5kcRYJSMaMOCCwQ",
-        coordinate: Coordinate(latitude: 48.8566, longitude: 2.3522)
-    )
-    private var baseDestination: UserPlaceEntry = UserPlaceEntry(
-        location: "Malmo Sweden",
-        placeID: "ChIJM1kLxJgXU0YRyE1nQ8nq6Qk",
-        coordinate: Coordinate(
-            latitude: 55.60926988364578,
-            longitude: 13.000636164482072
-        )
-    )
-    
-    init(forPreview : Bool = false) {
+
+    init(forPreview: Bool = false) {
         if forPreview {
             if let localResults = fetchResultsLocally() {
                 self.routes = localResults
@@ -43,16 +31,24 @@ final class RoutesViewModel: ObservableObject {
         }
     }
 
-    func performSearch(orgin: UserPlaceEntry?, destination: UserPlaceEntry?, departureDate: Date = Date()) {
+    func performSearch(
+        orgin: UserPlaceEntry,
+        destination: UserPlaceEntry,
+        departureDate: Date = Date()
+    ) {
         searchRoutes(
-            orgin: orgin ?? baseOrigin,
-            destination: destination ?? baseDestination,
+            orgin: orgin,
+            destination: destination,
             departureDate: departureDate
         )
     }
 
+    /*
+     Used only for debugging and previewing UI with mock data
+     */
     func fetchResultsLocally() -> [RouteResponse]? {
         // For now use the mock data
+        // Print statements for dev debugging
         let jsonDecoder = JSONDecoder()
         guard
             let fileURL = Bundle.main.url(
@@ -79,15 +75,20 @@ final class RoutesViewModel: ObservableObject {
         return nil
     }
 
-    func searchRoutes(orgin: UserPlaceEntry, destination: UserPlaceEntry, departureDate: Date) {
+    func searchRoutes(
+        orgin: UserPlaceEntry,
+        destination: UserPlaceEntry,
+        departureDate: Date
+    ) {
         searchTask?.cancel()
         searchTask = Task {
             self.isLoading = true
+            self.showRouteDetails = true
             do {
                 if orgin.coordinate == nil || destination.coordinate == nil {
-                    print("Origin or destination coordinates are nil.")
                     self.routes = []
                     self.isLoading = false
+                    self.showRouteDetails = false
                     return
                 }
                 let fetchedRoutes = try await APINetworkManager.shared.getRoute(
@@ -97,7 +98,7 @@ final class RoutesViewModel: ObservableObject {
                 )
                 self.routes = fetchedRoutes
             } catch {
-                print("Error fetching routes: \(error)")
+                self.showRouteDetails = false
                 self.routes = []
             }
             self.isLoading = false

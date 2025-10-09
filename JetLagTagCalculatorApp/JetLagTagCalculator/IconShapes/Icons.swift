@@ -31,7 +31,7 @@ func findIcon(for place: AutocompletePlaceSuggestion) -> String {
     return "mappin.and.ellipse"
 }
 
-func determineRouteLargeOcpm(route: RouteResponse) -> AnyView {
+func determineRouteLargeOcom(route: RouteResponse) -> AnyView {
     var transportationModeTypeCount: [TransportationModes: Int] = route.steps
         .reduce(
             into: [:]
@@ -81,4 +81,23 @@ func determineRouteLargeOcpm(route: RouteResponse) -> AnyView {
             alignment: .center
         ).padding(20).background(color.opacity(0.2)).cornerRadius(50)
     )
+}
+
+func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
+    switch transportationMode {
+    case .HIGH_SPEED_RAIL:
+        return AnyView(RouteLine(icon: HighSpeedTrain(), iconColor: .blue))
+    case .LOW_SPEED_RAIL:
+        return AnyView(RouteLine(icon: LowSpeedRail(), iconColor: .green))
+    case .METRO:
+        return AnyView(RouteLine(icon: MetroTrain(), iconColor: .orange))
+    case .BUS:
+        return AnyView(RouteLine(icon: BusIcon(), iconColor: .yellow))
+    case .FERRY:
+        return AnyView(RouteLine(icon: FerryIcon(), iconColor: .blue))
+    case .WALKING:
+        return AnyView(RouteLine(icon: WalkingIcon(), iconColor: .pink))
+    case .FLIGHT:
+        return AnyView(RouteLine(icon: Airplane(), iconColor: .purple))
+    }
 }

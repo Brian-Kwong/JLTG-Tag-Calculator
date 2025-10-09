@@ -145,7 +145,7 @@ struct RouteCard: View {
     @ViewBuilder var routeOverview: some View {
         Text(convertSecondsToTimeFormat(seconds: route.totalDuration))
             .font(.system(size: TextSizes.body, weight: .medium))
-        determineRouteLargeOcpm(route: route)
+        determineRouteLargeOcom(route: route)
         HStack {
             Coins().stroke(
                 style: StrokeStyle(
