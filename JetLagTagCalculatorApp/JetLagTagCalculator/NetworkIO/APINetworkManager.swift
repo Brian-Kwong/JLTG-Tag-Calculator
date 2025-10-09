@@ -16,23 +16,25 @@ final class APINetworkManager {
         destination: UserPlaceEntry,
         departureDate: Date
     ) async throws -> [RouteResponse] {
-        if (origin.coordinate == nil) || (destination.coordinate == nil) {
+        guard origin.coordinate != nil,
+            destination.coordinate != nil
+        else {
+            throw RouteFetchErrors.invalidCoordinates
+        }
+        guard !firebaseBaseFunctionURLString.isEmpty else {
             throw RouteFetchErrors.invalidURL
         }
-        if firebaseBaseFunctionURLString.isEmpty {
-            throw RouteFetchErrors.invalidURL
-        }
-        let requestURL = URL(
-            string:
-                "\(firebaseBaseFunctionURLString)/calculateRoute?originCoord=\(origin.coordinate!.latitude),\(origin.coordinate!.longitude)&destinationCoord=\(destination.coordinate!.latitude),\(destination.coordinate!.longitude)&departureTime=\(convertToISO8601DateString(date: departureDate))"
-        )
-        print("Request URL: \(String(describing: requestURL))")
-        if requestURL == nil {
+        guard
+            let requestURL = URL(
+                string:
+                    "\(firebaseBaseFunctionURLString)/calculateRoute?originCoord=\(origin.coordinate!.latitude),\(origin.coordinate!.longitude)&destinationCoord=\(destination.coordinate!.latitude),\(destination.coordinate!.longitude)&departureTime=\(convertToISO8601DateString(date: departureDate))"
+            )
+        else {
             throw RouteFetchErrors.invalidURL
         }
         URLSession.shared.configuration.timeoutIntervalForRequest = 30
         URLSession.shared.configuration.timeoutIntervalForResource = 60
-        var urlRequest = URLRequest(url: requestURL!)
+        var urlRequest = URLRequest(url: requestURL)
         guard let appCheckToken = await getFirebaseToken() else {
             throw RouteFetchErrors.invalidCredentials
         }
@@ -48,13 +50,12 @@ final class APINetworkManager {
         }
         do {
             let jsonDecoder = JSONDecoder()
-            print("Data received: \(String(data: data, encoding: .utf8) ?? "N/A")")
             let routeResponse = try jsonDecoder.decode(
                 [RouteResponse].self,
                 from: data
             )
             return routeResponse
-        } catch  {
+        } catch {
             throw RouteFetchErrors.decodingError
         }
     }

@@ -14,11 +14,13 @@ import _ConfidentialKit
 class GooglePlacesViewModel: ObservableObject {
     
     @Published var autoCompleteStations: [AutocompletePlaceSuggestion] = []
+    @Published var errorMessage: String? = nil
     private var placesClient = PlacesClient.shared
     private var sessionToken = AutocompleteSessionToken()
     private var searchTask: Task<Void, Never>?
     private var placeCordiateSearch: Task<Void, Never>?
     func fetchForStations(input: String, currentLocation: CLLocation) {
+        
         // Cancel any existing search task
         searchTask?.cancel()
 
@@ -55,19 +57,23 @@ class GooglePlacesViewModel: ObservableObject {
                         case .place(let placeSuggestion):
                             mySugguestions.append(placeSuggestion)
                         @unknown default:
-                            fatalError("Unknown suggestion type")
+                           return
                         }
                     }
                     self.autoCompleteStations = mySugguestions
+                    self.clearError()
                 }
             case .failure(let error):
-                print("Error fetching autocomplete suggestions: \(error)")
                 DispatchQueue.main.async {
                     self.autoCompleteStations = []
+                    if self.errorMessage == nil {
+                        self.errorMessage = error.localizedDescription
+                    }
                 }
             }
         }
     }
+    
     func fetchPlaceCordinates(placeID: String, setter: ((CLLocationCoordinate2D?) -> Void)? = nil) {
         placeCordiateSearch?.cancel()
         guard !placeID.isEmpty else {
@@ -81,8 +87,17 @@ class GooglePlacesViewModel: ObservableObject {
             case .success(let place):
                 setter?(place.location)
             case .failure(let placesError):
-                print("Error fetching place details: \(placesError)")
+                DispatchQueue.main.async {
+                    self.errorMessage = placesError.localizedDescription
+                }
             }
+        }
+    }
+    
+    /// Clear the currently stored error message (useful when dismissing alerts)
+    func clearError() {
+        DispatchQueue.main.async {
+            self.errorMessage = nil
         }
     }
 }

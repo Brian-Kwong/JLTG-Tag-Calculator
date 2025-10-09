@@ -7,58 +7,6 @@
 
 import SwiftUI
 
-func determineRouteLargeOcpm(route: RouteResponse) -> AnyView {
-    var transportationModeTypeCount: [TransportationModes: Int] = route.steps
-        .reduce(
-            into: [:]
-        ) { counts, step in
-            counts[step.transportationMode, default: 0] += 1
-        }
-    // Set walking as last resort
-    transportationModeTypeCount[.WALKING, default: 0] = 0
-    let transportationMode =
-        transportationModeTypeCount.max {
-            a,
-            b in
-            a.value < b.value
-                || (a.value == b.value
-                    && TransportationModes.allCases.firstIndex(of: a.key)!
-                        > TransportationModes.allCases.firstIndex(of: b.key)!)
-        }?.key ?? .LOW_SPEED_RAIL
-    var icon: AnyView
-    var color: Color
-    switch transportationMode {
-    case .HIGH_SPEED_RAIL:
-        icon = AnyView(HighSpeedTrain())
-        color = .blue
-    case .LOW_SPEED_RAIL:
-        icon = AnyView(LowSpeedRail())
-        color = .green
-    case .METRO:
-        icon = AnyView(MetroTrain())
-        color = .orange
-    case .BUS:
-        icon = AnyView(BusIcon())
-        color = .yellow
-    case .FERRY:
-        icon = AnyView(FerryIcon())
-        color = .blue
-    case .WALKING:
-        icon = AnyView(WalkingIcon())
-        color = .pink
-    case .FLIGHT:
-        icon = AnyView(Airplane())
-        color = .purple
-    }
-    return AnyView(
-        icon.frame(
-            width: 40,
-            height: 40,
-            alignment: .center
-        ).padding(20).background(color.opacity(0.2)).cornerRadius(50)
-    )
-}
-
 func findFirstTransitStation(route: RouteResponse) -> String {
     for step in route.steps {
         if step.transportationMode != .WALKING {
@@ -84,69 +32,16 @@ struct RouteCard: View {
         let isCompact = horizontalSizeClass == .compact
         HStack(spacing: 12) {
             VStack(alignment: .center) {
-                Text(convertSecondsToTimeFormat(seconds: route.totalDuration))
-                    .font(.system(size: TextSizes.body, weight: .medium))
-                determineRouteLargeOcpm(route: route)
-                HStack {
-                    Coins().stroke(
-                        style: StrokeStyle(
-                            lineWidth: 1,
-                            lineCap: .round,
-                            lineJoin: .round
-                        )
-                    ).frame(width: 20, height: 20)
-                    Text(route.totalCost.description).font(
-                        .system(size: TextSizes.body, weight: .medium)
-                    )
-                    .foregroundStyle(.secondary)
-
-                }
-            }
+                routeOverview
+            }.padding(.horizontal, isCompact ? 0 : 12)
             VStack(alignment: .center, spacing: 16) {
                 HStack(spacing: 12) {
-                    if isCompact {
-                        VStack {
-                            Text(findFirstTransitStation(route: route))
-                                .font(
-                                    .system(
-                                        size: TextSizes.subtitle,
-                                        weight: .bold
-                                    )
-                                )
-                            Text("to")
-                                .font(.system(size: TextSizes.caption))
-                                .foregroundStyle(
-                                    .secondary
-                                )
-                            Text(findLastTransitStation(route: route))
-                                .font(
-                                    .system(
-                                        size: TextSizes.subtitle,
-                                        weight: .bold
-                                    )
-                                )
-                        }
-                    } else {
+                    ViewThatFits {
                         HStack {
-                            Text(findFirstTransitStation(route: route))
-                                .font(
-                                    .system(
-                                        size: TextSizes.subtitle,
-                                        weight: .bold
-                                    )
-                                )
-                            Text("to")
-                                .font(.system(size: TextSizes.caption))
-                                .foregroundStyle(
-                                    .secondary
-                                )
-                            Text(findLastTransitStation(route: route))
-                                .font(
-                                    .system(
-                                        size: TextSizes.subtitle,
-                                        weight: .bold
-                                    )
-                                )
+                            routeSourceToDestination
+                        }
+                        VStack {
+                            routeSourceToDestination
                         }
                     }
                 }
@@ -211,14 +106,6 @@ struct RouteCard: View {
             ).foregroundStyle(.secondary)
         }
         HStack {
-            Image(systemName: "mappin.and.ellipse")
-                .font(.system(size: TextSizes.subtitle))
-            Text("\(route.totalDistance/1000) km")
-                .multilineTextAlignment(.leading).font(
-                    .system(size: TextSizes.body)
-                ).foregroundStyle(.secondary)
-        }
-        HStack {
             Image(systemName: "airplane.arrival")
                 .font(.system(size: TextSizes.subtitle))
             Text(
@@ -227,6 +114,14 @@ struct RouteCard: View {
             .multilineTextAlignment(.leading).font(
                 .system(size: TextSizes.body)
             ).foregroundStyle(.secondary)
+        }
+        HStack {
+            Image(systemName: "mappin.and.ellipse")
+                .font(.system(size: TextSizes.subtitle))
+            Text("\( String(format: "%.2f", route.totalDistance/1000)) km")
+                .multilineTextAlignment(.leading).font(
+                    .system(size: TextSizes.body)
+                ).foregroundStyle(.secondary)
         }
         HStack {
             TransferIcon()
@@ -245,6 +140,47 @@ struct RouteCard: View {
                 .system(size: TextSizes.body)
             ).foregroundStyle(.secondary)
         }
+    }
+
+    @ViewBuilder var routeOverview: some View {
+        Text(convertSecondsToTimeFormat(seconds: route.totalDuration))
+            .font(.system(size: TextSizes.body, weight: .medium))
+        determineRouteLargeOcpm(route: route)
+        HStack {
+            Coins().stroke(
+                style: StrokeStyle(
+                    lineWidth: 1,
+                    lineCap: .round,
+                    lineJoin: .round
+                )
+            ).frame(width: 20, height: 20)
+            Text(route.totalCost.description).font(
+                .system(size: TextSizes.body, weight: .medium)
+            )
+            .foregroundStyle(.secondary)
+        }
+    }
+
+    @ViewBuilder var routeSourceToDestination: some View {
+        Text(findFirstTransitStation(route: route))
+            .font(
+                .system(
+                    size: TextSizes.subtitle,
+                    weight: .bold
+                )
+            )
+        Text("to")
+            .font(.system(size: TextSizes.caption))
+            .foregroundStyle(
+                .secondary
+            )
+        Text(findLastTransitStation(route: route))
+            .font(
+                .system(
+                    size: TextSizes.subtitle,
+                    weight: .bold
+                )
+            )
     }
 }
 

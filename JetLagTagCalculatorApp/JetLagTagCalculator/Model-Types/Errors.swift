@@ -16,3 +16,7 @@ enum RouteFetchErrors : Error {
     case decodingError
     case noRoutesFound
 }
+
+enum GooglePlacesAutoCompleteErrors : Error {
+    case invalidRequest
+}

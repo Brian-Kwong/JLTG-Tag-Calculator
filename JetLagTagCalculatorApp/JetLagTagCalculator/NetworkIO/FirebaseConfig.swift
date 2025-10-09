@@ -32,10 +32,8 @@ class FirebaseAppDelegate: NSObject, UIApplicationDelegate {
 func getFirebaseToken() async -> String? {
     do {
         let appCheckToken = try await AppCheck.appCheck().token(forcingRefresh: false)
-        print("Fetched App Check token: \(appCheckToken.token)")
         return appCheckToken.token
     } catch {
-        print("Error fetching App Check token: \(error)")
         return nil
     }
 }

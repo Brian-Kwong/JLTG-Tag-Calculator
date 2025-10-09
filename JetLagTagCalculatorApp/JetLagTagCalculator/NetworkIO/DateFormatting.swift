@@ -30,7 +30,7 @@ func convertSecondsToTimeFormat(seconds: Int) -> String {
     let minutes = (seconds % 3600) / 60
     let secs = seconds % 60
     var timeString = ""
-    if hours != 0{
+    if hours != 0 {
         timeString += "\(hours)H "
     }
     if minutes != 0 {
