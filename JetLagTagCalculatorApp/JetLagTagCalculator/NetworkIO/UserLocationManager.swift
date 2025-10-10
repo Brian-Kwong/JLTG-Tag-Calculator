@@ -12,6 +12,9 @@ import Foundation
 final class UserLocationManager: NSObject, CLLocationManagerDelegate,
     ObservableObject
 {
+    
+    static var shared = UserLocationManager()
+    
     @Published var userLocation: CLLocation?
     
     var allowedLocation: Bool?

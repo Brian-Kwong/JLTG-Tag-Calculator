@@ -7,18 +7,23 @@
 
 import Foundation
 
-let dateFormatter = ISO8601DateFormatter()
+let dateFormatter = Date.ISO8601FormatStyle(includingFractionalSeconds: true)
 let timeFormatter = DateFormatter()
 
 func extractTime(timeString: String) -> String {
-    guard let date = dateFormatter.date(from: timeString) else {
+    print("Extracting time from: \(timeString)")
+    do {
+        let date = try dateFormatter.parse(timeString)
+        timeFormatter.dateFormat = "h:mm a"
+        
+        let TZRegex = #/(.*?)(\+|-)(\d{2}):(\d{2})$/#
+        let timeZone = timeString.firstMatch(of: TZRegex)
+        timeFormatter.timeZone = TimeZone(secondsFromGMT: ((timeZone?.output.2 == "+" ? 1 : -1) * ((Int(timeZone?.output.3 ?? "0") ?? 0) * 3600 + (Int(timeZone?.output.4 ?? "0") ?? 0) * 60)))
+        let time = timeFormatter.string(from: date)
+        return time
+    } catch {
         return "N/A"
     }
-    timeFormatter.dateFormat = "h:mm a"
-    timeFormatter.locale = Locale.current
-    timeFormatter.timeZone = TimeZone.current
-    let time = timeFormatter.string(from: date)
-    return time
 }
 
 func convertSecondsToTimeFormat(seconds: Int) -> String {
@@ -43,5 +48,5 @@ func convertSecondsToTimeFormat(seconds: Int) -> String {
 }
 
 func convertToISO8601DateString(date: Date) -> String {
-    return dateFormatter.string(from: date)
+    return dateFormatter.format(date)
 }

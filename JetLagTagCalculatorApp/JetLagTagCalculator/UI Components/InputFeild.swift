@@ -21,7 +21,6 @@ struct UserPlaceEntry: Hashable {
 
 struct InputFeild: View {
     @ObservedObject var googlePlacesViewModel: GooglePlacesViewModel
-    @ObservedObject var locationManager: UserLocationManager
     @Binding var location: UserPlaceEntry
     @FocusState.Binding var inputFocused: Bool
     var placeHolderText: String = ""
@@ -35,7 +34,7 @@ struct InputFeild: View {
                 googlePlacesViewModel
                     .fetchForStations(
                         input: newValue,
-                        currentLocation: locationManager
+                        currentLocation: UserLocationManager.shared
                             .userLocation
                             ?? CLLocation(latitude: 0, longitude: 0)
                     )
@@ -44,9 +43,9 @@ struct InputFeild: View {
             oldValue,
             newValue in
             if newValue {
-                locationManager.stattUpdatingLocation()
+                UserLocationManager.shared.stattUpdatingLocation()
             } else {
-                locationManager.stopUpdatingLocation()
+                UserLocationManager.shared.stopUpdatingLocation()
             }
         }.onChange(of: location.placeID) {
             oldValue,
@@ -77,7 +76,6 @@ struct InputFeild: View {
         var body: some View {
             InputFeild(
                 googlePlacesViewModel: GooglePlacesViewModel(),
-                locationManager: UserLocationManager(),
                 location: $fromLocation,
                 inputFocused: $fromLocationFocused
             )

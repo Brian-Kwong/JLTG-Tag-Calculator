@@ -31,6 +31,23 @@ struct RouteResults: View {
                         .listRowInsets(EdgeInsets())
                 }
                 .listStyle(.plain)
+            } else if routeResultsViewModel.errorMessage != nil {
+                VStack(alignment: .center, spacing: 12) {
+                    Image(
+                        systemName: routeResultsViewModel.errorIcon
+                            ?? "exclamationmark.triangle"
+                    )
+                    .font(.system(size: 48))
+                    .foregroundColor(.red)
+                    Text(" \(routeResultsViewModel.errorMessage!)")
+                        .multilineTextAlignment(.center)
+                }.containerRelativeFrame(
+                    .horizontal,
+                    count: 2,
+                    span: 1,
+                    spacing: 1,
+                    alignment: .center
+                )
             } else {
                 VStack {
                     Text("No routes found")
@@ -38,13 +55,28 @@ struct RouteResults: View {
             }
         }
         .navigationDestination(for: RouteResponse.self) { route in
-            RouteDetails(route: route)
+            RouteDetails(
+                userBalance: $routeResultsViewModel.userBalance,
+                route: route
+            )
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 SortByButton(
                     selectedSortOption: $routeResultsViewModel.sortByOption
                 )
             }
+        }.alert("Low Balance", isPresented: $routeResultsViewModel.lowBalanceWarningShown) {
+            Button("Go Back") {
+                routeResultsViewModel.lowBalanceWarningShown = false
+                routeResultsViewModel.showRouteDetails = false
+            }
+            Button("Continue") {
+                routeResultsViewModel.lowBalanceWarningShown = false
+            }
+        } message: {
+            Text(
+                "You currently do not have the coin budget to reach your destination."
+            )
         }
     }
 }

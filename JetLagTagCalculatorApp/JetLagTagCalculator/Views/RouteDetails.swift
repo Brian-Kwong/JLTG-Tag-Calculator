@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-func determineCostAfterStep (route : RouteResponse, startingBalance: Int = 2000) -> [Int] {
+func determineCostAfterStep(route: RouteResponse, startingBalance: Int = 2000)
+    -> [Int]
+{
     var balance = startingBalance
-    var balanceAfterStep : [Int] = []
+    var balanceAfterStep: [Int] = []
     for step in route.steps {
         balance -= step.journeyCost
         balanceAfterStep.append(balance)
@@ -18,9 +20,14 @@ func determineCostAfterStep (route : RouteResponse, startingBalance: Int = 2000)
 }
 
 struct RouteDetails: View {
+    @Binding var userBalance: Int
     let route: RouteResponse
+    @State private var showMap : Bool = false
     var body: some View {
-        let balanceAfterStep = determineCostAfterStep(route: route)
+        let balanceAfterStep = determineCostAfterStep(
+            route: route,
+            startingBalance: userBalance
+        )
         VStack {
             Text("Route Details")
                 .font(.system(size: TextSizes.title))
@@ -30,7 +37,19 @@ struct RouteDetails: View {
                 let balance = balanceAfterStep[idx]
                 RouteStep(routeStep: step, balance: balance)
             }
-        }.listStyle(.plain).padding(.horizontal, 12)
+        }.listStyle(.plain).padding(.horizontal, 12).toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    showMap.toggle()
+                }) {
+                    Image(systemName: "map")
+                }
+            }
+        }.navigationDestination(
+            isPresented: $showMap
+        ){
+            RouteMap(route: route)
+        }
     }
 }
 
@@ -39,9 +58,10 @@ struct RouteDetails: View {
         @StateObject var routeResultsViewModel = RoutesViewModel(
             forPreview: true
         )
+        @State private var userBalance: Int = 2000
         var body: some View {
             if let firstRoute = routeResultsViewModel.routes.first {
-                RouteDetails(route: firstRoute)
+                RouteDetails(userBalance: $userBalance, route: firstRoute)
             } else {
                 Text("No Route Data")
             }

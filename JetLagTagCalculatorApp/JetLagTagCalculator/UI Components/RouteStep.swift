@@ -45,12 +45,7 @@ struct RouteStep: View {
                         VStack(alignment: .center) {
                             if let lineName = routeStep.lineName {
                                 Text(
-                                    routeStep.transportationMode.rawValue
-                                        == "METRO"
-                                        || routeStep.transportationMode.rawValue
-                                            == "BUS"
-                                        ? "Line " + lineName
-                                        : lineName + " Line"
+                                    lineName.localizedCapitalized
                                 )
                                 .font(
                                     .system(
@@ -79,15 +74,15 @@ struct RouteStep: View {
                                 )
                             )
                             .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
 
-                        }.containerRelativeFrame(
-                            .horizontal,
-                            count: 3,
-                            span: 1,
-                            spacing: 1,
-                            alignment: .center
-                        )
+                        }.multilineTextAlignment(.center)
+                            .containerRelativeFrame(
+                                .horizontal,
+                                count: 3,
+                                span: 1,
+                                spacing: 1,
+                                alignment: .center
+                            )
                         VStack(alignment: .trailing) {
                             stepLocationAndTimeInfo(
                                 location: routeStep.endLocation,

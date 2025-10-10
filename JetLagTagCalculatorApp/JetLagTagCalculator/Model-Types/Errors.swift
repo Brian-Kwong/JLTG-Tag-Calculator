@@ -17,6 +17,11 @@ enum RouteFetchErrors : Error {
     case noRoutesFound
 }
 
+enum LocationEntryErrors : Error {
+    case invalidPlaceID
+    case coordinateFetchFailed
+}
+
 enum GooglePlacesAutoCompleteErrors : Error {
     case invalidRequest
 }

@@ -32,6 +32,7 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidURL
         }
+        print("Request URL: \(requestURL.absoluteString)")
         URLSession.shared.configuration.timeoutIntervalForRequest = 30
         URLSession.shared.configuration.timeoutIntervalForResource = 60
         var urlRequest = URLRequest(url: requestURL)
@@ -46,7 +47,14 @@ final class APINetworkManager {
         guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.statusCode == 200
         else {
-            throw RouteFetchErrors.invalidResponse
+            switch (response as? HTTPURLResponse)?.statusCode {
+            case 401, 403:
+                throw RouteFetchErrors.invalidCredentials
+            case 404:
+                throw RouteFetchErrors.noRoutesFound
+            default:
+                throw RouteFetchErrors.invalidResponse
+            }
         }
         do {
             let jsonDecoder = JSONDecoder()

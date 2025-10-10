@@ -12,6 +12,10 @@ final class RoutesViewModel: ObservableObject {
     @Published var showRouteDetails: Bool = false
     @Published var isLoading: Bool = false
     @Published var routes: [RouteResponse] = []
+    @Published var errorMessage: String?
+    @Published var errorIcon: String?
+    @Published var userBalance: Int = 2000
+    @Published var lowBalanceWarningShown: Bool = false
     @Published var sortByOption: SortByOptions = .cost {
         didSet {
             sortResultsBy(sortBy: sortByOption)
@@ -96,9 +100,40 @@ final class RoutesViewModel: ObservableObject {
                     destination: destination,
                     departureDate: departureDate
                 )
+                // Find the cheapest route and see if user can afford it
+                if let cheapestRoute = fetchedRoutes.min(by: { $0.totalCost < $1.totalCost }) {
+                    if cheapestRoute.totalCost > userBalance {
+                        lowBalanceWarningShown = true
+                    }
+                }
                 self.routes = fetchedRoutes
+            } catch RouteFetchErrors.invalidCredentials {
+                self.errorIcon = "lock.shield"
+                self.errorMessage = "Authentication error. Please try again."
+                self.routes = []
+            } catch RouteFetchErrors.noRoutesFound {
+                self.errorIcon = "circle.badge.questionmark"
+                self.errorMessage = "No routes found for the selected locations and time."
+                self.routes = []
+            } catch RouteFetchErrors.invalidCoordinates {
+                self.errorIcon = "mappin.slash"
+                self.errorMessage = "Invalid coordinates provided. Please check the locations and retry."
+                self.routes = []
+            } catch RouteFetchErrors.invalidResponse {
+                self.errorIcon = "exclamationmark.triangle"
+                self.errorMessage = "Received an invalid response from the server."
+                self.routes = []
+            } catch RouteFetchErrors.decodingError {
+                self.errorIcon = "xmark.octagon"
+                self.errorMessage = "Failed to decode the response data."
+                self.routes = []
+            } catch RouteFetchErrors.invalidURL {
+                self.errorIcon = "link.badge.plus"
+                self.errorMessage = "The request URL is invalid."
+                self.routes = []
             } catch {
-                self.showRouteDetails = false
+                self.errorIcon = "exclamationmark.octagon"
+                self.errorMessage = "An unexpected error occurred: \(error.localizedDescription)"
                 self.routes = []
             }
             self.isLoading = false

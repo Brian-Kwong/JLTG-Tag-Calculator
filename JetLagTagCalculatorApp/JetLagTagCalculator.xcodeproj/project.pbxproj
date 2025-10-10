@@ -10,6 +10,7 @@
 		A288A4742E90E46E0065C583 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = A288A4732E90E46E0065C583 /* GooglePlaces */; };
 		A288A4762E90E46E0065C583 /* GooglePlacesSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A288A4752E90E46E0065C583 /* GooglePlacesSwift */; };
 		A2A9854C2E9187E100D0689D /* _ConfidentialKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2A9854B2E9187E100D0689D /* _ConfidentialKit */; };
+		A2B99ABA2E9866340046017D /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = A2B99AB92E9866340046017D /* Polyline */; };
 		A2FC77792E970C38003D5518 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A2FC77782E970C38003D5518 /* FirebaseAnalytics */; };
 		A2FC777B2E970C38003D5518 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = A2FC777A2E970C38003D5518 /* FirebaseAnalyticsCore */; };
 		A2FC777D2E970C38003D5518 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = A2FC777C2E970C38003D5518 /* FirebaseAppCheck */; };
@@ -37,6 +38,7 @@
 				A2A9854C2E9187E100D0689D /* _ConfidentialKit in Frameworks */,
 				A2FC777B2E970C38003D5518 /* FirebaseAnalyticsCore in Frameworks */,
 				A2FC77792E970C38003D5518 /* FirebaseAnalytics in Frameworks */,
+				A2B99ABA2E9866340046017D /* Polyline in Frameworks */,
 				A2FC777F2E970C38003D5518 /* FirebaseCore in Frameworks */,
 				A2FC777D2E970C38003D5518 /* FirebaseAppCheck in Frameworks */,
 				A288A4762E90E46E0065C583 /* GooglePlacesSwift in Frameworks */,
@@ -90,6 +92,7 @@
 				A2FC777A2E970C38003D5518 /* FirebaseAnalyticsCore */,
 				A2FC777C2E970C38003D5518 /* FirebaseAppCheck */,
 				A2FC777E2E970C38003D5518 /* FirebaseCore */,
+				A2B99AB92E9866340046017D /* Polyline */,
 			);
 			productName = JetLagTagCalculator;
 			productReference = A296B3102E8F5EBE00CE74A2 /* JetLagTagCalculator.app */;
@@ -124,6 +127,7 @@
 				A288A47A2E90EB010065C583 /* XCRemoteSwiftPackageReference "swift-confidential-plugin" */,
 				A2A9854A2E9187E100D0689D /* XCRemoteSwiftPackageReference "swift-confidential" */,
 				A2FC77772E970C38003D5518 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A2B99AB82E9866340046017D /* XCRemoteSwiftPackageReference "Polyline" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A296B3112E8F5EBE00CE74A2 /* Products */;
@@ -400,6 +404,14 @@
 				minimumVersion = 0.4.2;
 			};
 		};
+		A2B99AB82E9866340046017D /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A2FC77772E970C38003D5518 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -430,6 +442,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2A9854A2E9187E100D0689D /* XCRemoteSwiftPackageReference "swift-confidential" */;
 			productName = _ConfidentialKit;
+		};
+		A2B99AB92E9866340046017D /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B99AB82E9866340046017D /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
 		};
 		A2FC77782E970C38003D5518 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

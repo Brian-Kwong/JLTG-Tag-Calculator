@@ -23,8 +23,8 @@ struct SelectRoutePicker: View {
     @State private var selectedTransitType: String = "All"
     @State private var departureDate: Date = Date()
     @State private var coinBalance: String = ""
-    @StateObject private var locationManager = UserLocationManager()
     @StateObject private var googlePlacesViewModel = GooglePlacesViewModel()
+    @State private var entryError: String?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var body: some View {
@@ -35,14 +35,12 @@ struct SelectRoutePicker: View {
                 Section("Location") {
                     InputFeild(
                         googlePlacesViewModel: googlePlacesViewModel,
-                        locationManager: locationManager,
                         location: $fromLocation,
                         inputFocused: $fromLocationFocused,
                         placeHolderText: "Origin Station"
                     )
                     InputFeild(
                         googlePlacesViewModel: googlePlacesViewModel,
-                        locationManager: locationManager,
                         location: $toLocation,
                         inputFocused: $toLocationFocused,
                         placeHolderText: "Destination Station"
@@ -56,10 +54,38 @@ struct SelectRoutePicker: View {
                     )
                     TextField("Coin Balance", text: $coinBalance)
                         .keyboardType(.numberPad)
+                        .onChange(of: coinBalance) {
+                            oldValue,
+                            newValue in
+                            if let balance = Int(coinBalance) {
+                                if balance < 0 {
+                                    routeResultsViewModel.userBalance = 2000
+                                } else {
+                                    routeResultsViewModel.userBalance = balance
+                                }
+                            } else {
+                                routeResultsViewModel.userBalance = 2000
+                            }
+                        }
                 }
                 Section {
                     Button("Search Route") {
                         Task {
+                            if fromLocation.location == "" || fromLocation.placeID == "" || fromLocation.coordinate == nil {
+                                entryError =
+                                    "Please enter a valid origin station"
+                                return
+                            } else if toLocation.location == "" || toLocation.placeID == "" || toLocation.coordinate == nil {
+                                entryError =
+                                    "Please enter a valid destination station"
+                                return
+                            } else if fromLocation.placeID
+                                        == toLocation.placeID
+                            {
+                                entryError =
+                                    "Origin and Destination cannot be the same"
+                                return
+                            }
                             routeResultsViewModel
                                 .performSearch(
                                     orgin: fromLocation,
@@ -108,13 +134,33 @@ struct SelectRoutePicker: View {
             isPresented: $routeResultsViewModel.showRouteDetails
         ) {
             RouteResults(routeResultsViewModel: routeResultsViewModel)
+        }.alert(
+            "Input Error",
+            isPresented: Binding<Bool>(
+                get: { entryError != nil },
+                set: { newValue in
+                    if !newValue {
+                        entryError = nil
+                    }
+                }
+            )
+        ) {
+            Button("OK") {
+                entryError = nil
+            }
+        } message: {
+            if let entryError {
+                Text(entryError)
+            }
         }
     }
 }
 
 #Preview {
     struct RouteSelectRoouteOpitionsPreviewWrapper: View {
-        @StateObject var routeResultsViewModel = RoutesViewModel( forPreview: true)
+        @StateObject var routeResultsViewModel = RoutesViewModel(
+            forPreview: true
+        )
         var body: some View {
             SelectRoutePicker(routeResultsViewModel: routeResultsViewModel)
         }
