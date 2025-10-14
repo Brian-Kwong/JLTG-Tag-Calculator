@@ -32,7 +32,6 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidURL
         }
-        print("Request URL: \(requestURL.absoluteString)")
         URLSession.shared.configuration.timeoutIntervalForRequest = 30
         URLSession.shared.configuration.timeoutIntervalForResource = 60
         var urlRequest = URLRequest(url: requestURL)

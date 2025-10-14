@@ -8,12 +8,10 @@
 
 import express from "express";
 import dotenv from "dotenv";
-import {
-    parseGoogleMapsResponse,
-    parseHEREMapsResponse,
-} from "./googleAPIParser";
+import { parseGoogleMapsResponse, parseHEREMapsResponse } from "./routeAPIParser";
 import haversine from "haversine-distance";
 import { determineDepartureDateTimeBasedOnLocation } from "./utils";
+import { parseDepartureAPIResponse } from "./departureAPIParser";
 
 dotenv.config();
 
@@ -122,7 +120,7 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
         },
         travelMode: "TRANSIT",
         departureTime: departureTime
-            ?  new Date(departureTime as string).toISOString()
+            ? new Date(departureTime as string).toISOString()
             : new Date().toISOString(),
         computeAlternativeRoutes: true,
         languageCode: "en",
@@ -154,7 +152,10 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
                 message: "No routes found",
             };
         }
-        const parsedResponse = parseGoogleMapsResponse(googleData, departureTime as string | undefined);
+        const parsedResponse = parseGoogleMapsResponse(
+            googleData,
+            departureTime as string | undefined
+        );
         return {
             status: 200,
             data: parsedResponse,
@@ -223,6 +224,52 @@ router.get("/calculateRoute", async function (req, res) {
     return res
         .status(routeResult.status)
         .json(routeResult.data || { error: routeResult.message });
+});
+
+router.get("/departures", async function (req, res) {
+    const { coordinates, departureTime, radius } = req.query;
+    if (!coordinates) {
+        return res.status(400).json({ error: "Coordinates is required" });
+    }
+    if (departureTime) {
+        const depTime = new Date(departureTime as string);
+        if (isNaN(depTime.getTime())) {
+            return {
+                status: 400,
+                message: "Invalid departureTime format",
+            };
+        }
+    }
+    const hereApiKey = process.env.HERE_API_KEY;
+    const localDepartureTime = determineDepartureDateTimeBasedOnLocation(
+        coordinates as string,
+        (departureTime as string) || new Date().toISOString()
+    )
+        .set({ millisecond: 0 })
+        .toISO({ suppressMilliseconds: true, includeOffset: false });
+    const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50`;
+    try {
+        const departuresResponse = await fetch(`${departuresURL}`);
+        if (!departuresResponse.ok) {
+            console.error(
+                "Error fetching departures data:",
+                await departuresResponse.text()
+            );
+            return res
+                .status(departuresResponse.status)
+                .json({ error: "Error fetching departures data" });
+        }
+        const departuresData = await departuresResponse.json();
+        if (!departuresData.boards || departuresData.boards.length === 0) {
+            return res.status(404).json({ error: "No departures or stations found nearby" });
+        }
+        const parsedDepartures = parseDepartureAPIResponse(departuresData, coordinates as string);
+        parsedDepartures.sort((a, b) => a.station.distance - b.station.distance);
+        return res.status(200).json(parsedDepartures);
+    } catch (error) {
+        console.error("Error parsing departures data:", error);
+        return res.status(500).json({ error: "Error parsing departures data" });
+    }
 });
 
 router.use((_req, res) => {

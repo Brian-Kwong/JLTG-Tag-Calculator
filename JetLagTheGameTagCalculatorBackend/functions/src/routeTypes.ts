@@ -203,6 +203,43 @@ type GOOGLE_MAPS_API_RESPONSE = {
     ];
 };
 
+
+
+type HERE_API_NEXT_DEPARTURE_RESPONSE = {
+    boards: [
+        {
+        place: {
+            name: string;
+            type: string;
+            location: {
+                lat: number;
+                lng: number;
+            };
+            wheelchairAccessible?: boolean;
+            id: string;
+        };
+        departures: [{
+                time: string;
+                delay?: number;
+                status?: string;
+                platform?: string;
+                transport: {
+                    mode: keyof typeof transportationModeCost;
+                    name?: string;
+                    color?: string;
+                    headsign?: string;
+                    shortName?: string;
+                };
+                agency: {
+                    id: string;
+                    name: string;
+                    website: string;
+                };
+        }]
+    }
+    ];
+};
+
 type ResponseStep = {
     transportationMode: keyof typeof transportationModeCost;
     startLocation: {
@@ -259,10 +296,42 @@ type RouteResponse = {
     steps: ResponseStep[];
 };
 
+type NextDepartures = {
+    station : {
+        name: string;
+        lat: number;
+        lng: number;
+        id: string;
+        type: string;
+        distance: number;
+    };
+    departures: [
+        {
+            time: string;
+            delay?: number;
+            status?: string;
+            platform?: string;
+            line: {
+                mode: keyof typeof transportationModeCost;
+                name?: string;
+                color?: string;
+                transitLineFinalDestination?: string;
+            };
+            agency: {
+                id: string;
+                name: string;
+                website: string;
+            };
+        }
+    ];
+}
+
 export { transportationMode, transportationModeCost };
 export type {
     HERE_API_RESPONSE,
     GOOGLE_MAPS_API_RESPONSE,
+    HERE_API_NEXT_DEPARTURE_RESPONSE,
+    NextDepartures,
     ResponseStep,
     RouteResponse,
 };

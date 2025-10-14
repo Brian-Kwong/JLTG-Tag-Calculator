@@ -30,7 +30,10 @@ import {
  * @param {string} [startTime] - Optional start time in ISO format to use for the first departure time if not provided by the API
  * @return {RouteResponse[]} - An array of RouteResponse objects
  */
-function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE, startTime?: string) {
+function parseGoogleMapsResponse(
+    response: GOOGLE_MAPS_API_RESPONSE,
+    startTime?: string
+) {
     const routes = response.routes;
     const walkingsSteps: Array<{
         distanceMeters: number;
@@ -109,20 +112,21 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE, startTime?:
                             );
                         }
                         polyline = encode(polyLineArray, 5);
-                        const departureTime = determineDepartureDateTimeBasedOnLocation(
-                            `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
-                            responseSteps.length === 0
-                                ? startTime || new Date().toISOString()
-                                : responseSteps[responseSteps.length - 1]
-                                      .arrivalTime
-                        )
+                        const departureTime =
+                            determineDepartureDateTimeBasedOnLocation(
+                                `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
+                                responseSteps.length === 0
+                                    ? startTime || new Date().toISOString()
+                                    : responseSteps[responseSteps.length - 1]
+                                          .arrivalTime
+                            );
                         // Let arrival time == departure time + duration
                         let arrivalTime = "";
                         if (departureTime) {
                             arrivalTime = departureTime
                                 .plus({ seconds: totalWalkingDuration })
                                 .toISO() as string;
-                        } 
+                        }
                         responseSteps.push({
                             transportationMode: "WALKING",
                             distance: totalWalkingDistance,
@@ -159,7 +163,8 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE, startTime?:
                                     (totalWalkingDuration / 60)
                             ),
                             departureTime:
-                                departureTime.toISO() || new Date().toISOString(),
+                                departureTime.toISO() ||
+                                new Date().toISOString(),
                             arrivalTime:
                                 arrivalTime || new Date().toISOString(),
                         });
