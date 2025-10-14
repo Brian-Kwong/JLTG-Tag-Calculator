@@ -22,26 +22,28 @@ import { Request, Response, NextFunction } from "express";
  * @param {NextFunction} next - Express next middleware function
  */
 async function verifyAppTestToken(
-  req: Request,
-  res: Response,
-  next: NextFunction
+    req: Request,
+    res: Response,
+    next: NextFunction
 ): Promise<void> {
-  const appCheckToken =
-    req.header("X-Firebase-AppCheck") || req.header("X-Firebase-Debug");
-  if (!appCheckToken) {
-    res
-      .status(401)
-      .json({ message: "Unauthorized: No App Check or Debug token provided" });
-    return;
-  }
-  try {
-    await admin.appCheck().verifyToken(appCheckToken);
-    return next();
-  } catch (error) {
-    console.error("Error verifying App Check token:", error);
-    res.status(401).json({ message: "Unauthorized: Invalid App Check token" });
-    return;
-  }
+    const appCheckToken =
+        req.header("X-Firebase-AppCheck") || req.header("X-Firebase-Debug");
+    if (!appCheckToken) {
+        res.status(401).json({
+            message: "Unauthorized: No App Check or Debug token provided",
+        });
+        return;
+    }
+    try {
+        await admin.appCheck().verifyToken(appCheckToken);
+        return next();
+    } catch (error) {
+        console.error("Error verifying App Check token:", error);
+        res.status(401).json({
+            message: "Unauthorized: Invalid App Check token",
+        });
+        return;
+    }
 }
 
 export default verifyAppTestToken;

@@ -43,7 +43,7 @@ struct RouteCard: View {
                         VStack {
                             routeSourceToDestination
                         }
-                    }
+                    }.multilineTextAlignment(.center)
                 }
                 ViewThatFits {
                     LazyVGrid(

@@ -9,8 +9,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import {
-  parseGoogleMapsResponse,
-  parseHEREMapsResponse,
+    parseGoogleMapsResponse,
+    parseHEREMapsResponse,
 } from "./googleAPIParser";
 import haversine from "haversine-distance";
 import { determineDepartureDateTimeBasedOnLocation } from "./utils";
@@ -19,7 +19,6 @@ dotenv.config();
 
 const createRouter = express.Router;
 const router = createRouter();
-
 
 const calculateRouteBasedOffHereApi = async (req: express.Request) => {
     const { originCoord, destinationCoord, departureTime } = req.query;
@@ -45,7 +44,9 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
             ? `&departureTime=${determineDepartureDateTimeBasedOnLocation(
                   originCoord as string,
                   departureTime as string
-              ).toISO()}`
+              )
+                  .set({ millisecond: 0 })
+                  .toISO({ suppressMilliseconds: true, includeOffset: false })}`
             : "");
     try {
         const transitResponse = await fetch(`${transitURL}`);
@@ -120,10 +121,9 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
             },
         },
         travelMode: "TRANSIT",
-        departureTime: determineDepartureDateTimeBasedOnLocation(
-            originCoord as string,
-            departureTime as string | undefined
-        ).toISO(),
+        departureTime: departureTime
+            ?  new Date(departureTime as string).toISOString()
+            : new Date().toISOString(),
         computeAlternativeRoutes: true,
         languageCode: "en",
     };
@@ -154,7 +154,7 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
                 message: "No routes found",
             };
         }
-        const parsedResponse = parseGoogleMapsResponse(googleData);
+        const parsedResponse = parseGoogleMapsResponse(googleData, departureTime as string | undefined);
         return {
             status: 200,
             data: parsedResponse,
@@ -226,9 +226,9 @@ router.get("/calculateRoute", async function (req, res) {
 });
 
 router.use((_req, res) => {
-  return res.status(404).json({
-    error: "The requested resource was not found",
-  });
+    return res.status(404).json({
+        error: "The requested resource was not found",
+    });
 });
 
 export default router;

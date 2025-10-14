@@ -14,123 +14,23 @@ import {
     GOOGLE_MAPS_API_RESPONSE,
     RouteResponse,
     ResponseStep,
-    transportationMode,
     transportationModeCost,
     HERE_API_RESPONSE,
 } from "./routeTypes";
-import { determineDepartureDateTimeBasedOnLocation } from "./utils";
-
-/**
- * Update the location names to "Start Location" and "End Location" if they are coordinates.
- * @param {RouteResponse[]} parsedRoutes - array of RouteResponse objects to inspect and update
- * @return {RouteResponse[]} - the same array with departure and arrival names replaced when they are coordinate strings
- */
-function updateLocationNames(parsedRoutes: RouteResponse[]): RouteResponse[] {
-    if (parsedRoutes.length > 0) {
-        for (const route of parsedRoutes) {
-            // Match if coordinates then replace with "Start Location" or "End Location"
-            if (
-                route.departureLocation.name.match(
-                    /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
-                )
-            ) {
-                route.departureLocation.name = "Start Location";
-            }
-            if (
-                route.arrivalLocation.name.match(
-                    /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
-                )
-            ) {
-                route.arrivalLocation.name = "End Location";
-            }
-            // Also replace in steps 0 and last
-            if (
-                route.steps[0].startLocation.name.match(
-                    /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
-                )
-            ) {
-                route.steps[0].startLocation.name = "Start Location";
-            }
-            if (
-                route.steps[route.steps.length - 1].endLocation.name.match(
-                    /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
-                )
-            ) {
-                route.steps[route.steps.length - 1].endLocation.name =
-                    "End Location";
-            }
-        }
-    }
-    return parsedRoutes;
-}
-
-/**
- * Determine the transportation mode based on the Google Maps API response vehicle type.
- * @param {string} type - transportation type from Google Maps API
- * @return {string} - the determined transportation mode
- */
-function determineTransportationMode(type: string) {
-    if (transportationMode.HIGH_SPEED_RAIL.includes(type)) {
-        return "HIGH_SPEED_RAIL";
-    } else if (transportationMode.LOW_SPEED_RAIL.includes(type)) {
-        return "LOW_SPEED_RAIL";
-    } else if (transportationMode.METRO.includes(type)) {
-        return "METRO";
-    } else if (transportationMode.BUS.includes(type)) {
-        return "BUS";
-    } else if (transportationMode.FERRY.includes(type)) {
-        return "FERRY";
-    } else if (transportationMode.FLIGHT.includes(type)) {
-        return "FLIGHT";
-    } else if (type === "WALK" || type === "pedestrian") {
-        return "WALKING";
-    } else {
-        return "LOW_SPEED_RAIL";
-    }
-}
-
-/** Determine the line name based on the provided name and short name.
- * @param {string | undefined} name - The full name of the line
- * @param {string | undefined} shortName - The short name of the line
- * @param { transportationMode } transport
- * @param {string | undefined} vehicleName - The specific name of the vehicle (e.g., bus, regional train)
- * @return {string | undefined} - The determined line name or undefined if both are not provided
- */
-function determineLineName(
-    name: string | undefined,
-    shortName: string | undefined,
-    transport: keyof typeof transportationModeCost,
-    vehicleName: string | undefined
-) {
-    if (shortName && shortName.trim() === "" && name && name.trim() === "") {
-        return undefined;
-    }
-    let baseName = "";
-    if (name && name.trim() !== "") {
-        baseName += `${name.trim()}`;
-    } else if (shortName && shortName.trim() !== "") {
-        if (baseName !== "") {
-            baseName += ` (${shortName.trim()})`;
-        } else {
-            baseName += `${shortName.trim()}`;
-        }
-    }
-    if (transport === "BUS" || transport === "METRO") {
-        baseName = `Line ${baseName}`;
-    } else {
-        if (vehicleName && vehicleName.trim() !== "") {
-            baseName = `${baseName} ${vehicleName.trim()}`;
-        }
-    }
-    return baseName.trim() === "" ? undefined : baseName.trim();
-}
+import {
+    determineDepartureDateTimeBasedOnLocation,
+    updateLocationNames,
+    determineTransportationMode,
+    determineLineName,
+} from "./utils";
 
 /**
  * Parse the Google Maps API response to extract relevant information to return back to the client.
  * @param {GOOGLE_MAPS_API_RESPONSE} response - The response object from Google Maps API
+ * @param {string} [startTime] - Optional start time in ISO format to use for the first departure time if not provided by the API
  * @return {RouteResponse[]} - An array of RouteResponse objects
  */
-function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
+function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE, startTime?: string) {
     const routes = response.routes;
     const walkingsSteps: Array<{
         distanceMeters: number;
@@ -209,6 +109,20 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
                             );
                         }
                         polyline = encode(polyLineArray, 5);
+                        const departureTime = determineDepartureDateTimeBasedOnLocation(
+                            `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
+                            responseSteps.length === 0
+                                ? startTime || new Date().toISOString()
+                                : responseSteps[responseSteps.length - 1]
+                                      .arrivalTime
+                        )
+                        // Let arrival time == departure time + duration
+                        let arrivalTime = "";
+                        if (departureTime) {
+                            arrivalTime = departureTime
+                                .plus({ seconds: totalWalkingDuration })
+                                .toISO() as string;
+                        } 
                         responseSteps.push({
                             transportationMode: "WALKING",
                             distance: totalWalkingDistance,
@@ -244,14 +158,10 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
                                 transportationModeCost.WALKING *
                                     (totalWalkingDuration / 60)
                             ),
-                        departureTime: determineDepartureDateTimeBasedOnLocation(
-                            `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
-                            ""
-                        ).toISO() || new Date().toISOString(),
-                        arrivalTime: determineDepartureDateTimeBasedOnLocation(
-                            `${walkingsSteps[walkingsSteps.length - 1].endLocation.latLng.latitude},${walkingsSteps[walkingsSteps.length - 1].endLocation.latLng.longitude}`,
-                            ""
-                        ).toISO() || new Date().toISOString(),
+                            departureTime:
+                                departureTime.toISO() || new Date().toISOString(),
+                            arrivalTime:
+                                arrivalTime || new Date().toISOString(),
                         });
                         walkingsSteps.length = 0; // Clear the walking steps
                     }
@@ -340,29 +250,32 @@ function parseGoogleMapsResponse(response: GOOGLE_MAPS_API_RESPONSE) {
                 lat: responseSteps[responseSteps.length - 1].endLocation.lat,
                 lng: responseSteps[responseSteps.length - 1].endLocation.lng,
             },
-            departureDate: (determineDepartureDateTimeBasedOnLocation(
-                `${responseSteps[0].startLocation.lat},${responseSteps[0].startLocation.lng}`,
-                responseSteps[0].departureTime
-            ).toISO() || new Date().toISOString())
-                .split("T")[0],
-            arrivalDate: (determineDepartureDateTimeBasedOnLocation(
-                `${responseSteps[responseSteps.length - 1].endLocation.lat},${responseSteps[responseSteps.length - 1].endLocation.lng}`,
-                responseSteps[responseSteps.length - 1].arrivalTime
+            departureDate: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${responseSteps[0].startLocation.lat},${responseSteps[0].startLocation.lng}`,
+                    responseSteps[0].departureTime
+                ).toISO() || new Date().toISOString()
+            ).split("T")[0],
+            arrivalDate: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${responseSteps[responseSteps.length - 1].endLocation.lat},${responseSteps[responseSteps.length - 1].endLocation.lng}`,
+                    responseSteps[responseSteps.length - 1].arrivalTime
+                ).toISO() || new Date().toISOString()
+            ).split("T")[0],
+            departureTime: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${responseSteps[0].startLocation.lat},${responseSteps[0].startLocation.lng}`,
+                    responseSteps[0].departureTime
+                ).toISO() || new Date().toISOString()
             )
-                .toISO() || new Date().toISOString())
-                .split("T")[0],
-            departureTime: (determineDepartureDateTimeBasedOnLocation(
-                `${responseSteps[0].startLocation.lat},${responseSteps[0].startLocation.lng}`,
-                responseSteps[0].departureTime
-            )
-                .toISO() || new Date().toISOString())
                 .split("T")[1]
                 .split(".")[0],
-            arrivalTime: (determineDepartureDateTimeBasedOnLocation(
-                `${responseSteps[responseSteps.length - 1].endLocation.lat},${responseSteps[responseSteps.length - 1].endLocation.lng}`,
-                responseSteps[responseSteps.length - 1].arrivalTime
+            arrivalTime: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${responseSteps[responseSteps.length - 1].endLocation.lat},${responseSteps[responseSteps.length - 1].endLocation.lng}`,
+                    responseSteps[responseSteps.length - 1].arrivalTime
+                ).toISO() || new Date().toISOString()
             )
-                .toISO() || new Date().toISOString())
                 .split("T")[1]
                 .split(".")[0],
             totalDuration: Math.ceil(
@@ -438,18 +351,34 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
                     section.transport.description || undefined
                 ),
                 vehicleType: section.transport.mode || undefined,
-                departureTime: determineDepartureDateTimeBasedOnLocation(
-                    `${section.departure.place.location.lat}, ${section.departure.place.location.lng}`,
-                    section.departure.time
-                ).toISO() || new Date().toISOString(),
-                arrivalTime: determineDepartureDateTimeBasedOnLocation(
-                    `${section.arrival.place.location.lat}, ${section.arrival.place.location.lng}`,
-                    section.arrival.time
-                ).toISO() || new Date().toISOString(),
+                departureTime:
+                    determineDepartureDateTimeBasedOnLocation(
+                        `${section.departure.place.location.lat}, ${section.departure.place.location.lng}`,
+                        section.departure.time
+                    ).toISO() || new Date().toISOString(),
+                arrivalTime:
+                    determineDepartureDateTimeBasedOnLocation(
+                        `${section.arrival.place.location.lat}, ${section.arrival.place.location.lng}`,
+                        section.arrival.time
+                    ).toISO() || new Date().toISOString(),
                 numStops: undefined,
                 transitLineFinalDestination:
                     section.transport.headsign || undefined,
             });
+            // If there are incidents, add them to the step
+            if (section.incidents && section.incidents.length > 0) {
+                steps[steps.length - 1].incidents = section.incidents.map(
+                    (incident) => ({
+                        summary: incident.summary,
+                        description: incident.description,
+                        type: incident.type,
+                        effect: incident.effect,
+                        validFrom: incident.validFrom,
+                        validUntil: incident.validUntil,
+                        url: incident.url,
+                    })
+                );
+            }
         }
         parsedRoutes.push({
             departureLocation: {
@@ -462,27 +391,32 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
                 lat: steps[steps.length - 1].endLocation.lat,
                 lng: steps[steps.length - 1].endLocation.lng,
             },
-            departureDate: (determineDepartureDateTimeBasedOnLocation(
-                `${steps[0].startLocation.lat},${steps[0].startLocation.lng}`,
-                steps[0].departureTime
-            ).toISO() || new Date().toISOString())
-                .split("T")[0],
-            arrivalDate: (determineDepartureDateTimeBasedOnLocation(
-                `${steps[steps.length - 1].endLocation.lat},${steps[steps.length - 1].endLocation.lng}`,
-                steps[steps.length - 1].arrivalTime
+            departureDate: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${steps[0].startLocation.lat},${steps[0].startLocation.lng}`,
+                    steps[0].departureTime
+                ).toISO() || new Date().toISOString()
+            ).split("T")[0],
+            arrivalDate: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${steps[steps.length - 1].endLocation.lat},${steps[steps.length - 1].endLocation.lng}`,
+                    steps[steps.length - 1].arrivalTime
+                ).toISO() || new Date().toISOString()
+            ).split("T")[0],
+            departureTime: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${steps[0].startLocation.lat},${steps[0].startLocation.lng}`,
+                    steps[0].departureTime
+                ).toISO() || new Date().toISOString()
             )
-                .toISO() || new Date().toISOString())
-                .split("T")[0],
-            departureTime: (determineDepartureDateTimeBasedOnLocation(
-                `${steps[0].startLocation.lat},${steps[0].startLocation.lng}`,
-                steps[0].departureTime
-            ).toISO() || new Date().toISOString())
                 .split("T")[1]
                 .split(".")[0],
-            arrivalTime: (determineDepartureDateTimeBasedOnLocation(
-                `${steps[steps.length - 1].endLocation.lat},${steps[steps.length - 1].endLocation.lng}`,
-                steps[steps.length - 1].arrivalTime
-            ).toISO() || new Date().toISOString())
+            arrivalTime: (
+                determineDepartureDateTimeBasedOnLocation(
+                    `${steps[steps.length - 1].endLocation.lat},${steps[steps.length - 1].endLocation.lng}`,
+                    steps[steps.length - 1].arrivalTime
+                ).toISO() || new Date().toISOString()
+            )
                 .split("T")[1]
                 .split(".")[0],
             totalDistance: Math.ceil(

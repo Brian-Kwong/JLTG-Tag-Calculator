@@ -24,6 +24,6 @@ const HERE_API_KEY = defineSecret("HERE_API_KEY");
 const GOOGLE_API_KEY = defineSecret("GOOGLE_API_KEY");
 
 export const appFunction = https.onRequest(
-  { secrets: [HERE_API_KEY, GOOGLE_API_KEY] },
-  app
+    { secrets: [HERE_API_KEY, GOOGLE_API_KEY] },
+    app
 );

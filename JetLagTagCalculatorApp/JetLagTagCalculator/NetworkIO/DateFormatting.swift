@@ -11,7 +11,6 @@ let dateFormatter = Date.ISO8601FormatStyle(includingFractionalSeconds: true)
 let timeFormatter = DateFormatter()
 
 func extractTime(timeString: String) -> String {
-    print("Extracting time from: \(timeString)")
     do {
         let date = try dateFormatter.parse(timeString)
         timeFormatter.dateFormat = "h:mm a"

@@ -23,6 +23,18 @@ struct Location: Hashable, Codable {
     var lng: Double
 }
 
+struct ResponseIncident: Hashable, Codable, Identifiable {
+    var id = UUID()
+    var summary : String?
+    var description : String?
+    var type : String
+    var effect: String
+    var validFrom: String?
+    var validUntil: String?
+    var url: String?
+}
+    
+
 struct ResponseStep: Hashable, Codable, Identifiable {
     var id = UUID()
     var transportationMode: TransportationModes
@@ -38,6 +50,7 @@ struct ResponseStep: Hashable, Codable, Identifiable {
     var arrivalTime: String?
     var numStops: Int?
     var transitLineFinalDestination: String?
+    var incidents: [ResponseIncident]?
     
     private enum CodingKeys: String, CodingKey {
         case transportationMode,
