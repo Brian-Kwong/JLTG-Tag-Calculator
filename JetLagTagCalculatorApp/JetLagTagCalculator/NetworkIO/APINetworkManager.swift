@@ -11,10 +11,19 @@ import _ConfidentialKit
 final class APINetworkManager {
     static let shared = APINetworkManager()
     private let firebaseBaseFunctionURLString = ObfuscatedLiterals.$apiURL
+    private let urlSession : URLSession
+    
+    init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.urlCache = URLCache(memoryCapacity: 20_000_000, diskCapacity: 100_000_000)
+        self.urlSession = URLSession(configuration: configuration)
+    }
+    
     func getRoute(
         from origin: UserPlaceEntry,
         destination: UserPlaceEntry,
-        departureDate: Date
+        departureDate: Date,
+        withCache: Bool = true
     ) async throws -> [RouteResponse] {
         guard origin.coordinate != nil,
             destination.coordinate != nil
@@ -42,7 +51,8 @@ final class APINetworkManager {
             "\(appCheckToken)",
             forHTTPHeaderField: "X-Firebase-AppCheck"
         )
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        urlRequest.cachePolicy = withCache ? .returnCacheDataElseLoad : .reloadIgnoringLocalCacheData
+        let (data, response) = try await urlSession.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.statusCode == 200
         else {

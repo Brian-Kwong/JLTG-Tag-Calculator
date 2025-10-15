@@ -49,6 +49,10 @@ func determineRouteLargeOcom(route: RouteResponse) -> AnyView {
                     && TransportationModes.allCases.firstIndex(of: a.key)!
                         > TransportationModes.allCases.firstIndex(of: b.key)!)
         }?.key ?? .WALKING
+    return createIcon(transportationMode: transportationMode)
+}
+
+func createIcon(transportationMode : TransportationModes,iconSize : CGFloat = 40, iconPadding : CGFloat = 20) -> AnyView {
     var icon: AnyView
     var color: Color
     switch transportationMode {
@@ -76,10 +80,10 @@ func determineRouteLargeOcom(route: RouteResponse) -> AnyView {
     }
     return AnyView(
         icon.frame(
-            width: 40,
-            height: 40,
+            width: iconSize,
+            height: iconSize,
             alignment: .center
-        ).padding(20).background(color.opacity(0.2)).cornerRadius(50)
+        ).padding(iconPadding).background(color.opacity(0.2)).cornerRadius(50)
     )
 }
 

@@ -14,11 +14,12 @@ import admin from "firebase-admin";
 import express from "express";
 import transitRoutes from "./fetchRoutes";
 import verifyToken from "./auth";
+import cacheResults from "./cache";
 
 admin.initializeApp();
 const app = express();
 app.use(express.json());
-app.use("/transit", verifyToken, transitRoutes);
+app.use("/transit", verifyToken, cacheResults, transitRoutes);
 
 const HERE_API_KEY = defineSecret("HERE_API_KEY");
 const GOOGLE_API_KEY = defineSecret("GOOGLE_API_KEY");

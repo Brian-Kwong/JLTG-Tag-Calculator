@@ -8,7 +8,10 @@
 
 import express from "express";
 import dotenv from "dotenv";
-import { parseGoogleMapsResponse, parseHEREMapsResponse } from "./routeAPIParser";
+import {
+    parseGoogleMapsResponse,
+    parseHEREMapsResponse,
+} from "./routeAPIParser";
 import haversine from "haversine-distance";
 import { determineDepartureDateTimeBasedOnLocation } from "./utils";
 import { parseDepartureAPIResponse } from "./departureAPIParser";
@@ -261,10 +264,17 @@ router.get("/departures", async function (req, res) {
         }
         const departuresData = await departuresResponse.json();
         if (!departuresData.boards || departuresData.boards.length === 0) {
-            return res.status(404).json({ error: "No departures or stations found nearby" });
+            return res
+                .status(404)
+                .json({ error: "No departures or stations found nearby" });
         }
-        const parsedDepartures = parseDepartureAPIResponse(departuresData, coordinates as string);
-        parsedDepartures.sort((a, b) => a.station.distance - b.station.distance);
+        const parsedDepartures = parseDepartureAPIResponse(
+            departuresData,
+            coordinates as string
+        );
+        parsedDepartures.sort(
+            (a, b) => a.station.distance - b.station.distance
+        );
         return res.status(200).json(parsedDepartures);
     } catch (error) {
         console.error("Error parsing departures data:", error);

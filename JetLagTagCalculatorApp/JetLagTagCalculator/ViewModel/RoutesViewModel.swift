@@ -22,9 +22,14 @@ final class RoutesViewModel: ObservableObject {
         }
     }
     private var searchTask: Task<Void, Never>?
+    
+    private var origin: UserPlaceEntry?
+    private var destination: UserPlaceEntry?
+    private var departureDate: Date?
 
     init(forPreview: Bool = false) {
         if forPreview {
+            self.isLoading = true
             if let localResults = fetchResultsLocally() {
                 self.routes = localResults
                 self.isLoading = false
@@ -82,7 +87,8 @@ final class RoutesViewModel: ObservableObject {
     func searchRoutes(
         orgin: UserPlaceEntry,
         destination: UserPlaceEntry,
-        departureDate: Date
+        departureDate: Date,
+        refresh: Bool = false
     ) {
         searchTask?.cancel()
         searchTask = Task {
@@ -95,14 +101,18 @@ final class RoutesViewModel: ObservableObject {
                     self.showRouteDetails = false
                     return
                 }
+                self.origin = orgin
+                self.destination = destination
+                self.departureDate = departureDate
                 let fetchedRoutes = try await APINetworkManager.shared.getRoute(
                     from: orgin,
                     destination: destination,
-                    departureDate: departureDate
+                    departureDate: departureDate,
+                    withCache: !refresh
                 )
                 // Find the cheapest route and see if user can afford it
                 if let cheapestRoute = fetchedRoutes.min(by: { $0.totalCost < $1.totalCost }) {
-                    if cheapestRoute.totalCost > userBalance {
+                    if cheapestRoute.totalCost > userBalance && !refresh{
                         lowBalanceWarningShown = true
                     }
                 }
@@ -138,6 +148,15 @@ final class RoutesViewModel: ObservableObject {
             }
             self.isLoading = false
         }
+    }
+    
+    func refresh(){
+        searchRoutes(
+            orgin: self.origin!,
+            destination: self.destination!,
+            departureDate: self.departureDate!,
+            refresh: true
+        )
     }
 
     func sortResultsBy(sortBy: SortByOptions) {

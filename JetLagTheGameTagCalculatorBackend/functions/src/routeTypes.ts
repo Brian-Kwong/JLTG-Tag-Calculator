@@ -203,40 +203,40 @@ type GOOGLE_MAPS_API_RESPONSE = {
     ];
 };
 
-
-
 type HERE_API_NEXT_DEPARTURE_RESPONSE = {
     boards: [
         {
-        place: {
-            name: string;
-            type: string;
-            location: {
-                lat: number;
-                lng: number;
+            place: {
+                name: string;
+                type: string;
+                location: {
+                    lat: number;
+                    lng: number;
+                };
+                wheelchairAccessible?: boolean;
+                id: string;
             };
-            wheelchairAccessible?: boolean;
-            id: string;
-        };
-        departures: [{
-                time: string;
-                delay?: number;
-                status?: string;
-                platform?: string;
-                transport: {
-                    mode: keyof typeof transportationModeCost;
-                    name?: string;
-                    color?: string;
-                    headsign?: string;
-                    shortName?: string;
-                };
-                agency: {
-                    id: string;
-                    name: string;
-                    website: string;
-                };
-        }]
-    }
+            departures: [
+                {
+                    time: string;
+                    delay?: number;
+                    status?: string;
+                    platform?: string;
+                    transport: {
+                        mode: keyof typeof transportationModeCost;
+                        name?: string;
+                        color?: string;
+                        headsign?: string;
+                        shortName?: string;
+                    };
+                    agency: {
+                        id: string;
+                        name: string;
+                        website: string;
+                    };
+                },
+            ];
+        },
     ];
 };
 
@@ -297,7 +297,7 @@ type RouteResponse = {
 };
 
 type NextDepartures = {
-    station : {
+    station: {
         name: string;
         lat: number;
         lng: number;
@@ -322,9 +322,9 @@ type NextDepartures = {
                 name: string;
                 website: string;
             };
-        }
+        },
     ];
-}
+};
 
 export { transportationMode, transportationModeCost };
 export type {

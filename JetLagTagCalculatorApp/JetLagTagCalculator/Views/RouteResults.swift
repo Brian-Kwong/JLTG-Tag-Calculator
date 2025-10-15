@@ -65,7 +65,10 @@ struct RouteResults: View {
                     selectedSortOption: $routeResultsViewModel.sortByOption
                 )
             }
-        }.alert("Low Balance", isPresented: $routeResultsViewModel.lowBalanceWarningShown) {
+        }.refreshable {
+            routeResultsViewModel.refresh()
+        }
+        .alert("Low Balance", isPresented: $routeResultsViewModel.lowBalanceWarningShown) {
             Button("Go Back") {
                 routeResultsViewModel.lowBalanceWarningShown = false
                 routeResultsViewModel.showRouteDetails = false
