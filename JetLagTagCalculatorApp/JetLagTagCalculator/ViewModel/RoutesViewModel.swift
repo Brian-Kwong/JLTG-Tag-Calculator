@@ -26,6 +26,7 @@ final class RoutesViewModel: ObservableObject {
     private var origin: UserPlaceEntry?
     private var destination: UserPlaceEntry?
     private var departureDate: Date?
+    private var selectedModesOfTransport : Set<TransportationModes>?
 
     init(forPreview: Bool = false) {
         if forPreview {
@@ -43,12 +44,14 @@ final class RoutesViewModel: ObservableObject {
     func performSearch(
         orgin: UserPlaceEntry,
         destination: UserPlaceEntry,
-        departureDate: Date = Date()
+        departureDate: Date = Date(),
+        modesOfTransport: Set<TransportationModes>
     ) {
         searchRoutes(
             orgin: orgin,
             destination: destination,
-            departureDate: departureDate
+            departureDate: departureDate,
+            modesOfTransport: modesOfTransport
         )
     }
 
@@ -88,6 +91,7 @@ final class RoutesViewModel: ObservableObject {
         orgin: UserPlaceEntry,
         destination: UserPlaceEntry,
         departureDate: Date,
+        modesOfTransport: Set<TransportationModes>,
         refresh: Bool = false
     ) {
         searchTask?.cancel()
@@ -104,10 +108,12 @@ final class RoutesViewModel: ObservableObject {
                 self.origin = orgin
                 self.destination = destination
                 self.departureDate = departureDate
+                self.selectedModesOfTransport = modesOfTransport
                 let fetchedRoutes = try await APINetworkManager.shared.getRoute(
                     from: orgin,
                     destination: destination,
                     departureDate: departureDate,
+                    modesOfTransport: modesOfTransport,
                     withCache: !refresh
                 )
                 // Find the cheapest route and see if user can afford it
@@ -120,6 +126,10 @@ final class RoutesViewModel: ObservableObject {
             } catch RouteFetchErrors.invalidCredentials {
                 self.errorIcon = "lock.shield"
                 self.errorMessage = "Authentication error. Please try again."
+                self.routes = []
+            } catch RouteFetchErrors.invalidTransportMode {
+                self.errorIcon = "car.fill"
+                self.errorMessage = "One or more selected transportation modes are invalid."
                 self.routes = []
             } catch RouteFetchErrors.noRoutesFound {
                 self.errorIcon = "circle.badge.questionmark"
@@ -155,6 +165,7 @@ final class RoutesViewModel: ObservableObject {
             orgin: self.origin!,
             destination: self.destination!,
             departureDate: self.departureDate!,
+            modesOfTransport: self.selectedModesOfTransport!,
             refresh: true
         )
     }

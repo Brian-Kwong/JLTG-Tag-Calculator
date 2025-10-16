@@ -10,7 +10,6 @@ import SwiftUI
 struct RouteResults: View {
     @ObservedObject var routeResultsViewModel: RoutesViewModel
 
-    @State var searched: Bool = false
     var body: some View {
         Group {
             if routeResultsViewModel.isLoading {
@@ -26,7 +25,7 @@ struct RouteResults: View {
                                 NavigationLink(value: route) {
                                     EmptyView()
                                 }.opacity(0)
-                            ).padding(.vertical, 24)
+                            ).padding(.vertical, 12)
                     }.frame(maxWidth: .infinity, alignment: .center)
                         .listRowInsets(EdgeInsets())
                 }

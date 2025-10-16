@@ -25,7 +25,14 @@ struct JetLagTagCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack{
-                SearchRoute()
+                TabView {
+                    Tab("Routes", systemImage: "location.magnifyingglass"){
+                        SearchRoute()
+                    }
+                    Tab("Departures", systemImage: "list.bullet.rectangle"){
+                        NextDepartures()
+                    }
+                }
             }
         }
     }

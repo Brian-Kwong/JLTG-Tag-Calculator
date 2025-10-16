@@ -12,8 +12,7 @@ extension Color {
     init?(hexString : String){
         var hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         hex = hex.replacingOccurrences(of: "#", with: "")
-        var rgbHex: UInt64 = 0
-        guard Scanner(string: hex).scanHexInt64(&rgbHex) else {
+        guard let rgbHex = UInt64(hex, radix: 16) else {
             return nil
         }
         var r, g, b, a: Double

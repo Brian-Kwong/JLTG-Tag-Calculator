@@ -105,3 +105,72 @@ func determineRouteLogo(transportationMode: TransportationModes) -> AnyView {
         return AnyView(RouteLine(icon: Airplane(), iconColor: .purple))
     }
 }
+
+func determineButtonIcon(transportationMode: TransportationModes, selectedModes : Binding<Set<TransportationModes>>, enabled: Bool = true) -> AnyView {
+    switch transportationMode {
+    case .HIGH_SPEED_RAIL:
+        return AnyView(
+            JetLagIconButton(
+                icon: HighSpeedTrain(),
+                transportMode: transportationMode,
+                selectedModesSet : selectedModes,
+                enabled: enabled
+            )
+        )
+    case .LOW_SPEED_RAIL:
+        return AnyView(
+            JetLagIconButton(
+                icon: LowSpeedRail(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    case .METRO:
+        return AnyView(
+            JetLagIconButton(
+                icon: MetroTrain(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    case .BUS:
+        return AnyView(
+            JetLagIconButton(
+                icon: BusIcon(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    case .FERRY:
+        return AnyView(JetLagIconButton(
+                icon: FerryIcon(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    case .WALKING:
+        return AnyView(
+            JetLagIconButton(
+                icon: WalkingIcon(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    case .FLIGHT:
+        return AnyView(
+            JetLagIconButton(
+                icon: Airplane(),
+                transportMode: transportationMode,
+                selectedModesSet: selectedModes,
+                enabled: enabled
+            )
+        )
+    }
+}
+
+

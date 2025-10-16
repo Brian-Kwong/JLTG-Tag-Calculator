@@ -13,7 +13,7 @@ import {
     parseHEREMapsResponse,
 } from "./routeAPIParser";
 import haversine from "haversine-distance";
-import { determineDepartureDateTimeBasedOnLocation } from "./utils";
+import { determineDepartureDateTimeBasedOnLocation, transportationModeToHereTransportModes } from "./utils";
 import { parseDepartureAPIResponse } from "./departureAPIParser";
 
 dotenv.config();
@@ -22,7 +22,7 @@ const createRouter = express.Router;
 const router = createRouter();
 
 const calculateRouteBasedOffHereApi = async (req: express.Request) => {
-    const { originCoord, destinationCoord, departureTime } = req.query;
+    const { originCoord, destinationCoord, departureTime, avoidModes } = req.query;
     if (!originCoord || !destinationCoord) {
         return {
             status: 400,
@@ -39,8 +39,11 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
         }
     }
     const hereApiKey = process.env.HERE_API_KEY;
+    const avoid = avoidModes ? `-${(avoidModes as string).split(",").map(
+        (mode) => transportationModeToHereTransportModes(mode.trim()).join(",-")
+    ).join(",")}` : null;
     const transitURL =
-        `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10&return=bookingLinks,polyline,travelSummary` +
+        `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10${avoid ? `&avoid=${avoid}` : ""}&return=bookingLinks,polyline,travelSummary` +
         (departureTime
             ? `&departureTime=${determineDepartureDateTimeBasedOnLocation(
                   originCoord as string,
@@ -68,7 +71,22 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
                 message: "No routes found",
             };
         }
-        const parsedTransitData = parseHEREMapsResponse(transitData);
+        let parsedTransitData = parseHEREMapsResponse(transitData);
+
+        if (avoidModes) {
+            const avoidModesArray = (avoidModes as string).split(",").map(m => m.trim());
+            parsedTransitData = parsedTransitData.filter(route =>
+                !route.steps.some(step =>
+                    avoidModesArray.includes(step.transportationMode)
+                )
+            );
+            if (parsedTransitData.length === 0) {
+                return {
+                    status: 404,
+                    message: "No routes found with the specified avoid modes",
+                };
+            }
+        }
 
         console.log("HERE API used for route calculation");
         return {
@@ -85,7 +103,7 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
 };
 
 const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
-    const { originCoord, destinationCoord, departureTime } = req.query;
+    const { originCoord, destinationCoord, departureTime, avoidModes } = req.query;
     if (!originCoord || !destinationCoord) {
         return {
             status: 400,
@@ -155,10 +173,24 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
                 message: "No routes found",
             };
         }
-        const parsedResponse = parseGoogleMapsResponse(
+        let parsedResponse = parseGoogleMapsResponse(
             googleData,
             departureTime as string | undefined
         );
+        if (avoidModes) {
+            const avoidArray = (avoidModes as string).split(",").map(m => m.trim());
+            parsedResponse = parsedResponse.filter(route =>
+                !route.steps.some(step =>
+                    avoidArray.includes(step.transportationMode)
+                )
+            );
+            if (parsedResponse.length === 0) {
+                return {
+                    status: 404,
+                    message: "No routes found with the specified avoid modes",
+                };
+            }
+        }
         return {
             status: 200,
             data: parsedResponse,
@@ -235,14 +267,16 @@ router.get("/departures", async function (req, res) {
         return res.status(400).json({ error: "Coordinates is required" });
     }
     if (departureTime) {
+        if (!(departureTime as string).endsWith("Z")) {
+            return res.status(400).json({ error: "departureTime must be in UTC and end with 'Z'" });
+        }
         const depTime = new Date(departureTime as string);
+        console.log("Parsed departureTime:", depTime);
         if (isNaN(depTime.getTime())) {
-            return {
-                status: 400,
-                message: "Invalid departureTime format",
-            };
+            return res.status(400).json({ error: "Invalid departureTime format" });
         }
     }
+    console.log("Fetching departures for coordinates:", coordinates);
     const hereApiKey = process.env.HERE_API_KEY;
     const localDepartureTime = determineDepartureDateTimeBasedOnLocation(
         coordinates as string,
@@ -252,6 +286,7 @@ router.get("/departures", async function (req, res) {
         .toISO({ suppressMilliseconds: true, includeOffset: false });
     const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50`;
     try {
+        console.log("Fetching departures from HERE API:", departuresURL);
         const departuresResponse = await fetch(`${departuresURL}`);
         if (!departuresResponse.ok) {
             console.error(
@@ -262,6 +297,7 @@ router.get("/departures", async function (req, res) {
                 .status(departuresResponse.status)
                 .json({ error: "Error fetching departures data" });
         }
+        console.log("HERE API used for departures data");
         const departuresData = await departuresResponse.json();
         if (!departuresData.boards || departuresData.boards.length === 0) {
             return res

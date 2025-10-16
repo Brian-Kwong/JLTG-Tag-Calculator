@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransportationModes: String, Codable, Hashable, CaseIterable {
+enum TransportationModes: String, Codable, Hashable, CaseIterable, Identifiable {
     case HIGH_SPEED_RAIL = "HIGH_SPEED_RAIL"
     case LOW_SPEED_RAIL = "LOW_SPEED_RAIL"
     case METRO = "METRO"
@@ -15,6 +15,8 @@ enum TransportationModes: String, Codable, Hashable, CaseIterable {
     case FERRY = "FERRY"
     case FLIGHT = "FLIGHT"
     case WALKING = "WALKING"
+    
+    var id: Self { self }
 }
 
 struct Location: Hashable, Codable {

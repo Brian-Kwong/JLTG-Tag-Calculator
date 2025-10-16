@@ -29,8 +29,6 @@ struct RouteDetails: View {
             startingBalance: userBalance
         )
         VStack {
-            Text("Route Details")
-                .font(.system(size: TextSizes.title))
             RouteCard(route: route).padding(.bottom, 12)
             List(route.steps.indices, id: \.self) { idx in
                 let step = route.steps[idx]
@@ -45,7 +43,7 @@ struct RouteDetails: View {
                     Image(systemName: "map")
                 }
             }
-        }.navigationDestination(
+        }.navigationTitle("Route Details").navigationDestination(
             isPresented: $showMap
         ){
             RouteMap(route: route)

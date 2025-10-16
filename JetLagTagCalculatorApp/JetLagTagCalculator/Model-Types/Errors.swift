@@ -9,12 +9,14 @@ import Foundation
 
 enum RouteFetchErrors : Error {
     case invalidCoordinates
+    case invalidTransportMode
     case invalidURL
     case invalidCredentials
     case requestFailed
     case invalidResponse
     case decodingError
     case noRoutesFound
+    case noDeparturesFound
 }
 
 enum LocationEntryErrors : Error {

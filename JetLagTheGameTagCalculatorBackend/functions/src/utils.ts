@@ -148,9 +148,37 @@ function determineLineName(
     return baseName.trim() === "" ? undefined : baseName.trim();
 }
 
+/**
+ * Convert transportation modes from the application to HERE API format.
+ * @param {string} mode The transportation category
+ * @return {string[]} The corresponding HERE API transport modes NOTE that an empty array means walking only since HERE doesn't have a exclusion for walking
+ */
+function transportationModeToHereTransportModes(mode: string) : string[] {
+    switch (mode) {
+        case "HIGH_SPEED_RAIL":
+            return ["highSpeedTrain"];
+        case "LOW_SPEED_RAIL":
+            return ["intercityTrain","interRegionalTrain","regionalTrain","cityTrain"];
+        case "METRO":
+            return ["subway","lightRail","inclined","aerial","monorail"];
+        case "BUS":
+            return ["bus", "busRapid"]
+        case "FERRY":
+            return ["ferry"];
+        case "FLIGHT":
+            return ["flight"];
+        case "WALKING":
+            return [];
+        default:
+            return [];
+    }
+}
+
+
 export {
     determineDepartureDateTimeBasedOnLocation,
     updateLocationNames,
     determineTransportationMode,
     determineLineName,
+    transportationModeToHereTransportModes
 };

@@ -25,6 +25,9 @@ struct SelectRoutePicker: View {
     @State private var coinBalance: String = ""
     @StateObject private var googlePlacesViewModel = GooglePlacesViewModel()
     @State private var entryError: String?
+    
+    // By default every mode of transport is selected
+    @State private var selectedModesOfTransport : Set<TransportationModes> = Set(TransportationModes.allCases)
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var body: some View {
@@ -67,6 +70,18 @@ struct SelectRoutePicker: View {
                                 routeResultsViewModel.userBalance = 2000
                             }
                         }
+                    HStack{
+                        ForEach(TransportationModes.allCases) {
+                            transportType in
+                            Spacer()
+                            determineButtonIcon(
+                                transportationMode: transportType,
+                                selectedModes: $selectedModesOfTransport
+                                
+                            )
+                            Spacer()
+                        }
+                    }
                 }
                 Section {
                     Button("Search Route") {
@@ -91,6 +106,7 @@ struct SelectRoutePicker: View {
                                     orgin: fromLocation,
                                     destination: toLocation,
                                     departureDate: departureDate,
+                                    modesOfTransport: selectedModesOfTransport
                                 )
                         }
                     }.frame(maxWidth: .infinity, alignment: .center)

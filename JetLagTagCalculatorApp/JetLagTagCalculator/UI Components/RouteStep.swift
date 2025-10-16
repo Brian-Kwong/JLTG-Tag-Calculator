@@ -52,7 +52,7 @@ struct RouteStep: View {
                                         size: TextSizes.body,
                                         weight: .bold
                                     )
-                                )
+                                ).lineLimit(3)
                             } else if let vehicleName = routeStep.vehicleType {
                                 Text(
                                     vehicleName.localizedCapitalized
