@@ -5,10 +5,12 @@
 //  Created by Brian Kwong on 10/15/25.
 //
 
+import CoreLocation
 import SwiftUI
 
 struct NextDepartures: View {
-    @State var departuresViewModel : DeparturesViewModel = DeparturesViewModel(forPreview: true)
+    @State var departuresViewModel: DeparturesViewModel = DeparturesViewModel()
+    @State var didAppear = false
     var body: some View {
         NavigationSplitView {
             DeparturesParameters(departuresViewModel: departuresViewModel)
@@ -17,9 +19,11 @@ struct NextDepartures: View {
                 if departuresViewModel.showDepartures {
                     StationsPage(departuresViewModel: departuresViewModel)
                 } else {
-                    Text("Please modify the departure search parameters to see departures.")
-                        .font(.system(size: TextSizes.body))
-                        .foregroundColor(.gray)
+                    Text(
+                        "Please modify the departure search parameters to see departures."
+                    )
+                    .font(.system(size: TextSizes.body))
+                    .foregroundColor(.gray)
                 }
             }
         }

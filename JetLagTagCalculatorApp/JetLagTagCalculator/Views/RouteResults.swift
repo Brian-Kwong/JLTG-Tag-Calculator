@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct RouteResults: View {
     @ObservedObject var routeResultsViewModel: RoutesViewModel
 
@@ -21,6 +23,7 @@ struct RouteResults: View {
                 List(routeResultsViewModel.routes) { route in
                     HStack {
                         RouteCard(route: route)
+                            .listScrollEffect()
                             .background(
                                 NavigationLink(value: route) {
                                     EmptyView()

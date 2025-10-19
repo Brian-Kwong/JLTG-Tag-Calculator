@@ -12,7 +12,7 @@ import GooglePlacesSwift
 import _ConfidentialKit
 
 class GooglePlacesViewModel: ObservableObject {
-    
+
     @Published var autoCompleteStations: [AutocompletePlaceSuggestion] = []
     @Published var errorMessage: String? = nil
     private var placesClient = PlacesClient.shared
@@ -20,7 +20,7 @@ class GooglePlacesViewModel: ObservableObject {
     private var searchTask: Task<Void, Never>?
     private var placeCordiateSearch: Task<Void, Never>?
     func fetchForStations(input: String, currentLocation: CLLocation) {
-        
+
         // Cancel any existing search task
         searchTask?.cancel()
 
@@ -31,7 +31,7 @@ class GooglePlacesViewModel: ObservableObject {
             }
             return
         }
-        
+
         searchTask = Task {
             let filter = AutocompleteFilter(
                 types: [.transitStation, .cityHall, .airport, .trainStation],
@@ -51,13 +51,13 @@ class GooglePlacesViewModel: ObservableObject {
             {
             case .success(let response):
                 DispatchQueue.main.async {
-                    var mySugguestions : [AutocompletePlaceSuggestion] = []
+                    var mySugguestions: [AutocompletePlaceSuggestion] = []
                     for suggestion in response {
                         switch suggestion {
                         case .place(let placeSuggestion):
                             mySugguestions.append(placeSuggestion)
                         @unknown default:
-                           return
+                            return
                         }
                     }
                     self.autoCompleteStations = mySugguestions
@@ -73,15 +73,19 @@ class GooglePlacesViewModel: ObservableObject {
             }
         }
     }
-    
-    func fetchPlaceCordinates(placeID: String, setter: ((CLLocationCoordinate2D?) -> Void)? = nil) {
+
+    func fetchPlaceCordinates(
+        placeID: String,
+        setter: ((CLLocationCoordinate2D?) -> Void)? = nil
+    ) {
         placeCordiateSearch?.cancel()
         guard !placeID.isEmpty else {
             return
         }
         placeCordiateSearch = Task {
             let fetchPlace = FetchPlaceRequest(
-                placeID: placeID, placeProperties: [.coordinate]
+                placeID: placeID,
+                placeProperties: [.coordinate]
             )
             switch await placesClient.fetchPlace(with: fetchPlace) {
             case .success(let place):
@@ -93,7 +97,7 @@ class GooglePlacesViewModel: ObservableObject {
             }
         }
     }
-    
+
     /// Clear the currently stored error message (useful when dismissing alerts)
     func clearError() {
         DispatchQueue.main.async {

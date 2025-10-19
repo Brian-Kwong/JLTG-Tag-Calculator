@@ -262,7 +262,7 @@ router.get("/calculateRoute", async function (req, res) {
 });
 
 router.get("/departures", async function (req, res) {
-    const { coordinates, departureTime, radius } = req.query;
+    const { coordinates, departureTime, radius, avoidModes } = req.query;
     if (!coordinates) {
         return res.status(400).json({ error: "Coordinates is required" });
     }
@@ -271,12 +271,10 @@ router.get("/departures", async function (req, res) {
             return res.status(400).json({ error: "departureTime must be in UTC and end with 'Z'" });
         }
         const depTime = new Date(departureTime as string);
-        console.log("Parsed departureTime:", depTime);
         if (isNaN(depTime.getTime())) {
             return res.status(400).json({ error: "Invalid departureTime format" });
         }
     }
-    console.log("Fetching departures for coordinates:", coordinates);
     const hereApiKey = process.env.HERE_API_KEY;
     const localDepartureTime = determineDepartureDateTimeBasedOnLocation(
         coordinates as string,
@@ -284,9 +282,11 @@ router.get("/departures", async function (req, res) {
     )
         .set({ millisecond: 0 })
         .toISO({ suppressMilliseconds: true, includeOffset: false });
-    const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50`;
+        const avoid = avoidModes ? `-${(avoidModes as string).split(",").map(
+        (mode) => transportationModeToHereTransportModes(mode.trim()).join(",-")
+    ).join(",")}` : null;
+    const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50${avoid ? `&modes=${avoid}` : ""}`;
     try {
-        console.log("Fetching departures from HERE API:", departuresURL);
         const departuresResponse = await fetch(`${departuresURL}`);
         if (!departuresResponse.ok) {
             console.error(
@@ -304,13 +304,34 @@ router.get("/departures", async function (req, res) {
                 .status(404)
                 .json({ error: "No departures or stations found nearby" });
         }
-        const parsedDepartures = parseDepartureAPIResponse(
+        let parsedDepartures = parseDepartureAPIResponse(
             departuresData,
             coordinates as string
         );
+
+        if (avoidModes) {
+            const avoidModesArray = (avoidModes as string).split(",").map(m => m.trim());
+            parsedDepartures = parsedDepartures.map(stationDepartures => {
+                const filteredDepartures = stationDepartures.departures.filter(departure =>
+                    !avoidModesArray.includes(departure.line.mode)
+                );
+                return {
+                    station: stationDepartures.station,
+                    departures: filteredDepartures,
+                };
+            }).filter(stationDepartures => stationDepartures.departures.length > 0);
+            if (parsedDepartures.length === 0) {
+                return {
+                    status: 404,
+                    message: "No routes found with the specified avoid modes",
+                };
+            }
+        }
+
         parsedDepartures.sort(
             (a, b) => a.station.distance - b.station.distance
         );
+
         return res.status(200).json(parsedDepartures);
     } catch (error) {
         console.error("Error parsing departures data:", error);

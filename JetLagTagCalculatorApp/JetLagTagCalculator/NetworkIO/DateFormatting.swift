@@ -45,3 +45,12 @@ func convertSecondsToTimeFormat(seconds: Int) -> String {
 func convertToISO8601DateString(date: Date) -> String {
     return dateFormatter.format(date)
 }
+
+func convertStringToDate(dateString: String) -> Date? {
+    do {
+        let date = try dateFormatter.parse(dateString)
+        return date
+    } catch {
+        return nil
+    }
+}

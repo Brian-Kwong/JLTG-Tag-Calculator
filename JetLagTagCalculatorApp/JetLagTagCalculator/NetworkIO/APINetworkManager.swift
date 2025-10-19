@@ -38,12 +38,14 @@ final class APINetworkManager {
         guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.statusCode == 200
         else {
+            URLCache.shared.removeCachedResponse(for: urlRequest)
             switch (response as? HTTPURLResponse)?.statusCode {
             case 401, 403:
                 throw RouteFetchErrors.invalidCredentials
             case 404:
                 throw RouteFetchErrors.noRoutesFound
             default:
+                print("Status code \((response as? HTTPURLResponse)?.statusCode ?? -1))")
                 throw RouteFetchErrors.invalidResponse
             }
         }
@@ -75,7 +77,6 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidCoordinates
         }
-        print("Disallowed modes of transport: \(modesOfTransport)")
         guard let disallowedModesOfTransport = Set(TransportationModes.allCases).subtracting( modesOfTransport).map({ $0.rawValue }).joined(separator: ",") as String? else {
             throw RouteFetchErrors.invalidTransportMode
         }
@@ -87,7 +88,6 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidURL
         }
-        print("Request URL: \(requestURL.absoluteString)")
         do {
             let data = try await fetchResource(url: requestURL, withCache: withCache)
             let routeData = try await jsonDecoder(data: data, decodeType: RouteResponse.self)
@@ -103,7 +103,9 @@ final class APINetworkManager {
     
     func getDepartures(
         location : UserPlaceEntry,
+        radius : String,
         dateTime: Date,
+        modeOfTransport: Set<TransportationModes>,
         withCache: Bool = true
     ) async throws -> [RouteDeparturesResponse] {
         guard location.coordinate != nil else {
@@ -112,10 +114,13 @@ final class APINetworkManager {
         guard !firebaseBaseFunctionURLString.isEmpty else {
             throw RouteFetchErrors.invalidURL
         }
+        guard let disallowedModesOfTransport = Set(TransportationModes.allCases).subtracting( modeOfTransport).map({ $0.rawValue }).joined(separator: ",") as String? else {
+            throw RouteFetchErrors.invalidTransportMode
+        }
         guard
             let requestURL = URL(
                 string:
-                    "\(firebaseBaseFunctionURLString)/departures?coordinates=\(location.coordinate!.latitude),\(location.coordinate!.longitude)&departureTime=\(convertToISO8601DateString(date: dateTime))"
+                    "\(firebaseBaseFunctionURLString)/departures?coordinates=\(location.coordinate!.latitude),\(location.coordinate!.longitude)&departureTime=\(convertToISO8601DateString(date: dateTime))&radius=\(radius)&avoidModes=\(disallowedModesOfTransport)"
             )
         else {
             throw RouteFetchErrors.invalidURL

@@ -12,8 +12,44 @@ import {
 import {
     determineDepartureDateTimeBasedOnLocation,
     determineTransportationMode,
+    determineStationType
 } from "./utils";
 import haversine from "haversine-distance";
+
+/**
+ * This function groups departures from related stations (e.g., multiple platforms or companies at the same station)
+ * @param {NextDepartures} departures 
+ * @return {NextDepartures[]} The grouped departures by station
+ */
+function groupRelatedStationsDepartures(
+    departures: NextDepartures[],
+): NextDepartures[] {
+    // Stations are grouped by name and location (lat, lng)
+    const groupedStations = new Map<
+        string,
+        { station: NextDepartures["station"]; departures: NextDepartures["departures"] }
+    >();
+    for (const station of departures) {
+        const key = `${station.station.name}`;
+        if (!groupedStations.has(key)) {
+            groupedStations.set(key, {
+                station: station.station,
+                departures: station.departures,
+            });
+        } else {
+            const existing = groupedStations.get(key);
+            if (existing) {
+                existing.departures.push(...station.departures);
+                existing.station.type = determineStationType(existing.departures);
+                existing.departures.sort((a, b) => {
+                    return a.time.localeCompare(b.time);
+                });
+            }
+        }
+    }
+    return Array.from(groupedStations.values());
+}
+
 /**
  * The function to parse the next departures from HERE API response
  * @param {HERE_API_NEXT_DEPARTURE_RESPONSE} nextDepartures The next departures from a radius of stations from HERE API
@@ -53,24 +89,13 @@ function parseDepartureAPIResponse(
                 },
             };
         });
-        // Determine station type by checking the transportation modes of its departures
-        const modes = new Map<keyof typeof transportationModeCost, number>();
-        let maxCount = 0;
-        for (const dep of departures) {
-            const count = (modes.get(dep.line.mode) || 0) + 1;
-            if (count > maxCount) {
-                maxCount = count;
-                board.place.type = dep.line.mode;
-            }
-            modes.set(dep.line.mode, count);
-        }
         nearbyDepartures.push({
             station: {
-                name: board.place.name,
+                name: board.place.name.replace("/", "&"),
                 id: board.place.id,
                 lat: board.place.location.lat,
                 lng: board.place.location.lng,
-                type: board.place.type,
+                type: determineStationType(departures),
                 distance: haversine(
                     {
                         latitude: parseFloat(originalLocation.split(",")[0]),
@@ -85,7 +110,7 @@ function parseDepartureAPIResponse(
             departures: departures as NextDepartures["departures"],
         });
     }
-    return nearbyDepartures;
+    return groupRelatedStationsDepartures(nearbyDepartures);
 }
 
 export { parseDepartureAPIResponse };

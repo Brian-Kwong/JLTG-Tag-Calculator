@@ -296,17 +296,7 @@ type RouteResponse = {
     steps: ResponseStep[];
 };
 
-type NextDepartures = {
-    station: {
-        name: string;
-        lat: number;
-        lng: number;
-        id: string;
-        type: string;
-        distance: number;
-    };
-    departures: [
-        {
+type Departure = {
             time: string;
             delay?: number;
             status?: string;
@@ -322,8 +312,18 @@ type NextDepartures = {
                 name: string;
                 website: string;
             };
-        },
-    ];
+        };
+
+type NextDepartures = {
+    station: {
+        name: string;
+        lat: number;
+        lng: number;
+        id: string;
+        type: string;
+        distance: number;
+    };
+    departures: Departure[];
 };
 
 export { transportationMode, transportationModeCost };
@@ -334,4 +334,5 @@ export type {
     NextDepartures,
     ResponseStep,
     RouteResponse,
+    Departure,
 };

@@ -7,6 +7,24 @@
 
 import GooglePlacesSwift
 import SwiftUI
+internal import _LocationEssentials
+
+func setCurrentLocation(location : inout UserPlaceEntry) {
+    location.location =
+        "Current Location"
+    location.placeID = ""
+    location.coordinate =
+    Coordinate(
+        latitude: UserLocationManager.shared.userLocation?.coordinate.latitude ?? 0.0,
+        longitude: UserLocationManager.shared.userLocation?.coordinate.longitude ?? 0.0,
+    )
+}
+
+func clearLocation(location : inout UserPlaceEntry) {
+    location.location = ""
+    location.placeID = ""
+    location.coordinate = nil
+}
 
 struct SelectRoutePicker: View {
     @ObservedObject var routeResultsViewModel: RoutesViewModel
@@ -30,6 +48,7 @@ struct SelectRoutePicker: View {
     @State private var selectedModesOfTransport : Set<TransportationModes> = Set(TransportationModes.allCases)
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    
     var body: some View {
         let isCompact =
             horizontalSizeClass == .compact && verticalSizeClass == .compact
@@ -37,12 +56,16 @@ struct SelectRoutePicker: View {
             Form {
                 Section("Location") {
                     InputFeild(
+                        showTrailingIcon: fromLocationFocused,
+                        trailingIconAction: fromLocation.location != "" ? clearLocation: setCurrentLocation,
                         googlePlacesViewModel: googlePlacesViewModel,
                         location: $fromLocation,
                         inputFocused: $fromLocationFocused,
                         placeHolderText: "Origin Station"
                     )
                     InputFeild(
+                        showTrailingIcon: toLocationFocused,
+                        trailingIconAction: toLocation.location != "" ? clearLocation: setCurrentLocation,
                         googlePlacesViewModel: googlePlacesViewModel,
                         location: $toLocation,
                         inputFocused: $toLocationFocused,
@@ -70,27 +93,17 @@ struct SelectRoutePicker: View {
                                 routeResultsViewModel.userBalance = 2000
                             }
                         }
-                    HStack{
-                        ForEach(TransportationModes.allCases) {
-                            transportType in
-                            Spacer()
-                            determineButtonIcon(
-                                transportationMode: transportType,
-                                selectedModes: $selectedModesOfTransport
-                                
-                            )
-                            Spacer()
-                        }
-                    }
+                    TransportModeSelector(selectedModesOfTransport:
+                        $selectedModesOfTransport)
                 }
                 Section {
                     Button("Search Route") {
                         Task {
-                            if fromLocation.location == "" || fromLocation.placeID == "" || fromLocation.coordinate == nil {
+                            if fromLocation.location == "" || fromLocation.coordinate == nil {
                                 entryError =
                                     "Please enter a valid origin station"
                                 return
-                            } else if toLocation.location == "" || toLocation.placeID == "" || toLocation.coordinate == nil {
+                            } else if toLocation.location == "" || toLocation.coordinate == nil {
                                 entryError =
                                     "Please enter a valid destination station"
                                 return
@@ -112,38 +125,20 @@ struct SelectRoutePicker: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                 }
             }.overlay(alignment: .top) {
-                if (fromLocationFocused
-                    && !googlePlacesViewModel.autoCompleteStations.isEmpty
-                    && fromLocation.location != "")
-                    || (toLocationFocused
-                        && !googlePlacesViewModel.autoCompleteStations.isEmpty
-                        && toLocation.location != "")
-                {
-                    VStack {
-                        ForEach(
-                            googlePlacesViewModel.autoCompleteStations
-                                .prefix(5),
-                            id: \.self
-                        ) { suggestion in
-                            AutoSuggestionEntry(
-                                suggestion: suggestion,
-                                userInput: fromLocationFocused
-                                    ? $fromLocation
-                                    : $toLocation,
-                                inputFocused: fromLocationFocused
-                                    ? $fromLocationFocused
-                                    : $toLocationFocused
-                            )
-                        }
-                    }.frame(maxWidth: .infinity)
-                        .background(.ultraThinMaterial)
-                        .cornerRadius(8)
-                        .padding()
-                        .shadow(radius: 5)
-                        .offset(
-                            y: fromLocationFocused
-                                ? isCompact ? 60 : 70 : isCompact ? 120 : 130
-                        )
+                if fromLocationFocused {
+                    NavOverlay(
+                        inputFocused: $fromLocationFocused,
+                        googlePlacesViewModel: googlePlacesViewModel,
+                        userLocation: $fromLocation,
+                        overlayOffsetY: isCompact ? 60 : 70
+                    )
+                } else if toLocationFocused {
+                    NavOverlay(
+                        inputFocused: $toLocationFocused,
+                        googlePlacesViewModel: googlePlacesViewModel,
+                        userLocation: $toLocation,
+                        overlayOffsetY: isCompact ? 120 : 130
+                    )
                 }
             }
         }.navigationTitle("Route Search").navigationDestination(

@@ -19,6 +19,7 @@ func determineCostAfterStep(route: RouteResponse, startingBalance: Int = 2000)
     return balanceAfterStep
 }
 
+
 struct RouteDetails: View {
     @Binding var userBalance: Int
     let route: RouteResponse

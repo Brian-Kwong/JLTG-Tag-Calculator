@@ -8,6 +8,17 @@
 internal import Combine
 import Foundation
 
+enum RoutesSortByOptions: String, CaseIterable, Identifiable {
+    case duration = "clock"
+    case transfers = "arrow.triangle.2.circlepath"
+    case departureTime = "arrow.right.circle"
+    case arrivalTime = "arrow.left.circle"
+    case cost = "tram.card"
+    case distance = "mappin.and.ellipse"
+
+    var id: String { self.rawValue }
+}
+
 final class RoutesViewModel: ObservableObject {
     @Published var showRouteDetails: Bool = false
     @Published var isLoading: Bool = false
@@ -16,7 +27,7 @@ final class RoutesViewModel: ObservableObject {
     @Published var errorIcon: String?
     @Published var userBalance: Int = 2000
     @Published var lowBalanceWarningShown: Bool = false
-    @Published var sortByOption: SortByOptions = .cost {
+    @Published var sortByOption: RoutesSortByOptions = .cost {
         didSet {
             sortResultsBy(sortBy: sortByOption)
         }
@@ -96,6 +107,8 @@ final class RoutesViewModel: ObservableObject {
     ) {
         searchTask?.cancel()
         searchTask = Task {
+            self.errorIcon = nil
+            self.errorMessage = nil
             self.isLoading = true
             self.showRouteDetails = true
             do {
@@ -170,7 +183,7 @@ final class RoutesViewModel: ObservableObject {
         )
     }
 
-    func sortResultsBy(sortBy: SortByOptions) {
+    func sortResultsBy(sortBy: RoutesSortByOptions) {
         switch sortBy {
         case .cost:
             self.routes.sort { $0.totalCost < $1.totalCost }

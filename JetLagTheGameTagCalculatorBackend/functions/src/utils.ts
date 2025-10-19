@@ -1,6 +1,7 @@
 import { find } from "geo-tz";
 import { DateTime } from "luxon";
 import {
+    Departure,
     RouteResponse,
     transportationMode,
     transportationModeCost,
@@ -174,11 +175,32 @@ function transportationModeToHereTransportModes(mode: string) : string[] {
     }
 }
 
+/**
+ * Determine the station type based on the transportation modes of its departures.
+ * @param {Departure[]} departures
+ * @return {transportationModeCost} The determined station type
+ */
+function determineStationType(departures : Departure []) : keyof typeof transportationModeCost {
+            // Determine station type by checking the transportation modes of its departures
+            const modes = new Map<keyof typeof transportationModeCost, number>();
+            let type : keyof typeof transportationModeCost = "LOW_SPEED_RAIL"; // Default type
+            let maxCount = 0;
+            for (const dep of departures) {
+                const count = (modes.get(dep.line.mode) || 0) + 1;
+                if (count > maxCount) {
+                    maxCount = count;
+                    type = dep.line.mode;
+                }
+                modes.set(dep.line.mode, count);
+            }
+            return type;
+}
 
 export {
     determineDepartureDateTimeBasedOnLocation,
     updateLocationNames,
     determineTransportationMode,
     determineLineName,
-    transportationModeToHereTransportModes
+    transportationModeToHereTransportModes,
+    determineStationType
 };

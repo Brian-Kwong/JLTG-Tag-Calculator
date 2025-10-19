@@ -7,33 +7,25 @@
 
 import SwiftUI
 
-enum SortByOptions {
-    case duration
-    case transfers
-    case departureTime
-    case arrivalTime
-    case cost
-    case distance
-}
-
-struct SortByButton: View {
-    @Binding var selectedSortOption: SortByOptions
+struct SortByButton<OpitionType>: View
+where
+    OpitionType: CaseIterable & Hashable
+        & RawRepresentable, OpitionType.RawValue == String
+{
+    @Binding var selectedSortOption: OpitionType
     var body: some View {
         Menu {
             Label("Sort By", systemImage: "arrow.2.circlepath.circle")
             Divider()
-            Picker ("Sort By", selection: $selectedSortOption) {
-                Label(
-                    "Duration",
-                    systemImage: "clock"
-                ).tag(SortByOptions.duration)
-                Label("Transfers", systemImage: "arrow.triangle.2.circlepath").tag(SortByOptions.transfers)
-                Label("Departure Time", systemImage: "arrow.right.circle").tag(SortByOptions.departureTime)
-                Label("Arrival Time", systemImage: "arrow.left.circle").tag(SortByOptions.arrivalTime)
-                Label("Cost", systemImage: "tram.card").tag(SortByOptions.cost)
-                Label("Distance", systemImage: "mappin.and.ellipse").tag(SortByOptions.distance)
+            Picker("Sort By", selection: $selectedSortOption) {
+                ForEach(Array(OpitionType.allCases), id: \.self) { option in
+                    Label(
+                        String(describing: option).titleCase(),
+                        systemImage: option.rawValue
+                    )
+                    .tag(option)
+                }
             }
-
         } label: {
             Button(action: {}) {
                 Label("Sort By", systemImage: "arrow.2.circlepath.circle")
@@ -42,6 +34,18 @@ struct SortByButton: View {
     }
 }
 
-#Preview {
-    SortByButton(selectedSortOption: .constant(SortByOptions.duration))
+extension String {
+    public func titleCase() -> String {
+        return
+            self
+            .replacingOccurrences(
+                of: "([A-Z])",
+                with: " $1",
+                options: .regularExpression,
+                range: range(of: self)
+            )
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .capitalized  // If input is in llamaCase
+    }
+
 }
