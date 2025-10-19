@@ -9,18 +9,24 @@ import GooglePlacesSwift
 import SwiftUI
 internal import _LocationEssentials
 
-func setCurrentLocation(location : inout UserPlaceEntry) {
-    location.location =
+func setCurrentLocation(location : inout UserPlaceEntry, errorMdg: inout String?) {
+    if let currentLocation =
+        UserLocationManager.shared.userLocation {
+        location.location =
         "Current Location"
-    location.placeID = ""
-    location.coordinate =
-    Coordinate(
-        latitude: UserLocationManager.shared.userLocation?.coordinate.latitude ?? 0.0,
-        longitude: UserLocationManager.shared.userLocation?.coordinate.longitude ?? 0.0,
-    )
+        location.placeID = ""
+        location.coordinate =
+        Coordinate(
+            latitude: currentLocation.coordinate.latitude,
+            longitude: currentLocation.coordinate.longitude
+        )
+    } else {
+        clearLocation(location: &location, errorMdg: &errorMdg)
+        errorMdg = "Unable to access current location. Please ensure location services are enabled."
+    }
 }
 
-func clearLocation(location : inout UserPlaceEntry) {
+func clearLocation(location : inout UserPlaceEntry, errorMdg: inout String?) {
     location.location = ""
     location.placeID = ""
     location.coordinate = nil
@@ -58,6 +64,7 @@ struct SelectRoutePicker: View {
                     InputFeild(
                         showTrailingIcon: fromLocationFocused,
                         trailingIconAction: fromLocation.location != "" ? clearLocation: setCurrentLocation,
+                        errorMessage: $entryError,
                         googlePlacesViewModel: googlePlacesViewModel,
                         location: $fromLocation,
                         inputFocused: $fromLocationFocused,
@@ -66,6 +73,7 @@ struct SelectRoutePicker: View {
                     InputFeild(
                         showTrailingIcon: toLocationFocused,
                         trailingIconAction: toLocation.location != "" ? clearLocation: setCurrentLocation,
+                        errorMessage: $entryError,
                         googlePlacesViewModel: googlePlacesViewModel,
                         location: $toLocation,
                         inputFocused: $toLocationFocused,

@@ -23,7 +23,10 @@ struct InputFeild: View {
     var showTrailingIcon: Bool = false
     var trailingIconName : String?
     var trailingIconColor : Color?
-    var trailingIconAction : ((inout UserPlaceEntry) -> Void)? = nil
+    var trailingIconAction : (
+        (inout UserPlaceEntry, inout String?) -> Void
+    )? = nil
+    @Binding var errorMessage: String?
     @ObservedObject var googlePlacesViewModel: GooglePlacesViewModel
     @Binding var location: UserPlaceEntry
     @FocusState.Binding var inputFocused: Bool
@@ -37,7 +40,7 @@ struct InputFeild: View {
                 Button(action: {
                     Task {
                         if let action = trailingIconAction {
-                            action(&location)
+                            action(&location, &errorMessage)
                         }
                     }
                 }) {
@@ -92,6 +95,7 @@ struct InputFeild: View {
         @FocusState private var fromLocationFocused: Bool
         var body: some View {
             InputFeild(
+                errorMessage: Binding.constant(""),
                 googlePlacesViewModel: GooglePlacesViewModel(),
                 location: $fromLocation,
                 inputFocused: $fromLocationFocused

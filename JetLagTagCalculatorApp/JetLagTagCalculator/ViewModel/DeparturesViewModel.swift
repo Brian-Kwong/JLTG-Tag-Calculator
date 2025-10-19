@@ -120,7 +120,7 @@ final class DeparturesViewModel: ObservableObject {
                 self.errorIcon = "lock.shield"
                 self.errorMessage = "Authentication error. Please try again."
                 self.departures = []
-            } catch RouteFetchErrors.noDeparturesFound {
+            } catch RouteFetchErrors.noDeparturesFound, RouteFetchErrors.noRoutesFound {
                 self.errorIcon = "circle.badge.questionmark"
                 self.errorMessage =
                     "No departures found for the selected locations and time."

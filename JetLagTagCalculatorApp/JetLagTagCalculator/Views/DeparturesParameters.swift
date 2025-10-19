@@ -54,7 +54,9 @@ struct DeparturesParameters: View {
                 departuresViewModel.errorIcon = "location.slash"
                 departuresViewModel.errorMessage =
                 "Location not available. Please either enable location services or use the search filter to search for a specific area."
+                clearLocation(location: &searchLocation, errorMdg: &entryError)
                 departuresViewModel.showDepartures = true
+                return
             }
         }
 
@@ -82,6 +84,7 @@ struct DeparturesParameters: View {
                         showTrailingIcon: searchLocationFocused,
                         trailingIconAction: searchLocation.location != ""
                             ? clearLocation : setCurrentLocation,
+                        errorMessage: $entryError,
                         googlePlacesViewModel: googlePlacesViewModel,
                         location: $searchLocation,
                         inputFocused: $searchLocationFocused,
