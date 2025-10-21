@@ -3,4 +3,4 @@
 .DS_Store
 JetLagTheGameTagCalculatorBackend/functions/src/serviceInfo.json
 *.log
-JetLagTagCalculatorApp/JetLagTagCalculator/GoogleService-Info.plist
+*/JetLagTagCalculatorApp/JetLagTagCalculator/GoogleService-Info.plist
