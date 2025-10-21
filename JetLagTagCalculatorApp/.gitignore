@@ -5,3 +5,4 @@ IDEWorkspaceChecks.plist
 *.xcworkspacedata
 /CloudCast.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 .DS_Store
+/JetLagTagCalculator/GoogleService-Info.plist
