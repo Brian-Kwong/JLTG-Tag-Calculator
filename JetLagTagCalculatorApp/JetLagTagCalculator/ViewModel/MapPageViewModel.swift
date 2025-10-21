@@ -40,7 +40,7 @@ func calculateLatitudeDelta(locationA: Location, locationB: Location) -> Double
 func determinePolyLineColor(transportationType: TransportationModes) -> Color {
     switch transportationType {
     case .HIGH_SPEED_RAIL:
-        return .blue
+        return .teal
     case .LOW_SPEED_RAIL:
         return .green
     case .METRO:

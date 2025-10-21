@@ -13,7 +13,10 @@ import {
     parseHEREMapsResponse,
 } from "./routeAPIParser";
 import haversine from "haversine-distance";
-import { determineDepartureDateTimeBasedOnLocation, transportationModeToHereTransportModes } from "./utils";
+import {
+    determineDepartureDateTimeBasedOnLocation,
+    transportationModeToHereTransportModes,
+} from "./utils";
 import { parseDepartureAPIResponse } from "./departureAPIParser";
 
 dotenv.config();
@@ -22,7 +25,8 @@ const createRouter = express.Router;
 const router = createRouter();
 
 const calculateRouteBasedOffHereApi = async (req: express.Request) => {
-    const { originCoord, destinationCoord, departureTime, avoidModes } = req.query;
+    const { originCoord, destinationCoord, departureTime, avoidModes } =
+        req.query;
     if (!originCoord || !destinationCoord) {
         return {
             status: 400,
@@ -39,9 +43,14 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
         }
     }
     const hereApiKey = process.env.HERE_API_KEY;
-    const avoid = avoidModes ? `-${(avoidModes as string).split(",").map(
-        (mode) => transportationModeToHereTransportModes(mode.trim()).join(",-")
-    ).join(",-")}` : null;
+    const avoid = avoidModes
+        ? `-${(avoidModes as string)
+              .split(",")
+              .map((mode) =>
+                  transportationModeToHereTransportModes(mode.trim()).join(",-")
+              )
+              .join(",-")}`
+        : null;
     const transitURL =
         `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10${avoid ? `&modes=${avoid}` : ""}&return=bookingLinks,polyline,travelSummary,incidents&lang=en-US` +
         (departureTime
@@ -74,11 +83,14 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
         let parsedTransitData = parseHEREMapsResponse(transitData);
 
         if (avoidModes) {
-            const avoidModesArray = (avoidModes as string).split(",").map(m => m.trim());
-            parsedTransitData = parsedTransitData.filter(route =>
-                !route.steps.some(step =>
-                    avoidModesArray.includes(step.transportationMode)
-                )
+            const avoidModesArray = (avoidModes as string)
+                .split(",")
+                .map((m) => m.trim());
+            parsedTransitData = parsedTransitData.filter(
+                (route) =>
+                    !route.steps.some((step) =>
+                        avoidModesArray.includes(step.transportationMode)
+                    )
             );
             if (parsedTransitData.length === 0) {
                 return {
@@ -103,7 +115,8 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
 };
 
 const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
-    const { originCoord, destinationCoord, departureTime, avoidModes } = req.query;
+    const { originCoord, destinationCoord, departureTime, avoidModes } =
+        req.query;
     if (!originCoord || !destinationCoord) {
         return {
             status: 400,
@@ -178,11 +191,14 @@ const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
             departureTime as string | undefined
         );
         if (avoidModes) {
-            const avoidArray = (avoidModes as string).split(",").map(m => m.trim());
-            parsedResponse = parsedResponse.filter(route =>
-                !route.steps.some(step =>
-                    avoidArray.includes(step.transportationMode)
-                )
+            const avoidArray = (avoidModes as string)
+                .split(",")
+                .map((m) => m.trim());
+            parsedResponse = parsedResponse.filter(
+                (route) =>
+                    !route.steps.some((step) =>
+                        avoidArray.includes(step.transportationMode)
+                    )
             );
             if (parsedResponse.length === 0) {
                 return {
@@ -268,11 +284,15 @@ router.get("/departures", async function (req, res) {
     }
     if (departureTime) {
         if (!(departureTime as string).endsWith("Z")) {
-            return res.status(400).json({ error: "departureTime must be in UTC and end with 'Z'" });
+            return res.status(400).json({
+                error: "departureTime must be in UTC and end with 'Z'",
+            });
         }
         const depTime = new Date(departureTime as string);
         if (isNaN(depTime.getTime())) {
-            return res.status(400).json({ error: "Invalid departureTime format" });
+            return res
+                .status(400)
+                .json({ error: "Invalid departureTime format" });
         }
     }
     const hereApiKey = process.env.HERE_API_KEY;
@@ -282,9 +302,14 @@ router.get("/departures", async function (req, res) {
     )
         .set({ millisecond: 0 })
         .toISO({ suppressMilliseconds: true, includeOffset: false });
-        const avoid = avoidModes ? `-${(avoidModes as string).split(",").map(
-        (mode) => transportationModeToHereTransportModes(mode.trim()).join(",-")
-    ).join(",")}` : null;
+    const avoid = avoidModes
+        ? `-${(avoidModes as string)
+              .split(",")
+              .map((mode) =>
+                  transportationModeToHereTransportModes(mode.trim()).join(",-")
+              )
+              .join(",")}`
+        : null;
     const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50${avoid ? `&modes=${avoid}` : ""}`;
     try {
         const departuresResponse = await fetch(`${departuresURL}`);
@@ -310,16 +335,25 @@ router.get("/departures", async function (req, res) {
         );
 
         if (avoidModes) {
-            const avoidModesArray = (avoidModes as string).split(",").map(m => m.trim());
-            parsedDepartures = parsedDepartures.map(stationDepartures => {
-                const filteredDepartures = stationDepartures.departures.filter(departure =>
-                    !avoidModesArray.includes(departure.line.mode)
+            const avoidModesArray = (avoidModes as string)
+                .split(",")
+                .map((m) => m.trim());
+            parsedDepartures = parsedDepartures
+                .map((stationDepartures) => {
+                    const filteredDepartures =
+                        stationDepartures.departures.filter(
+                            (departure) =>
+                                !avoidModesArray.includes(departure.line.mode)
+                        );
+                    return {
+                        station: stationDepartures.station,
+                        departures: filteredDepartures,
+                    };
+                })
+                .filter(
+                    (stationDepartures) =>
+                        stationDepartures.departures.length > 0
                 );
-                return {
-                    station: stationDepartures.station,
-                    departures: filteredDepartures,
-                };
-            }).filter(stationDepartures => stationDepartures.departures.length > 0);
             if (parsedDepartures.length === 0) {
                 return {
                     status: 404,

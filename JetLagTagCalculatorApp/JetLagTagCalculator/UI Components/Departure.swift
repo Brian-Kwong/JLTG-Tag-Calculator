@@ -64,7 +64,7 @@ struct Departure: View, Equatable {
                     spacing: 10
                 ) {
                     departureInfo
-                }.frame(minWidth: 250, minHeight: 80, alignment: .center)
+                }.frame(minWidth: 250, minHeight: 120, alignment: .center)
                 LazyVGrid(
                     columns: Array(
                         repeating: GridItem(.flexible(), spacing: 8),
@@ -102,7 +102,7 @@ struct Departure: View, Equatable {
             ).foregroundStyle(.secondary)
             Text(
                 departureStatus == "Delayed"
-                    ? "Delayed +\(convertSecondsToTimeFormat(seconds: departure.delay!))"
+                    ? "Delayed +\(convertSecondsToTimeFormat(seconds: departure.delay ?? 0))"
                     : departureStatus
             ).multilineTextAlignment(.center)
                 .font(.system(size: TextSizes.smallCaption))

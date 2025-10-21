@@ -240,6 +240,25 @@ type HERE_API_NEXT_DEPARTURE_RESPONSE = {
     ];
 };
 
+type GOOGLE_WALKING_STEP = {
+    distanceMeters: number;
+    staticDuration: string;
+    polyline: string;
+    startLocation: {
+        latLng: {
+            latitude: number;
+            longitude: number;
+        };
+    };
+    endLocation: {
+        latLng: {
+            latitude: number;
+            longitude: number;
+        };
+    };
+    travelMode: string;
+};
+
 type ResponseStep = {
     transportationMode: keyof typeof transportationModeCost;
     startLocation: {
@@ -306,22 +325,22 @@ type RouteResponse = {
 };
 
 type Departure = {
-            time: string;
-            delay?: number;
-            status?: string;
-            platform?: string;
-            line: {
-                mode: keyof typeof transportationModeCost;
-                name?: string;
-                color?: string;
-                transitLineFinalDestination?: string;
-            };
-            agency: {
-                id: string;
-                name: string;
-                website: string;
-            };
-        };
+    time: string;
+    delay?: number;
+    status?: string;
+    platform?: string;
+    line: {
+        mode: keyof typeof transportationModeCost;
+        name?: string;
+        color?: string;
+        transitLineFinalDestination?: string;
+    };
+    agency: {
+        id: string;
+        name: string;
+        website: string;
+    };
+};
 
 type NextDepartures = {
     station: {
@@ -338,6 +357,7 @@ type NextDepartures = {
 export { transportationMode, transportationModeCost };
 export type {
     HERE_API_RESPONSE,
+    GOOGLE_WALKING_STEP,
     GOOGLE_MAPS_API_RESPONSE,
     HERE_API_NEXT_DEPARTURE_RESPONSE,
     NextDepartures,

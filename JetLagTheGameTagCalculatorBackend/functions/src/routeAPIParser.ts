@@ -1,4 +1,4 @@
-import { decode, encode } from "@googlemaps/polyline-codec";
+import { encode } from "@googlemaps/polyline-codec";
 import { decode as hereDecode } from "@here/flexpolyline";
 
 /**
@@ -12,6 +12,7 @@ import { decode as hereDecode } from "@here/flexpolyline";
 
 import {
     GOOGLE_MAPS_API_RESPONSE,
+    GOOGLE_WALKING_STEP,
     RouteResponse,
     ResponseStep,
     transportationModeCost,
@@ -22,6 +23,7 @@ import {
     updateLocationNames,
     determineTransportationMode,
     determineLineName,
+    aggregatesWalkingSteps,
 } from "./utils";
 
 /**
@@ -35,24 +37,7 @@ function parseGoogleMapsResponse(
     startTime?: string
 ) {
     const routes = response.routes;
-    const walkingsSteps: Array<{
-        distanceMeters: number;
-        staticDuration: string;
-        polyline: string;
-        startLocation: {
-            latLng: {
-                latitude: number;
-                longitude: number;
-            };
-        };
-        endLocation: {
-            latLng: {
-                latitude: number;
-                longitude: number;
-            };
-        };
-        travelMode: string;
-    }> = [];
+    const walkingsSteps: GOOGLE_WALKING_STEP[] = [];
 
     const responseSteps: ResponseStep[] = [];
     const parsedRoute: RouteResponse[] = [];
@@ -79,96 +64,18 @@ function parseGoogleMapsResponse(
                         travelMode: step.travelMode,
                     });
                 } else if (step.travelMode === "TRANSIT") {
-                    // Collect all the walking steps into one
-                    // Get total walking distance and duration
                     if (walkingsSteps.length > 0) {
-                        let totalWalkingDistance = 0;
-                        let totalWalkingDuration = 0;
-                        const polyLineArray: number[][] = [];
-                        let polyline = "";
-
-                        // Get the last transit station as the start location of the walking segment
-                        const startLocationName = responseSteps.length
-                            ? responseSteps[responseSteps.length - 1]
-                                  .endLocation.name
-                            : walkingsSteps[0].startLocation.latLng.latitude +
-                              ", " +
-                              walkingsSteps[0].startLocation.latLng.longitude;
-                        const endLocationName = step.transitDetails
-                            ? step.transitDetails.stopDetails.departureStop.name
-                            : walkingsSteps[walkingsSteps.length - 1]
-                                  .endLocation.latLng.latitude +
-                              ", " +
-                              walkingsSteps[walkingsSteps.length - 1]
-                                  .endLocation.latLng.longitude;
-                        // Get the first transit station as the end location of the walking segment
-                        for (const walkingStep of walkingsSteps) {
-                            totalWalkingDistance += walkingStep.distanceMeters;
-                            totalWalkingDuration += parseInt(
-                                walkingStep.staticDuration
+                        const aggregatedWalkingStep =
+                            aggregatesWalkingSteps(
+                                walkingsSteps,
+                                parsedRoute,
+                                step,
+                                startTime
                             );
-                            polyLineArray.push(
-                                ...decode(walkingStep.polyline, 5)
-                            );
+                        if (aggregatedWalkingStep) {
+                            responseSteps.push(aggregatedWalkingStep);
                         }
-                        polyline = encode(polyLineArray, 5);
-                        const departureTime =
-                            determineDepartureDateTimeBasedOnLocation(
-                                `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
-                                responseSteps.length === 0
-                                    ? startTime || new Date().toISOString()
-                                    : responseSteps[responseSteps.length - 1]
-                                          .arrivalTime
-                            );
-                        // Let arrival time == departure time + duration
-                        let arrivalTime = "";
-                        if (departureTime) {
-                            arrivalTime = departureTime
-                                .plus({ seconds: totalWalkingDuration })
-                                .toISO() as string;
-                        }
-                        responseSteps.push({
-                            transportationMode: "WALKING",
-                            distance: totalWalkingDistance,
-                            polyline: polyline,
-                            startLocation: {
-                                name:
-                                    startLocationName ||
-                                    walkingsSteps[0].startLocation.latLng
-                                        .latitude +
-                                        ", " +
-                                        walkingsSteps[0].startLocation.latLng
-                                            .longitude,
-                                lat: walkingsSteps[0].startLocation.latLng
-                                    .latitude,
-                                lng: walkingsSteps[0].startLocation.latLng
-                                    .longitude,
-                            },
-                            endLocation: {
-                                name:
-                                    endLocationName ||
-                                    walkingsSteps[walkingsSteps.length - 1]
-                                        .endLocation.latLng.latitude +
-                                        ", " +
-                                        walkingsSteps[walkingsSteps.length - 1]
-                                            .endLocation.latLng.longitude,
-                                lat: walkingsSteps[walkingsSteps.length - 1]
-                                    .endLocation.latLng.latitude,
-                                lng: walkingsSteps[walkingsSteps.length - 1]
-                                    .endLocation.latLng.longitude,
-                            },
-                            duration: totalWalkingDuration,
-                            journeyCost: Math.ceil(
-                                transportationModeCost.WALKING *
-                                    (totalWalkingDuration / 60)
-                            ),
-                            departureTime:
-                                departureTime.toISO() ||
-                                new Date().toISOString(),
-                            arrivalTime:
-                                arrivalTime || new Date().toISOString(),
-                        });
-                        walkingsSteps.length = 0; // Clear the walking steps
+                        walkingsSteps.length = 0; // Clear walking steps after aggregation
                     }
                     if (step.transitDetails) {
                         const transportationMode = determineTransportationMode(
@@ -229,6 +136,20 @@ function parseGoogleMapsResponse(
                 }
             }
         }
+        
+        if (walkingsSteps.length > 0) {
+            const aggregatedWalkingStep = aggregatesWalkingSteps(
+                walkingsSteps,
+                parsedRoute,
+                undefined,
+                startTime
+            );
+            if (aggregatedWalkingStep) {
+                responseSteps.push(aggregatedWalkingStep);
+            }
+            walkingsSteps.length = 0; // Clear walking steps after aggregation
+        }
+
         // Filter for any steps that have the same start and end location (some walking steps can be like this provided by the Google Maps API)
         const filteredResponseSteps = responseSteps.filter(
             (step) =>

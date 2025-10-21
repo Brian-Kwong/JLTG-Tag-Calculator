@@ -12,22 +12,25 @@ import {
 import {
     determineDepartureDateTimeBasedOnLocation,
     determineTransportationMode,
-    determineStationType
+    determineStationType,
 } from "./utils";
 import haversine from "haversine-distance";
 
 /**
  * This function groups departures from related stations (e.g., multiple platforms or companies at the same station)
- * @param {NextDepartures} departures 
+ * @param {NextDepartures} departures
  * @return {NextDepartures[]} The grouped departures by station
  */
 function groupRelatedStationsDepartures(
-    departures: NextDepartures[],
+    departures: NextDepartures[]
 ): NextDepartures[] {
     // Stations are grouped by name and location (lat, lng)
     const groupedStations = new Map<
         string,
-        { station: NextDepartures["station"]; departures: NextDepartures["departures"] }
+        {
+            station: NextDepartures["station"];
+            departures: NextDepartures["departures"];
+        }
     >();
     for (const station of departures) {
         const key = `${station.station.name}`;
@@ -40,7 +43,9 @@ function groupRelatedStationsDepartures(
             const existing = groupedStations.get(key);
             if (existing) {
                 existing.departures.push(...station.departures);
-                existing.station.type = determineStationType(existing.departures);
+                existing.station.type = determineStationType(
+                    existing.departures
+                );
                 existing.departures.sort((a, b) => {
                     return a.time.localeCompare(b.time);
                 });

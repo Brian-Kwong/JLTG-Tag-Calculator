@@ -2,10 +2,13 @@ import { find } from "geo-tz";
 import { DateTime } from "luxon";
 import {
     Departure,
+    GOOGLE_WALKING_STEP,
+    ResponseStep,
     RouteResponse,
     transportationMode,
     transportationModeCost,
 } from "./routeTypes";
+import { decode, encode } from "@googlemaps/polyline-codec";
 
 /**
  * Determine the departure DateTime based on the provided location coordinates and optional departure time.
@@ -150,20 +153,180 @@ function determineLineName(
 }
 
 /**
+ * Collects all the walking steps from Google API
+ * @param {GOOGLE_WALKING_STEP[]} walkingsSteps - Array of walking steps from Google Maps API
+ * @param {RouteResponse[]} responseSteps - Array of already processed route steps
+ * @param {unknown} nextStep - The next step in the route to used to determine end location
+ * @param {string | undefined} startTime - The requested start time for the trip
+ * @return {ResponseStep | undefined} - Aggregated walking step information
+ */
+function aggregatesWalkingSteps(
+    walkingsSteps: GOOGLE_WALKING_STEP[],
+    responseSteps: RouteResponse[],
+    nextStep?: {
+        distanceMeters: number;
+        staticDuration: string;
+        polyline: {
+            encodedPolyline: string;
+        };
+        startLocation: {
+            latLng: {
+                latitude: number;
+                longitude: number;
+            };
+        };
+        endLocation: {
+            latLng: {
+                latitude: number;
+                longitude: number;
+            };
+        };
+        travelMode: string;
+        transitDetails?: {
+            stopDetails: {
+                arrivalStop: {
+                    name: string;
+                    location: {
+                        latLng: {
+                            latitude: number;
+                            longitude: number;
+                        };
+                    };
+                };
+                arrivalTime: string;
+                departureStop: {
+                    name: string;
+                    location: {
+                        latLng: {
+                            latitude: number;
+                            longitude: number;
+                        };
+                    };
+                };
+                departureTime: string;
+            };
+            headsign: string;
+            transitLine: {
+                agencies: [
+                    {
+                        name: string;
+                        phoneNumber: string;
+                        uri: string;
+                    },
+                ];
+                name: string;
+                color: string;
+                nameShort: string;
+                textColor: string;
+                vehicle: {
+                    name: {
+                        text: string;
+                    };
+                    type: string;
+                    iconUri: string;
+                };
+            };
+            stopCount: number;
+        };
+    },
+    startTime?: string
+): ResponseStep | undefined {
+    if (walkingsSteps.length > 0) {
+        let totalWalkingDistance = 0;
+        let totalWalkingDuration = 0;
+        const polyLineArray: number[][] = [];
+        let polyline = "";
+
+        // Get the last transit station as the start location of the walking segment
+        const startLocationName = responseSteps.length
+            ? responseSteps[responseSteps.length - 1].arrivalLocation.name
+            : walkingsSteps[0].startLocation.latLng.latitude +
+              ", " +
+              walkingsSteps[0].startLocation.latLng.longitude;
+        const endLocationName = nextStep && nextStep.transitDetails
+            ? nextStep.transitDetails.stopDetails.departureStop.name
+            : walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                  .latitude +
+              ", " +
+              walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                  .longitude;
+        // Get the first transit station as the end location of the walking segment
+        for (const walkingStep of walkingsSteps) {
+            totalWalkingDistance += walkingStep.distanceMeters;
+            totalWalkingDuration += parseInt(walkingStep.staticDuration);
+            polyLineArray.push(...decode(walkingStep.polyline, 5));
+        }
+        polyline = encode(polyLineArray, 5);
+        const departureTime = determineDepartureDateTimeBasedOnLocation(
+            `${walkingsSteps[0].startLocation.latLng.latitude},${walkingsSteps[0].startLocation.latLng.longitude}`,
+            responseSteps.length === 0
+                ? startTime || new Date().toISOString()
+                : responseSteps[responseSteps.length - 1].arrivalTime
+        );
+        // Let arrival time == departure time + duration
+        let arrivalTime = "";
+        if (departureTime) {
+            arrivalTime = departureTime
+                .plus({ seconds: totalWalkingDuration })
+                .toISO() as string;
+        }
+        return {
+            transportationMode: "WALKING",
+            distance: totalWalkingDistance,
+            polyline: polyline,
+            startLocation: {
+                name:
+                    startLocationName ||
+                    walkingsSteps[0].startLocation.latLng.latitude +
+                        ", " +
+                        walkingsSteps[0].startLocation.latLng.longitude,
+                lat: walkingsSteps[0].startLocation.latLng.latitude,
+                lng: walkingsSteps[0].startLocation.latLng.longitude,
+            },
+            endLocation: {
+                name:
+                    endLocationName ||
+                    walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                        .latitude +
+                        ", " +
+                        walkingsSteps[walkingsSteps.length - 1].endLocation
+                            .latLng.longitude,
+                lat: walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                    .latitude,
+                lng: walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                    .longitude,
+            },
+            duration: totalWalkingDuration,
+            journeyCost: Math.ceil(
+                transportationModeCost.WALKING * (totalWalkingDuration / 60)
+            ),
+            departureTime: departureTime.toISO() || new Date().toISOString(),
+            arrivalTime: arrivalTime || new Date().toISOString(),
+        };
+    }
+    return undefined;
+}
+
+/**
  * Convert transportation modes from the application to HERE API format.
  * @param {string} mode The transportation category
  * @return {string[]} The corresponding HERE API transport modes NOTE that an empty array means walking only since HERE doesn't have a exclusion for walking
  */
-function transportationModeToHereTransportModes(mode: string) : string[] {
+function transportationModeToHereTransportModes(mode: string): string[] {
     switch (mode) {
         case "HIGH_SPEED_RAIL":
             return ["highSpeedTrain"];
         case "LOW_SPEED_RAIL":
-            return ["intercityTrain","interRegionalTrain","regionalTrain","cityTrain"];
+            return [
+                "intercityTrain",
+                "interRegionalTrain",
+                "regionalTrain",
+                "cityTrain",
+            ];
         case "METRO":
-            return ["subway","lightRail","inclined","aerial","monorail"];
+            return ["subway", "lightRail", "inclined", "aerial", "monorail"];
         case "BUS":
-            return ["bus", "busRapid"]
+            return ["bus", "busRapid"];
         case "FERRY":
             return ["ferry"];
         case "FLIGHT":
@@ -180,20 +343,22 @@ function transportationModeToHereTransportModes(mode: string) : string[] {
  * @param {Departure[]} departures
  * @return {transportationModeCost} The determined station type
  */
-function determineStationType(departures : Departure []) : keyof typeof transportationModeCost {
-            // Determine station type by checking the transportation modes of its departures
-            const modes = new Map<keyof typeof transportationModeCost, number>();
-            let type : keyof typeof transportationModeCost = "LOW_SPEED_RAIL"; // Default type
-            let maxCount = 0;
-            for (const dep of departures) {
-                const count = (modes.get(dep.line.mode) || 0) + 1;
-                if (count > maxCount) {
-                    maxCount = count;
-                    type = dep.line.mode;
-                }
-                modes.set(dep.line.mode, count);
-            }
-            return type;
+function determineStationType(
+    departures: Departure[]
+): keyof typeof transportationModeCost {
+    // Determine station type by checking the transportation modes of its departures
+    const modes = new Map<keyof typeof transportationModeCost, number>();
+    let type: keyof typeof transportationModeCost = "LOW_SPEED_RAIL"; // Default type
+    let maxCount = 0;
+    for (const dep of departures) {
+        const count = (modes.get(dep.line.mode) || 0) + 1;
+        if (count > maxCount) {
+            maxCount = count;
+            type = dep.line.mode;
+        }
+        modes.set(dep.line.mode, count);
+    }
+    return type;
 }
 
 export {
@@ -202,5 +367,6 @@ export {
     determineTransportationMode,
     determineLineName,
     transportationModeToHereTransportModes,
-    determineStationType
+    determineStationType,
+    aggregatesWalkingSteps,
 };
