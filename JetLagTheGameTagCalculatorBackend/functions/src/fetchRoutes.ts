@@ -308,9 +308,10 @@ router.get("/departures", async function (req, res) {
               .map((mode) =>
                   transportationModeToHereTransportModes(mode.trim()).join(",-")
               )
-              .join(",")}`
+              .join(",-")}`.replace(",-,", ",")
         : null;
     const departuresURL = ` https://transit.hereapi.com/v8/departures?apiKey=${hereApiKey}&in=${coordinates};r=${radius || 1000}&time=${localDepartureTime}&maxPlaces=50&maxPerBoard=50${avoid ? `&modes=${avoid}` : ""}`;
+    console.log("Departures URL:", departuresURL);
     try {
         const departuresResponse = await fetch(`${departuresURL}`);
         if (!departuresResponse.ok) {

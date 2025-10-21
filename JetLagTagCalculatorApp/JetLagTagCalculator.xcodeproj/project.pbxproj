@@ -299,6 +299,8 @@
 				DEVELOPMENT_TEAM = 8Z2UJ4572D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "JLTG-Tag-Calc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This uses your location to provide you with more detailed and location-centric routes and departures.  You may decline location services but some features may be unavailable, less reliable or require manual input instead ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -335,6 +337,8 @@
 				DEVELOPMENT_TEAM = 8Z2UJ4572D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "JLTG-Tag-Calc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This uses your location to provide you with more detailed and location-centric routes and departures.  You may decline location services but some features may be unavailable, less reliable or require manual input instead ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

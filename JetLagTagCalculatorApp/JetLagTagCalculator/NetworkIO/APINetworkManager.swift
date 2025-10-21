@@ -49,9 +49,6 @@ final class APINetworkManager {
             case 404:
                 throw RouteFetchErrors.noRoutesFound
             default:
-                print(
-                    "Status code \((response as? HTTPURLResponse)?.statusCode ?? -1))"
-                )
                 throw RouteFetchErrors.invalidResponse
             }
         }
@@ -101,7 +98,6 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidURL
         }
-        print("Request URL: \(requestURL.absoluteString)")
         do {
             let data = try await fetchResource(
                 url: requestURL,

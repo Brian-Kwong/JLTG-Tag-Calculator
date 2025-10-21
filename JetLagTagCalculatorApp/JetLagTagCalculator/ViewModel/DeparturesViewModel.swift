@@ -120,7 +120,7 @@ final class DeparturesViewModel: ObservableObject {
                 self.errorIcon = "lock.shield"
                 self.errorMessage = "Authentication error. Please try again."
                 self.departures = []
-            } catch RouteFetchErrors.noDeparturesFound, RouteFetchErrors.noRoutesFound {
+            } catch RouteFetchErrors.noDeparturesFound, RouteFetchErrors.noRoutesFound, RouteFetchErrors.invalidResponse {
                 self.errorIcon = "circle.badge.questionmark"
                 self.errorMessage =
                     "No departures found for the selected locations and time."
@@ -129,11 +129,6 @@ final class DeparturesViewModel: ObservableObject {
                 self.errorIcon = "mappin.slash"
                 self.errorMessage =
                     "Invalid coordinates provided. Please check the locations and retry."
-                self.departures = []
-            } catch RouteFetchErrors.invalidResponse {
-                self.errorIcon = "exclamationmark.triangle"
-                self.errorMessage =
-                    "Received an invalid response from the server."
                 self.departures = []
             } catch RouteFetchErrors.decodingError {
                 self.errorIcon = "xmark.octagon"
