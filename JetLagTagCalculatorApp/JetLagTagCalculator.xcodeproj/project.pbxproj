@@ -18,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A246D34C2EA7384900E048E6 /* JetLagTagCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JetLagTagCalculator.entitlements; sourceTree = "<group>"; };
 		A296B3102E8F5EBE00CE74A2 /* JetLagTagCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetLagTagCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,7 +51,6 @@
 		A296B3072E8F5EBE00CE74A2 = {
 			isa = PBXGroup;
 			children = (
-				A246D34C2EA7384900E048E6 /* JetLagTagCalculator.entitlements */,
 				A296B3122E8F5EBE00CE74A2 /* JetLagTagCalculator */,
 				A296B3112E8F5EBE00CE74A2 /* Products */,
 			);
@@ -295,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JetLagTagCalculator/JetLagTagCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8Z2UJ4572D;
@@ -329,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JetLagTagCalculator/JetLagTagCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8Z2UJ4572D;
