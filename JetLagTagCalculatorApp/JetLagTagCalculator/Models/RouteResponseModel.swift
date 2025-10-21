@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum TransportationModes: String, Codable, Hashable, CaseIterable, Identifiable {
+enum TransportationModes: String, Codable, Hashable, CaseIterable, Identifiable
+{
     case HIGH_SPEED_RAIL = "HIGH_SPEED_RAIL"
     case LOW_SPEED_RAIL = "LOW_SPEED_RAIL"
     case METRO = "METRO"
@@ -15,7 +16,7 @@ enum TransportationModes: String, Codable, Hashable, CaseIterable, Identifiable 
     case FERRY = "FERRY"
     case FLIGHT = "FLIGHT"
     case WALKING = "WALKING"
-    
+
     var id: Self { self }
 }
 
@@ -23,22 +24,41 @@ struct Location: Hashable, Codable {
     var name: String
     var lat: Double
     var lng: Double
+
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        return lhs.name == rhs.name && lhs.lat == rhs.lat && lhs.lng == rhs.lng
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(lat)
+        hasher.combine(lng)
+    }
 }
 
 struct ResponseIncident: Hashable, Codable, Identifiable {
-    var id = UUID()
-    var summary : String?
-    var description : String?
-    var type : String
-    var effect: String
+    let id = UUID()
+    var summary: String?
+    var description: String?
+    var type: IncidentNoticeType
+    var effect: IncidentEffectType
     var validFrom: String?
     var validUntil: String?
     var url: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case summary,
+            description,
+            type,
+            effect,
+            validFrom,
+            validUntil,
+            url
+    }
 }
-    
 
 struct ResponseStep: Hashable, Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     var transportationMode: TransportationModes
     var startLocation: Location
     var endLocation: Location
@@ -52,27 +72,26 @@ struct ResponseStep: Hashable, Codable, Identifiable {
     var arrivalTime: String?
     var numStops: Int?
     var transitLineFinalDestination: String?
-    var incidents: [ResponseIncident]?
-    
+
     private enum CodingKeys: String, CodingKey {
         case transportationMode,
-             startLocation,
-             endLocation,
-             duration,
-             distance,
-             polyline,
-             journeyCost,
-             lineName,
-             vehicleType,
-             departureTime,
-             arrivalTime,
-             numStops,
-             transitLineFinalDestination
+            startLocation,
+            endLocation,
+            duration,
+            distance,
+            polyline,
+            journeyCost,
+            lineName,
+            vehicleType,
+            departureTime,
+            arrivalTime,
+            numStops,
+            transitLineFinalDestination
     }
 }
 
 struct RouteResponse: Hashable, Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     var departureLocation: Location
     var arrivalLocation: Location
     var departureDate: String
@@ -85,6 +104,7 @@ struct RouteResponse: Hashable, Codable, Identifiable {
     var numTransfers: Int
     var numSteps: Int
     var steps: [ResponseStep]
+    var incidents: [ResponseIncident]?
 
     private enum CodingKeys: String, CodingKey {
         case departureLocation,
@@ -98,6 +118,7 @@ struct RouteResponse: Hashable, Codable, Identifiable {
             totalCost,
             numTransfers,
             numSteps,
-            steps
+            steps,
+            incidents
     }
 }

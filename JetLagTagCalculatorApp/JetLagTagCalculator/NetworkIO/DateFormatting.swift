@@ -54,3 +54,12 @@ func convertStringToDate(dateString: String) -> Date? {
         return nil
     }
 }
+
+func calculateDaysAhead(date : String) -> Int {
+    let date = convertStringToDate(dateString: date) ?? Date()
+    let currentDate = Date()
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.day], from: currentDate, to: date)
+    let daysAhead = components.day ?? 0
+    return daysAhead
+}

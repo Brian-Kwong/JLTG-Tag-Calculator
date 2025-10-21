@@ -12,4 +12,5 @@ struct TextSizes {
     static let subtitle = 20.0
     static let body = 16.0
     static let caption = 12.0
+    static let smallCaption = 10.0
 }

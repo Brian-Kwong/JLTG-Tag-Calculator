@@ -17,12 +17,12 @@ struct StationCard: View {
                 transportationMode: station.station.type,
                 iconPadding: isCompact
                 ? 10 : 20)
-            VStack{
+            VStack(alignment: .center, spacing: 8) {
                 Text(station.station.name)
                     .font(.system(size: TextSizes.subtitle, weight: .bold))
                     .foregroundStyle(.primary)
                     .multilineTextAlignment(.leading)
-                HStack{
+                HStack(spacing: isCompact ? 12 : 24) {
                     HStack {
                         Image(systemName: "mappin.and.ellipse")
                             .font(.system(size: TextSizes.subtitle))
@@ -64,7 +64,7 @@ struct StationCard: View {
                             ).foregroundStyle(.secondary)
                     }
                 }
-            }
+            }.frame(maxWidth: .infinity, alignment: .center)
         }        .padding(12)
             .containerRelativeFrame(
                 .horizontal,

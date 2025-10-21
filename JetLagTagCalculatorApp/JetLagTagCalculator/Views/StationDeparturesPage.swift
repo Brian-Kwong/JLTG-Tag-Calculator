@@ -8,17 +8,37 @@
 import SwiftUI
 
 struct StationDeparturesPage: View {
-    let station: RouteDeparturesResponse
+    @StateObject private var stationDeparturesViewModel:
+        StationDeparturesViewModel
+
+    init(station: RouteDeparturesResponse) {
+        _stationDeparturesViewModel = StateObject(
+            wrappedValue: StationDeparturesViewModel(station: station)
+        )
+    }
+
     var body: some View {
         VStack {
-            StationCard(station: station)
-            List(station.departures.indices, id: \.self) { idx in
-                let departure = station.departures[idx]
-                Departure(departure: departure)
+            StationCard(station: stationDeparturesViewModel.station)
+            List(
+                stationDeparturesViewModel.station.departures.indices,
+                id: \.self
+            ) { idx in
+                let departure = stationDeparturesViewModel.station.departures[
+                    idx
+                ]
+                Departure(departure: departure).padding(.vertical, 8).frame(maxWidth: .infinity, alignment: .center)
+                    .listRowInsets(EdgeInsets())
             }
         }.listStyle(.plain).padding(.horizontal, 12).navigationTitle(
             "Next Departures"
-        )
+        ).toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                SortByButton(
+                    selectedSortOption: $stationDeparturesViewModel.sortByOption,
+                )
+            }
+        }
     }
 }
 

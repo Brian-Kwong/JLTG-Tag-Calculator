@@ -12,8 +12,8 @@ import SwiftUI
 
 class AppCheckFactory: NSObject, AppCheckProviderFactory {
     func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
-        return AppCheckDebugProvider(app: app)
-        //  return AppAttestProvider(app: app)
+//        return AppCheckDebugProvider(app: app)
+          return AppAttestProvider(app: app)
     }
 }
 
@@ -34,6 +34,7 @@ func getFirebaseToken() async -> String? {
         let appCheckToken = try await AppCheck.appCheck().token(forcingRefresh: false)
         return appCheckToken.token
     } catch {
+        print("Error fetching Firebase App Check token: \(error)")
         return nil
     }
 }

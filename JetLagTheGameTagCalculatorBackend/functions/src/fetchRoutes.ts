@@ -41,9 +41,9 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
     const hereApiKey = process.env.HERE_API_KEY;
     const avoid = avoidModes ? `-${(avoidModes as string).split(",").map(
         (mode) => transportationModeToHereTransportModes(mode.trim()).join(",-")
-    ).join(",")}` : null;
+    ).join(",-")}` : null;
     const transitURL =
-        `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10${avoid ? `&avoid=${avoid}` : ""}&return=bookingLinks,polyline,travelSummary` +
+        `https://transit.router.hereapi.com/v8/routes?apiKey=${hereApiKey}&origin=${originCoord}&destination=${destinationCoord}&alternatives=10${avoid ? `&modes=${avoid}` : ""}&return=bookingLinks,polyline,travelSummary,incidents&lang=en-US` +
         (departureTime
             ? `&departureTime=${determineDepartureDateTimeBasedOnLocation(
                   originCoord as string,

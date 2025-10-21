@@ -24,6 +24,7 @@
             },
             {
                 "time": "2025-10-15T05:34:00.000+02:00",
+                "delay": 126,
                 "line": {
                     "mode": "LOW_SPEED_RAIL",
                     "name": "C70+",
@@ -37,6 +38,7 @@
             },
             {
                 "time": "2025-10-15T06:00:00.000+02:00",
+                "status": "cancelled",
                 "line": {
                     "mode": "LOW_SPEED_RAIL",
                     "name": "C70+",

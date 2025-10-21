@@ -11,15 +11,18 @@ import _ConfidentialKit
 final class APINetworkManager {
     static let shared = APINetworkManager()
     private let firebaseBaseFunctionURLString = ObfuscatedLiterals.$apiURL
-    private let urlSession : URLSession
-    
+    private let urlSession: URLSession
+
     init() {
         let configuration = URLSessionConfiguration.default
-        configuration.urlCache = URLCache(memoryCapacity: 20_000_000, diskCapacity: 100_000_000)
+        configuration.urlCache = URLCache(
+            memoryCapacity: 20_000_000,
+            diskCapacity: 100_000_000
+        )
         self.urlSession = URLSession(configuration: configuration)
     }
-    
-    private func fetchResource(url : URL, withCache : Bool) async throws -> Data {
+
+    private func fetchResource(url: URL, withCache: Bool) async throws -> Data {
         guard !firebaseBaseFunctionURLString.isEmpty else {
             throw RouteFetchErrors.invalidURL
         }
@@ -33,7 +36,8 @@ final class APINetworkManager {
             "\(appCheckToken)",
             forHTTPHeaderField: "X-Firebase-AppCheck"
         )
-        urlRequest.cachePolicy = withCache ? .returnCacheDataElseLoad : .reloadIgnoringLocalCacheData
+        urlRequest.cachePolicy =
+            withCache ? .returnCacheDataElseLoad : .reloadIgnoringLocalCacheData
         let (data, response) = try await urlSession.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.statusCode == 200
@@ -45,14 +49,18 @@ final class APINetworkManager {
             case 404:
                 throw RouteFetchErrors.noRoutesFound
             default:
-                print("Status code \((response as? HTTPURLResponse)?.statusCode ?? -1))")
+                print(
+                    "Status code \((response as? HTTPURLResponse)?.statusCode ?? -1))"
+                )
                 throw RouteFetchErrors.invalidResponse
             }
         }
         return data
     }
-    
-    private func jsonDecoder<T : Decodable>(data : Data, decodeType: T.Type) async throws -> [T]? where T : Decodable {
+
+    private func jsonDecoder<T: Decodable>(data: Data, decodeType: T.Type)
+        async throws -> [T]? where T: Decodable
+    {
         do {
             let jsonDecoder = JSONDecoder()
             let departuresData = try jsonDecoder.decode(
@@ -64,7 +72,7 @@ final class APINetworkManager {
             throw RouteFetchErrors.decodingError
         }
     }
-    
+
     func getRoute(
         from origin: UserPlaceEntry,
         destination: UserPlaceEntry,
@@ -77,7 +85,12 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidCoordinates
         }
-        guard let disallowedModesOfTransport = Set(TransportationModes.allCases).subtracting( modesOfTransport).map({ $0.rawValue }).joined(separator: ",") as String? else {
+        guard
+            let disallowedModesOfTransport = Set(TransportationModes.allCases)
+                .subtracting(modesOfTransport).map({ $0.rawValue }).joined(
+                    separator: ","
+                ) as String?
+        else {
             throw RouteFetchErrors.invalidTransportMode
         }
         guard
@@ -88,9 +101,16 @@ final class APINetworkManager {
         else {
             throw RouteFetchErrors.invalidURL
         }
+        print("Request URL: \(requestURL.absoluteString)")
         do {
-            let data = try await fetchResource(url: requestURL, withCache: withCache)
-            let routeData = try await jsonDecoder(data: data, decodeType: RouteResponse.self)
+            let data = try await fetchResource(
+                url: requestURL,
+                withCache: withCache
+            )
+            let routeData = try await jsonDecoder(
+                data: data,
+                decodeType: RouteResponse.self
+            )
             if let routeData {
                 return routeData
             } else {
@@ -100,10 +120,10 @@ final class APINetworkManager {
             throw error
         }
     }
-    
+
     func getDepartures(
-        location : UserPlaceEntry,
-        radius : String,
+        location: UserPlaceEntry,
+        radius: String,
         dateTime: Date,
         modeOfTransport: Set<TransportationModes>,
         withCache: Bool = true
@@ -114,7 +134,12 @@ final class APINetworkManager {
         guard !firebaseBaseFunctionURLString.isEmpty else {
             throw RouteFetchErrors.invalidURL
         }
-        guard let disallowedModesOfTransport = Set(TransportationModes.allCases).subtracting( modeOfTransport).map({ $0.rawValue }).joined(separator: ",") as String? else {
+        guard
+            let disallowedModesOfTransport = Set(TransportationModes.allCases)
+                .subtracting(modeOfTransport).map({ $0.rawValue }).joined(
+                    separator: ","
+                ) as String?
+        else {
             throw RouteFetchErrors.invalidTransportMode
         }
         guard
@@ -126,8 +151,14 @@ final class APINetworkManager {
             throw RouteFetchErrors.invalidURL
         }
         do {
-            let data = try await fetchResource(url: requestURL, withCache: withCache)
-            let departuresData = try await jsonDecoder(data: data, decodeType: RouteDeparturesResponse.self)
+            let data = try await fetchResource(
+                url: requestURL,
+                withCache: withCache
+            )
+            let departuresData = try await jsonDecoder(
+                data: data,
+                decodeType: RouteDeparturesResponse.self
+            )
             if let departuresData {
                 return departuresData
             } else {

@@ -1,4 +1,4 @@
-/**
+/*
  * Main entry point for Firebase Cloud Functions.
  * Sets up an Express app with routes for transit calculations,
  * Adds auth protected by Firebase App Check authentication.

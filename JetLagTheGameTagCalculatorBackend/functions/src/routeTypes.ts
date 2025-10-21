@@ -294,6 +294,15 @@ type RouteResponse = {
     numTransfers: number;
     numSteps: number;
     steps: ResponseStep[];
+    incidents?: {
+        summary?: string;
+        description?: string;
+        type: string;
+        effect: string;
+        validFrom?: string;
+        validUntil?: string;
+        url?: string;
+    }[];
 };
 
 type Departure = {

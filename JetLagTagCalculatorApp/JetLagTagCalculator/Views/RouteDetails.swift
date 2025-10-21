@@ -24,13 +24,15 @@ struct RouteDetails: View {
     @Binding var userBalance: Int
     let route: RouteResponse
     @State private var showMap : Bool = false
+    private var balanceAfterStep: [Int] {
+        determineCostAfterStep(route: route, startingBalance: userBalance)
+    }
     var body: some View {
-        let balanceAfterStep = determineCostAfterStep(
-            route: route,
-            startingBalance: userBalance
-        )
         VStack {
             RouteCard(route: route).padding(.bottom, 12)
+            if route.incidents != nil && !(route.incidents?.isEmpty ?? true) {
+                NoticesBanner(notices: route.incidents ?? [])
+            }
             List(route.steps.indices, id: \.self) { idx in
                 let step = route.steps[idx]
                 let balance = balanceAfterStep[idx]

@@ -437,6 +437,7 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
                     .length - 1,
             numSteps: steps.length,
             steps: structuredClone(steps),
+            incidents: steps.flatMap((step) => step.incidents || []),
         });
         steps.length = 0;
     }
