@@ -15,7 +15,7 @@ struct NoticesBanner: View {
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundColor(.yellow)
             Text(
-                "\(notices.count) Service Disruptions Currently Active on Selected Route"
+                "\(notices.count) Notices Currently Active on Selected Route"
             )
             .font(.system(size: TextSizes.caption))
             .foregroundColor(.primary)

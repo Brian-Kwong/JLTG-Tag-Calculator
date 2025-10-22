@@ -80,7 +80,7 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
                 message: "No routes found",
             };
         }
-        let parsedTransitData = parseHEREMapsResponse(transitData);
+        let parsedTransitData = await parseHEREMapsResponse(transitData);
 
         if (avoidModes) {
             const avoidModesArray = (avoidModes as string)

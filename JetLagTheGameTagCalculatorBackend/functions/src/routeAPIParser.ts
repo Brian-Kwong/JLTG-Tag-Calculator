@@ -1,5 +1,6 @@
 import { encode } from "@googlemaps/polyline-codec";
 import { decode as hereDecode } from "@here/flexpolyline";
+import translate from "google-translate-api-x";
 
 /**
  * Functions to parse responses from Google Maps and HERE Maps APIs into a
@@ -231,7 +232,7 @@ function parseGoogleMapsResponse(
  * @param {HERE_API_RESPONSE} response - The response object from HERE Maps API
  * @return {RouteResponse[]} - An array of RouteResponse objects
  */
-function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
+async function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
     const routes = response.routes;
     const steps: ResponseStep[] = [];
     const parsedRoutes: RouteResponse[] = [];
@@ -293,16 +294,16 @@ function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
             });
             // If there are incidents, add them to the step
             if (section.incidents && section.incidents.length > 0) {
-                steps[steps.length - 1].incidents = section.incidents.map(
-                    (incident) => ({
-                        summary: incident.summary,
-                        description: incident.description,
+                steps[steps.length - 1].incidents = await Promise.all(section.incidents.map(
+                    async (incident) => ({
+                        summary: (await translate(incident.summary || "Announcement", { to: "en" })).text,
+                        description: (await translate(incident.description || "", { to: "en" })).text,
                         type: incident.type,
                         effect: incident.effect,
                         validFrom: incident.validFrom,
                         validUntil: incident.validUntil,
                         url: incident.url,
-                    })
+                    }))
                 );
             }
         }

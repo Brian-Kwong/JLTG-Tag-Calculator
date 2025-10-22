@@ -22,16 +22,20 @@ struct NoticeCard: View {
             VStack(alignment: .center, spacing: 4) {
                 Text(notice.summary ?? "Service Notice")
                     .font(.system(size: TextSizes.subtitle, weight: .bold)).lineLimit(2)
-                Text(
-                    "Effected: \(notice.validFrom ?? "Unkown") to \(notice.validUntil ?? "Unknown")"
-                )
-                .font(.system(size: TextSizes.caption))
-                .foregroundStyle(.secondary)
+                if let validFrom = notice.validFrom,
+                   let validUntil = notice.validUntil {
+                    
+                    Text(
+                        "Effected: \(validFrom) to \(validUntil)"
+                    )
+                    .font(.system(size: TextSizes.caption))
+                    .foregroundStyle(.secondary)
+                }
                 Text(notice.description ?? "No additional details provided.")
                     .font(.system(size: TextSizes.body))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.leading)
-            }.multilineTextAlignment(.center)
+            }.frame(maxWidth: .infinity, alignment: .center).multilineTextAlignment(.center)
         }.padding(16).background(
             noticeColors[notice.type]?.opacity(0.1).gradient
                 ?? Color.yellow.opacity(0.1).gradient

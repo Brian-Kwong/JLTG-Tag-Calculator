@@ -25,6 +25,7 @@
         "firebase-admin": "^12.7.0",
         "firebase-functions": "^6.0.1",
         "geo-tz": "^8.1.4",
+        "google-translate-api-x": "^10.7.2",
         "haversine-distance": "^1.2.4",
         "luxon": "^3.7.2"
     },
