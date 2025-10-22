@@ -10,11 +10,25 @@ import FirebaseAppCheck
 import FirebaseCore
 import SwiftUI
 
+struct AppCheckAvailabe{
+    static var isAvailable: Bool {
+        if #available(iOS 14.0, *) {
+            return !ProcessInfo.processInfo.isiOSAppOnMac
+        }
+        return false
+    }
+}
+    
+
 class AppCheckFactory: NSObject, AppCheckProviderFactory {
     func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
         // If debugging, use the debug provider
         // return AppCheckDebugProvider(app: app)
-        return AppAttestProvider(app: app)
+        if AppCheckAvailabe.isAvailable {
+            return AppAttestProvider(app: app)
+        } else {
+            return DeviceCheckProvider(app: app)
+        }
     }
 }
 
