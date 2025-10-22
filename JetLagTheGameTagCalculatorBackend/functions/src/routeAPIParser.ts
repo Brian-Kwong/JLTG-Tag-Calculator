@@ -66,13 +66,12 @@ function parseGoogleMapsResponse(
                     });
                 } else if (step.travelMode === "TRANSIT") {
                     if (walkingsSteps.length > 0) {
-                        const aggregatedWalkingStep =
-                            aggregatesWalkingSteps(
-                                walkingsSteps,
-                                parsedRoute,
-                                step,
-                                startTime
-                            );
+                        const aggregatedWalkingStep = aggregatesWalkingSteps(
+                            walkingsSteps,
+                            parsedRoute,
+                            step,
+                            startTime
+                        );
                         if (aggregatedWalkingStep) {
                             responseSteps.push(aggregatedWalkingStep);
                         }
@@ -137,7 +136,7 @@ function parseGoogleMapsResponse(
                 }
             }
         }
-        
+
         if (walkingsSteps.length > 0) {
             const aggregatedWalkingStep = aggregatesWalkingSteps(
                 walkingsSteps,
@@ -294,10 +293,19 @@ async function parseHEREMapsResponse(response: HERE_API_RESPONSE) {
             });
             // If there are incidents, add them to the step
             if (section.incidents && section.incidents.length > 0) {
-                steps[steps.length - 1].incidents = await Promise.all(section.incidents.map(
-                    async (incident) => ({
-                        summary: (await translate(incident.summary || "Announcement", { to: "en" })).text,
-                        description: (await translate(incident.description || "", { to: "en" })).text,
+                steps[steps.length - 1].incidents = await Promise.all(
+                    section.incidents.map(async (incident) => ({
+                        summary: (
+                            await translate(
+                                incident.summary || "Announcement",
+                                { to: "en" }
+                            )
+                        ).text,
+                        description: (
+                            await translate(incident.description || "", {
+                                to: "en",
+                            })
+                        ).text,
                         type: incident.type,
                         effect: incident.effect,
                         validFrom: incident.validFrom,

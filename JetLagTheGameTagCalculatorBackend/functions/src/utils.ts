@@ -243,13 +243,14 @@ function aggregatesWalkingSteps(
             : walkingsSteps[0].startLocation.latLng.latitude +
               ", " +
               walkingsSteps[0].startLocation.latLng.longitude;
-        const endLocationName = nextStep && nextStep.transitDetails
-            ? nextStep.transitDetails.stopDetails.departureStop.name
-            : walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
-                  .latitude +
-              ", " +
-              walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
-                  .longitude;
+        const endLocationName =
+            nextStep && nextStep.transitDetails
+                ? nextStep.transitDetails.stopDetails.departureStop.name
+                : walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                      .latitude +
+                  ", " +
+                  walkingsSteps[walkingsSteps.length - 1].endLocation.latLng
+                      .longitude;
         // Get the first transit station as the end location of the walking segment
         for (const walkingStep of walkingsSteps) {
             totalWalkingDistance += walkingStep.distanceMeters;
