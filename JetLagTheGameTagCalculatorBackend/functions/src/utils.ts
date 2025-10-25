@@ -145,11 +145,28 @@ function determineLineName(
     if (transport === "BUS" || transport === "METRO") {
         baseName = `Line ${baseName}`;
     } else {
-        if (vehicleName && vehicleName.trim() !== "") {
+        if (
+            vehicleName &&
+            vehicleName.trim() !== "" &&
+            vehicleName.trim().toLowerCase() !== baseName.toLowerCase()
+        ) {
             baseName = `${baseName} ${vehicleName.trim()}`;
+        } else if (vehicleName && vehicleName.trim() !== "") {
+            baseName = `${baseName}`;
         }
     }
-    return baseName.trim() === "" ? undefined : baseName.trim();
+    if (baseName.trim() === "") {
+        return undefined;
+    } else {
+        return baseName
+            .trim()
+            .split(" ")
+            .filter((word, index, arr) => {
+                return arr.indexOf(word) === index;
+            })
+            .join(" ")
+            .trim();
+    }
 }
 
 /**
