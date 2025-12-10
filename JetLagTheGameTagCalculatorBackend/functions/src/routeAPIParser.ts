@@ -68,7 +68,7 @@ function parseGoogleMapsResponse(
                     if (walkingsSteps.length > 0) {
                         const aggregatedWalkingStep = aggregatesWalkingSteps(
                             walkingsSteps,
-                            parsedRoute,
+                            responseSteps,
                             step,
                             startTime
                         );
@@ -140,7 +140,7 @@ function parseGoogleMapsResponse(
         if (walkingsSteps.length > 0) {
             const aggregatedWalkingStep = aggregatesWalkingSteps(
                 walkingsSteps,
-                parsedRoute,
+                responseSteps,
                 undefined,
                 startTime
             );

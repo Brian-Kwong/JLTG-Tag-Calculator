@@ -25,6 +25,7 @@ const createRouter = express.Router;
 const router = createRouter();
 
 const calculateRouteBasedOffHereApi = async (req: express.Request) => {
+    console.log("Calculating route using HERE API");
     const { originCoord, destinationCoord, departureTime, avoidModes } =
         req.query;
     if (!originCoord || !destinationCoord) {
@@ -115,6 +116,7 @@ const calculateRouteBasedOffHereApi = async (req: express.Request) => {
 };
 
 const calculateRouteBasedOffGoogleApi = async (req: express.Request) => {
+    console.log("Calculating route using Google Maps API");
     const { originCoord, destinationCoord, departureTime, avoidModes } =
         req.query;
     if (!originCoord || !destinationCoord) {

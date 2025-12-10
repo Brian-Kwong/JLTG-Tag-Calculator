@@ -179,7 +179,7 @@ function determineLineName(
  */
 function aggregatesWalkingSteps(
     walkingsSteps: GOOGLE_WALKING_STEP[],
-    responseSteps: RouteResponse[],
+    responseSteps: ResponseStep[],
     nextStep?: {
         distanceMeters: number;
         staticDuration: string;
@@ -256,7 +256,7 @@ function aggregatesWalkingSteps(
 
         // Get the last transit station as the start location of the walking segment
         const startLocationName = responseSteps.length
-            ? responseSteps[responseSteps.length - 1].arrivalLocation.name
+            ? responseSteps[responseSteps.length - 1].endLocation.name
             : walkingsSteps[0].startLocation.latLng.latitude +
               ", " +
               walkingsSteps[0].startLocation.latLng.longitude;
